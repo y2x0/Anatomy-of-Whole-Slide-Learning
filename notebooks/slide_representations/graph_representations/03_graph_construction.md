@@ -71,6 +71,21 @@ This makes topology model-dependent.
 WiKG-style dynamic graph approaches fit here: the graph is not fixed physical
 adjacency but learned relation structure.
 
+Mathematically, this changes the slide object from:
+
+```math
+(H,C,A_{\operatorname{physical}})
+```
+
+to:
+
+```math
+(H,C,A_\theta(H,C)).
+```
+
+The representation is now end-to-end learned. This can connect distant but
+related morphologies, but it also means the graph may encode label shortcuts.
+
 ## Heterogeneous Graph
 
 A heterogeneous graph has node types:
@@ -97,6 +112,36 @@ cell-near-cell edge
 ```
 
 HACT-style models use hierarchy between cell and tissue graphs.
+
+More explicitly, a hierarchical cell-to-tissue graph can be written:
+
+```math
+V
+=
+V_{\operatorname{cell}}
+\cup
+V_{\operatorname{tissue}},
+```
+
+```math
+E
+=
+E_{\operatorname{cell-cell}}
+\cup
+E_{\operatorname{tissue-tissue}}
+\cup
+E_{\operatorname{cell-tissue}}.
+```
+
+The cross-level edge:
+
+```math
+(c,r)\in E_{\operatorname{cell-tissue}}
+```
+
+means cell $c$ belongs to or is spatially contained in tissue region $r$. This
+makes the graph a multiscale tissue object rather than a flat patch adjacency
+graph.
 
 ## Dense Summary
 

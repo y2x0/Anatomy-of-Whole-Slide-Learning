@@ -24,7 +24,7 @@ for every permutation $\pi$.
 ## Files
 
 - `01_slide_as_set.md`: the mathematical object and symmetry.
-- `02_deep_sets_and_mil.md`: Deep Sets, MIL, and universal invariant maps.
+- `02_deep_sets_and_mil.md`: Deep Sets, MIL, and invariant map approximation.
 - `03_statistics_that_survive.md`: mean, max, attention, and distributional
   statistics.
 - `04_failure_modes.md`: loss of geometry, sparse positives, and bag shortcuts.

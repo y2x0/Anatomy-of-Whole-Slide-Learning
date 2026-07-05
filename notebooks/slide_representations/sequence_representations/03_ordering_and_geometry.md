@@ -46,6 +46,24 @@ Hilbert or Morton order tries to preserve locality:
 ```
 
 But no one-dimensional order perfectly preserves two-dimensional neighborhoods.
+For growing two-dimensional grids, any one-dimensional traversal must create
+spatial neighbors whose sequence indices are far apart. The issue is not that
+Hilbert or Morton orders are bad; it is that a total order cannot faithfully
+preserve all 2D adjacency relations.
+
+A useful diagnostic is locality distortion:
+
+```math
+D(\sigma)
+=
+\frac{1}{|E_{\operatorname{spatial}}|}
+\sum_{(u,v)\in E_{\operatorname{spatial}}}
+|\sigma(u)-\sigma(v)|.
+```
+
+Here $E_{\operatorname{spatial}}$ can be a grid, kNN, or radius-neighborhood
+graph built from coordinates. Low distortion means spatial neighbors usually
+stay near each other in sequence space.
 
 ## Learned Reordering
 
@@ -60,6 +78,18 @@ new learned preprocessing step.
 
 If $\sigma_i$ depends on the slide features, the sequence object itself becomes
 model-dependent.
+
+In that case the forward map is better written:
+
+```math
+\sigma_i=f_\theta(H_i,C_i),
+\qquad
+\mathcal{X}_i
+=
+(h_{i\sigma_i(1)},\ldots,h_{i\sigma_i(n_i)}).
+```
+
+The representation and the model are no longer separable.
 
 ## Positional Features Versus Ordering
 

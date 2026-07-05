@@ -110,6 +110,57 @@ F_\theta
 
 Thus graph depth controls spatial/contextual range.
 
+## Expressivity Limit
+
+Standard message-passing GNNs update a node from the multiset of neighbor
+states:
+
+```math
+h_v^{(\ell+1)}
+=
+\Phi_\ell
+\left(
+h_v^{(\ell)},
+\{\!\{h_u^{(\ell)}:u\in\mathcal{N}(v)\}\!\}
+\right).
+```
+
+Because the neighborhood enters as a multiset, many message-passing GNNs are no
+more discriminative than the 1-dimensional Weisfeiler-Lehman color refinement
+test. If two graphs produce identical rooted neighborhood multisets at every
+iteration, the GNN may assign them the same graph representation even when their
+biological meaning differs.
+
+For WSI graphs this matters because coordinate kNN graphs can have very similar
+local degree patterns across slides:
+
+```text
+different tissue organization
+same local graph neighborhoods
+```
+
+The model can still use node features, edge features, coordinates, hierarchy, or
+global readout to separate slides, but vanilla message passing alone does not
+give arbitrary graph expressivity.
+
+## Bottlenecks And Oversquashing
+
+If many distant nodes must influence $v$ through a small cut $B$, then their
+information is compressed into bounded-dimensional messages:
+
+```math
+\{h_u:u\in U\}
+\longrightarrow
+\{m_b:b\in B\}
+\longrightarrow
+h_v^{(L)}.
+```
+
+When $|U|$ is large, $|B|$ is small, and message dimension is fixed, long-range
+signals can be squashed before reaching the readout. Increasing depth expands
+the receptive field but does not automatically increase the capacity of narrow
+graph cuts.
+
 ## Dense Summary
 
 ```math

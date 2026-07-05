@@ -28,6 +28,17 @@ first moment of contextualized node features
 
 The graph affects $h_v^{(L)}$, but the readout is still a mean.
 
+If two slides produce the same multiset of final node states:
+
+```math
+\{\!\{h_v^{(L)}:v\in V\}\!\}
+=
+\{\!\{\bar h_u^{(L)}:u\in \bar V\}\!\},
+```
+
+then mean readout cannot distinguish them, even if the original graph topology
+was different.
+
 ## Attention Readout
 
 ```math

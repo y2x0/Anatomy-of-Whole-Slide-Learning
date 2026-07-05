@@ -1,7 +1,6 @@
 # Deep Sets And MIL
 
-The Deep Sets form states that many permutation-invariant functions can be
-written as:
+The Deep Sets template writes a permutation-invariant set function as:
 
 ```math
 f(\{h_1,\ldots,h_n\})
@@ -10,6 +9,18 @@ f(\{h_1,\ldots,h_n\})
 \sum_{j=1}^{n}\phi(h_j)
 \right).
 ```
+
+The theorem should be read with conditions. For countable domains, invariant
+functions admit this kind of sum-decomposition with a suitable feature map. For
+continuous set functions on compact domains, neural implementations are best
+understood as approximation families. The important modeling lesson is:
+
+```text
+per-instance transform, invariant sum, bag-level head
+```
+
+not that every finite neural architecture exactly realizes every invariant
+functional.
 
 For WSI:
 
@@ -78,8 +89,34 @@ The set statistic is:
 largest instance score
 ```
 
-This is useful for sparse positives but unstable when patch-level evidence is
-noisy.
+This is an extreme-value statistic, not a first moment. It is useful for sparse
+positives but unstable when patch-level evidence is noisy.
+
+Max pooling is still permutation invariant and can be approximated by smooth
+sum-style statistics. For scalar scores $s_j=g_\theta(h_j)$:
+
+```math
+\max_j s_j
+=
+\lim_{\beta\to\infty}
+\frac{1}{\beta}
+\log
+\left(
+\sum_j\exp(\beta s_j)
+\right).
+```
+
+Thus the right distinction is not:
+
+```text
+Deep Sets versus max
+```
+
+but:
+
+```text
+moment-like prevalence statistic versus extreme-evidence statistic
+```
 
 ## Attention MIL
 
@@ -92,6 +129,19 @@ a_{ij}
 {\sum_{\ell=1}^{n_i}\exp(s_\theta(h_{i\ell}))},
 \qquad
 z_i=\sum_ja_{ij}v_\theta(h_{ij}).
+```
+
+The gated attention variant scores instances with:
+
+```math
+s_\theta(h)
+=
+w^\top
+\left(
+\tanh(Vh)
+\odot
+\operatorname{sigmoid}(Uh)
+\right).
 ```
 
 This is still permutation invariant if scores are computed independently over
@@ -134,6 +184,32 @@ z_i=\operatorname{Pool}(\widetilde{H}_i).
 
 This allows pairwise or higher-order patch interactions without explicit
 geometry.
+
+Full set attention can be viewed as message passing on the complete graph over
+instances:
+
+```math
+\widetilde{h}_j
+=
+\sum_k
+\operatorname*{softmax}_{k}
+\left(
+\frac{q_j^\top k_k}{\sqrt{d}}
+\right)
+v_k.
+```
+
+Set Transformer also introduces pooling by multihead attention. With seed
+vectors $s_m$:
+
+```math
+z_m
+=
+\operatorname{Attn}(s_m,\widetilde{H}_i,\widetilde{H}_i).
+```
+
+Inducing-point variants reduce all-pairs cost by routing interaction through a
+smaller learned set of inducing states.
 
 ## Dense Summary
 

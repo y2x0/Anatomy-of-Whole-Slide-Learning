@@ -126,6 +126,15 @@ Set attention can compute:
 \operatorname*{softmax}_{k}(q_j^\top k_k)v_k.
 ```
 
+This is a complete-graph context operator:
+
+```math
+\mathcal{N}_{K_n}(j)=\{1,\ldots,n\}.
+```
+
+Every patch can send a learned message to every other patch before invariant
+pooling.
+
 Then invariant pooling:
 
 ```math

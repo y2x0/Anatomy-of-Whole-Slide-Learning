@@ -31,7 +31,7 @@ learned topology
 ## Files
 
 - `01_slide_as_graph.md`: graph object, node features, edge structure.
-- `02_message_passing.md`: GNN maps and permutation equivariance.
-- `03_graph_construction.md`: kNN, radius, cell graphs, heterogeneous graphs.
+- `02_message_passing.md`: GNN maps, permutation equivariance, and expressivity.
+- `03_graph_construction.md`: kNN, radius, dynamic, and heterogeneous graphs.
 - `04_readout_and_surviving_statistics.md`: graph-level representations.
 - `05_failure_modes.md`: oversmoothing, oversquashing, topology errors.

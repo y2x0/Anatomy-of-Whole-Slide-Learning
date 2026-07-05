@@ -43,6 +43,9 @@ sequence_representations/
 
 graph_representations/
     slide = graph of patches, regions, cells, or tissue units
+
+unifying_view/
+    set, sequence, and graph as choices of structure, context, and readout
 ```
 
 ## Core Distinction
@@ -77,9 +80,11 @@ graph:
 1. `set_representations/`
 2. `sequence_representations/`
 3. `graph_representations/`
+4. `unifying_view/`
 
 These three cover the most common ways to turn patch embeddings into a slide
-object before task-specific aggregation.
+object before task-specific aggregation. The unifying view then places the
+families into one C/R/G/S decomposition.
 
 ## Anchor Papers
 

@@ -63,6 +63,10 @@ H'=H+P.
 
 Without $P$, self-attention is permutation equivariant, not sequence-aware.
 
+With full attention, every token can interact with every other token. The
+interaction graph is complete; the sequence enters through $P$ or through
+relative position terms, not through a path constraint.
+
 ## State-Space Operator
 
 A linear state-space model:
@@ -88,6 +92,9 @@ Then:
 ```math
 s_{j+1}=A_js_j+B_jh_j.
 ```
+
+This is path-structured context. Information from token $k$ can affect token
+$j$ only through the intervening scan states.
 
 The readout can be:
 
@@ -119,6 +126,9 @@ u_j=[s_j^{\rightarrow};s_j^{\leftarrow}].
 
 For WSI, bidirectionality reduces dependence on arbitrary scan direction.
 
+It does not make the representation permutation invariant. If the order changes,
+the forward and backward paths change too.
+
 ## Dense Summary
 
 ```text
@@ -126,10 +136,10 @@ RNN:
     sequential hidden state
 
 Transformer:
-    all-pairs token interaction plus positional encoding
+    complete-graph token interaction plus positional encoding
 
 State-space:
-    linear-time recurrence with long-context memory
+    path-structured recurrence with long-context memory
 
 Bidirectional scan:
     reduces direction artifact
