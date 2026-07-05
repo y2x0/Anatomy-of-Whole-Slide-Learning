@@ -29,7 +29,7 @@ because the morphology used for risk may change with time.
 
 ## Time-Conditioned Attention
 
-Let \(q(t)\) be a time query:
+Let $q(t)$ be a time query:
 
 ```math
 q(t)=\phi_t(t)\in\mathbb{R}^r.
@@ -85,7 +85,7 @@ The continuous-time loss is:
 \int_0^{X_i}\lambda_i(u)\,du.
 ```
 
-The gradient with respect to a patch embedding \(h_{ij}\) is:
+The gradient with respect to a patch embedding $h_{ij}$ is:
 
 ```math
 \nabla_{h_{ij}}\mathcal{L}_i
@@ -147,7 +147,7 @@ b(t)
 \right].
 ```
 
-Here \(r_m(t)\) is a prototype-specific time effect.
+Here $r_m(t)$ is a prototype-specific time effect.
 
 The derivative with respect to prototype prevalence is:
 
@@ -204,7 +204,7 @@ a_{ij}(t)
 ```
 
 Graph message passing defines spatial context. Time attention selects which
-contextualized regions matter at horizon \(t\).
+contextualized regions matter at horizon $t$.
 
 ## Relation To Cox
 
@@ -222,7 +222,7 @@ with:
 \eta_i=f(z_i)
 ```
 
-and \(z_i\) does not depend on \(t\).
+and $z_i$ does not depend on $t$.
 
 Taking logs:
 
@@ -238,7 +238,7 @@ A continuous WSI model violates proportional hazards when:
 \log\lambda_i(t)-\log\lambda_j(t)
 ```
 
-depends on \(t\). Time-conditioned readout makes this natural.
+depends on $t$. Time-conditioned readout makes this natural.
 
 ## What Statistic Survives
 
@@ -292,4 +292,4 @@ z_i(t)&=\sum_j a_{ij}(t)Vh_{ij},\\
 ```
 
 Continuous-time WSI models can make morphology time-indexed, but only if
-\(\mathcal{R}\) or \(\mathcal{C}\) is allowed to depend on time.
+$\mathcal{R}$ or $\mathcal{C}$ is allowed to depend on time.

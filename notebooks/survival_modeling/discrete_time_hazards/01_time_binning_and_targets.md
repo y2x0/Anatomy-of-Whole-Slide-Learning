@@ -6,13 +6,13 @@ Discrete-time models replace continuous event time with ordered intervals:
 0=\tau_0 < \tau_1 < \cdots < \tau_K.
 ```
 
-The \(k\)-th interval is:
+The $k$-th interval is:
 
 ```math
 I_k=(\tau_{k-1},\tau_k].
 ```
 
-For a patient with observed time \(X_i\), define:
+For a patient with observed time $X_i$, define:
 
 ```math
 \kappa_i
@@ -32,7 +32,7 @@ h_{ik}
 \Pr(T_i\in I_k \mid T_i>\tau_{k-1},z_i).
 ```
 
-If \(\delta_i=1\), the event happened in interval \(\kappa_i\). Then:
+If $\delta_i=1$, the event happened in interval $\kappa_i$. Then:
 
 ```math
 y_{ik}=0 \quad k<\kappa_i,
@@ -43,7 +43,7 @@ y_{i\kappa_i}=1.
 Intervals after the event are undefined because the patient is no longer at
 risk.
 
-If \(\delta_i=0\), the patient is censored in interval \(\kappa_i\). We know:
+If $\delta_i=0$, the patient is censored in interval $\kappa_i$. We know:
 
 ```math
 T_i>X_i.
@@ -54,7 +54,7 @@ the censoring time, but no event label afterward.
 
 ## Survival From Hazards
 
-The discrete survival probability through the end of interval \(k\) is:
+The discrete survival probability through the end of interval $k$ is:
 
 ```math
 S_i(\tau_k)
@@ -64,7 +64,7 @@ S_i(\tau_k)
 \prod_{\ell=1}^{k}(1-h_{i\ell}).
 ```
 
-The event probability in interval \(k\) is:
+The event probability in interval $k$ is:
 
 ```math
 \Pr(T_i\in I_k\mid z_i)
@@ -99,13 +99,13 @@ For whole-slide survival:
 h_{ik}=\sigma(w_k^\top z_i+b_k).
 ```
 
-Each time bin has its own readout vector \(w_k\). Therefore:
+Each time bin has its own readout vector $w_k$. Therefore:
 
 ```math
 w_k^\top z_i
 ```
 
-is the slide evidence for risk in interval \(k\).
+is the slide evidence for risk in interval $k$.
 
 If:
 

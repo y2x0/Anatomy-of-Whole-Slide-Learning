@@ -6,7 +6,7 @@ Mixture survival models introduce a latent regime:
 M_i\in\{1,\ldots,M\}.
 ```
 
-The slide representation \(z_i\) determines mixture weights:
+The slide representation $z_i$ determines mixture weights:
 
 ```math
 \pi_m(z_i)
@@ -88,7 +88,7 @@ effective component weights change with time.
 
 ## Censored Likelihood
 
-For observed \((X_i,\delta_i)\):
+For observed $(X_i,\delta_i)$:
 
 ```math
 p_i

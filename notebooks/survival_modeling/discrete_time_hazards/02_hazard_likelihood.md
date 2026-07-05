@@ -8,7 +8,7 @@ h_{ik}
 \Pr(T_i\in I_k \mid T_i>\tau_{k-1},z_i).
 ```
 
-Surviving through interval \(k\) has probability:
+Surviving through interval $k$ has probability:
 
 ```math
 1-h_{ik}.
@@ -16,8 +16,8 @@ Surviving through interval \(k\) has probability:
 
 ## Event Likelihood
 
-If patient \(i\) has an event in interval \(\kappa_i\), then the patient must
-survive all previous intervals and fail in interval \(\kappa_i\):
+If patient $i$ has an event in interval $\kappa_i$, then the patient must
+survive all previous intervals and fail in interval $\kappa_i$:
 
 ```math
 p_i
@@ -40,7 +40,7 @@ The log likelihood is:
 
 ## Censored Likelihood
 
-If patient \(i\) is censored at interval \(\kappa_i\), the observed information
+If patient $i$ is censored at interval $\kappa_i$, the observed information
 is survival until censoring:
 
 ```math
@@ -105,7 +105,7 @@ S_i(\tau_k)
 \prod_{\ell=1}^{k}(1-h_{i\ell}).
 ```
 
-The cumulative incidence by interval \(k\) is:
+The cumulative incidence by interval $k$ is:
 
 ```math
 F_i(\tau_k)
@@ -125,7 +125,7 @@ h_{ik}\prod_{\ell=1}^{k-1}(1-h_{i\ell})
 \right],
 ```
 
-where \(\bar{\tau}_k\) is an interval representative.
+where $\bar{\tau}_k$ is an interval representative.
 
 ## Gradient Shape
 

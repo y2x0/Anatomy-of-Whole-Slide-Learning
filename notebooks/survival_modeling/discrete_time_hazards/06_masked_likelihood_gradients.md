@@ -15,13 +15,13 @@ Define:
 m_{ik}\in\{0,1\}
 ```
 
-to indicate whether interval \(k\) is observed for subject \(i\), and:
+to indicate whether interval $k$ is observed for subject $i$, and:
 
 ```math
 y_{ik}\in\{0,1\}
 ```
 
-to indicate an event in interval \(k\).
+to indicate an event in interval $k$.
 
 The loss:
 
@@ -38,12 +38,12 @@ y_{ik}\log h_{ik}
 \right]
 ```
 
-is a censored likelihood if \(m_{ik}\) is constructed from the observed
+is a censored likelihood if $m_{ik}$ is constructed from the observed
 at-risk process.
 
 ## Event Case
 
-If subject \(i\) fails in interval \(r\):
+If subject $i$ fails in interval $r$:
 
 ```math
 y_{ik}
@@ -82,7 +82,7 @@ h_{ir}
 
 ## Censored Case
 
-If subject \(i\) is censored after interval \(r\):
+If subject $i$ is censored after interval $r$:
 
 ```math
 y_{ik}=0,
@@ -105,7 +105,7 @@ The model is trained only on survival up to the observed censoring horizon.
 
 ## Inside-Interval Censoring
 
-If censoring occurs at \(X_i\in(\tau_{r-1},\tau_r)\), there are two common masks:
+If censoring occurs at $X_i\in(\tau_{r-1},\tau_r)$, there are two common masks:
 
 Conservative:
 
@@ -119,7 +119,7 @@ Boundary approximation:
 m_{ik}=\mathbf{1}[k\le r].
 ```
 
-The second assumes event-free status through \(\tau_r\), which may be false.
+The second assumes event-free status through $\tau_r$, which may be false.
 The first discards partial interval information.
 
 ## Gradients
@@ -227,7 +227,7 @@ m_{ik}(h_{ik}-y_{ik})
 \frac{\partial g_{ik}}{\partial h_{ij}}.
 ```
 
-Holding \(a_{ijk}\) fixed:
+Holding $a_{ijk}$ fixed:
 
 ```math
 \frac{\partial\mathcal{L}_i}{\partial h_{ij}}

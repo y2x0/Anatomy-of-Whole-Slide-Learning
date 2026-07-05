@@ -2,7 +2,7 @@
 
 The Cox partial likelihood can be derived from a multiplicative intensity model.
 
-For subject \(i\), define:
+For subject $i$, define:
 
 ```math
 N_i(t)=\mathbf{1}[X_i\le t,\delta_i=1],
@@ -10,9 +10,9 @@ N_i(t)=\mathbf{1}[X_i\le t,\delta_i=1],
 Y_i(t)=\mathbf{1}[X_i\ge t].
 ```
 
-Here \(N_i(t)\) counts whether the event has occurred by time \(t\), and
-\(Y_i(t)\) indicates whether the subject is still at risk immediately before
-time \(t\).
+Here $N_i(t)$ counts whether the event has occurred by time $t$, and
+$Y_i(t)$ indicates whether the subject is still at risk immediately before
+time $t$.
 
 The Cox intensity model is:
 
@@ -24,7 +24,7 @@ Y_i(t)\lambda_0(t)\exp(\eta_i),
 \eta_i=f_\theta(z_i).
 ```
 
-The process \(N_i(t)\) has compensator:
+The process $N_i(t)$ has compensator:
 
 ```math
 A_i(t)
@@ -66,7 +66,7 @@ The log likelihood is:
 \int_0^{X_i}\lambda_0(u)\,du.
 ```
 
-Using \(Y_i(u)=\mathbf{1}[X_i\ge u]\):
+Using $Y_i(u)=\mathbf{1}[X_i\ge u]$:
 
 ```math
 \ell(\theta,\lambda_0)
@@ -126,9 +126,9 @@ The log likelihood terms involving jumps are:
 \right],
 ```
 
-where \(i_\ell\) is the subject failing at \(t_\ell\).
+where $i_\ell$ is the subject failing at $t_\ell$.
 
-Maximize over each \(\Delta\Lambda_{0\ell}\):
+Maximize over each $\Delta\Lambda_{0\ell}$:
 
 ```math
 \frac{\partial \ell}{\partial \Delta\Lambda_{0\ell}}
@@ -186,7 +186,7 @@ we recover the partial log likelihood:
 
 ## Tied Events
 
-If \(d_t\) subjects fail at time \(t\), the Breslow approximation is:
+If $d_t$ subjects fail at time $t$, the Breslow approximation is:
 
 ```math
 \ell_t^{\mathrm{Breslow}}
@@ -248,8 +248,8 @@ For WSI survival:
 \eta_i=f_\theta(\mathcal{R}(\mathcal{C}(H_i;G_i))).
 ```
 
-The counting-process derivation does not care how \(z_i\) was built. Therefore
-all WSI complexity enters only through \(\eta_i\).
+The counting-process derivation does not care how $z_i$ was built. Therefore
+all WSI complexity enters only through $\eta_i$.
 
 The Cox loss cannot directly distinguish:
 

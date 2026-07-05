@@ -13,19 +13,19 @@ h_{ik}
 \Pr(T_i\in I_k\mid T_i>\tau_{k-1},z_i).
 ```
 
-Change the intervals \(I_k\), and the target changes.
+Change the intervals $I_k$, and the target changes.
 
 Coarse bins hide temporal structure. Fine bins create sparse event targets.
 
 ## 2. Interval Censoring Ambiguity
 
-If a patient is censored inside interval \(I_k\), we know:
+If a patient is censored inside interval $I_k$, we know:
 
 ```math
 T_i>X_i
 ```
 
-but we may not know whether the patient would survive through \(\tau_k\). Treating
+but we may not know whether the patient would survive through $\tau_k$. Treating
 the entire interval as event-free can introduce bias.
 
 ## 3. Too Many Empty Event Bins
@@ -49,7 +49,7 @@ If:
 h_i=\sigma(Wz_i+b),
 ```
 
-all hazards depend on the same slide embedding \(z_i\).
+all hazards depend on the same slide embedding $z_i$.
 
 This can still miss time-specific morphology if the aggregator discards it.
 
@@ -86,7 +86,7 @@ This is especially likely when ranking losses are mixed with likelihood losses.
 
 ## 7. WSI Attention Reuse
 
-If the same attention weights define \(z_i\) for all time bins, then all hazards
+If the same attention weights define $z_i$ for all time bins, then all hazards
 see the same morphological summary.
 
 This can silently turn a time-dependent survival head into:

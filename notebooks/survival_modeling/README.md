@@ -36,6 +36,24 @@ discrete_time_hazards/
 
 continuous_time_hazards/
     risk is a time-indexed hazard, survival curve, or event-time density
+
+competing_risks/
+    risk is event-type-specific hazard, PMF, or cumulative incidence
+
+survival_losses/
+    training objective defines which censored facts are used
+
+evaluation/
+    metric must match the predicted risk object
+
+wsi_survival_models/
+    slide representation plus survival head
+
+multimodal_survival/
+    pathology, genomics, clinical, and pathway fusion
+
+unifying_view/
+    C/R/G/S survival decomposition and design rules
 ```
 
 The dense math pass adds the derivation kernels:
@@ -55,6 +73,24 @@ continuous_time_hazards/
     monotone cumulative-hazard parameterizations
     mixture survival algebra
     time-conditioned WSI readouts and gradients
+
+competing_risks/
+    CIFs, cause-specific hazards, Fine-Gray, DeepHit-style PMFs
+
+survival_losses/
+    likelihood, ranking, IPCW, and multi-objective survival losses
+
+evaluation/
+    concordance, time-dependent AUC, Brier score, calibration, leakage
+
+wsi_survival_models/
+    MIL, graph, transformer, state-space, foundation, and end-to-end survival
+
+multimodal_survival/
+    tensor fusion, co-attention, pathway tokens, missing modalities, hierarchy
+
+unifying_view/
+    risk object lattice, paper placement matrix, minimal reporting checklist
 ```
 
 The notes are derivation-first. Each family should make explicit:
@@ -67,7 +103,7 @@ The notes are derivation-first. Each family should make explicit:
 
 ## Core Observed Data
 
-For patient or slide indexed by \(i\):
+For patient or slide indexed by $i$:
 
 ```math
 T_i = \text{event time},
@@ -83,9 +119,9 @@ X_i = \min(T_i,C_i),
 \delta_i = \mathbf{1}[T_i \le C_i].
 ```
 
-The pair \((X_i,\delta_i)\) is the survival label. Whole-slide pathology adds
-the high-dimensional object \(S_i\), usually represented through patch features
-\(H_i\).
+The pair $(X_i,\delta_i)$ is the survival label. Whole-slide pathology adds
+the high-dimensional object $S_i$, usually represented through patch features
+$H_i$.
 
 ## References To Anchor The First Pass
 
@@ -106,3 +142,10 @@ the high-dimensional object \(S_i\), usually represented through patch features
   https://arxiv.org/abs/2107.13048
 - Chen et al. "Multimodal Co-Attention Transformer for Survival Prediction in
   Gigapixel Whole Slide Images." ICCV 2021.
+- Fine and Gray. "A proportional hazards model for the subdistribution of a
+  competing risk." JASA 1999.
+- Jaume et al. "Modeling Dense Multimodal Interactions Between Biological
+  Pathways and Histology for Survival Prediction." CVPR 2024.
+- Cen et al. "C2MIL: Synchronizing Semantic and Topological Causalities in
+  Multiple Instance Learning for Robust and Interpretable Survival Analysis."
+  ICCV 2025.

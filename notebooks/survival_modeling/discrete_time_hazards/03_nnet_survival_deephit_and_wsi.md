@@ -42,7 +42,7 @@ S_i(\tau_k)
 ```
 
 This is subtly different from predicting hazards. A hazard is conditional on
-survival; a mass \(p_{ik}\) is unconditional.
+survival; a mass $p_{ik}$ is unconditional.
 
 The two connect by:
 
@@ -65,7 +65,7 @@ ranking penalty compares patients whose event order is known:
 \phi(r_i,r_j).
 ```
 
-Here \(r_i\) may be a scalar summary of the predicted event distribution, such
+Here $r_i$ may be a scalar summary of the predicted event distribution, such
 as cumulative incidence at a clinically chosen time.
 
 This improves concordance-like behavior but can weaken calibration if it
@@ -89,7 +89,7 @@ h_i
 W\in\mathbb{R}^{K\times d}.
 ```
 
-Each row \(w_k^\top\) asks a different time-specific question of the slide:
+Each row $w_k^\top$ asks a different time-specific question of the slide:
 
 ```math
 g_{ik}=w_k^\top z_i+b_k.

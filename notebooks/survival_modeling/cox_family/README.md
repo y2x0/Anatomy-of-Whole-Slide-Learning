@@ -17,7 +17,7 @@ The proportional hazards model writes:
 \lambda_0(t)\exp(\eta_i).
 ```
 
-The baseline hazard \(\lambda_0(t)\) is unspecified. Training depends on event
+The baseline hazard $\lambda_0(t)$ is unspecified. Training depends on event
 ordering through the partial likelihood.
 
 ## Why This Matters For WSI
@@ -34,7 +34,7 @@ then the Cox head keeps only:
 \eta_i = w^\top z_i
 ```
 
-or a nonlinear scalar \(f_\theta(z_i)\).
+or a nonlinear scalar $f_\theta(z_i)$.
 
 That means the entire slide is compressed into one coordinate before the
 survival loss sees it.

@@ -9,10 +9,10 @@ Let:
 R_i = \{j : X_j \ge X_i\}
 ```
 
-be the risk set at the observed event time \(X_i\). It contains everyone still
-under observation just before \(X_i\).
+be the risk set at the observed event time $X_i$. It contains everyone still
+under observation just before $X_i$.
 
-For an uncensored event \(\delta_i=1\), the Cox model assigns probability:
+For an uncensored event $\delta_i=1$, the Cox model assigns probability:
 
 ```math
 \Pr(i \text{ fails at } X_i \mid R_i)
@@ -60,7 +60,7 @@ p_{ij}
 {\sum_{k\in R_i}\exp(\eta_k)}.
 ```
 
-The event patient \(i\) is the positive class. Everyone in \(R_i\) is a
+The event patient $i$ is the positive class. Everyone in $R_i$ is a
 competitor.
 
 This makes the gradient easy to read:
@@ -72,7 +72,7 @@ p_{ij} - \mathbf{1}[j=i],
 \qquad j\in R_i.
 ```
 
-For a linear head \(\eta_j=w^\top z_j\):
+For a linear head $\eta_j=w^\top z_j$:
 
 ```math
 \frac{\partial \mathcal{L}_i}{\partial w}
@@ -85,8 +85,8 @@ average representation.
 
 ## What Censoring Does
 
-If \(\delta_i=0\), patient \(i\) has no event numerator. But for any earlier
-event time \(X_k \le X_i\), patient \(i\in R_k\). Therefore censored patients
+If $\delta_i=0$, patient $i$ has no event numerator. But for any earlier
+event time $X_k \le X_i$, patient $i\in R_k$. Therefore censored patients
 shape the denominator until they leave observation.
 
 This encodes:
@@ -103,7 +103,7 @@ If multiple events happen at the same observed time, the exact partial
 likelihood is more complicated. Common approximations include Breslow and Efron
 ties.
 
-The simple Breslow form for tied event set \(D_t\) is:
+The simple Breslow form for tied event set $D_t$ is:
 
 ```math
 \ell_t
