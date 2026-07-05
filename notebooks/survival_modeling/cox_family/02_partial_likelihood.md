@@ -34,7 +34,7 @@ L_{\mathrm{Cox}}(\theta)
 The negative log partial likelihood is:
 
 ```math
-\mathcal L_{\mathrm{Cox}}(\theta)
+\mathcal{L}_{\mathrm{Cox}}(\theta)
 =
 -
 \sum_{i:\delta_i=1}
@@ -66,16 +66,16 @@ competitor.
 This makes the gradient easy to read:
 
 ```math
-\frac{\partial \mathcal L_i}{\partial \eta_j}
+\frac{\partial \mathcal{L}_i}{\partial \eta_j}
 =
-p_{ij} - \mathbf 1[j=i],
+p_{ij} - \mathbf{1}[j=i],
 \qquad j\in R_i.
 ```
 
 For a linear head \(\eta_j=w^\top z_j\):
 
 ```math
-\frac{\partial \mathcal L_i}{\partial w}
+\frac{\partial \mathcal{L}_i}{\partial w}
 =
 \sum_{j\in R_i}p_{ij}z_j - z_i.
 ```

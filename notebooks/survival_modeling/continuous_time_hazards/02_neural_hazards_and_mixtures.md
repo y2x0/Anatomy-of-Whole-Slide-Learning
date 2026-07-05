@@ -23,7 +23,7 @@ The network receives both time and covariates:
 ```math
 g_\theta(t,z)
 =
-\operatorname{MLP}_\theta([e(t),z]).
+\operatorname{MLP}_{\theta}([e(t),z]).
 ```
 
 Here \(e(t)\) may be:

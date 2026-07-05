@@ -205,7 +205,7 @@ Let:
 ```math
 a_m(z)=\text{mixture logit},
 \qquad
-\pi_m(z)=\operatorname{softmax}_m(a(z)).
+\pi_m(z)=\operatorname*{softmax}_{m}(a(z)).
 ```
 
 For event observations, define:

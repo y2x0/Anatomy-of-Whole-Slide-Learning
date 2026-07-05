@@ -9,7 +9,7 @@ For each individual \(i\), there is an event time \(T_i\) and a censoring time
 ```math
 X_i = \min(T_i,C_i),
 \qquad
-\delta_i = \mathbf 1[T_i \le C_i].
+\delta_i = \mathbf{1}[T_i \le C_i].
 ```
 
 If \(\delta_i=1\), the event occurred at \(X_i\). If \(\delta_i=0\), the only
@@ -77,7 +77,7 @@ After tiling and feature extraction:
 ```math
 H_i = \{h_{ij}\}_{j=1}^{n_i},
 \qquad
-h_{ij}\in\mathbb R^d.
+h_{ij}\in\mathbb{R}^d.
 ```
 
 A WSI survival model first builds a slide representation:
@@ -85,7 +85,7 @@ A WSI survival model first builds a slide representation:
 ```math
 z_i
 =
-\mathcal R(\mathcal C(H_i;G_i,S_i)).
+\mathcal{R}(\mathcal{C}(H_i;G_i,S_i)).
 ```
 
 Here:
@@ -100,7 +100,7 @@ S = supervision and censoring structure
 Then the survival head maps \(z_i\) into a risk object:
 
 ```math
-\mathcal H(z_i)
+\mathcal{H}(z_i)
 \in
 \{\eta_i,\ h_i,\ \lambda_i(t),\ S_i(t),\ f_i(t)\}.
 ```

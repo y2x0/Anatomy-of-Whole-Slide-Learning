@@ -5,9 +5,9 @@ The Cox partial likelihood can be derived from a multiplicative intensity model.
 For subject \(i\), define:
 
 ```math
-N_i(t)=\mathbf 1[X_i\le t,\delta_i=1],
+N_i(t)=\mathbf{1}[X_i\le t,\delta_i=1],
 \qquad
-Y_i(t)=\mathbf 1[X_i\ge t].
+Y_i(t)=\mathbf{1}[X_i\ge t].
 ```
 
 Here \(N_i(t)\) counts whether the event has occurred by time \(t\), and
@@ -66,7 +66,7 @@ The log likelihood is:
 \int_0^{X_i}\lambda_0(u)\,du.
 ```
 
-Using \(Y_i(u)=\mathbf 1[X_i\ge u]\):
+Using \(Y_i(u)=\mathbf{1}[X_i\ge u]\):
 
 ```math
 \ell(\theta,\lambda_0)
@@ -245,7 +245,7 @@ subject-specific information acts through one time-invariant log-risk score.
 For WSI survival:
 
 ```math
-\eta_i=f_\theta(\mathcal R(\mathcal C(H_i;G_i))).
+\eta_i=f_\theta(\mathcal{R}(\mathcal{C}(H_i;G_i))).
 ```
 
 The counting-process derivation does not care how \(z_i\) was built. Therefore
@@ -273,8 +273,8 @@ unless those choices change risk-set ordering.
 
 ```math
 \begin{aligned}
-N_i(t)&=\mathbf 1[X_i\le t,\delta_i=1],\\
-Y_i(t)&=\mathbf 1[X_i\ge t],\\
+N_i(t)&=\mathbf{1}[X_i\le t,\delta_i=1],\\
+Y_i(t)&=\mathbf{1}[X_i\ge t],\\
 \lambda_i(t)&=Y_i(t)\lambda_0(t)\exp(\eta_i),\\
 S^{(0)}(t)&=\sum_jY_j(t)\exp(\eta_j),\\
 \ell_p(\theta)

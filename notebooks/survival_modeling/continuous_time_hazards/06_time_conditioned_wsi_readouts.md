@@ -8,7 +8,7 @@ The generic form is:
 ```math
 H_i=\{h_{ij}\}_{j=1}^{n_i},
 \qquad
-z_i(t)=\mathcal R_t(\mathcal C_t(H_i;G_i)),
+z_i(t)=\mathcal{R}_{t}(\mathcal{C}_{t}(H_i;G_i)),
 ```
 
 then:
@@ -20,7 +20,7 @@ then:
 This is strictly richer than:
 
 ```math
-z_i=\mathcal R(\mathcal C(H_i;G_i)),
+z_i=\mathcal{R}(\mathcal{C}(H_i;G_i)),
 \qquad
 \lambda_i(t)=\rho(g_\theta(t,z_i)).
 ```
@@ -32,7 +32,7 @@ because the morphology used for risk may change with time.
 Let \(q(t)\) be a time query:
 
 ```math
-q(t)=\phi_t(t)\in\mathbb R^r.
+q(t)=\phi_t(t)\in\mathbb{R}^r.
 ```
 
 Patch keys:
@@ -78,7 +78,7 @@ Now attention is a function:
 The continuous-time loss is:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -\delta_i\log\lambda_i(X_i)
 +
@@ -88,7 +88,7 @@ The continuous-time loss is:
 The gradient with respect to a patch embedding \(h_{ij}\) is:
 
 ```math
-\nabla_{h_{ij}}\mathcal L_i
+\nabla_{h_{ij}}\mathcal{L}_i
 =
 -
 \delta_i
@@ -116,7 +116,7 @@ For censored cases:
 so:
 
 ```math
-\nabla_{h_{ij}}\mathcal L_i
+\nabla_{h_{ij}}\mathcal{L}_i
 =
 \int_0^{X_i}
 \nabla_{h_{ij}}\lambda_i(u)\,du.
@@ -154,21 +154,21 @@ The derivative with respect to prototype prevalence is:
 ```math
 \frac{\partial\lambda_i(t)}{\partial p_{im}}
 =
-\operatorname{softplus}'(\cdot)r_m(t).
+\operatorname{softplus}^{\prime}(\cdot)r_m(t).
 ```
 
 So the survival loss gradient is:
 
 ```math
-\frac{\partial\mathcal L_i}{\partial p_{im}}
+\frac{\partial\mathcal{L}_i}{\partial p_{im}}
 =
 -
 \delta_i
-\frac{\operatorname{softplus}'(\xi_i(X_i))r_m(X_i)}
+\frac{\operatorname{softplus}^{\prime}(\xi_i(X_i))r_m(X_i)}
 {\lambda_i(X_i)}
 +
 \int_0^{X_i}
-\operatorname{softplus}'(\xi_i(u))r_m(u)\,du,
+\operatorname{softplus}^{\prime}(\xi_i(u))r_m(u)\,du,
 ```
 
 where:
@@ -184,7 +184,7 @@ This exposes exactly how a prototype is rewarded or penalized across time.
 Let graph node states be:
 
 ```math
-\widetilde h_{ij}=\operatorname{GNN}(H_i,G_i)_j.
+\widetilde h_{ij}=\operatorname{GNN}(H_i,G_i)_{j}.
 ```
 
 A time-conditioned graph readout can be:
@@ -200,7 +200,7 @@ where:
 ```math
 a_{ij}(t)
 =
-\operatorname{softmax}_j(q(t)^\top K\widetilde h_{ij}).
+\operatorname*{softmax}_{j}(q(t)^\top K\widetilde h_{ij}).
 ```
 
 Graph message passing defines spatial context. Time attention selects which
@@ -245,7 +245,7 @@ depends on \(t\). Time-conditioned readout makes this natural.
 Shared readout:
 
 ```math
-z_i=\mathcal R(H_i)
+z_i=\mathcal{R}(H_i)
 ```
 
 survives as one slide statistic used at all times.
@@ -253,7 +253,7 @@ survives as one slide statistic used at all times.
 Time-conditioned readout:
 
 ```math
-z_i(t)=\mathcal R_t(H_i)
+z_i(t)=\mathcal{R}_{t}(H_i)
 ```
 
 survives as a curve in representation space:
@@ -280,11 +280,11 @@ Graph time readouts survive as:
 \begin{aligned}
 z_i(t)&=\sum_j a_{ij}(t)Vh_{ij},\\
 \lambda_i(t)&=\operatorname{softplus}(u^\top z_i(t)+b(t)),\\
-\mathcal L_i
+\mathcal{L}_i
 &=
 -\delta_i\log\lambda_i(X_i)
 +\int_0^{X_i}\lambda_i(u)\,du,\\
-\nabla_{h_{ij}}\mathcal L_i
+\nabla_{h_{ij}}\mathcal{L}_i
 &=
 -\delta_i\nabla_{h_{ij}}\log\lambda_i(X_i)
 +\int_0^{X_i}\nabla_{h_{ij}}\lambda_i(u)\,du.
@@ -292,4 +292,4 @@ z_i(t)&=\sum_j a_{ij}(t)Vh_{ij},\\
 ```
 
 Continuous-time WSI models can make morphology time-indexed, but only if
-\(\mathcal R\) or \(\mathcal C\) is allowed to depend on time.
+\(\mathcal{R}\) or \(\mathcal{C}\) is allowed to depend on time.

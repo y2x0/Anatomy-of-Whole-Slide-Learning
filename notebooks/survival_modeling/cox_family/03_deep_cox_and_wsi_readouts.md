@@ -15,7 +15,7 @@ with a neural score:
 The loss is still the Cox partial likelihood:
 
 ```math
-\mathcal L_{\mathrm{Cox}}(\theta)
+\mathcal{L}_{\mathrm{Cox}}(\theta)
 =
 -
 \sum_{i:\delta_i=1}
@@ -40,7 +40,7 @@ H_i = \{h_{ij}\}_{j=1}^{n_i}.
 A WSI survival model builds:
 
 ```math
-z_i = \mathcal R(\mathcal C(H_i;G_i)).
+z_i = \mathcal{R}(\mathcal{C}(H_i;G_i)).
 ```
 
 Then:
@@ -97,7 +97,7 @@ h_{ij}^{(\ell+1)}
 =
 \phi\left(
 h_{ij}^{(\ell)},
-\operatorname{AGG}_{k\in \mathcal N(j)}
+\operatorname*{AGG}_{k \in \mathcal{N}(j)}
 \psi(h_{ij}^{(\ell)},h_{ik}^{(\ell)})
 \right).
 ```
@@ -121,9 +121,9 @@ Patch-GCN style models fit here.
 If pathology and genomics are available:
 
 ```math
-z_i^{\mathrm{path}}=\mathcal R_{\mathrm{path}}(H_i),
+z_i^{\mathrm{path}}=\mathcal{R}_{\mathrm{path}}(H_i),
 \qquad
-z_i^{\mathrm{omic}}=\mathcal R_{\mathrm{omic}}(g_i).
+z_i^{\mathrm{omic}}=\mathcal{R}_{\mathrm{omic}}(g_i).
 ```
 
 A fusion model gives:

@@ -6,13 +6,13 @@ Let a WSI be represented by patch embeddings:
 
 ```math
 H_i=\{h_{ij}\}_{j=1}^{n_i},
-\qquad h_{ij}\in\mathbb R^d.
+\qquad h_{ij}\in\mathbb{R}^d.
 ```
 
 A slide encoder produces:
 
 ```math
-z_i=\mathcal R(\mathcal C(H_i;G_i)).
+z_i=\mathcal{R}(\mathcal{C}(H_i;G_i)).
 ```
 
 A Cox head gives:
@@ -23,7 +23,7 @@ A Cox head gives:
 
 The loss only depends on the slide through \(\eta_i\). Therefore the survival
 statistic is whatever part of \(H_i\) changes risk-set ordering after
-\(\mathcal C,\mathcal R,f_\theta\).
+\(\mathcal{C},\mathcal{R},f_\theta\).
 
 ## Linear Attention MIL Cox
 
@@ -60,7 +60,7 @@ e_{ij}=w^\top h_{ij}.
 Then:
 
 ```math
-\eta_i=\mathbb E_{j\sim a_i}[e_{ij}].
+\eta_i=\mathbb{E}_{j\sim a_i}[e_{ij}].
 ```
 
 So the surviving statistic is the attention-weighted first moment of patch risk
@@ -71,7 +71,7 @@ evidence.
 For one event \(i\), the Cox loss is:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -\eta_i+\log\sum_{k\in R_i}\exp(\eta_k).
 ```
@@ -79,9 +79,9 @@ For one event \(i\), the Cox loss is:
 For slide \(m\in R_i\):
 
 ```math
-\frac{\partial\mathcal L_i}{\partial z_m}
+\frac{\partial\mathcal{L}_i}{\partial z_m}
 =
-(p_{im}-\mathbf 1[m=i])w.
+(p_{im}-\mathbf{1}[m=i])w.
 ```
 
 For an attention-pooled slide:
@@ -93,9 +93,9 @@ z_m=\sum_j a_{mj}h_{mj}.
 If attention weights are treated as fixed for the moment:
 
 ```math
-\frac{\partial\mathcal L_i}{\partial h_{mj}}
+\frac{\partial\mathcal{L}_i}{\partial h_{mj}}
 =
-(p_{im}-\mathbf 1[m=i])a_{mj}w.
+(p_{im}-\mathbf{1}[m=i])a_{mj}w.
 ```
 
 Thus event slides receive negative pressure along \(w\); competing risk-set
@@ -204,7 +204,7 @@ Let:
 ```math
 h_{ij}^{(L)}
 =
-\operatorname{GNN}_\theta(h_{ij}^{(0)},G_i).
+\operatorname{GNN}_{\theta}(h_{ij}^{(0)},G_i).
 ```
 
 Then:
@@ -284,20 +284,20 @@ For a WSI Cox model:
 
 ```math
 H_i
-\xrightarrow{\mathcal C}
+\xrightarrow{\mathcal{C}}
 \widetilde H_i
-\xrightarrow{\mathcal R}
+\xrightarrow{\mathcal{R}}
 z_i
 \xrightarrow{f}
 \eta_i
 \xrightarrow{\mathrm{risk\ sets}}
-\mathcal L_{\mathrm{Cox}}.
+\mathcal{L}_{\mathrm{Cox}}.
 ```
 
 The survival statistic is:
 
 ```math
-\eta_i=f(\mathcal R(\mathcal C(H_i;G_i))).
+\eta_i=f(\mathcal{R}(\mathcal{C}(H_i;G_i))).
 ```
 
 Every design question becomes:

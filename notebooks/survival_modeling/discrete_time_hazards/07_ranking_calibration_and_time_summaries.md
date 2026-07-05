@@ -31,13 +31,13 @@ Early hazards affect all later horizon risks.
 
 ## Expected Event Time
 
-Using interval representatives \(\bar\tau_k\):
+Using interval representatives \(\bar{\tau}_k\):
 
 ```math
-\widehat{\mathbb E}[T_i]
+\widehat{\mathbb{E}}[T_i]
 =
-\sum_{k=1}^{K}\bar\tau_kp_{ik}
-+\bar\tau_{>K}p_{i,>K}.
+\sum_{k=1}^{K}\bar{\tau}_kp_{ik}
++\bar{\tau}_{>K}p_{i,>K}.
 ```
 
 Since:
@@ -69,10 +69,10 @@ X_i<X_j,\ \delta_i=1.
 At horizon \(\tau_k\), a pairwise logistic ranking loss can be:
 
 ```math
-\mathcal L_{\mathrm{rank}}
+\mathcal{L}_{\mathrm{rank}}
 =
 \sum_{i,j}
-\mathbf 1[i\prec j]
+\mathbf{1}[i\prec j]
 \log
 \left[
 1+\exp(-(r_i(\tau_k)-r_j(\tau_k))/\gamma)
@@ -82,10 +82,10 @@ At horizon \(\tau_k\), a pairwise logistic ranking loss can be:
 or a hinge loss:
 
 ```math
-\mathcal L_{\mathrm{rank}}
+\mathcal{L}_{\mathrm{rank}}
 =
 \sum_{i,j}
-\mathbf 1[i\prec j]
+\mathbf{1}[i\prec j]
 \max(0,1-r_i+r_j).
 ```
 
@@ -97,13 +97,13 @@ times.
 A generic composite objective is:
 
 ```math
-\mathcal L
+\mathcal{L}
 =
-\mathcal L_{\mathrm{lik}}
+\mathcal{L}_{\mathrm{lik}}
 +
-\alpha\mathcal L_{\mathrm{rank}}
+\alpha\mathcal{L}_{\mathrm{rank}}
 +
-\beta\mathcal L_{\mathrm{cal}}.
+\beta\mathcal{L}_{\mathrm{cal}}.
 ```
 
 The design question is which object each term acts on:
@@ -122,7 +122,7 @@ meaning.
 For horizon \(t\), the binary event indicator is:
 
 ```math
-Y_i(t)=\mathbf 1[T_i\le t].
+Y_i(t)=\mathbf{1}[T_i\le t].
 ```
 
 But \(Y_i(t)\) may be unobserved if subject \(i\) is censored before \(t\).
@@ -141,11 +141,11 @@ be the censoring survival function. The IPCW Brier score is:
 \frac{1}{n}
 \sum_i
 \left[
-\frac{\mathbf 1[X_i\le t,\delta_i=1]}{\widehat G(X_i)}
-(0-\widehat S_i(t))^2
+\frac{\mathbf{1}[X_i\le t,\delta_i=1]}{\widehat{G}(X_i)}
+(0-\widehat{S}_i(t))^2
 +
-\frac{\mathbf 1[X_i>t]}{\widehat G(t)}
-(1-\widehat S_i(t))^2
+\frac{\mathbf{1}[X_i>t]}{\widehat{G}(t)}
+(1-\widehat{S}_i(t))^2
 \right].
 ```
 
@@ -156,13 +156,13 @@ This evaluates calibrated survival probability, not just ranking.
 At time \(\tau_k\), group subjects by predicted risk:
 
 ```math
-\widehat F_i(\tau_k)=1-\widehat S_i(\tau_k).
+\widehat{F}_i(\tau_k)=1-\widehat{S}_i(\tau_k).
 ```
 
 Calibration asks:
 
 ```math
-\Pr(T\le \tau_k\mid \widehat F(\tau_k)=q)
+\Pr(T\le \tau_k\mid \widehat{F}(\tau_k)=q)
 =
 q.
 ```
@@ -181,7 +181,7 @@ h_i=\sigma(Wz_i+b).
 Likelihood gradients train each time bin:
 
 ```math
-\frac{\partial\mathcal L_{\mathrm{lik}}}{\partial z_i}
+\frac{\partial\mathcal{L}_{\mathrm{lik}}}{\partial z_i}
 =
 \sum_km_{ik}(h_{ik}-y_{ik})w_k.
 ```
@@ -216,7 +216,7 @@ functional:
 \in
 \left\{
 F_i(\tau_k),
-\widehat{\mathbb E}[T_i],
+\widehat{\mathbb{E}}[T_i],
 \sum_kh_{ik},
 -S_i(\tau_k),
 \operatorname{median}(T_i)
@@ -233,11 +233,11 @@ r_i(\tau_k)&=1-\prod_{\ell\le k}(1-h_{i\ell}),\\
 \frac{\partial r_i(\tau_k)}{\partial h_{im}}
 &=
 \prod_{\ell\le k,\ell\ne m}(1-h_{i\ell}),\\
-\mathcal L
+\mathcal{L}
 &=
-\mathcal L_{\mathrm{lik}}
-+\alpha\mathcal L_{\mathrm{rank}}
-+\beta\mathcal L_{\mathrm{cal}}.
+\mathcal{L}_{\mathrm{lik}}
++\alpha\mathcal{L}_{\mathrm{rank}}
++\beta\mathcal{L}_{\mathrm{cal}}.
 \end{aligned}
 ```
 

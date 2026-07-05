@@ -80,7 +80,7 @@ y_{ik}=1
 Then a common discrete hazard loss is:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -
 \sum_{k=1}^K
@@ -116,16 +116,16 @@ F_i(\tau_k)
 The expected event time can be approximated by:
 
 ```math
-\mathbb E[T_i\mid z_i]
+\mathbb{E}[T_i\mid z_i]
 \approx
 \sum_{k=1}^{K}
-\bar \tau_k
+\bar{\tau}_k
 \left[
 h_{ik}\prod_{\ell=1}^{k-1}(1-h_{i\ell})
 \right],
 ```
 
-where \(\bar\tau_k\) is an interval representative.
+where \(\bar{\tau}_k\) is an interval representative.
 
 ## Gradient Shape
 
@@ -138,7 +138,7 @@ h_{ik}=\sigma(g_{ik}),
 then the masked BCE gradient is:
 
 ```math
-\frac{\partial \mathcal L_i}{\partial g_{ik}}
+\frac{\partial \mathcal{L}_i}{\partial g_{ik}}
 =
 m_{ik}(h_{ik}-y_{ik}).
 ```

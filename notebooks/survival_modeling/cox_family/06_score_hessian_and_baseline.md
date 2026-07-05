@@ -31,7 +31,7 @@ z^{\otimes2}=zz^\top.
 Define the risk-set mean:
 
 ```math
-\bar z(t;\beta)
+\bar{z}(t;\beta)
 =
 \frac{S^{(1)}(t;\beta)}{S^{(0)}(t;\beta)}.
 ```
@@ -43,7 +43,7 @@ V(t;\beta)
 =
 \frac{S^{(2)}(t;\beta)}{S^{(0)}(t;\beta)}
 -
-\bar z(t;\beta)\bar z(t;\beta)^\top.
+\bar{z}(t;\beta)\bar{z}(t;\beta)^\top.
 ```
 
 ## Score
@@ -71,7 +71,7 @@ U(\beta)
 =
 \sum_{i:\delta_i=1}
 \left[
-z_i-\bar z(X_i;\beta)
+z_i-\bar{z}(X_i;\beta)
 \right].
 ```
 
@@ -80,7 +80,7 @@ Thus the score equation is:
 ```math
 \sum_{i:\delta_i=1}z_i
 =
-\sum_{i:\delta_i=1}\bar z(X_i;\beta).
+\sum_{i:\delta_i=1}\bar{z}(X_i;\beta).
 ```
 
 The event features must match the model-weighted risk-set features.
@@ -122,13 +122,13 @@ p_{ij}
 =
 \frac{\exp(\eta_j)}
 {\sum_{k\in R_i}\exp(\eta_k)}
-\mathbf 1[j\in R_i].
+\mathbf{1}[j\in R_i].
 ```
 
 The event-level loss is:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -\eta_i+\log\sum_{j\in R_i}\exp(\eta_j).
 ```
@@ -136,18 +136,18 @@ The event-level loss is:
 The derivative with respect to each risk score is:
 
 ```math
-\frac{\partial\mathcal L_i}{\partial\eta_j}
+\frac{\partial\mathcal{L}_i}{\partial\eta_j}
 =
-p_{ij}-\mathbf 1[j=i].
+p_{ij}-\mathbf{1}[j=i].
 ```
 
 Then:
 
 ```math
-\nabla_\theta\mathcal L_i
+\nabla_\theta\mathcal{L}_i
 =
 \sum_{j\in R_i}
-(p_{ij}-\mathbf 1[j=i])
+(p_{ij}-\mathbf{1}[j=i])
 \nabla_\theta f_\theta(z_j).
 ```
 
@@ -155,10 +155,10 @@ The gradient couples all risk-set members through the softmax.
 
 ## Breslow Baseline Recovery
 
-After fitting \(\widehat\beta\) or \(\widehat\theta\), define:
+After fitting \(\widehat{\beta}\) or \(\widehat{\theta}\), define:
 
 ```math
-\widehat\eta_i=f_{\widehat\theta}(z_i).
+\widehat{\eta}_i=f_{\widehat{\theta}}(z_i).
 ```
 
 For tied event set \(D_t\), Breslow estimates:
@@ -167,7 +167,7 @@ For tied event set \(D_t\), Breslow estimates:
 \widehat{\Delta\Lambda}_0(t)
 =
 \frac{d_t}
-{\sum_{j\in R_t}\exp(\widehat\eta_j)},
+{\sum_{j\in R_t}\exp(\widehat{\eta}_j)},
 \qquad
 d_t=|D_t|.
 ```
@@ -175,7 +175,7 @@ d_t=|D_t|.
 The cumulative baseline hazard is:
 
 ```math
-\widehat\Lambda_0(t)
+\widehat{\Lambda}_0(t)
 =
 \sum_{s\le t}
 \widehat{\Delta\Lambda}_0(s).
@@ -184,19 +184,19 @@ The cumulative baseline hazard is:
 Then the patient-specific cumulative hazard is:
 
 ```math
-\widehat\Lambda_i(t)
+\widehat{\Lambda}_i(t)
 =
-\exp(\widehat\eta_i)\widehat\Lambda_0(t).
+\exp(\widehat{\eta}_i)\widehat{\Lambda}_0(t).
 ```
 
 and survival is:
 
 ```math
-\widehat S_i(t)
+\widehat{S}_i(t)
 =
-\exp[-\widehat\Lambda_i(t)]
+\exp[-\widehat{\Lambda}_i(t)]
 =
-\exp[-\exp(\widehat\eta_i)\widehat\Lambda_0(t)].
+\exp[-\exp(\widehat{\eta}_i)\widehat{\Lambda}_0(t)].
 ```
 
 This is where Cox becomes calibrated, if the baseline estimate and proportional
@@ -272,19 +272,19 @@ class imbalance across cancer subtypes
 U(\beta)
 &=
 \sum_{i:\delta_i=1}
-[z_i-\bar z(X_i;\beta)],\\
+[z_i-\bar{z}(X_i;\beta)],\\
 \nabla^2\ell(\beta)
 &=
 -
 \sum_{i:\delta_i=1}
 V(X_i;\beta),\\
-\widehat\Lambda_0(t)
+\widehat{\Lambda}_0(t)
 &=
 \sum_{s\le t}
 \frac{d_s}
-{\sum_{j\in R_s}\exp(\widehat\eta_j)},\\
-\widehat S_i(t)
+{\sum_{j\in R_s}\exp(\widehat{\eta}_j)},\\
+\widehat{S}_i(t)
 &=
-\exp[-\exp(\widehat\eta_i)\widehat\Lambda_0(t)].
+\exp[-\exp(\widehat{\eta}_i)\widehat{\Lambda}_0(t)].
 \end{aligned}
 ```

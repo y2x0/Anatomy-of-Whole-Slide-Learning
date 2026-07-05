@@ -65,7 +65,7 @@ Since:
 the negative log likelihood is:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -
 \delta_i\log\lambda(X_i\mid z_i)

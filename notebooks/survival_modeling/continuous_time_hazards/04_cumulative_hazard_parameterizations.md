@@ -43,7 +43,7 @@ or:
 The likelihood is:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -
 \delta_i\log \rho(g_\theta(X_i,z_i))
@@ -217,7 +217,7 @@ enough.
 For direct hazard:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -\delta_i\log\lambda_\theta(X_i,z_i)
 +
@@ -227,7 +227,7 @@ For direct hazard:
 The gradient is:
 
 ```math
-\nabla_\theta\mathcal L_i
+\nabla_\theta\mathcal{L}_i
 =
 -
 \delta_i
@@ -241,7 +241,7 @@ The gradient is:
 For WSI representation \(z_i\):
 
 ```math
-\nabla_{z_i}\mathcal L_i
+\nabla_{z_i}\mathcal{L}_i
 =
 -
 \delta_i
@@ -258,7 +258,7 @@ integrated hazard before observed time.
 
 ```math
 \begin{aligned}
-\mathcal L_i
+\mathcal{L}_i
 &=
 -\delta_i\log\lambda_\theta(X_i,z_i)
 +\Lambda_\theta(X_i,z_i),\\

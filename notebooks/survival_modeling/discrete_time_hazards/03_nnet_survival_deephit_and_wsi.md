@@ -3,7 +3,7 @@
 Nnet-survival style models use a neural network to output interval hazards:
 
 ```math
-g_i=f_\theta(z_i)\in\mathbb R^K,
+g_i=f_\theta(z_i)\in\mathbb{R}^K,
 \qquad
 h_{ik}=\sigma(g_{ik}).
 ```
@@ -58,10 +58,10 @@ Many discrete survival models combine likelihood with a ranking term. A generic
 ranking penalty compares patients whose event order is known:
 
 ```math
-\mathcal L_{\mathrm{rank}}
+\mathcal{L}_{\mathrm{rank}}
 =
 \sum_{i,j}
-\mathbf 1[X_i<X_j,\delta_i=1]
+\mathbf{1}[X_i<X_j,\delta_i=1]
 \phi(r_i,r_j).
 ```
 
@@ -76,7 +76,7 @@ dominates the likelihood.
 For whole-slide features:
 
 ```math
-z_i=\mathcal R(\mathcal C(H_i)).
+z_i=\mathcal{R}(\mathcal{C}(H_i)).
 ```
 
 A simple discrete hazard head is:
@@ -86,7 +86,7 @@ h_i
 =
 \sigma(Wz_i+b),
 \qquad
-W\in\mathbb R^{K\times d}.
+W\in\mathbb{R}^{K\times d}.
 ```
 
 Each row \(w_k^\top\) asks a different time-specific question of the slide:
@@ -119,7 +119,7 @@ A more expressive WSI design is:
 ```math
 a_{ijk}
 =
-\operatorname{softmax}_j(q_k^\top \phi(h_{ij})),
+\operatorname*{softmax}_{j}(q_k^\top \phi(h_{ij})),
 \qquad
 z_{ik}=\sum_j a_{ijk}h_{ij},
 ```

@@ -77,7 +77,7 @@ Different summaries can rank patients differently.
 A model can rank well but produce poorly calibrated hazards:
 
 ```math
-\widehat h_{ik}
+\widehat{h}_{ik}
 \ne
 \Pr(T_i\in I_k\mid T_i>\tau_{k-1},z_i).
 ```

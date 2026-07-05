@@ -25,7 +25,7 @@ ordering through the partial likelihood.
 If the WSI encoder produces:
 
 ```math
-z_i = \mathcal R(\mathcal C(H_i)),
+z_i = \mathcal{R}(\mathcal{C}(H_i)),
 ```
 
 then the Cox head keeps only:

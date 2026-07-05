@@ -3,7 +3,7 @@
 For whole-slide survival, a continuous-time model can be written:
 
 ```math
-z_i=\mathcal R(\mathcal C(H_i;G_i)),
+z_i=\mathcal{R}(\mathcal{C}(H_i;G_i)),
 \qquad
 \lambda_i(t)=\lambda_\theta(t,z_i).
 ```
@@ -21,7 +21,7 @@ The key difference from Cox is that morphology can interact with time:
 The simplest version uses one slide embedding for all times:
 
 ```math
-z_i=\mathcal R(H_i),
+z_i=\mathcal{R}(H_i),
 \qquad
 \lambda_i(t)=\rho(g_\theta(t,z_i)).
 ```
@@ -31,7 +31,7 @@ A more expressive version makes the readout itself time-conditioned:
 ```math
 a_{ij}(t)
 =
-\operatorname{softmax}_j(q(t)^\top \phi(h_{ij})),
+\operatorname*{softmax}_{j}(q(t)^\top \phi(h_{ij})),
 ```
 
 ```math
@@ -86,7 +86,7 @@ Then:
 ```math
 z_i(t)
 =
-\operatorname{READOUT}_t(H_i^{(L)}),
+\operatorname{READOUT}_{t}(H_i^{(L)}),
 \qquad
 \lambda_i(t)=\rho(g_\theta(t,z_i(t))).
 ```

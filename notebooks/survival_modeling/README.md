@@ -17,11 +17,11 @@ representation:
 S_i
 \longrightarrow
 H_i=\{h_{ij}\}_{j=1}^{n_i}
-\xrightarrow{\mathcal C}
+\xrightarrow{\mathcal{C}}
 \widetilde H_i
-\xrightarrow{\mathcal R}
+\xrightarrow{\mathcal{R}}
 z_i
-\xrightarrow{\mathcal H}
+\xrightarrow{\mathcal{H}}
 \text{risk object}.
 ```
 
@@ -80,7 +80,7 @@ but we observe only
 ```math
 X_i = \min(T_i,C_i),
 \qquad
-\delta_i = \mathbf 1[T_i \le C_i].
+\delta_i = \mathbf{1}[T_i \le C_i].
 ```
 
 The pair \((X_i,\delta_i)\) is the survival label. Whole-slide pathology adds

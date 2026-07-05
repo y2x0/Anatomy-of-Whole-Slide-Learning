@@ -26,7 +26,7 @@ to indicate an event in interval \(k\).
 The loss:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -
 \sum_{k=1}^{K}
@@ -48,7 +48,7 @@ If subject \(i\) fails in interval \(r\):
 ```math
 y_{ik}
 =
-\mathbf 1[k=r],
+\mathbf{1}[k=r],
 ```
 
 and:
@@ -56,13 +56,13 @@ and:
 ```math
 m_{ik}
 =
-\mathbf 1[k\le r].
+\mathbf{1}[k\le r].
 ```
 
 Then:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -
 \sum_{k<r}\log(1-h_{ik})
@@ -87,13 +87,13 @@ If subject \(i\) is censored after interval \(r\):
 ```math
 y_{ik}=0,
 \qquad
-m_{ik}=\mathbf 1[k\le r].
+m_{ik}=\mathbf{1}[k\le r].
 ```
 
 Then:
 
 ```math
-\mathcal L_i
+\mathcal{L}_i
 =
 -
 \sum_{k\le r}\log(1-h_{ik})
@@ -110,13 +110,13 @@ If censoring occurs at \(X_i\in(\tau_{r-1},\tau_r)\), there are two common masks
 Conservative:
 
 ```math
-m_{ik}=\mathbf 1[k<r].
+m_{ik}=\mathbf{1}[k<r].
 ```
 
 Boundary approximation:
 
 ```math
-m_{ik}=\mathbf 1[k\le r].
+m_{ik}=\mathbf{1}[k\le r].
 ```
 
 The second assumes event-free status through \(\tau_r\), which may be false.
@@ -157,13 +157,13 @@ g_{ik}=w_k^\top z_i+b_k,
 the gradients are:
 
 ```math
-\frac{\partial\mathcal L}{\partial w_k}
+\frac{\partial\mathcal{L}}{\partial w_k}
 =
 \sum_i m_{ik}(h_{ik}-y_{ik})z_i,
 ```
 
 ```math
-\frac{\partial\mathcal L}{\partial z_i}
+\frac{\partial\mathcal{L}}{\partial z_i}
 =
 \sum_km_{ik}(h_{ik}-y_{ik})w_k.
 ```
@@ -182,7 +182,7 @@ z_i=\sum_j a_{ij}h_{ij},
 and attention is held fixed:
 
 ```math
-\frac{\partial\mathcal L_i}{\partial h_{ij}}
+\frac{\partial\mathcal{L}_i}{\partial h_{ij}}
 =
 a_{ij}
 \sum_km_{ik}(h_{ik}-y_{ik})w_k.
@@ -199,7 +199,7 @@ e_i
 Then:
 
 ```math
-\frac{\partial\mathcal L_i}{\partial h_{ij}}
+\frac{\partial\mathcal{L}_i}{\partial h_{ij}}
 =
 a_{ij}e_i.
 ```
@@ -220,7 +220,7 @@ g_{ik}=w_k^\top z_{ik}+b_k,
 then:
 
 ```math
-\frac{\partial\mathcal L_i}{\partial h_{ij}}
+\frac{\partial\mathcal{L}_i}{\partial h_{ij}}
 =
 \sum_k
 m_{ik}(h_{ik}-y_{ik})
@@ -230,7 +230,7 @@ m_{ik}(h_{ik}-y_{ik})
 Holding \(a_{ijk}\) fixed:
 
 ```math
-\frac{\partial\mathcal L_i}{\partial h_{ij}}
+\frac{\partial\mathcal{L}_i}{\partial h_{ij}}
 =
 \sum_k
 m_{ik}(h_{ik}-y_{ik})
@@ -244,7 +244,7 @@ Now patches can receive different risk gradients for different time horizons.
 Unlike Cox, the discrete hazard likelihood decomposes over subjects:
 
 ```math
-\mathcal L=\sum_i\mathcal L_i.
+\mathcal{L}=\sum_i\mathcal{L}_i.
 ```
 
 There is no risk-set denominator coupling patients. This makes stochastic
@@ -264,15 +264,15 @@ Late bins often receive little signal under heavy censoring.
 
 ```math
 \begin{aligned}
-\mathcal L_i
+\mathcal{L}_i
 &=
 -
 \sum_km_{ik}
 [y_{ik}\log h_{ik}+(1-y_{ik})\log(1-h_{ik})],\\
-\frac{\partial\mathcal L_i}{\partial g_{ik}}
+\frac{\partial\mathcal{L}_i}{\partial g_{ik}}
 &=
 m_{ik}(h_{ik}-y_{ik}),\\
-\frac{\partial\mathcal L_i}{\partial z_i}
+\frac{\partial\mathcal{L}_i}{\partial z_i}
 &=
 \sum_km_{ik}(h_{ik}-y_{ik})w_k.
 \end{aligned}
