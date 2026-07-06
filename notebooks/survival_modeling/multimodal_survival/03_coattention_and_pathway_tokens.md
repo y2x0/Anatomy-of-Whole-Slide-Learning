@@ -64,11 +64,11 @@ Mathematically:
 
 ```math
 (P_i,G_i)
-\xrightarrow{\operatorname{coattention}}
+\xrightarrow{\text{coattention}}
 Z_i
-\xrightarrow{\operatorname{aggregation}}
+\xrightarrow{\text{aggregation}}
 z_i
-\xrightarrow{\operatorname{survival}}
+\xrightarrow{\text{survival}}
 \eta_i.
 ```
 
@@ -102,7 +102,7 @@ Fusion:
 ```math
 Z_i
 =
-\operatorname{Transformer}_{\operatorname{multi}}
+\operatorname{Transformer}_{\text{multi}}
 ([P_i;G_i]).
 ```
 

@@ -12,7 +12,7 @@ F_c(t\mid z)=\Pr(T\le t,J=c\mid z).
 The subdistribution survival for cause $c$ is:
 
 ```math
-S_c^{\operatorname{sub}}(t\mid z)
+S_c^{\text{sub}}(t\mid z)
 =
 1-F_c(t\mid z).
 ```
@@ -89,7 +89,7 @@ hazard.
 A schematic weighted risk set is:
 
 ```math
-R_i^{\operatorname{FG}}
+R_i^{\text{FG}}
 =
 \{j:X_j\ge X_i\}
 \cup
@@ -174,7 +174,7 @@ processes.
 
 ```math
 \begin{aligned}
-S_c^{\operatorname{sub}}(t\mid z)
+S_c^{\text{sub}}(t\mid z)
 &=1-F_c(t\mid z),\\
 \alpha_c(t\mid z)
 &=

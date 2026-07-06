@@ -16,7 +16,7 @@ then pathology contributes little even if the model is described as multimodal.
 Check by modality ablation:
 
 ```math
-\Delta_{\operatorname{path}}
+\Delta_{\text{path}}
 =
 \operatorname{Perf}(p,g)-\operatorname{Perf}(g).
 ```
@@ -71,7 +71,7 @@ cell-type-specific mechanisms.
 The paired multimodal set may be much smaller than the pathology-only set:
 
 ```math
-n_{\operatorname{paired}}\ll n_{\operatorname{path}}.
+n_{\text{paired}}\ll n_{\text{path}}.
 ```
 
 Large fusion models can overfit.

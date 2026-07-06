@@ -139,11 +139,11 @@ then the final statistic is still a first moment, but over contextualized nodes.
 
 ```math
 H_i
-\xrightarrow{\mathcal{C}_{\operatorname{graph/attn/ssm}}}
+\xrightarrow{\mathcal{C}_{\text{graph/attn/ssm}}}
 \widetilde{H}_i
 \xrightarrow{\mathcal{R}}
 z_i
-\xrightarrow{\mathcal{H}_{\operatorname{surv}}}
+\xrightarrow{\mathcal{H}_{\text{surv}}}
 \eta_i,h_i,\lambda_i(t).
 ```
 

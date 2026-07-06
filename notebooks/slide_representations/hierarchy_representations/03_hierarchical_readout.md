@@ -138,7 +138,7 @@ Thus hierarchy changes the measure being averaged:
 becomes:
 
 ```math
-\mu_i^{\operatorname{hier}}
+\mu_i^{\text{hier}}
 =
 \sum_j w_j\delta_{h_{ij}}.
 ```

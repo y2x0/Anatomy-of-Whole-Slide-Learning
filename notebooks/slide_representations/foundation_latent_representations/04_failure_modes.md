@@ -9,13 +9,13 @@ question.
 The pretrained encoder is optimized for:
 
 ```math
-\ell_{\operatorname{pretrain}},
+\ell_{\text{pretrain}},
 ```
 
 not directly for:
 
 ```math
-\ell_{\operatorname{task}}.
+\ell_{\text{task}}.
 ```
 
 If pretraining emphasizes tissue type, stain, magnification, or caption
@@ -36,7 +36,7 @@ can only use directions already linearly accessible in $z_i$.
 A strong patch encoder:
 
 ```math
-h_{ij}=E_{\operatorname{FM}}(x_{ij})
+h_{ij}=E_{\text{FM}}(x_{ij})
 ```
 
 does not solve slide representation:
@@ -99,7 +99,7 @@ But:
 ```math
 t_c
 =
-F_{\operatorname{text}}(\operatorname{prompt}(c)).
+F_{\text{text}}(\operatorname{prompt}(c)).
 ```
 
 If the prompt fails to express the relevant pathology concept, then the
@@ -116,18 +116,18 @@ t_c^{(1)}\ne t_c^{(2)}.
 Let source and target distributions be:
 
 ```math
-p_{\operatorname{src}}(z,y),
+p_{\text{src}}(z,y),
 \qquad
-p_{\operatorname{tgt}}(z,y).
+p_{\text{tgt}}(z,y).
 ```
 
 Even if image-level representations transfer well on average, downstream tasks
 can fail when:
 
 ```math
-p_{\operatorname{src}}(y\mid z)
+p_{\text{src}}(y\mid z)
 \ne
-p_{\operatorname{tgt}}(y\mid z).
+p_{\text{tgt}}(y\mid z).
 ```
 
 The same latent neighborhood may have different clinical meaning across cohorts.

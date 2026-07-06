@@ -33,7 +33,7 @@ p_i,p_k\in\Delta^{M-1},
 one can use:
 
 ```math
-D_{\operatorname{KL}}(p_i\|p_k)
+D_{\text{KL}}(p_i\|p_k)
 =
 \sum_{m=1}^{M}
 p_{im}
@@ -44,11 +44,11 @@ p_{im}
 or a symmetric variant:
 
 ```math
-D_{\operatorname{JS}}(p_i,p_k)
+D_{\text{JS}}(p_i,p_k)
 =
-\frac{1}{2}D_{\operatorname{KL}}(p_i\|m)
+\frac{1}{2}D_{\text{KL}}(p_i\|m)
 +
-\frac{1}{2}D_{\operatorname{KL}}(p_k\|m),
+\frac{1}{2}D_{\text{KL}}(p_k\|m),
 ```
 
 where:
@@ -123,7 +123,7 @@ Distribution distances can drive retrieval:
 ```math
 \mathcal{N}_K(i)
 =
-\operatorname*{arg\,topK}_{k}
+\operatorname*{TopK}_{k}
 -
 d(\mu_i,\mu_k).
 ```

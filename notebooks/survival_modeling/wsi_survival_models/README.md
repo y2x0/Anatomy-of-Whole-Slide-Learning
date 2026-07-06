@@ -13,7 +13,7 @@ H_i=\{h_{ij}\}_{j=1}^{n_i}
 \widetilde{H}_i
 \xrightarrow{\mathcal{R}}
 z_i
-\xrightarrow{\mathcal{H}_{\operatorname{surv}}}
+\xrightarrow{\mathcal{H}_{\text{surv}}}
 \text{risk object}.
 ```
 

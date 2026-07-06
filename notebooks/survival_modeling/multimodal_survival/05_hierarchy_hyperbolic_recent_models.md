@@ -113,7 +113,7 @@ in hyperbolic space than Euclidean space.
 This belongs in the representation layer:
 
 ```math
-\mathcal{X}_{\operatorname{slide}}
+\mathcal{X}_{\text{slide}}
 \to
 \mathbb{B}^{d}
 \to

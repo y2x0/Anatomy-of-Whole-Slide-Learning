@@ -14,9 +14,9 @@ Mathematical map:
 
 ```math
 H_i,G_i
-\xrightarrow{\operatorname{GNN}}
+\xrightarrow{\text{GNN}}
 \widetilde{H}_i
-\xrightarrow{\operatorname{attention/readout}}
+\xrightarrow{\text{attention/readout}}
 z_i
 \xrightarrow{\mathrm{survival\ head}}
 \eta_i.
@@ -44,12 +44,12 @@ Co-attention maps histology and genomics into a fused survival representation.
 Mathematical map:
 
 ```math
-H_i^{\operatorname{path}},H_i^{\operatorname{omic}}
-\xrightarrow{\operatorname{coattention}}
+H_i^{\text{path}},H_i^{\text{omic}}
+\xrightarrow{\text{coattention}}
 Z_i
-\xrightarrow{\operatorname{fusion}}
+\xrightarrow{\text{fusion}}
 z_i
-\xrightarrow{\operatorname{survival}}
+\xrightarrow{\text{survival}}
 \eta_i.
 ```
 
@@ -67,10 +67,10 @@ https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Multimodal_Co-Attenti
 Core operator:
 
 ```math
-z_{\operatorname{fused}}
+z_{\text{fused}}
 =
 \operatorname{TensorFusion}
-(z_{\operatorname{path}},z_{\operatorname{omic}}).
+(z_{\text{path}},z_{\text{omic}}).
 ```
 
 Tensor fusion models pairwise and higher-order interactions between modalities.
@@ -115,11 +115,11 @@ Core object:
 Mathematical map:
 
 ```math
-H_i^{\operatorname{path}},
-P_i^{\operatorname{pathway}}
+H_i^{\text{path}},
+P_i^{\text{pathway}}
 \xrightarrow{\mathrm{multimodal\ transformer}}
 z_i
-\xrightarrow{\operatorname{survival}}
+\xrightarrow{\text{survival}}
 \eta_i.
 ```
 

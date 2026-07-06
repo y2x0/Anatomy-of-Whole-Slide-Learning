@@ -13,7 +13,7 @@ The common template is:
 
 ```math
 H_i
-\xrightarrow{\operatorname{structure}}
+\xrightarrow{\text{structure}}
 \mathcal{X}_i
 \xrightarrow{\mathcal{C}}
 \widetilde{H}_i

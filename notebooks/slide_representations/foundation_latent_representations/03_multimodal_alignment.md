@@ -26,11 +26,11 @@ Let:
 ```math
 z_i
 =
-F_{\operatorname{image}}(S_i),
+F_{\text{image}}(S_i),
 \qquad
 t_i
 =
-F_{\operatorname{text}}(R_i),
+F_{\text{text}}(R_i),
 ```
 
 where $R_i$ is a report, caption, diagnosis string, or generated description.
@@ -55,7 +55,7 @@ Loss:
 Often the symmetric text-to-image loss is also used:
 
 ```math
-\ell_i^{\operatorname{sym}}
+\ell_i^{\text{sym}}
 =
 \ell_{\operatorname{image}\to\operatorname{text}}
 +
@@ -77,7 +77,7 @@ For zero-shot classification, create class text embeddings:
 ```math
 t_c
 =
-F_{\operatorname{text}}(\operatorname{prompt}(c)).
+F_{\text{text}}(\operatorname{prompt}(c)).
 ```
 
 Prediction:
@@ -111,7 +111,7 @@ A slide-level multimodal model can use reports during pretraining:
 At inference, the slide embedding can be used without the report:
 
 ```math
-z_i=F_{\operatorname{image}}(S_i).
+z_i=F_{\text{image}}(S_i).
 ```
 
 But the geometry of $z_i$ still reflects report supervision.
@@ -125,18 +125,18 @@ retrieval, zero-shot classification, report generation, or linear probing.
 Image-to-text retrieval:
 
 ```math
-\mathcal{N}_K^{\operatorname{text}}(i)
+\mathcal{N}_K^{\text{text}}(i)
 =
-\operatorname*{arg\,topK}_{r}
+\operatorname*{TopK}_{r}
 z_i^\top t_r.
 ```
 
 Text-to-image retrieval:
 
 ```math
-\mathcal{N}_K^{\operatorname{image}}(q)
+\mathcal{N}_K^{\text{image}}(q)
 =
-\operatorname*{arg\,topK}_{i}
+\operatorname*{TopK}_{i}
 z_i^\top t_q.
 ```
 

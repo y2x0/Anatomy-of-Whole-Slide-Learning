@@ -152,7 +152,7 @@ Cox starts from:
 Profiling out $\lambda_0$ gives:
 
 ```math
-\mathcal{L}_{\operatorname{Cox}}
+\mathcal{L}_{\text{Cox}}
 =
 -
 \sum_{i:\delta_i=1}

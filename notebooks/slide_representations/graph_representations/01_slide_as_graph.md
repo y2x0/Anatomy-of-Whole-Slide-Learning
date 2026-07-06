@@ -23,7 +23,7 @@ e_{iuv}\in\mathbb{R}^{r}
 for $(u,v)\in E_i$, then:
 
 ```math
-\mathcal{X}_i=(V_i,E_i,H_i,E_i^{\operatorname{feat}}).
+\mathcal{X}_i=(V_i,E_i,H_i,E_i^{\text{feat}}).
 ```
 
 ## Node Choices

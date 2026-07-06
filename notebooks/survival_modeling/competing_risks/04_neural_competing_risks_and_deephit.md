@@ -54,7 +54,7 @@ The model predicts the full discrete competing-risk distribution.
 If subject $i$ has event $c$ in interval $r$:
 
 ```math
-\mathcal{L}_i^{\operatorname{event}}
+\mathcal{L}_i^{\text{event}}
 =
 -\log p_{irc}.
 ```
@@ -63,7 +63,7 @@ If subject $i$ is censored in interval $r$, the observed event time exceeds
 the censoring time:
 
 ```math
-\mathcal{L}_i^{\operatorname{cens}}
+\mathcal{L}_i^{\text{cens}}
 =
 -\log
 \left[
@@ -75,7 +75,7 @@ the censoring time:
 Equivalently:
 
 ```math
-\mathcal{L}_i^{\operatorname{cens}}
+\mathcal{L}_i^{\text{cens}}
 =
 -\log S_i(\tau_r).
 ```

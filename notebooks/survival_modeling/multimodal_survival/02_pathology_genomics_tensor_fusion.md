@@ -65,7 +65,7 @@ z_i=\phi(W\operatorname{vec}(T_i)+b).
 Survival:
 
 ```math
-\eta_i=f_{\operatorname{surv}}(z_i).
+\eta_i=f_{\text{surv}}(z_i).
 ```
 
 ## Bilinear Interaction View
@@ -132,7 +132,7 @@ or type-specific baselines:
 \widetilde{z}^{p}&=z^{p}\odot\sigma(W_pz^{p}+b_p),\\
 \widetilde{z}^{g}&=z^{g}\odot\sigma(W_gz^{g}+b_g),\\
 T&=[\widetilde{z}^{p};1]\otimes[\widetilde{z}^{g};1],\\
-\eta&=f_{\operatorname{surv}}(\operatorname{vec}(T)).
+\eta&=f_{\text{surv}}(\operatorname{vec}(T)).
 \end{aligned}
 ```
 

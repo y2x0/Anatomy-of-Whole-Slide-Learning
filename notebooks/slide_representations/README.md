@@ -14,11 +14,11 @@ The representation choice determines which maps are natural.
 
 ```math
 S_i
-\xrightarrow{\operatorname{tile}}
+\xrightarrow{\text{tile}}
 \{x_{ij}\}_{j=1}^{n_i}
 \xrightarrow{E}
 H_i=\{h_{ij}\}_{j=1}^{n_i}
-\xrightarrow{\operatorname{representation}}
+\xrightarrow{\text{representation}}
 \mathcal{X}_i.
 ```
 

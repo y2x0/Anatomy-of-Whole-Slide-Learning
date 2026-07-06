@@ -23,7 +23,7 @@ The nearest neighbors are nearest under the chosen metric:
 ```math
 k^\star
 =
-\operatorname*{arg\,max}_{k}
+\operatorname*{argmax}_{k}
 \operatorname{sim}(z_i,z_k).
 ```
 

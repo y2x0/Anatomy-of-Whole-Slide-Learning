@@ -49,7 +49,7 @@ A sequence model computes:
 ```math
 u_{ij}
 =
-\mathcal{C}_{\operatorname{seq}}
+\mathcal{C}_{\text{seq}}
 (h_{i1},\ldots,h_{in_i})_j.
 ```
 
@@ -114,7 +114,7 @@ This makes them appealing for WSI-scale patch sequences.
 ```math
 \begin{aligned}
 \mathcal{X}_i&=(h_{i\sigma(1)},\ldots,h_{i\sigma(n_i)}),\\
-u_{ij}&=\mathcal{C}_{\operatorname{seq}}(\mathcal{X}_i)_j,\\
+u_{ij}&=\mathcal{C}_{\text{seq}}(\mathcal{X}_i)_j,\\
 z_i&=\mathcal{R}(u_{i1},\ldots,u_{in_i}).
 \end{aligned}
 ```

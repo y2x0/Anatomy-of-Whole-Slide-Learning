@@ -125,11 +125,11 @@ A hierarchical model can alternate:
 
 ```math
 H^{(0)}
-\xrightarrow{\operatorname{coarsen}}
+\xrightarrow{\text{coarsen}}
 H^{(1)}
-\xrightarrow{\operatorname{lateral}}
+\xrightarrow{\text{lateral}}
 \bar H^{(1)}
-\xrightarrow{\operatorname{coarsen}}
+\xrightarrow{\text{coarsen}}
 H^{(2)}.
 ```
 
@@ -137,11 +137,11 @@ or:
 
 ```math
 H^{(0)}
-\xrightarrow{\operatorname{local\ attention}}
+\xrightarrow{\text{local attention}}
 \bar H^{(0)}
-\xrightarrow{\operatorname{pool}}
+\xrightarrow{\text{pool}}
 H^{(1)}
-\xrightarrow{\operatorname{global\ attention}}
+\xrightarrow{\text{global attention}}
 \bar H^{(1)}.
 ```
 

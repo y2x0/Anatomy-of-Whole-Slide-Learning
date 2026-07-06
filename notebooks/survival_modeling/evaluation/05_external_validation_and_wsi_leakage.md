@@ -49,9 +49,9 @@ or biased if censoring is strongly site-dependent.
 Evaluation should inspect:
 
 ```math
-\widehat{G}_{\operatorname{train}}(t),
+\widehat{G}_{\text{train}}(t),
 \qquad
-\widehat{G}_{\operatorname{test}}(t).
+\widehat{G}_{\text{test}}(t).
 ```
 
 ## Patch Leakage
@@ -106,7 +106,7 @@ This baseline should be estimated on training data, then applied to validation
 or test patients:
 
 ```math
-\widehat{S}_{\operatorname{test}}(t\mid z_i)
+\widehat{S}_{\text{test}}(t\mid z_i)
 =
 \exp[-\exp(\eta_i)\widehat{\Lambda}_{0,\operatorname{train}}(t)].
 ```

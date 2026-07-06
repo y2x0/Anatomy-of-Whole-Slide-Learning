@@ -17,7 +17,7 @@ Then encode patches:
 ```math
 h_{ij}
 =
-E_{\operatorname{FM}}(x_{ij}).
+E_{\text{FM}}(x_{ij}).
 ```
 
 The slide still needs an aggregator:
@@ -47,17 +47,17 @@ slide-level object:
 ```math
 z_i
 =
-F_{\operatorname{slide}}
+F_{\text{slide}}
 \left(
 \{h_{ij},c_{ij}\}_{j=1}^{n_i}
 \right).
 ```
 
-If $F_{\operatorname{slide}}$ is pretrained, the slide representation itself is
+If $F_{\text{slide}}$ is pretrained, the slide representation itself is
 foundation-level:
 
 ```math
-z_i\in\mathcal{Z}_{\operatorname{slide}}.
+z_i\in\mathcal{Z}_{\text{slide}}.
 ```
 
 GigaPath-style models fit here: a tile encoder produces patch features, and a
@@ -70,7 +70,7 @@ Some models introduce intermediate region tokens:
 ```math
 u_{ir}
 =
-\mathcal{R}_{\operatorname{region}}
+\mathcal{R}_{\text{region}}
 \left(
 \{h_{ij}:j\in R_r\}
 \right).
@@ -81,7 +81,7 @@ Then:
 ```math
 z_i
 =
-\mathcal{R}_{\operatorname{slide}}
+\mathcal{R}_{\text{slide}}
 \left(
 \{u_{ir}\}_{r=1}^{R_i}
 \right).
@@ -100,7 +100,7 @@ The representation object is multiscale, not just a bag of patch embeddings.
 The common practical pipeline is:
 
 ```math
-E_{\operatorname{FM}}
+E_{\text{FM}}
 \quad
 \text{frozen},
 \qquad
@@ -112,7 +112,7 @@ E_{\operatorname{FM}}
 Gradient flow:
 
 ```math
-\nabla E_{\operatorname{FM}}=0,
+\nabla E_{\text{FM}}=0,
 \qquad
 \nabla\mathcal{R}_\theta\ne0.
 ```
@@ -125,13 +125,13 @@ geometry.
 If the encoder is updated:
 
 ```math
-\nabla E_{\operatorname{FM}}\ne0,
+\nabla E_{\text{FM}}\ne0,
 ```
 
 then patch geometry changes:
 
 ```math
-d_{\operatorname{FM}}(x_a,x_b)
+d_{\text{FM}}(x_a,x_b)
 \to
 d_{\theta}(x_a,x_b).
 ```

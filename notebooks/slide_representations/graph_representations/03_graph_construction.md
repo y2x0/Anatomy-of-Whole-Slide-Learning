@@ -74,7 +74,7 @@ adjacency but learned relation structure.
 Mathematically, this changes the slide object from:
 
 ```math
-(H,C,A_{\operatorname{physical}})
+(H,C,A_{\text{physical}})
 ```
 
 to:
@@ -118,25 +118,25 @@ More explicitly, a hierarchical cell-to-tissue graph can be written:
 ```math
 V
 =
-V_{\operatorname{cell}}
+V_{\text{cell}}
 \cup
-V_{\operatorname{tissue}},
+V_{\text{tissue}},
 ```
 
 ```math
 E
 =
-E_{\operatorname{cell-cell}}
+E_{\text{cell-cell}}
 \cup
-E_{\operatorname{tissue-tissue}}
+E_{\text{tissue-tissue}}
 \cup
-E_{\operatorname{cell-tissue}}.
+E_{\text{cell-tissue}}.
 ```
 
 The cross-level edge:
 
 ```math
-(c,r)\in E_{\operatorname{cell-tissue}}
+(c,r)\in E_{\text{cell-tissue}}
 ```
 
 means cell $c$ belongs to or is spatially contained in tissue region $r$. This

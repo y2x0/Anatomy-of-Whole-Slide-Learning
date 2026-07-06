@@ -5,7 +5,7 @@ standard pipeline is:
 
 ```math
 S_i
-\xrightarrow{\operatorname{tile}}
+\xrightarrow{\text{tile}}
 \{x_{ij}\}_{j=1}^{n_i}
 \xrightarrow{E}
 H_i=\{h_{ij}\}_{j=1}^{n_i}.
@@ -26,13 +26,13 @@ z_i=\mathcal{R}(\mathcal{C}(H_i;G_i)).
 The survival head maps:
 
 ```math
-z_i\mapsto \mathcal{Y}_i^{\operatorname{surv}}.
+z_i\mapsto \mathcal{Y}_i^{\text{surv}}.
 ```
 
 where:
 
 ```math
-\mathcal{Y}_i^{\operatorname{surv}}
+\mathcal{Y}_i^{\text{surv}}
 \in
 \{\eta_i,h_i,\lambda_i,S_i,p_i,F_i\}.
 ```
@@ -54,7 +54,7 @@ z_i=\mathcal{R}(\widetilde{H}_i).
 Risk head:
 
 ```math
-\mathcal{Y}_i^{\operatorname{surv}}
+\mathcal{Y}_i^{\text{surv}}
 =
 \mathcal{H}_{\theta}(z_i).
 ```
@@ -65,7 +65,7 @@ Loss:
 \mathcal{L}
 =
 \sum_i
-\ell(\mathcal{Y}_i^{\operatorname{surv}},X_i,\delta_i).
+\ell(\mathcal{Y}_i^{\text{surv}},X_i,\delta_i).
 ```
 
 ## Where Survival Enters
@@ -113,9 +113,9 @@ X_i=\min(T_i,C_i),
 If there are multiple slides per patient, the patient representation may be:
 
 ```math
-z_i^{\operatorname{patient}}
+z_i^{\text{patient}}
 =
-\mathcal{R}_{\operatorname{patient}}
+\mathcal{R}_{\text{patient}}
 (\{z_{is}\}_{s=1}^{m_i}).
 ```
 
@@ -128,8 +128,8 @@ The survival label belongs to the patient, not the tile.
 h_{ij}&=E(x_{ij}),\\
 \widetilde{H}_i&=\mathcal{C}(H_i;G_i),\\
 z_i&=\mathcal{R}(\widetilde{H}_i),\\
-\widehat{Y}_i^{\operatorname{surv}}&=\mathcal{H}_{\theta}(z_i),\\
-\mathcal{L}&=\sum_i\ell(\widehat{Y}_i^{\operatorname{surv}},X_i,\delta_i).
+\widehat{Y}_i^{\text{surv}}&=\mathcal{H}_{\theta}(z_i),\\
+\mathcal{L}&=\sum_i\ell(\widehat{Y}_i^{\text{surv}},X_i,\delta_i).
 \end{aligned}
 ```
 

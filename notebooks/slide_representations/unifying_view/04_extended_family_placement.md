@@ -7,11 +7,11 @@ The common map is:
 
 ```math
 S_i
-\xrightarrow{\operatorname{tile}}
+\xrightarrow{\text{tile}}
 \{x_{ij},c_{ij}\}_{j=1}^{n_i}
 \xrightarrow{E}
 H_i
-\xrightarrow{\operatorname{Rep}}
+\xrightarrow{\text{Rep}}
 \mathcal{X}_i
 \xrightarrow{\mathcal{F}}
 z_i.
@@ -182,7 +182,7 @@ Representation:
 ```math
 \mathcal{X}_i
 =
-F_{\operatorname{FM}}(S_i)
+F_{\text{FM}}(S_i)
 ```
 
 or:
@@ -190,15 +190,15 @@ or:
 ```math
 \mathcal{X}_i
 =
-\{E_{\operatorname{FM}}(x_{ij})\}_{j=1}^{n_i}.
+\{E_{\text{FM}}(x_{ij})\}_{j=1}^{n_i}.
 ```
 
 Context:
 
 ```math
-d_{\operatorname{FM}}(a,b)
+d_{\text{FM}}(a,b)
 =
-\|F_{\operatorname{FM}}(a)-F_{\operatorname{FM}}(b)\|.
+\|F_{\text{FM}}(a)-F_{\text{FM}}(b)\|.
 ```
 
 Readout:
@@ -206,7 +206,7 @@ Readout:
 ```math
 \widehat y_i
 =
-\mathcal{H}_\theta(F_{\operatorname{FM}}(S_i)).
+\mathcal{H}_\theta(F_{\text{FM}}(S_i)).
 ```
 
 or, for prompt-based prediction:

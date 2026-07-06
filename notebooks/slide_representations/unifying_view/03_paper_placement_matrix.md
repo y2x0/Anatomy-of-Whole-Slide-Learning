@@ -169,7 +169,7 @@ z_i^{(c)}
 The auxiliary instance constraint acts on selected patches:
 
 ```math
-\ell_{\operatorname{inst}}
+\ell_{\text{inst}}
 =
 \ell(g_\theta(h_{ij^+}),1)
 +
@@ -364,9 +364,9 @@ HACT represents tissue with a hierarchy:
 ```math
 V
 =
-V_{\operatorname{cell}}
+V_{\text{cell}}
 \cup
-V_{\operatorname{tissue}}.
+V_{\text{tissue}}.
 ```
 
 Edges include:
@@ -374,26 +374,26 @@ Edges include:
 ```math
 E
 =
-E_{\operatorname{cell-cell}}
+E_{\text{cell-cell}}
 \cup
-E_{\operatorname{tissue-tissue}}
+E_{\text{tissue-tissue}}
 \cup
-E_{\operatorname{cell-tissue}}.
+E_{\text{cell-tissue}}.
 ```
 
 Cell states and tissue states are contextualized at different scales:
 
 ```math
-H_{\operatorname{cell}}'
+H_{\text{cell}}'
 =
-\mathcal{C}_{\operatorname{cell}}(H_{\operatorname{cell}},A_{\operatorname{cell}}),
+\mathcal{C}_{\text{cell}}(H_{\text{cell}},A_{\text{cell}}),
 ```
 
 ```math
-H_{\operatorname{tissue}}'
+H_{\text{tissue}}'
 =
-\mathcal{C}_{\operatorname{tissue}}
-(H_{\operatorname{tissue}},A_{\operatorname{tissue}},H_{\operatorname{cell}}').
+\mathcal{C}_{\text{tissue}}
+(H_{\text{tissue}},A_{\text{tissue}},H_{\text{cell}}').
 ```
 
 Placement:
@@ -589,7 +589,7 @@ T(S_i),
 \qquad
 \mathcal{N}_K(i)
 =
-\operatorname*{arg\,topK}_{k}
+\operatorname*{TopK}_{k}
 \operatorname{sim}(z_i,z_k).
 ```
 
@@ -638,13 +638,13 @@ GigaPath-style whole-slide foundation models separate tile and slide encoders:
 ```math
 h_{ij}
 =
-E_{\operatorname{tile}}(x_{ij}),
+E_{\text{tile}}(x_{ij}),
 ```
 
 ```math
 z_i
 =
-F_{\operatorname{slide}}
+F_{\text{slide}}
 \left(
 \{h_{ij},c_{ij}\}_{j=1}^{n_i}
 \right).
@@ -680,7 +680,7 @@ representation pipeline:
 ```math
 h_{ij}
 =
-E_{\operatorname{FM}}(x_{ij}).
+E_{\text{FM}}(x_{ij}).
 ```
 
 The downstream slide representation still requires:
@@ -723,11 +723,11 @@ Image and text embeddings:
 ```math
 z_i
 =
-F_{\operatorname{image}}(S_i),
+F_{\text{image}}(S_i),
 \qquad
 t_i
 =
-F_{\operatorname{text}}(R_i).
+F_{\text{text}}(R_i).
 ```
 
 Contrastive alignment:

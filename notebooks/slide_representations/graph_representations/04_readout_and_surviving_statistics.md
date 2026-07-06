@@ -67,13 +67,13 @@ V=\bigcup_{r=1}^{R}V_r.
 Region embeddings:
 
 ```math
-z_r=\mathcal{R}_{\operatorname{local}}(\{h_v^{(L)}:v\in V_r\}).
+z_r=\mathcal{R}_{\text{local}}(\{h_v^{(L)}:v\in V_r\}).
 ```
 
 Slide embedding:
 
 ```math
-z=\mathcal{R}_{\operatorname{global}}(\{z_r\}_{r=1}^{R}).
+z=\mathcal{R}_{\text{global}}(\{z_r\}_{r=1}^{R}).
 ```
 
 Survives:
@@ -93,13 +93,13 @@ S\in\mathbb{R}^{|V|\times R}.
 Cluster features:
 
 ```math
-H_{\operatorname{cluster}}=S^\top H.
+H_{\text{cluster}}=S^\top H.
 ```
 
 Cluster adjacency:
 
 ```math
-A_{\operatorname{cluster}}=S^\top AS.
+A_{\text{cluster}}=S^\top AS.
 ```
 
 This creates a coarsened graph.

@@ -7,7 +7,7 @@ Patch-level:
 ```math
 h_{ij}
 =
-E_{\operatorname{FM}}(x_{ij}).
+E_{\text{FM}}(x_{ij}).
 ```
 
 Slide-level:
@@ -15,7 +15,7 @@ Slide-level:
 ```math
 z_i
 =
-F_{\operatorname{FM}}(\{x_{ij},c_{ij}\}_{j=1}^{n_i}).
+F_{\text{FM}}(\{x_{ij},c_{ij}\}_{j=1}^{n_i}).
 ```
 
 The slide is then represented as:
@@ -31,7 +31,7 @@ or, if patch tokens are retained:
 =
 \{h_{ij}\}_{j=1}^{n_i},
 \qquad
-h_{ij}\in\mathcal{Z}_{\operatorname{FM}}.
+h_{ij}\in\mathcal{Z}_{\text{FM}}.
 ```
 
 ## Pretrained Geometry
@@ -39,9 +39,9 @@ h_{ij}\in\mathcal{Z}_{\operatorname{FM}}.
 The latent space has a geometry induced by pretraining:
 
 ```math
-d_{\operatorname{FM}}(a,b)
+d_{\text{FM}}(a,b)
 =
-\|E_{\operatorname{FM}}(a)-E_{\operatorname{FM}}(b)\|.
+\|E_{\text{FM}}(a)-E_{\text{FM}}(b)\|.
 ```
 
 This distance is not neutral. It encodes invariances and sensitivities learned
@@ -88,7 +88,7 @@ then image geometry is partly text geometry.
 A frozen representation uses:
 
 ```math
-z_i=F_{\operatorname{FM}}(S_i),
+z_i=F_{\text{FM}}(S_i),
 \qquad
 \widehat y_i=\mathcal{H}_\theta(z_i),
 ```
@@ -153,7 +153,7 @@ Retrieval latent:
 \boxed{
 \mathcal{X}_i
 =
-F_{\operatorname{FM}}(S_i)
+F_{\text{FM}}(S_i)
 }
 ```
 

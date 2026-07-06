@@ -161,7 +161,7 @@ Foundation-latent representation:
 ```math
 \mathcal{X}_i
 =
-F_{\operatorname{FM}}(S_i).
+F_{\text{FM}}(S_i).
 ```
 
 The same slide can be converted into any of these. The choice changes which

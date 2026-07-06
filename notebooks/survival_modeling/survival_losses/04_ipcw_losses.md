@@ -40,7 +40,7 @@ For predicted event probability:
 a censoring-weighted squared loss is:
 
 ```math
-\mathcal{L}_{\operatorname{IPCW}}(t)
+\mathcal{L}_{\text{IPCW}}(t)
 =
 \sum_i
 \left[
@@ -138,7 +138,7 @@ proper scoring rule.
 ## Dense Summary
 
 ```math
-\mathcal{L}_{\operatorname{IPCW}}(t)
+\mathcal{L}_{\text{IPCW}}(t)
 =
 \sum_i
 \frac{\mathbf{1}[X_i\le t,\delta_i=1]}{\widehat{G}(X_i)}

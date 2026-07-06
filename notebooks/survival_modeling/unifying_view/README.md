@@ -17,7 +17,7 @@ H_i
 \xrightarrow{\mathcal{R}}
 z_i
 \xrightarrow{\mathcal{H}}
-\mathcal{Y}_i^{\operatorname{surv}}
+\mathcal{Y}_i^{\text{surv}}
 \xrightarrow{\ell}
 \mathcal{L}.
 ```

@@ -56,12 +56,12 @@ A useful diagnostic is locality distortion:
 ```math
 D(\sigma)
 =
-\frac{1}{|E_{\operatorname{spatial}}|}
-\sum_{(u,v)\in E_{\operatorname{spatial}}}
+\frac{1}{|E_{\text{spatial}}|}
+\sum_{(u,v)\in E_{\text{spatial}}}
 |\sigma(u)-\sigma(v)|.
 ```
 
-Here $E_{\operatorname{spatial}}$ can be a grid, kNN, or radius-neighborhood
+Here $E_{\text{spatial}}$ can be a grid, kNN, or radius-neighborhood
 graph built from coordinates. Low distortion means spatial neighbors usually
 stay near each other in sequence space.
 

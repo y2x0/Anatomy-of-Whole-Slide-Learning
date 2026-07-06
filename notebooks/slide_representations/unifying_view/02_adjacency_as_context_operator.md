@@ -189,11 +189,11 @@ A hierarchy chooses several node sets:
 ```math
 V
 =
-V_{\operatorname{cell}}
+V_{\text{cell}}
 \cup
-V_{\operatorname{region}}
+V_{\text{region}}
 \cup
-V_{\operatorname{slide}}.
+V_{\text{slide}}.
 ```
 
 Edges include within-level and cross-level relations:
@@ -201,11 +201,11 @@ Edges include within-level and cross-level relations:
 ```math
 E
 =
-E_{\operatorname{cell-cell}}
+E_{\text{cell-cell}}
 \cup
-E_{\operatorname{region-region}}
+E_{\text{region-region}}
 \cup
-E_{\operatorname{cell-region}}.
+E_{\text{cell-region}}.
 ```
 
 This turns context into multiscale message passing.
@@ -252,7 +252,7 @@ distribution shape can survive while spatial arrangement disappears
 Retrieval builds a graph between the query slide and database items:
 
 ```math
-(i,k)\in E_{\operatorname{memory}}
+(i,k)\in E_{\text{memory}}
 \quad
 \Longleftrightarrow
 \quad
@@ -274,7 +274,7 @@ Foundation models define context before downstream training through a pretrained
 map:
 
 ```math
-F_{\operatorname{FM}}:S_i\mapsto z_i.
+F_{\text{FM}}:S_i\mapsto z_i.
 ```
 
 The induced neighbor relation is:
@@ -288,7 +288,7 @@ z_k
 \text{ is close to }
 z_i
 \text{ under }
-d_{\operatorname{FM}}.
+d_{\text{FM}}.
 ```
 
 Failure mode:

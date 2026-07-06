@@ -36,7 +36,7 @@ Output:
 Loss:
 
 ```math
-\mathcal{L}_{\operatorname{Cox}}
+\mathcal{L}_{\text{Cox}}
 =
 -
 \sum_{i:\delta_i=1}
@@ -137,7 +137,7 @@ r_i=\rho(\text{risk object}_i).
 Pairwise loss:
 
 ```math
-\mathcal{L}_{\operatorname{rank}}
+\mathcal{L}_{\text{rank}}
 =
 \sum_{i,j}
 \mathbf{1}[X_i<X_j,\delta_i=1]

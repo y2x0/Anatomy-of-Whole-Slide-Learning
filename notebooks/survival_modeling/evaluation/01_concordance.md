@@ -18,7 +18,7 @@ or be censored.
 The empirical concordance is:
 
 ```math
-\widehat{C}_{\operatorname{Harrell}}
+\widehat{C}_{\text{Harrell}}
 =
 \frac{
 \sum_{i,j}
@@ -72,7 +72,7 @@ Let:
 estimated from training data. A schematic IPCW estimator is:
 
 ```math
-\widehat{C}_{\operatorname{Uno}}(\tau)
+\widehat{C}_{\text{Uno}}(\tau)
 =
 \frac{
 \sum_{i,j}

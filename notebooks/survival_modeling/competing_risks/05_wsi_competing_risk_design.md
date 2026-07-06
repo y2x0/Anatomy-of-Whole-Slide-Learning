@@ -160,13 +160,13 @@ vascular invasion.
 If patch embeddings come from a pathology foundation model:
 
 ```math
-h_{ij}=E_{\operatorname{FM}}(x_{ij}),
+h_{ij}=E_{\text{FM}}(x_{ij}),
 ```
 
 then the competing-risk model learns:
 
 ```math
-E_{\operatorname{FM}}
+E_{\text{FM}}
 \to
 \mathcal{C}
 \to

@@ -24,7 +24,7 @@ r_i=\rho(\widehat{S}_i,\widehat{F}_i,\widehat{\lambda}_i)
 be a scalar risk summary. A pairwise loss is:
 
 ```math
-\mathcal{L}_{\operatorname{rank}}
+\mathcal{L}_{\text{rank}}
 =
 \sum_{i,j}
 A_{ij}\phi(r_j-r_i),
@@ -41,15 +41,15 @@ The function $\phi$ is decreasing when $r_i>r_j$.
 Examples:
 
 ```math
-\phi_{\operatorname{log}}(u)=\log(1+\exp(u/\sigma)),
+\phi_{\text{log}}(u)=\log(1+\exp(u/\sigma)),
 ```
 
 ```math
-\phi_{\operatorname{hinge}}(u)=\max(0,1+u),
+\phi_{\text{hinge}}(u)=\max(0,1+u),
 ```
 
 ```math
-\phi_{\operatorname{exp}}(u)=\exp(u/\sigma).
+\phi_{\text{exp}}(u)=\exp(u/\sigma).
 ```
 
 ## Gradient
@@ -67,14 +67,14 @@ Then:
 =
 -
 \frac{1}{\sigma}
-\sigma_{\operatorname{logistic}}((r_j-r_i)/\sigma),
+\sigma_{\text{logistic}}((r_j-r_i)/\sigma),
 ```
 
 ```math
 \frac{\partial\phi}{\partial r_j}
 =
 \frac{1}{\sigma}
-\sigma_{\operatorname{logistic}}((r_j-r_i)/\sigma).
+\sigma_{\text{logistic}}((r_j-r_i)/\sigma).
 ```
 
 The loss pushes the earlier event subject to higher risk.
@@ -127,7 +127,7 @@ r_{ic}(t)=\widehat{F}_{ic}(t).
 A DeepHit-style ranking term is:
 
 ```math
-\mathcal{L}_{\operatorname{rank}}
+\mathcal{L}_{\text{rank}}
 =
 \sum_c\sum_{i,j}
 A_{ij}^{(c)}
@@ -154,7 +154,7 @@ This is why ranking can produce high C-index but poor survival curves.
 ```math
 \begin{aligned}
 A_{ij}&=\mathbf{1}[X_i<X_j,\delta_i=1],\\
-\mathcal{L}_{\operatorname{rank}}
+\mathcal{L}_{\text{rank}}
 &=
 \sum_{i,j}A_{ij}\phi(r_j-r_i),\\
 r_i&=\rho[\text{predicted risk object}_i].

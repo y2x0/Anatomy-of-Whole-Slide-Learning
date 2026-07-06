@@ -15,7 +15,7 @@ where $E_0$ is fixed. Then train:
 ```math
 z_i=\mathcal{R}_{\theta}(\mathcal{C}_{\theta}(H_i)),
 \qquad
-\widehat{Y}_i^{\operatorname{surv}}=\mathcal{H}_{\theta}(z_i).
+\widehat{Y}_i^{\text{surv}}=\mathcal{H}_{\theta}(z_i).
 ```
 
 Advantages:
@@ -67,13 +67,13 @@ Recent end-to-end WSI survival work tries to reduce this computational barrier.
 Pathology foundation models produce:
 
 ```math
-h_{ij}=E_{\operatorname{FM}}(x_{ij}).
+h_{ij}=E_{\text{FM}}(x_{ij}).
 ```
 
 Survival learning becomes:
 
 ```math
-E_{\operatorname{FM}}
+E_{\text{FM}}
 \to
 \mathcal{C}_{\theta}
 \to
@@ -118,7 +118,7 @@ W'=W+BA.
 Prompt/tuning style adaptation:
 
 ```math
-\widetilde{H}_i=E_{\operatorname{FM}}(x_i;P_{\theta}).
+\widetilde{H}_i=E_{\text{FM}}(x_i;P_{\theta}).
 ```
 
 Survival data are often too small for full fine-tuning, so parameter-efficient

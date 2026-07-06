@@ -41,7 +41,7 @@ Specificity:
 The cumulative/dynamic AUC is:
 
 ```math
-\operatorname{AUC}_{\operatorname{CD}}(t)
+\operatorname{AUC}_{\text{CD}}(t)
 =
 \Pr(M_i(t)>M_j(t)\mid T_i\le t,T_j>t).
 ```
@@ -131,7 +131,7 @@ If a paper reports only one C-index, it hides this horizon dependence.
 ## Dense Summary
 
 ```math
-\operatorname{AUC}_{\operatorname{CD}}(t)
+\operatorname{AUC}_{\text{CD}}(t)
 =
 \Pr(M_i(t)>M_j(t)\mid T_i\le t,T_j>t).
 ```

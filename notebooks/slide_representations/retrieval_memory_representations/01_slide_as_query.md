@@ -57,7 +57,7 @@ For a slide foundation model:
 ```math
 z_i
 =
-F_{\operatorname{slide}}(H_i,C_i).
+F_{\text{slide}}(H_i,C_i).
 ```
 
 Retrieval is downstream of representation, but it changes the prediction object.
@@ -77,7 +77,7 @@ with keys $z_k$ and values $v_k$, retrieve:
 ```math
 \mathcal{N}_K(i)
 =
-\operatorname*{arg\,topK}_{k}
+\operatorname*{TopK}_{k}
 \operatorname{sim}(z_i,z_k).
 ```
 
@@ -119,7 +119,7 @@ The prediction may be:
 ```math
 \widehat y_i
 =
-\operatorname*{arg\,max}_y
+\operatorname*{argmax}_y
 \widehat p_i(y).
 ```
 
