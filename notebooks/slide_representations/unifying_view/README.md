@@ -1,7 +1,7 @@
 # Unifying View
 
-The set, sequence, and graph notes should not be read as separate model
-catalogs. They are different ways of specifying structure before aggregation.
+The slide representation notes should not be read as separate model catalogs.
+They are different ways of specifying structure before aggregation.
 
 This folder asks:
 
@@ -30,7 +30,7 @@ H_i:
     patch embeddings
 
 structure:
-    set, order, graph, hierarchy, or learned relation
+    set, order, graph, hierarchy, distribution, memory, or latent geometry
 
 mathcal{C}:
     context operator
@@ -47,6 +47,7 @@ mathcal{H}:
 1. `01_crgs_placement_for_representations.md`
 2. `02_adjacency_as_context_operator.md`
 3. `03_paper_placement_matrix.md`
+4. `04_extended_family_placement.md`
 
 ## Core Claim
 
@@ -56,6 +57,7 @@ Most whole-slide learning architectures differ by:
 which structure they put on patches
 which context edges they allow
 which statistics survive readout
+which external geometry or memory is inherited
 ```
 
 That is why representation and aggregation must be separated.

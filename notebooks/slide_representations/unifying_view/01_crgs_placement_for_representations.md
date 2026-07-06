@@ -205,6 +205,158 @@ P\operatorname{GNN}(H_i,A_i).
 
 The graph is not neutral preprocessing. It defines possible information flow.
 
+## Hierarchy Representation
+
+The hierarchy view chooses nested levels:
+
+```math
+\Omega_i
+=
+\left(
+\{V_i^{(\ell)}\}_{\ell=0}^{L},
+\{\pi_i^{(\ell)}\}_{\ell=0}^{L-1}
+\right).
+```
+
+The context operator has scale-aware pieces:
+
+```math
+\mathcal{C}
+=
+\mathcal{C}_{\operatorname{bottom-up}}
+\circ
+\mathcal{C}_{\operatorname{lateral}}
+\circ
+\mathcal{C}_{\operatorname{top-down}}.
+```
+
+Readout may use only the top token:
+
+```math
+z_i=h_{\operatorname{slide}}^{(L)}.
+```
+
+or several scales:
+
+```math
+z_i
+=
+\psi_\theta
+\left(
+\mathcal{R}^{(0)}(H_i^{(0)}),
+\ldots,
+\mathcal{R}^{(L)}(H_i^{(L)})
+\right).
+```
+
+The hierarchy assumes that fine morphology composes into larger tissue units.
+
+## Distribution Representation
+
+The distribution view chooses:
+
+```math
+\Omega_i=\mu_i,
+\qquad
+\mu_i
+=
+\frac{1}{n_i}
+\sum_j\delta_{h_{ij}}.
+```
+
+The readout is a statistic of a measure:
+
+```math
+z_i=T(\mu_i).
+```
+
+Examples:
+
+```math
+T(\mu_i)
+=
+\int \phi(h)\,d\mu_i(h),
+```
+
+```math
+T(\mu_i)
+=
+\left(
+\int q_1(h)\,d\mu_i(h),
+\ldots,
+\int q_M(h)\,d\mu_i(h)
+\right).
+```
+
+The distribution view assumes morphology prevalence or distribution shape is the
+right object.
+
+## Retrieval Memory Representation
+
+The retrieval view chooses an external memory:
+
+```math
+\Omega_i=\mathcal{M}
+=
+\{(k_r,v_r)\}_{r=1}^{N}.
+```
+
+The slide first becomes a query:
+
+```math
+q_i=Q(S_i).
+```
+
+Then memory context is:
+
+```math
+\mathcal{M}(q_i)
+=
+\{(k_r,v_r):r\in\mathcal{N}_K(i)\}.
+```
+
+The representation is:
+
+```math
+\mathcal{X}_i=(q_i,\mathcal{M}(q_i)).
+```
+
+Retrieval makes the database part of the mathematical object.
+
+## Foundation Latent Representation
+
+The foundation-latent view chooses a pretrained map:
+
+```math
+\Omega_i=F_{\operatorname{FM}}.
+```
+
+The slide object is:
+
+```math
+\mathcal{X}_i
+=
+F_{\operatorname{FM}}(S_i)
+```
+
+or patch tokens in pretrained latent space:
+
+```math
+\mathcal{X}_i
+=
+\{E_{\operatorname{FM}}(x_{ij})\}_{j=1}^{n_i}.
+```
+
+The inherited geometry is:
+
+```math
+d_{\operatorname{FM}}(a,b)
+=
+\|F_{\operatorname{FM}}(a)-F_{\operatorname{FM}}(b)\|.
+```
+
+This geometry is shaped by pretraining, not by the downstream task alone.
+
 ## Placement Table
 
 | Representation | $\Omega_i$ | $\mathcal{C}$ | $\mathcal{R}$ | Surviving Statistic |
@@ -215,6 +367,10 @@ The graph is not neutral preprocessing. It defines possible information flow.
 | Sequence SSM | order $\sigma_i$ | scan | final state or pool | compressed trajectory |
 | Spatial GNN | adjacency $A_i$ | message passing | graph pool | contextualized node statistic |
 | Heterogeneous graph | typed nodes and edges | typed message passing | multitype pool | typed relational summary |
+| Hierarchy | parent maps $\pi_i$ | multiscale context | top or multiscale readout | scale-composed summary |
+| Distribution | empirical measure $\mu_i$ | optional statistic map | $T(\mu_i)$ | measure statistic |
+| Retrieval memory | external memory $\mathcal{M}$ | nearest-neighbor context | query plus retrieved values | archive-conditioned statistic |
+| Foundation latent | pretrained map $F_{\operatorname{FM}}$ | frozen or adapted encoder | probe or slide head | pretrained latent coordinate |
 
 ## What This Decomposition Buys
 

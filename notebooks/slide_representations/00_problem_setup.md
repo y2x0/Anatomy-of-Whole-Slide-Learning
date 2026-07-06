@@ -34,6 +34,7 @@ region hierarchy
 scan order
 prototype dictionary
 retrieval memory
+foundation encoder
 ```
 
 The representation is not just implementation detail. It defines the symmetry
@@ -106,7 +107,7 @@ P\mathcal{F}(H,A)
 
 for node permutation matrix $P$.
 
-## Three Starting Objects
+## Starting Objects
 
 Set representation:
 
@@ -124,6 +125,43 @@ Graph representation:
 
 ```math
 \mathcal{X}_i=(V_i,E_i,H_i).
+```
+
+Hierarchy representation:
+
+```math
+\mathcal{X}_i
+=
+\left(
+\{V_i^{(\ell)}\}_{\ell=0}^{L},
+\{\pi_i^{(\ell)}\}_{\ell=0}^{L-1}
+\right).
+```
+
+Distribution representation:
+
+```math
+\mathcal{X}_i
+=
+\mu_i
+=
+\frac{1}{n_i}\sum_j\delta_{h_{ij}}.
+```
+
+Retrieval-memory representation:
+
+```math
+\mathcal{X}_i
+=
+(z_i,\mathcal{M}(z_i)).
+```
+
+Foundation-latent representation:
+
+```math
+\mathcal{X}_i
+=
+F_{\operatorname{FM}}(S_i).
 ```
 
 The same slide can be converted into any of these. The choice changes which

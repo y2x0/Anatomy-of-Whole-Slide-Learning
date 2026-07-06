@@ -216,6 +216,87 @@ Failure mode:
 errors in segmentation or region assignment propagate across scales
 ```
 
+## Distribution Statistic
+
+A distribution representation may have no adjacency at all. It chooses a measure:
+
+```math
+\mu_i
+=
+\frac{1}{n_i}\sum_j\delta_{h_{ij}}
+```
+
+and a statistic:
+
+```math
+z_i=T(\mu_i).
+```
+
+The context is implicit in the statistic $T$. For example, prototype assignment
+uses a learned morphology codebook:
+
+```math
+q_m(h)
+=
+\operatorname{Assign}(h,c_m).
+```
+
+Failure mode:
+
+```text
+distribution shape can survive while spatial arrangement disappears
+```
+
+## Memory Adjacency
+
+Retrieval builds a graph between the query slide and database items:
+
+```math
+(i,k)\in E_{\operatorname{memory}}
+\quad
+\Longleftrightarrow
+\quad
+k\in\mathcal{N}_K(i).
+```
+
+The neighbors are not tissue neighbors. They are archive neighbors under a
+similarity metric.
+
+Failure mode:
+
+```text
+nearest cases may be nearest by nuisance rather than biology
+```
+
+## Foundation Geometry
+
+Foundation models define context before downstream training through a pretrained
+map:
+
+```math
+F_{\operatorname{FM}}:S_i\mapsto z_i.
+```
+
+The induced neighbor relation is:
+
+```math
+k\in\mathcal{N}_K(i)
+\quad
+\Longleftrightarrow
+\quad
+z_k
+\text{ is close to }
+z_i
+\text{ under }
+d_{\operatorname{FM}}.
+```
+
+Failure mode:
+
+```text
+pretraining geometry may not match the downstream clinical question
+```
+
 ## Equivalence Table
 
 | Interaction Structure | Model Family | Context Geometry |
@@ -226,6 +307,10 @@ errors in segmentation or region assignment propagate across scales
 | kNN or radius graph | Patch-GCN-style GNN | spatially local context |
 | learned dynamic graph | WiKG-style graph MIL | task-learned relational context |
 | typed hierarchy | HACT-style graph | multiscale tissue context |
+| parent map $\pi$ | HIPT-style hierarchy | compositional scale context |
+| statistic $T(\mu)$ | PANTHER or histogram-style distribution | morphology distribution context |
+| memory graph | Yottixel/SISH-style retrieval | archive-neighborhood context |
+| pretrained geometry | UNI, Virchow, GigaPath, CONCH, PRISM, TITAN | inherited latent context |
 
 ## The Design Question
 
