@@ -31,7 +31,7 @@ A more expressive version makes the readout itself time-conditioned:
 ```math
 a_{ij}(t)
 =
-\operatorname*{softmax}_{j}(q(t)^\top \phi(h_{ij})),
+\mathrm{softmax}_{j}(q(t)^\top \phi(h_{ij})),
 ```
 
 ```math
@@ -78,7 +78,7 @@ For graph WSI models:
 ```math
 G_i=(V_i,E_i),
 \qquad
-H_i^{(L)}=\operatorname{GNN}(G_i,H_i^{(0)}).
+H_i^{(L)}=\mathrm{GNN}(G_i,H_i^{(0)}).
 ```
 
 Then:
@@ -86,7 +86,7 @@ Then:
 ```math
 z_i(t)
 =
-\operatorname{READOUT}_{t}(H_i^{(L)}),
+\mathrm{READOUT}_{t}(H_i^{(L)}),
 \qquad
 \lambda_i(t)=\rho(g_\theta(t,z_i(t))).
 ```

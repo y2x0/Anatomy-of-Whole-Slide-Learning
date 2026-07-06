@@ -18,7 +18,7 @@ Prediction:
 ```math
 \widehat y_i
 =
-\operatorname*{argmax}_y
+\mathrm{argmax}_y
 \widehat p_i(y).
 ```
 

@@ -97,7 +97,7 @@ h_{ij}^{(\ell+1)}
 =
 \phi\left(
 h_{ij}^{(\ell)},
-\operatorname*{AGG}_{k \in \mathcal{N}(j)}
+\mathrm{AGG}_{k \in \mathcal{N}(j)}
 \psi(h_{ij}^{(\ell)},h_{ik}^{(\ell)})
 \right).
 ```
@@ -105,7 +105,7 @@ h_{ij}^{(\ell)},
 Then:
 
 ```math
-z_i = \operatorname{READOUT}(\{h_{ij}^{(L)}\}_{j\in V_i}).
+z_i = \mathrm{READOUT}(\{h_{ij}^{(L)}\}_{j\in V_i}).
 ```
 
 Surviving statistic:

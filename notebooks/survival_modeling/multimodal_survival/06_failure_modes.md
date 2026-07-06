@@ -18,7 +18,7 @@ Check by modality ablation:
 ```math
 \Delta_{\text{path}}
 =
-\operatorname{Perf}(p,g)-\operatorname{Perf}(g).
+\mathrm{Perf}(p,g)-\mathrm{Perf}(g).
 ```
 
 ## 2. Missingness Confounding

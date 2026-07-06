@@ -59,7 +59,7 @@ or:
 ```math
 z_i
 =
-\operatorname{MLP}
+\mathrm{MLP}
 \left(
 [z_i^{(0)};\cdots;z_i^{(L)}]
 \right).
@@ -100,8 +100,8 @@ For bottom-up mean coarsening:
 ```math
 h_u^{(\ell+1)}
 =
-\frac{1}{|\operatorname{Ch}(u)|}
-\sum_{v\in\operatorname{Ch}(u)}h_v^{(\ell)}.
+\frac{1}{|\mathrm{Ch}(u)|}
+\sum_{v\in\mathrm{Ch}(u)}h_v^{(\ell)}.
 ```
 
 After two levels:
@@ -109,10 +109,10 @@ After two levels:
 ```math
 h_r^{(\ell+2)}
 =
-\frac{1}{|\operatorname{Ch}(r)|}
-\sum_{u\in\operatorname{Ch}(r)}
-\frac{1}{|\operatorname{Ch}(u)|}
-\sum_{v\in\operatorname{Ch}(u)}h_v^{(\ell)}.
+\frac{1}{|\mathrm{Ch}(r)|}
+\sum_{u\in\mathrm{Ch}(r)}
+\frac{1}{|\mathrm{Ch}(u)|}
+\sum_{v\in\mathrm{Ch}(u)}h_v^{(\ell)}.
 ```
 
 This is not necessarily the same as a flat mean over all fine nodes. Children of
@@ -124,7 +124,7 @@ The effective fine-node weight is:
 w_v
 =
 \prod_{\ell=0}^{L-1}
-\frac{1}{|\operatorname{Ch}(\pi^{(\ell)}(v))|}.
+\frac{1}{|\mathrm{Ch}(\pi^{(\ell)}(v))|}.
 ```
 
 Thus hierarchy changes the measure being averaged:

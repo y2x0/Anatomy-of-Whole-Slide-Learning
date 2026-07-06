@@ -101,7 +101,7 @@ w^\top
 \left(
 \tanh(Vh_{ij})
 \odot
-\operatorname{sigmoid}(Uh_{ij})
+\mathrm{sigmoid}(Uh_{ij})
 \right).
 ```
 
@@ -155,7 +155,7 @@ A simplified class-specific attention map is:
 ```math
 a_{ij}^{(c)}
 =
-\operatorname*{softmax}_{j}s_c(h_{ij}).
+\mathrm{softmax}_{j}s_c(h_{ij}).
 ```
 
 Class-specific slide embeddings are:
@@ -206,7 +206,7 @@ Set Transformer introduces complete-graph attention among instances:
 \widetilde{h}_j
 =
 \sum_{\ell=1}^{n_i}
-\operatorname*{softmax}_{\ell}
+\mathrm{softmax}_{\ell}
 \left(
 \frac{q_j^\top k_\ell}{\sqrt{d}}
 \right)
@@ -218,7 +218,7 @@ Pooling by multihead attention can be written with seed vectors $s_m$:
 ```math
 z_m
 =
-\operatorname{Attn}(s_m,\widetilde{H}_i,\widetilde{H}_i).
+\mathrm{Attn}(s_m,\widetilde{H}_i,\widetilde{H}_i).
 ```
 
 Placement:
@@ -312,7 +312,7 @@ Edges are coordinate-derived:
 ```math
 (u,v)\in E_i
 \quad\Longleftrightarrow\quad
-u\in\operatorname{kNN}_k(c_v).
+u\in\mathrm{kNN}_k(c_v).
 ```
 
 Message passing gives:
@@ -320,7 +320,7 @@ Message passing gives:
 ```math
 H_i^{(L)}
 =
-\operatorname{GCN}_\theta(H_i,A_i).
+\mathrm{GCN}_\theta(H_i,A_i).
 ```
 
 Readout and survival head:
@@ -589,8 +589,8 @@ T(S_i),
 \qquad
 \mathcal{N}_K(i)
 =
-\operatorname*{TopK}_{k}
-\operatorname{sim}(z_i,z_k).
+\mathrm{TopK}_{k}
+\mathrm{sim}(z_i,z_k).
 ```
 
 For patch-mosaic approaches, the representation is a selected subset:

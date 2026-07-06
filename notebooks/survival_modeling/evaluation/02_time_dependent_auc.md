@@ -25,7 +25,7 @@ Dynamic controls are:
 Sensitivity at threshold $a$:
 
 ```math
-\operatorname{TPR}(a,t)
+\mathrm{TPR}(a,t)
 =
 \Pr(M(t)>a\mid T\le t).
 ```
@@ -33,7 +33,7 @@ Sensitivity at threshold $a$:
 Specificity:
 
 ```math
-\operatorname{TNR}(a,t)
+\mathrm{TNR}(a,t)
 =
 \Pr(M(t)\le a\mid T>t).
 ```
@@ -41,7 +41,7 @@ Specificity:
 The cumulative/dynamic AUC is:
 
 ```math
-\operatorname{AUC}_{\text{CD}}(t)
+\mathrm{AUC}_{\text{CD}}(t)
 =
 \Pr(M_i(t)>M_j(t)\mid T_i\le t,T_j>t).
 ```
@@ -79,14 +79,14 @@ The exact weights depend on the AUC definition.
 C-index summarizes ordering over event times. Time-dependent AUC gives a curve:
 
 ```math
-t\mapsto \operatorname{AUC}(t).
+t\mapsto \mathrm{AUC}(t).
 ```
 
 A model can discriminate well early but poorly late:
 
 ```math
-\operatorname{AUC}(1\text{ year}) >
-\operatorname{AUC}(5\text{ years}).
+\mathrm{AUC}(1\text{ year}) >
+\mathrm{AUC}(5\text{ years}).
 ```
 
 This matters for WSI because morphology may encode early aggressiveness better
@@ -131,7 +131,7 @@ If a paper reports only one C-index, it hides this horizon dependence.
 ## Dense Summary
 
 ```math
-\operatorname{AUC}_{\text{CD}}(t)
+\mathrm{AUC}_{\text{CD}}(t)
 =
 \Pr(M_i(t)>M_j(t)\mid T_i\le t,T_j>t).
 ```

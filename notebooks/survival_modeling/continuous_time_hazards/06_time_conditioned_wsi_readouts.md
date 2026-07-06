@@ -61,7 +61,7 @@ Hazard:
 ```math
 \lambda_i(t)
 =
-\operatorname{softplus}
+\mathrm{softplus}
 \left[
 u^\top z_i(t)+b(t)
 \right].
@@ -139,7 +139,7 @@ be prototype prevalence. Define:
 ```math
 \lambda_i(t)
 =
-\operatorname{softplus}
+\mathrm{softplus}
 \left[
 b(t)
 +
@@ -154,7 +154,7 @@ The derivative with respect to prototype prevalence is:
 ```math
 \frac{\partial\lambda_i(t)}{\partial p_{im}}
 =
-\operatorname{softplus}^{\prime}(\cdot)r_m(t).
+\mathrm{softplus}^{\prime}(\cdot)r_m(t).
 ```
 
 So the survival loss gradient is:
@@ -164,11 +164,11 @@ So the survival loss gradient is:
 =
 -
 \delta_i
-\frac{\operatorname{softplus}^{\prime}(\xi_i(X_i))r_m(X_i)}
+\frac{\mathrm{softplus}^{\prime}(\xi_i(X_i))r_m(X_i)}
 {\lambda_i(X_i)}
 +
 \int_0^{X_i}
-\operatorname{softplus}^{\prime}(\xi_i(u))r_m(u)\,du,
+\mathrm{softplus}^{\prime}(\xi_i(u))r_m(u)\,du,
 ```
 
 where:
@@ -184,7 +184,7 @@ This exposes exactly how a prototype is rewarded or penalized across time.
 Let graph node states be:
 
 ```math
-\widetilde h_{ij}=\operatorname{GNN}(H_i,G_i)_{j}.
+\widetilde h_{ij}=\mathrm{GNN}(H_i,G_i)_{j}.
 ```
 
 A time-conditioned graph readout can be:
@@ -200,7 +200,7 @@ where:
 ```math
 a_{ij}(t)
 =
-\operatorname*{softmax}_{j}(q(t)^\top K\widetilde h_{ij}).
+\mathrm{softmax}_{j}(q(t)^\top K\widetilde h_{ij}).
 ```
 
 Graph message passing defines spatial context. Time attention selects which
@@ -279,7 +279,7 @@ Graph time readouts survive as:
 ```math
 \begin{aligned}
 z_i(t)&=\sum_j a_{ij}(t)Vh_{ij},\\
-\lambda_i(t)&=\operatorname{softplus}(u^\top z_i(t)+b(t)),\\
+\lambda_i(t)&=\mathrm{softplus}(u^\top z_i(t)+b(t)),\\
 \mathcal{L}_i
 &=
 -\delta_i\log\lambda_i(X_i)

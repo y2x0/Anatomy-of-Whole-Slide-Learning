@@ -57,9 +57,9 @@ Often the symmetric text-to-image loss is also used:
 ```math
 \ell_i^{\text{sym}}
 =
-\ell_{\operatorname{image}\to\operatorname{text}}
+\ell_{\mathrm{image}\to\mathrm{text}}
 +
-\ell_{\operatorname{text}\to\operatorname{image}}.
+\ell_{\mathrm{text}\to\mathrm{image}}.
 ```
 
 This makes visual similarity partly semantic:
@@ -77,7 +77,7 @@ For zero-shot classification, create class text embeddings:
 ```math
 t_c
 =
-F_{\text{text}}(\operatorname{prompt}(c)).
+F_{\text{text}}(\mathrm{prompt}(c)).
 ```
 
 Prediction:
@@ -127,7 +127,7 @@ Image-to-text retrieval:
 ```math
 \mathcal{N}_K^{\text{text}}(i)
 =
-\operatorname*{TopK}_{r}
+\mathrm{TopK}_{r}
 z_i^\top t_r.
 ```
 
@@ -136,7 +136,7 @@ Text-to-image retrieval:
 ```math
 \mathcal{N}_K^{\text{image}}(q)
 =
-\operatorname*{TopK}_{i}
+\mathrm{TopK}_{i}
 z_i^\top t_q.
 ```
 

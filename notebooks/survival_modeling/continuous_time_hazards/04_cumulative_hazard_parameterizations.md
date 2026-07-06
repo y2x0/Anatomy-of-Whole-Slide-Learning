@@ -31,7 +31,7 @@ Let:
 with:
 
 ```math
-\rho(a)=\operatorname{softplus}(a)
+\rho(a)=\mathrm{softplus}(a)
 ```
 
 or:
@@ -183,7 +183,7 @@ If $B_m$ is known analytically, the likelihood is cheap and exact.
 For WSI:
 
 ```math
-\alpha(z_i)=\operatorname{softplus}(Az_i+b).
+\alpha(z_i)=\mathrm{softplus}(Az_i+b).
 ```
 
 The slide predicts nonnegative weights over temporal hazard basis functions.
@@ -196,7 +196,7 @@ A neural cumulative hazard can be constructed as:
 \Lambda_\theta(t,z)
 =
 \int_0^t
-\operatorname{softplus}(g_\theta(u,z))\,du.
+\mathrm{softplus}(g_\theta(u,z))\,du.
 ```
 
 This is always monotone but still requires integration.
@@ -206,7 +206,7 @@ Alternatively:
 ```math
 \Lambda_\theta(t,z)
 =
-\operatorname{softplus}(a_\theta(t,z))
+\mathrm{softplus}(a_\theta(t,z))
 ```
 
 is nonnegative but not necessarily monotone in $t$. Nonnegativity alone is not

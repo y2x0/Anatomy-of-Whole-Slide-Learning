@@ -77,8 +77,8 @@ with keys $z_k$ and values $v_k$, retrieve:
 ```math
 \mathcal{N}_K(i)
 =
-\operatorname*{TopK}_{k}
-\operatorname{sim}(z_i,z_k).
+\mathrm{TopK}_{k}
+\mathrm{sim}(z_i,z_k).
 ```
 
 The values can be:
@@ -109,9 +109,9 @@ Weights can be:
 ```math
 w_{ik}
 =
-\frac{\exp(\operatorname{sim}(z_i,z_k)/\tau)}
+\frac{\exp(\mathrm{sim}(z_i,z_k)/\tau)}
 {\sum_{\ell\in\mathcal{N}_K(i)}
-\exp(\operatorname{sim}(z_i,z_\ell)/\tau)}.
+\exp(\mathrm{sim}(z_i,z_\ell)/\tau)}.
 ```
 
 The prediction may be:
@@ -119,7 +119,7 @@ The prediction may be:
 ```math
 \widehat y_i
 =
-\operatorname*{argmax}_y
+\mathrm{argmax}_y
 \widehat p_i(y).
 ```
 
@@ -136,7 +136,7 @@ this slide is similar to these prior cases
 But similarity is only meaningful relative to the embedding and metric:
 
 ```math
-\operatorname{sim}(z_i,z_k)
+\mathrm{sim}(z_i,z_k)
 \ne
 \text{clinical equivalence}.
 ```

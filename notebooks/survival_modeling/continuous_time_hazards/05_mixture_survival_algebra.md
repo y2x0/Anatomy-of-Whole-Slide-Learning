@@ -182,7 +182,7 @@ One can set:
 or:
 
 ```math
-\pi(z_i)=\operatorname{softmax}(Az_i+b).
+\pi(z_i)=\mathrm{softmax}(Az_i+b).
 ```
 
 Then each mixture component can correspond to a latent prognosis regime:
@@ -205,7 +205,7 @@ Let:
 ```math
 a_m(z)=\text{mixture logit},
 \qquad
-\pi_m(z)=\operatorname*{softmax}_{m}(a(z)).
+\pi_m(z)=\mathrm{softmax}_{m}(a(z)).
 ```
 
 For event observations, define:

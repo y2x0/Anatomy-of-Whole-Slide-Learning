@@ -68,7 +68,7 @@ A smoothness penalty:
 (g_{i,k+1}-2g_{ik}+g_{i,k-1})^2
 ```
 
-where $g_{ik}=\operatorname{logit}(h_{ik})$, penalizes jagged hazards.
+where $g_{ik}=\mathrm{logit}(h_{ik})$, penalizes jagged hazards.
 
 This is useful when event bins are sparse, but it imposes an assumption that risk
 changes smoothly over time.

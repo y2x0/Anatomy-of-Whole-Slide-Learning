@@ -28,7 +28,7 @@ An IPCW Brier score has the same censoring logic as survival Brier, but the
 target is cause-specific event occurrence by $t$:
 
 ```math
-\operatorname{BS}_{c}(t)
+\mathrm{BS}_{c}(t)
 =
 \frac{1}{n}\sum_i
 w_i(t)
@@ -44,7 +44,7 @@ Weights account for whether $Y_{ic}(t)$ is observed under censoring.
 At horizon $t$:
 
 ```math
-\operatorname{AUC}_{c}(t)
+\mathrm{AUC}_{c}(t)
 =
 \Pr(
 \widehat{F}_{ic}(t)>\widehat{F}_{jc}(t)

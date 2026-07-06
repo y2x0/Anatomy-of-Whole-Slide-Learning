@@ -113,7 +113,7 @@ z
 =
 \mathcal{R}
 \left(
-\operatorname{GNN}(H,A)
+\mathrm{GNN}(H,A)
 \right).
 ```
 

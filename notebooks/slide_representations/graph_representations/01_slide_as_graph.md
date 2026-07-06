@@ -62,7 +62,7 @@ Spatial kNN:
 ```math
 (u,v)\in E
 \quad\text{if}\quad
-v\in\operatorname{kNN}(u).
+v\in\mathrm{kNN}(u).
 ```
 
 Radius graph:
@@ -78,7 +78,7 @@ Similarity graph:
 ```math
 (u,v)\in E
 \quad\text{if}\quad
-\operatorname{sim}(h_u,h_v)\ge\tau.
+\mathrm{sim}(h_u,h_v)\ge\tau.
 ```
 
 Learned graph:

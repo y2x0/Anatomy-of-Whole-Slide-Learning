@@ -36,7 +36,7 @@ h_{ij}^{(\ell+1)}
 \phi_\ell
 \left(
 h_{ij}^{(\ell)},
-\operatorname*{AGG}_{k\in\mathcal{N}(j)}
+\mathrm{AGG}_{k\in\mathcal{N}(j)}
 \psi_\ell(h_{ij}^{(\ell)},h_{ik}^{(\ell)},e_{jk})
 \right).
 ```
@@ -65,13 +65,13 @@ Transformer context:
 ```math
 \widetilde{H}_i
 =
-\operatorname{Transformer}(H_i+P_i).
+\mathrm{Transformer}(H_i+P_i).
 ```
 
 Readout:
 
 ```math
-z_i=\widetilde{h}_{i,\operatorname{cls}}
+z_i=\widetilde{h}_{i,\mathrm{cls}}
 \quad\text{or}\quad
 z_i=\frac{1}{n_i}\sum_j\widetilde{h}_{ij}.
 ```
@@ -79,9 +79,9 @@ z_i=\frac{1}{n_i}\sum_j\widetilde{h}_{ij}.
 Self-attention can model long-range patch interactions:
 
 ```math
-\operatorname{Attn}(Q,K,V)
+\mathrm{Attn}(Q,K,V)
 =
-\operatorname{softmax}
+\mathrm{softmax}
 \left(
 \frac{QK^\top}{\sqrt{d}}
 \right)V.

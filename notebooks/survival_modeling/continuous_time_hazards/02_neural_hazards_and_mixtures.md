@@ -13,7 +13,7 @@ where $\rho$ enforces positivity.
 The most direct choice is:
 
 ```math
-\rho(a)=\operatorname{softplus}(a).
+\rho(a)=\mathrm{softplus}(a).
 ```
 
 ## Time As An Input
@@ -23,7 +23,7 @@ The network receives both time and covariates:
 ```math
 g_\theta(t,z)
 =
-\operatorname{MLP}_{\theta}([e(t),z]).
+\mathrm{MLP}_{\theta}([e(t),z]).
 ```
 
 Here $e(t)$ may be:

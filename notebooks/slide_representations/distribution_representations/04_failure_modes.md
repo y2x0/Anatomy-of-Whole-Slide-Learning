@@ -95,7 +95,7 @@ If prototypes are fit on a source cohort:
 ```math
 \{c_m\}_{m=1}^{M}
 =
-\operatorname{Fit}(\{\mu_i:i\in\mathcal{D}_{\text{source}}\}),
+\mathrm{Fit}(\{\mu_i:i\in\mathcal{D}_{\text{source}}\}),
 ```
 
 then a target cohort with new morphology may be forced into old bins.

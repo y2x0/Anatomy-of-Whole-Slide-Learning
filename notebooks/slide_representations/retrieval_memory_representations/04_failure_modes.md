@@ -9,7 +9,7 @@ If train and test slides from the same patient or case family both enter memory,
 retrieval can become memorization:
 
 ```math
-\operatorname{sim}(z_i,z_k)\approx1
+\mathrm{sim}(z_i,z_k)\approx1
 ```
 
 because of patient, block, scanner, or near-duplicate structure.
@@ -23,8 +23,8 @@ The nearest neighbors are nearest under the chosen metric:
 ```math
 k^\star
 =
-\operatorname*{argmax}_{k}
-\operatorname{sim}(z_i,z_k).
+\mathrm{argmax}_{k}
+\mathrm{sim}(z_i,z_k).
 ```
 
 If $z$ encodes stain, scanner, tissue amount, or organ more strongly than

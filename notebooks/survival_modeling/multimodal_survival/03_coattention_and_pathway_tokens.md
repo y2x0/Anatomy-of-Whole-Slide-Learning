@@ -36,7 +36,7 @@ Cross-attended pathology:
 ```math
 A_{G\leftarrow P}
 =
-\operatorname{softmax}
+\mathrm{softmax}
 \left(
 \frac{QK^\top}{\sqrt{d}}
 \right)V.
@@ -49,7 +49,7 @@ The reverse direction is:
 ```math
 A_{P\leftarrow G}
 =
-\operatorname{softmax}
+\mathrm{softmax}
 \left(
 \frac{P_iW_Q(G_iW_K)^\top}{\sqrt{d}}
 \right)G_iW_V.
@@ -77,7 +77,7 @@ The interaction matrix:
 ```math
 A
 =
-\operatorname{softmax}
+\mathrm{softmax}
 \left(
 \frac{QK^\top}{\sqrt{d}}
 \right)
@@ -102,7 +102,7 @@ Fusion:
 ```math
 Z_i
 =
-\operatorname{Transformer}_{\text{multi}}
+\mathrm{Transformer}_{\text{multi}}
 ([P_i;G_i]).
 ```
 
@@ -154,7 +154,7 @@ sum over pathway-conditioned morphology summaries
 \begin{aligned}
 A_{rj}
 &=
-\operatorname*{softmax}_{j}(q_r^\top k_j),\\
+\mathrm{softmax}_{j}(q_r^\top k_j),\\
 u_{ir}
 &=
 \sum_jA_{rj}v_{ij},\\

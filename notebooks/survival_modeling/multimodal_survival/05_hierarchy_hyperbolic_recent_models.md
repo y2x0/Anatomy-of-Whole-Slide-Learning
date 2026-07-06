@@ -67,7 +67,7 @@ The distance is:
 ```math
 d_{\mathbb{B}}(x,y)
 =
-\operatorname{arcosh}
+\mathrm{arcosh}
 \left(
 1+
 2

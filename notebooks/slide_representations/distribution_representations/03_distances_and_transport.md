@@ -94,7 +94,7 @@ prototypes.
 For kernel mean embeddings:
 
 ```math
-\operatorname{MMD}^2(\mu_i,\mu_k)
+\mathrm{MMD}^2(\mu_i,\mu_k)
 =
 \left\|
 m_{\mu_i}-m_{\mu_k}
@@ -104,7 +104,7 @@ m_{\mu_i}-m_{\mu_k}
 Expanding:
 
 ```math
-\operatorname{MMD}^2
+\mathrm{MMD}^2
 =
 \mathbb{E}_{h,h'\sim\mu_i}k(h,h')
 +
@@ -123,7 +123,7 @@ Distribution distances can drive retrieval:
 ```math
 \mathcal{N}_K(i)
 =
-\operatorname*{TopK}_{k}
+\mathrm{TopK}_{k}
 -
 d(\mu_i,\mu_k).
 ```

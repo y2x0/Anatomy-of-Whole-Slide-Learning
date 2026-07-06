@@ -108,9 +108,9 @@ G_i=\{g_{ir}\}_{r=1}^{R}.
 Cross-attention from omics to pathology:
 
 ```math
-\operatorname{Attn}(G_i,P_i,P_i)
+\mathrm{Attn}(G_i,P_i,P_i)
 =
-\operatorname{softmax}
+\mathrm{softmax}
 \left(
 \frac{G_iW_Q(P_iW_K)^\top}{\sqrt{d}}
 \right)

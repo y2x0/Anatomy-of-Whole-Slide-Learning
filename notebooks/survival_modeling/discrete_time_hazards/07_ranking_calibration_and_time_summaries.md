@@ -136,7 +136,7 @@ G(t)=\Pr(C>t)
 be the censoring survival function. The IPCW Brier score is:
 
 ```math
-\operatorname{BS}(t)
+\mathrm{BS}(t)
 =
 \frac{1}{n}
 \sum_i
@@ -219,7 +219,7 @@ F_i(\tau_k),
 \widehat{\mathbb{E}}[T_i],
 \sum_kh_{ik},
 -S_i(\tau_k),
-\operatorname{median}(T_i)
+\mathrm{median}(T_i)
 \right\}.
 ```
 

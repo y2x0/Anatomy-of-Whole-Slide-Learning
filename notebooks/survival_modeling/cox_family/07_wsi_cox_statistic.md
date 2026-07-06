@@ -204,13 +204,13 @@ Let:
 ```math
 h_{ij}^{(L)}
 =
-\operatorname{GNN}_{\theta}(h_{ij}^{(0)},G_i).
+\mathrm{GNN}_{\theta}(h_{ij}^{(0)},G_i).
 ```
 
 Then:
 
 ```math
-z_i=\operatorname{READOUT}(\{h_{ij}^{(L)}\}),
+z_i=\mathrm{READOUT}(\{h_{ij}^{(L)}\}),
 \qquad
 \eta_i=f(z_i).
 ```
@@ -237,7 +237,7 @@ For transformer MIL:
 ```math
 \widetilde H_i
 =
-\operatorname{Transformer}(H_i+P_i),
+\mathrm{Transformer}(H_i+P_i),
 ```
 
 with readout:

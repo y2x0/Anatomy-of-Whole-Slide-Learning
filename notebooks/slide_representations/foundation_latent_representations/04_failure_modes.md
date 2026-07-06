@@ -99,7 +99,7 @@ But:
 ```math
 t_c
 =
-F_{\text{text}}(\operatorname{prompt}(c)).
+F_{\text{text}}(\mathrm{prompt}(c)).
 ```
 
 If the prompt fails to express the relevant pathology concept, then the

@@ -123,7 +123,7 @@ Set attention can compute:
 \widetilde{h}_j
 =
 \sum_k
-\operatorname*{softmax}_{k}(q_j^\top k_k)v_k.
+\mathrm{softmax}_{k}(q_j^\top k_k)v_k.
 ```
 
 This is a complete-graph context operator:

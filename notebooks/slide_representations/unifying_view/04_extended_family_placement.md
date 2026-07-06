@@ -41,7 +41,7 @@ H_i^{(\ell+1)}
 \mathcal{R}_{\ell}
 \left(
 \mathcal{C}_{\ell}
-\{h_v^{(\ell)}:v\in\operatorname{Ch}(u)\}
+\{h_v^{(\ell)}:v\in\mathrm{Ch}(u)\}
 \right).
 ```
 
@@ -87,7 +87,7 @@ Context:
 ```math
 q_m(h)
 =
-\operatorname{Assign}(h,c_m)
+\mathrm{Assign}(h,c_m)
 ```
 
 or:

@@ -69,7 +69,7 @@ Core operator:
 ```math
 z_{\text{fused}}
 =
-\operatorname{TensorFusion}
+\mathrm{TensorFusion}
 (z_{\text{path}},z_{\text{omic}}).
 ```
 

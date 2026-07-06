@@ -52,7 +52,7 @@ Let:
 ```math
 a_{ijc}
 =
-\operatorname*{softmax}_{j}(q_c^\top\phi(h_{ij})).
+\mathrm{softmax}_{j}(q_c^\top\phi(h_{ij})).
 ```
 
 Then:
@@ -78,7 +78,7 @@ For discrete competing risks:
 ```math
 a_{ijkc}
 =
-\operatorname*{softmax}_{j}(q_{kc}^\top\phi(h_{ij})).
+\mathrm{softmax}_{j}(q_{kc}^\top\phi(h_{ij})).
 ```
 
 Then:
@@ -132,7 +132,7 @@ This makes event types interpretable through morphology distributions.
 Let:
 
 ```math
-\widetilde H_i=\operatorname{GNN}(H_i,G_i).
+\widetilde H_i=\mathrm{GNN}(H_i,G_i).
 ```
 
 Cause readout:
@@ -140,7 +140,7 @@ Cause readout:
 ```math
 z_{ic}
 =
-\operatorname{READOUT}_{c}(\widetilde H_i).
+\mathrm{READOUT}_{c}(\widetilde H_i).
 ```
 
 Time-cause readout:
@@ -148,7 +148,7 @@ Time-cause readout:
 ```math
 z_{ikc}
 =
-\operatorname{READOUT}_{k,c}(\widetilde H_i).
+\mathrm{READOUT}_{k,c}(\widetilde H_i).
 ```
 
 Graph context is useful when event type depends on spatial arrangements such as

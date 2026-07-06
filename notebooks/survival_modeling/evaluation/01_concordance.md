@@ -107,7 +107,7 @@ r_i=-\int_0^{\tau}\widehat{S}_i(t)\,dt,
 ```
 
 ```math
-r_i=-\operatorname{median}_{\widehat{S}_i}(T).
+r_i=-\mathrm{median}_{\widehat{S}_i}(T).
 ```
 
 Different $\rho$ can produce different C-indices.

@@ -17,7 +17,7 @@ lateral:
 
 ## Bottom-Up Coarsening
 
-Given children $\operatorname{Ch}(u)$ of a parent node $u$, bottom-up coarsening
+Given children $\mathrm{Ch}(u)$ of a parent node $u$, bottom-up coarsening
 computes:
 
 ```math
@@ -25,7 +25,7 @@ h_u^{(\ell+1)}
 =
 \mathcal{R}_{\ell}
 \left(
-\{h_v^{(\ell)}:v\in\operatorname{Ch}(u)\}
+\{h_v^{(\ell)}:v\in\mathrm{Ch}(u)\}
 \right).
 ```
 
@@ -34,8 +34,8 @@ For mean coarsening:
 ```math
 h_u^{(\ell+1)}
 =
-\frac{1}{|\operatorname{Ch}(u)|}
-\sum_{v\in\operatorname{Ch}(u)}h_v^{(\ell)}.
+\frac{1}{|\mathrm{Ch}(u)|}
+\sum_{v\in\mathrm{Ch}(u)}h_v^{(\ell)}.
 ```
 
 For attention coarsening:
@@ -43,14 +43,14 @@ For attention coarsening:
 ```math
 a_{vu}^{(\ell)}
 =
-\operatorname*{softmax}_{v\in\operatorname{Ch}(u)}
+\mathrm{softmax}_{v\in\mathrm{Ch}(u)}
 s_\theta(h_v^{(\ell)}),
 ```
 
 ```math
 h_u^{(\ell+1)}
 =
-\sum_{v\in\operatorname{Ch}(u)}
+\sum_{v\in\mathrm{Ch}(u)}
 a_{vu}^{(\ell)}\phi_\theta(h_v^{(\ell)}).
 ```
 
@@ -72,7 +72,7 @@ For region-level graphs:
 ```math
 \mathcal{N}_\ell(u)
 =
-\operatorname{kNN}(c_u;\{c_v:v\in V_i^{(\ell)}\}).
+\mathrm{kNN}(c_u;\{c_v:v\in V_i^{(\ell)}\}).
 ```
 
 For image-pyramid transformers, lateral context can be full attention among
@@ -81,7 +81,7 @@ tokens at the same scale:
 ```math
 \bar H^{(\ell)}
 =
-\operatorname{Transformer}_\ell(H^{(\ell)}+P^{(\ell)}).
+\mathrm{Transformer}_\ell(H^{(\ell)}+P^{(\ell)}).
 ```
 
 ## Top-Down Conditioning
@@ -115,7 +115,7 @@ F_\theta
 \left(
 h_v^{(\ell)},
 \mathcal{R}_{\ell}
-\{h_w^{(\ell)}:w\in\operatorname{Ch}(\pi(v))\}
+\{h_w^{(\ell)}:w\in\mathrm{Ch}(\pi(v))\}
 \right).
 ```
 
@@ -193,7 +193,7 @@ h_u^{(\ell+1)}
 \mathcal{R}_{\ell}
 \left(
 \mathcal{C}_{\ell}
-\{h_v^{(\ell)}:v\in\operatorname{Ch}(u)\}
+\{h_v^{(\ell)}:v\in\mathrm{Ch}(u)\}
 \right)
 }
 ```

@@ -24,7 +24,7 @@ A softmax over $KC+1$ cells enforces this:
 ```math
 (p_{i11},\ldots,p_{iKC},p_{i,>K})
 =
-\operatorname{softmax}(u_i).
+\mathrm{softmax}(u_i).
 ```
 
 ## CIF And Survival
@@ -188,7 +188,7 @@ W\in\mathbb{R}^{(KC+1)\times d}.
 Then:
 
 ```math
-p_i=\operatorname{softmax}(u_i).
+p_i=\mathrm{softmax}(u_i).
 ```
 
 This makes each time-cause cell a probe of the same slide representation.
@@ -202,7 +202,7 @@ z_{ikc}
 \qquad
 p_{ikc}
 =
-\operatorname{softmax}_{k,c}(w_{kc}^\top z_{ikc}).
+\mathrm{softmax}_{k,c}(w_{kc}^\top z_{ikc}).
 ```
 
 Now different event types and horizons can attend to different morphology.

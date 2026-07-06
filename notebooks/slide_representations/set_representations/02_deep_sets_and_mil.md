@@ -140,7 +140,7 @@ w^\top
 \left(
 \tanh(Vh)
 \odot
-\operatorname{sigmoid}(Uh)
+\mathrm{sigmoid}(Uh)
 \right).
 ```
 
@@ -165,7 +165,7 @@ If:
 ```math
 \widetilde{H}_i
 =
-\operatorname{SetAttention}(H_i),
+\mathrm{SetAttention}(H_i),
 ```
 
 then:
@@ -179,7 +179,7 @@ P_\pi\widetilde{H}_i.
 An invariant readout gives:
 
 ```math
-z_i=\operatorname{Pool}(\widetilde{H}_i).
+z_i=\mathrm{Pool}(\widetilde{H}_i).
 ```
 
 This allows pairwise or higher-order patch interactions without explicit
@@ -192,7 +192,7 @@ instances:
 \widetilde{h}_j
 =
 \sum_k
-\operatorname*{softmax}_{k}
+\mathrm{softmax}_{k}
 \left(
 \frac{q_j^\top k_k}{\sqrt{d}}
 \right)
@@ -205,7 +205,7 @@ vectors $s_m$:
 ```math
 z_m
 =
-\operatorname{Attn}(s_m,\widetilde{H}_i,\widetilde{H}_i).
+\mathrm{Attn}(s_m,\widetilde{H}_i,\widetilde{H}_i).
 ```
 
 Inducing-point variants reduce all-pairs cost by routing interaction through a

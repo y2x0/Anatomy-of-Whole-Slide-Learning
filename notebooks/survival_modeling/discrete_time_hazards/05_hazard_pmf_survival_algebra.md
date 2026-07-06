@@ -190,7 +190,7 @@ Alternatively:
 ```math
 (p_1,\ldots,p_K,p_{>K})
 =
-\operatorname{softmax}(u_1,\ldots,u_K,u_{>K}).
+\mathrm{softmax}(u_1,\ldots,u_K,u_{>K}).
 ```
 
 This automatically normalizes the event-time distribution.

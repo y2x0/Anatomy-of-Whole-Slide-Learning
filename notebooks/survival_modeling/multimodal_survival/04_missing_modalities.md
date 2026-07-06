@@ -39,7 +39,7 @@ During training, randomly mask modalities:
 =
 M_i^mB_i^m,
 \qquad
-B_i^m\sim\operatorname{Bernoulli}(q_m).
+B_i^m\sim\mathrm{Bernoulli}(q_m).
 ```
 
 Train:

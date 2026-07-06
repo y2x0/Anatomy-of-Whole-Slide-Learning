@@ -70,7 +70,7 @@ stay near each other in sequence space.
 A model may learn or choose an order based on features:
 
 ```math
-\sigma_i=\operatorname{argsort}(r_\theta(h_{ij},c_{ij})).
+\sigma_i=\mathrm{argsort}(r_\theta(h_{ij},c_{ij})).
 ```
 
 This can bring relevant patches closer in sequence space, but it introduces a

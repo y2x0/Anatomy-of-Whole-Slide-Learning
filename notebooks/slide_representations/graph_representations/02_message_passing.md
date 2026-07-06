@@ -13,7 +13,7 @@ Layer $\ell$:
 ```math
 m_v^{(\ell)}
 =
-\operatorname*{AGG}_{u\in\mathcal{N}(v)}
+\mathrm{AGG}_{u\in\mathcal{N}(v)}
 \psi_\ell(h_v^{(\ell)},h_u^{(\ell)},e_{uv}),
 ```
 
@@ -55,7 +55,7 @@ Attention coefficient:
 ```math
 \alpha_{uv}
 =
-\operatorname*{softmax}_{u\in\mathcal{N}(v)}
+\mathrm{softmax}_{u\in\mathcal{N}(v)}
 a_\theta(h_v,h_u,e_{uv}).
 ```
 
@@ -86,9 +86,9 @@ A'=PAP^\top,
 then message passing satisfies:
 
 ```math
-\operatorname{GNN}(H',A')
+\mathrm{GNN}(H',A')
 =
-P\operatorname{GNN}(H,A),
+P\mathrm{GNN}(H,A),
 ```
 
 assuming aggregation is permutation invariant over neighbors.
@@ -170,7 +170,7 @@ h_v^{(\ell+1)}
 \phi_\ell
 \left(
 h_v^{(\ell)},
-\operatorname*{AGG}_{u\in\mathcal{N}(v)}
+\mathrm{AGG}_{u\in\mathcal{N}(v)}
 \psi_\ell(h_v^{(\ell)},h_u^{(\ell)},e_{uv})
 \right)
 }

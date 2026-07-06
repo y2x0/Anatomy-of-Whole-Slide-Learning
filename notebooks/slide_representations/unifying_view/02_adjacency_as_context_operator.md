@@ -12,7 +12,7 @@ context layer can be written:
 ```math
 m_j
 =
-\operatorname*{AGG}_{k\in\mathcal{N}_{G_i}(j)}
+\mathrm{AGG}_{k\in\mathcal{N}_{G_i}(j)}
 \psi_\theta(h_j,h_k,e_{jk}),
 ```
 
@@ -81,7 +81,7 @@ the update is:
 ```math
 \alpha_{j\ell}
 =
-\operatorname*{softmax}_{\ell}
+\mathrm{softmax}_{\ell}
 \left(
 \frac{q_j^\top k_\ell}{\sqrt{d}}
 \right).
@@ -135,7 +135,7 @@ Patch-GCN-style models choose edges from coordinates:
 ```math
 (u,v)\in E_i
 \quad\Longleftrightarrow\quad
-u\in\operatorname{kNN}_k(c_v).
+u\in\mathrm{kNN}_k(c_v).
 ```
 
 or:
@@ -170,7 +170,7 @@ A learned graph chooses neighbors from features and possibly coordinates:
 ```math
 A_{uv}
 =
-\operatorname*{softmax}_{u}
+\mathrm{softmax}_{u}
 g_\theta(h_v,h_u,c_v,c_u).
 ```
 
@@ -238,7 +238,7 @@ uses a learned morphology codebook:
 ```math
 q_m(h)
 =
-\operatorname{Assign}(h,c_m).
+\mathrm{Assign}(h,c_m).
 ```
 
 Failure mode:

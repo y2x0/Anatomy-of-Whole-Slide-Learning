@@ -59,9 +59,9 @@ Evaluation should inspect:
 If tiles are randomly split rather than slides or patients:
 
 ```math
-x_{ij}\in\operatorname{train},
+x_{ij}\in\mathrm{train},
 \qquad
-x_{ik}\in\operatorname{test},
+x_{ik}\in\mathrm{test},
 ```
 
 then evaluation is invalid. Patch-level feature extractors may memorize stain,
@@ -108,7 +108,7 @@ or test patients:
 ```math
 \widehat{S}_{\text{test}}(t\mid z_i)
 =
-\exp[-\exp(\eta_i)\widehat{\Lambda}_{0,\operatorname{train}}(t)].
+\exp[-\exp(\eta_i)\widehat{\Lambda}_{0,\mathrm{train}}(t)].
 ```
 
 Estimating the baseline on test outcomes leaks label distribution.

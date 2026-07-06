@@ -35,8 +35,8 @@ signal, then evidence is averaged away:
 ```math
 h_u^{(\ell+1)}
 =
-\frac{1}{|\operatorname{Ch}(u)|}
-\sum_{v\in\operatorname{Ch}(u)}h_v^{(\ell)}.
+\frac{1}{|\mathrm{Ch}(u)|}
+\sum_{v\in\mathrm{Ch}(u)}h_v^{(\ell)}.
 ```
 
 If only one child is positive:
@@ -46,13 +46,13 @@ h_{v^\star}^{(\ell)}
 \quad
 \text{with}
 \quad
-|\operatorname{Ch}(u)|\gg1,
+|\mathrm{Ch}(u)|\gg1,
 ```
 
 then its contribution has weight:
 
 ```math
-\frac{1}{|\operatorname{Ch}(u)|}.
+\frac{1}{|\mathrm{Ch}(u)|}.
 ```
 
 This is sparse-positive dilution inside the hierarchy.

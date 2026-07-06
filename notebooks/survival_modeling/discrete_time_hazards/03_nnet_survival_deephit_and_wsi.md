@@ -119,7 +119,7 @@ A more expressive WSI design is:
 ```math
 a_{ijk}
 =
-\operatorname*{softmax}_{j}(q_k^\top \phi(h_{ij})),
+\mathrm{softmax}_{j}(q_k^\top \phi(h_{ij})),
 \qquad
 z_{ik}=\sum_j a_{ijk}h_{ij},
 ```

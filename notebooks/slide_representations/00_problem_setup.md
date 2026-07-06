@@ -20,7 +20,7 @@ The slide must then be represented by some mathematical object:
 ```math
 \mathcal{X}_i
 =
-\operatorname{Rep}(H_i,\Gamma_i),
+\mathrm{Rep}(H_i,\Gamma_i),
 \qquad
 H_i=\{h_{ij}\}_{j=1}^{n_i}.
 ```

@@ -50,7 +50,7 @@ The parent map is:
 The children of a coarse unit $u\in V_i^{(\ell+1)}$ are:
 
 ```math
-\operatorname{Ch}(u)
+\mathrm{Ch}(u)
 =
 \{v\in V_i^{(\ell)}:\pi_i^{(\ell)}(v)=u\}.
 ```
@@ -110,7 +110,7 @@ A region-level encoder sees a collection of children:
 ```math
 h_u^{(1)}
 =
-E_1(\{h_v^{(0)}:v\in\operatorname{Ch}(u)\}).
+E_1(\{h_v^{(0)}:v\in\mathrm{Ch}(u)\}).
 ```
 
 A slide-level encoder sees regions:

@@ -11,7 +11,7 @@ Given patch coordinates $c_v\in\mathbb{R}^{2}$:
 ```math
 \mathcal{N}(v)
 =
-\operatorname{kNN}_{k}(c_v;\{c_u\}_{u\in V}).
+\mathrm{kNN}_{k}(c_v;\{c_u\}_{u\in V}).
 ```
 
 Edges:
@@ -44,7 +44,7 @@ with tissue density and missing tissue.
 ```math
 (u,v)\in E
 \quad\Longleftrightarrow\quad
-\operatorname{sim}(h_u,h_v)\ge\tau.
+\mathrm{sim}(h_u,h_v)\ge\tau.
 ```
 
 Inductive bias:
@@ -62,7 +62,7 @@ A learned adjacency:
 ```math
 A_{uv}
 =
-\operatorname{softmax}_{u}
+\mathrm{softmax}_{u}
 g_\theta(h_v,h_u,c_v,c_u).
 ```
 

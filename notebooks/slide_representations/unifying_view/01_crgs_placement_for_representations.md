@@ -184,7 +184,7 @@ Message passing computes:
 ```math
 \widetilde{H}_i
 =
-\operatorname{GNN}_\theta(H_i,A_i,E_i).
+\mathrm{GNN}_\theta(H_i,A_i,E_i).
 ```
 
 Readout gives:
@@ -198,9 +198,9 @@ z_i
 The valid symmetry is graph relabeling equivariance:
 
 ```math
-\operatorname{GNN}(PH_i,PA_iP^\top)
+\mathrm{GNN}(PH_i,PA_iP^\top)
 =
-P\operatorname{GNN}(H_i,A_i).
+P\mathrm{GNN}(H_i,A_i).
 ```
 
 The graph is not neutral preprocessing. It defines possible information flow.

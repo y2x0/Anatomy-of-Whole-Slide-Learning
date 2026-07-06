@@ -27,7 +27,7 @@ z=s_n
 or:
 
 ```math
-z=\operatorname{Pool}(u_1,\ldots,u_n).
+z=\mathrm{Pool}(u_1,\ldots,u_n).
 ```
 
 The state $s_j$ summarizes previous tokens.
@@ -47,9 +47,9 @@ V=HW_V.
 Then:
 
 ```math
-\operatorname{Attn}(H)
+\mathrm{Attn}(H)
 =
-\operatorname{softmax}
+\mathrm{softmax}
 \left(
 \frac{QK^\top}{\sqrt{d}}
 \right)V.
@@ -99,7 +99,7 @@ $j$ only through the intervening scan states.
 The readout can be:
 
 ```math
-z=\operatorname{Pool}(u_1,\ldots,u_n)
+z=\mathrm{Pool}(u_1,\ldots,u_n)
 ```
 
 or the final state.

@@ -107,7 +107,7 @@ A hazard must be nonnegative:
 Neural models usually enforce this with:
 
 ```math
-\lambda_\theta(t,z)=\operatorname{softplus}(g_\theta(t,z))
+\lambda_\theta(t,z)=\mathrm{softplus}(g_\theta(t,z))
 ```
 
 or:

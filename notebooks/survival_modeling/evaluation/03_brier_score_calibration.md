@@ -17,7 +17,7 @@ The model predicts:
 Without censoring:
 
 ```math
-\operatorname{BS}(t)
+\mathrm{BS}(t)
 =
 \frac{1}{n}\sum_i
 (Y_i^{S}(t)-\widehat{S}_i(t))^2.
@@ -34,7 +34,7 @@ With right censoring, use censoring survival:
 The IPCW Brier score is:
 
 ```math
-\operatorname{BS}^{c}(t)
+\mathrm{BS}^{c}(t)
 =
 \frac{1}{n}
 \sum_i
@@ -55,21 +55,21 @@ $t$ have true survival status $1$.
 For time range $[t_1,t_2]$:
 
 ```math
-\operatorname{IBS}
+\mathrm{IBS}
 =
 \frac{1}{t_2-t_1}
 \int_{t_1}^{t_2}
-\operatorname{BS}^{c}(t)\,dt.
+\mathrm{BS}^{c}(t)\,dt.
 ```
 
 Numerically:
 
 ```math
-\operatorname{IBS}
+\mathrm{IBS}
 \approx
 \frac{1}{t_2-t_1}
 \sum_{k}
-\operatorname{BS}^{c}(t_k)\Delta t_k.
+\mathrm{BS}^{c}(t_k)\Delta t_k.
 ```
 
 IBS evaluates the survival curve over time.
@@ -136,7 +136,7 @@ If the model outputs discrete hazards, survival is:
 ## Dense Summary
 
 ```math
-\operatorname{BS}^{c}(t)
+\mathrm{BS}^{c}(t)
 =
 \frac{1}{n}
 \sum_i

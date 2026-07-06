@@ -135,7 +135,7 @@ Continuous hazard:
 ```math
 \lambda_i(t)
 =
-\operatorname{softplus}
+\mathrm{softplus}
 \left[
 b(t)+\sum_m\beta_m(t)p_{im}
 \right].

@@ -53,8 +53,8 @@ If pretraining uses contrastive learning:
 \ell
 =
 -\log
-\frac{\exp(\operatorname{sim}(z_i,z_i^+)/\tau)}
-{\sum_k\exp(\operatorname{sim}(z_i,z_k^-)/\tau)}.
+\frac{\exp(\mathrm{sim}(z_i,z_i^+)/\tau)}
+{\sum_k\exp(\mathrm{sim}(z_i,z_k^-)/\tau)}.
 ```
 
 then the space is shaped by positive and negative pair definitions.
@@ -100,7 +100,7 @@ Adaptation changes the representation:
 ```math
 z_i
 =
-F_{\operatorname{FM},\theta}(S_i).
+F_{\mathrm{FM},\theta}(S_i).
 ```
 
 The mathematical object differs:

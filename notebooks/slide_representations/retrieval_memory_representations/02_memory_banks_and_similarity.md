@@ -43,7 +43,7 @@ where $t_r$ is a text or report embedding.
 Cosine similarity:
 
 ```math
-\operatorname{sim}(z_i,z_k)
+\mathrm{sim}(z_i,z_k)
 =
 \frac{z_i^\top z_k}{\|z_i\|\|z_k\|}.
 ```
@@ -51,7 +51,7 @@ Cosine similarity:
 Negative Euclidean distance:
 
 ```math
-\operatorname{sim}(z_i,z_k)
+\mathrm{sim}(z_i,z_k)
 =
 -\|z_i-z_k\|_2^2.
 ```
@@ -59,7 +59,7 @@ Negative Euclidean distance:
 Mahalanobis similarity:
 
 ```math
-\operatorname{sim}(z_i,z_k)
+\mathrm{sim}(z_i,z_k)
 =
 -(z_i-z_k)^\top\Sigma^{-1}(z_i-z_k).
 ```
@@ -67,7 +67,7 @@ Mahalanobis similarity:
 Learned similarity:
 
 ```math
-\operatorname{sim}_\theta(z_i,z_k)
+\mathrm{sim}_\theta(z_i,z_k)
 =
 g_\theta(z_i,z_k).
 ```
@@ -87,12 +87,12 @@ B_i
 The slide-to-slide similarity can be:
 
 ```math
-\operatorname{sim}(S_i,S_k)
+\mathrm{sim}(S_i,S_k)
 =
 \frac{1}{M}
 \sum_{m=1}^{M}
 \max_{r}
-\operatorname{sim}(b_{im},b_{kr}).
+\mathrm{sim}(b_{im},b_{kr}).
 ```
 
 This is a set-to-set matching score, not a single-vector comparison.
@@ -141,8 +141,8 @@ Retrieval can be written as attention over memory:
 ```math
 \alpha_{ir}
 =
-\operatorname*{softmax}_{r}
-\operatorname{sim}(q_i,k_r),
+\mathrm{softmax}_{r}
+\mathrm{sim}(q_i,k_r),
 ```
 
 ```math
@@ -179,7 +179,7 @@ This makes retrieval a memory-augmented context operator:
 \qquad
 \mathcal{M}(z_i)
 =
-\operatorname{Retrieve}_K(z_i;\mathcal{M})
+\mathrm{Retrieve}_K(z_i;\mathcal{M})
 }
 ```
 
