@@ -1,0 +1,139 @@
+# InfoNCE And Mutual Information Bounds
+
+InfoNCE is a classification loss over positives and sampled negatives.
+
+For query $q$, positive key $k^+$, and negative keys $k_1^-,\ldots,k_M^-$:
+
+```math
+\mathcal{L}_{\mathrm{NCE}}
+=
+-
+\log
+\frac{
+\exp(\mathrm{sim}(q,k^+)/\tau)
+}{
+\exp(\mathrm{sim}(q,k^+)/\tau)
++
+\sum_{m=1}^{M}
+\exp(\mathrm{sim}(q,k_m^-)/\tau)
+}.
+```
+
+Here $\tau$ is temperature.
+
+## Softmax Classification View
+
+The loss is cross entropy for identifying the positive key among candidates:
+
+```math
+P(k^+\mid q,\mathcal{K})
+=
+\frac{
+\exp(\mathrm{sim}(q,k^+)/\tau)
+}{
+\sum_{k\in\mathcal{K}}
+\exp(\mathrm{sim}(q,k)/\tau)
+}.
+```
+
+Thus contrastive labels are not class labels. They are index labels within a
+candidate set.
+
+## Mutual Information Bound
+
+Under ideal sampling assumptions, InfoNCE lower bounds mutual information:
+
+```math
+I(Q;K)
+\ge
+\log(M+1)
+-
+\mathcal{L}_{\mathrm{NCE}}.
+```
+
+This statement relies on negatives being sampled from the marginal and positives
+from the joint distribution.
+
+In WSI, this can fail because negatives may share disease class, tissue type,
+organ, stain, or patient-level factors with the query.
+
+## Gradient Shape
+
+Let:
+
+```math
+s_k
+=
+\mathrm{sim}(q,k)/\tau.
+```
+
+The softmax weight is:
+
+```math
+\pi_k
+=
+\frac{\exp(s_k)}
+{\sum_{\ell}\exp(s_\ell)}.
+```
+
+The gradient pulls the query toward the positive:
+
+```math
+\nabla_q\mathcal{L}
+\supset
+-
+\nabla_q s_{k^+},
+```
+
+and pushes it away from all candidates proportional to $\pi_k$:
+
+```math
+\nabla_q\mathcal{L}
+=
+\sum_k
+\pi_k\nabla_q s_k
+-
+\nabla_q s_{k^+}.
+```
+
+Hard negatives with high $\pi_k$ dominate repulsion.
+
+## Temperature
+
+Small $\tau$ sharpens the denominator:
+
+```math
+\pi_k
+\to
+\mathbf{1}\{k=\arg\max_\ell s_\ell\}.
+```
+
+Large $\tau$ spreads gradients across more negatives.
+
+## C/R/G/S Placement
+
+```text
+G:
+    can determine which negatives are truly negative or false negative
+
+C:
+    encoder learns invariances from positive construction
+
+R:
+    object embedding is the representation being contrasted
+
+S:
+    positive index among sampled candidates
+```
+
+## Dense Summary
+
+InfoNCE is mathematically clean only after specifying the sampling distribution:
+
+```math
+k^+\sim P(k\mid q),
+\qquad
+k^-\sim P(k).
+```
+
+In pathology, these distributions are design choices, not facts.

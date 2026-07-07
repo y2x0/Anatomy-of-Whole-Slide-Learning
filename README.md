@@ -69,3 +69,5 @@ math notes first.
 - `notebooks/pooling_operators/`: what information survives aggregation.
 - `notebooks/wsi_geometry/`: how spatial information is encoded, ignored, or
   learned.
+- `notebooks/weak_supervision/`: where supervision comes from and what latent
+  pathology variables it actually constrains.
