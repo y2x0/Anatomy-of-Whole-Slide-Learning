@@ -10,18 +10,18 @@ Weak supervision is limited by what the observed signal identifies.
 | Noisy bag label | $\widetilde Y$ | noisy-label prediction | clean $Y$, instances | noise channel $T$ or robust noise assumption |
 | Partial labels | $M\odot U$ | labeled subset | unlabeled subset | missingness model |
 | Region label | $\Gamma_R(Z_R)$ | region event | patch labels inside region | region bag map |
-| Pseudo-label | $\widehat U$ | teacher/model belief | true latent state | pseudo-label accuracy or correction |
+| Pseudo-label | $\widehat U_t=\Psi_t(H,G,S^{\mathrm{obs}},\theta_t,\mathcal{D})$ | teacher/model belief | true latent state | pseudo-label accuracy or correction |
 | Contrastive pair | $a\sim b$ | relation geometry | class probability or patch truth | valid positive and negative construction |
 | Report-derived label | text-to-label output | report mention pattern | full slide truth | report extraction and clinical semantics |
 
 ## Identifiability Definition
 
-A latent object $U$ is identifiable from $S$ if:
+A latent object $U$ is identifiable from $S^{\mathrm{obs}}$ if:
 
 ```math
-P_{\theta}(S\mid H,G)
+P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)
 =
-P_{\theta'}(S\mid H,G)
+P_{\theta',\alpha'}(S^{\mathrm{obs}}\mid H,G)
 \quad
 \forall H,G
 \quad
@@ -77,15 +77,16 @@ matches the task.
 
 ## Fisher Information View
 
-For parameters $\theta$, supervision $S$ provides Fisher information:
+For parameters $\theta$, observed supervision $S^{\mathrm{obs}}$ provides
+Fisher information when the observed likelihood is correctly specified:
 
 ```math
-\mathcal{I}_S(\theta)
+\mathcal{I}_{S^{\mathrm{obs}}}(\theta)
 =
 \mathbb{E}
 \left[
-\nabla_\theta\log P_\theta(S\mid H,G)
-\nabla_\theta\log P_\theta(S\mid H,G)^\top
+\nabla_\theta\log P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)
+\nabla_\theta\log P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)^\top
 \right].
 ```
 
@@ -101,15 +102,39 @@ Full latent labels would provide:
 \right].
 ```
 
-Weak supervision loses information when:
+It is tempting to write:
 
 ```math
-\mathcal{I}_S(\theta)
+\mathcal{I}_{S^{\mathrm{obs}}}(\theta)
 \prec
 \mathcal{I}_U(\theta).
 ```
 
-The missing directions correspond to unidentifiable latent structure.
+But that matrix ordering is not automatic. A safer statement is about rank and
+null spaces. If:
+
+```math
+v^\top
+\nabla_\theta
+\log P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)
+=
+0
+```
+
+almost surely while:
+
+```math
+v^\top
+\nabla_\theta
+\log P_\theta(U\mid H,G)
+\ne
+0
+```
+
+with positive probability, then direction $v$ is invisible to the weak
+supervision but visible to the complete latent labels. Those directions are
+where instance explanations can change without changing the observed-label
+likelihood.
 
 ## Failure Geometry
 
@@ -117,7 +142,7 @@ Weak supervision induces flat directions:
 
 ```math
 \nabla_\theta
-P_\theta(S\mid H,G)
+\log P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)
 =
 0
 ```
@@ -139,13 +164,13 @@ changing observed-label likelihood.
 The right question is:
 
 ```text
-What does S identify?
+What does S^{obs} identify?
 ```
 
 Not:
 
 ```text
-What do we hope S means?
+What do we hope S^{obs} means?
 ```
 
 If a latent variable is not identified by the supervision channel, interpreting

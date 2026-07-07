@@ -147,6 +147,38 @@ template artifacts
 
 Thus report-derived weak labels are noisy observations, not ground truth.
 
+Campanella-style clinical weak supervision uses reported diagnoses as labels at
+scale. The observed label is closer to:
+
+```math
+\widetilde Y_{\mathrm{case}}
+=
+E_{\mathrm{report}}(R_{\mathrm{case}})
+```
+
+than to a clean patch or slide-local label. This creates several separate
+channels:
+
+```text
+case-to-slide mapping:
+    which slides inherit the case diagnosis
+
+report extraction:
+    how diagnosis text becomes a discrete label
+
+negative curation:
+    whether negative slides are truly negative or only not reported positive
+
+clinical target:
+    whether the label describes the whole case, the submitted tissue, or a local lesion
+
+aggregation:
+    how patch or tile predictions become a case/slide prediction
+```
+
+Calling this "label noise" is correct but incomplete. The report is an
+observation process with its own unit of analysis.
+
 ## C/R/G/S Placement
 
 ```text

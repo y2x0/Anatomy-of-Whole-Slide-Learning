@@ -92,7 +92,7 @@ classifiers.
 Partial labels require modeling the annotation process:
 
 ```math
-S
+S^{\mathrm{obs}}
 =
 (M,M\odot U).
 ```

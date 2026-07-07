@@ -1,44 +1,29 @@
 # Pseudo-Bags And Distillation
 
-Some WSI methods create smaller bags from a large slide, train or score those
-pseudo-bags, then distill information back into a slide model.
+Pseudo-bag methods reduce a huge slide bag into smaller bags, train a local MIL
+model on those smaller bags, distill features from that model, and then train a
+second slide-level MIL model.
 
-DTFD-MIL-style methods fit this broad pattern.
+DTFD-MIL is the anchor example. It is not a generic teacher-student method. Its
+specific move is double-tier feature distillation.
 
-## Pseudo-Bag Partition
+References: [DTFD-MIL arXiv](https://arxiv.org/abs/2203.12081),
+[CVPR open-access paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_DTFD-MIL_Double-Tier_Feature_Distillation_Multiple_Instance_Learning_for_Histopathology_Whole_CVPR_2022_paper.pdf).
 
-Partition slide instances into $M_i$ pseudo-bags:
+## Tier-1 Pseudo-Bag Partition
+
+For slide $i$, randomly partition instances into $M_i$ pseudo-bags:
 
 ```math
 \{1,\ldots,n_i\}
 =
 \bigcup_{m=1}^{M_i}
-B_{im},
+\mathcal{B}_{im},
 \qquad
-B_{im}\cap B_{im'}=\varnothing.
+\mathcal{B}_{im}\cap\mathcal{B}_{im'}=\varnothing.
 ```
 
-Each pseudo-bag has an embedding:
-
-```math
-z_{im}
-=
-\mathcal{R}_{\mathrm{local}}
-(\{h_{ij}:j\in B_{im}\}).
-```
-
-The slide readout is:
-
-```math
-z_i
-=
-\mathcal{R}_{\mathrm{global}}
-(\{z_{im}\}_{m=1}^{M_i}).
-```
-
-## Pseudo-Bag Label
-
-The slide label may be assigned to each pseudo-bag:
+Each pseudo-bag inherits the parent slide label:
 
 ```math
 \widehat Y_{im}
@@ -46,99 +31,239 @@ The slide label may be assigned to each pseudo-bag:
 Y_i.
 ```
 
-This is noisy because a positive slide can contain negative pseudo-bags.
-
-Alternatively, a teacher can score pseudo-bags:
+This is a generated target:
 
 ```math
-\widehat q_{im}
+\widehat Y_{im}
 =
-P_\phi(Y\mid B_{im}).
+\Psi_{\mathrm{split}}(Y_i,\mathcal{B}_{im}),
 ```
 
-Then training uses:
+not an observed pseudo-bag label.
+
+## Tier-1 MIL
+
+The first-tier model aggregates each pseudo-bag:
 
 ```math
-\mathcal{L}_{\mathrm{pb}}
+z_{im}^{(1)}
+=
+\mathcal{R}_1(\{h_{ij}:j\in\mathcal{B}_{im}\}),
+```
+
+and predicts:
+
+```math
+\widehat p_{im}^{(1)}
+=
+\mathcal{H}_1(z_{im}^{(1)}).
+```
+
+The Tier-1 loss copies the slide label to the pseudo-bag:
+
+```math
+\mathcal{L}_1
 =
 \sum_{i,m}
-\mathrm{CE}
-(P_\theta(Y\mid B_{im}),\widehat q_{im}).
+\mathrm{CE}(\widehat p_{im}^{(1)},Y_i).
 ```
+
+This is noisy. If $Y_i=1$, many pseudo-bags can contain no positive evidence:
+
+```math
+Y_i=1,
+\qquad
+Y_{im}^{\star}=0,
+\qquad
+\widehat Y_{im}=1.
+```
+
+DTFD-MIL accepts that noise because pseudo-bags are much smaller than whole
+slides and can yield more direct optimization signals.
+
+## Why Attention Is Not Treated As Probability
+
+Under attention MIL, a pseudo-bag representation may be:
+
+```math
+z_{im}^{(1)}
+=
+\sum_{j\in\mathcal{B}_{im}}
+a_{ij}^{(m)}v(h_{ij}).
+```
+
+The attention weight $a_{ij}^{(m)}$ is a readout coefficient. It is not, by
+itself, an instance probability:
+
+```math
+a_{ij}^{(m)}
+\ne
+P(Z_{ij}=1\mid H_i,Y_i)
+```
+
+unless an additional probabilistic model justifies that interpretation.
+
+DTFD-MIL therefore uses gradient-based evidence, described in the paper through
+Grad-CAM, to derive an instance-discriminative score from the Tier-1 model.
+Schematically:
+
+```math
+\rho_{ij}^{(m)}
+=
+\mathrm{Normalize}
+\left(
+\mathrm{GradCAM}
+(o_{im}^{(1)},h_{ij})
+\right).
+```
+
+The important point is not the exact notation above; it is the distinction:
+derived instance evidence is computed from the trained pseudo-bag classifier,
+rather than read directly from raw attention weights.
 
 ## Feature Distillation
 
-If a local model computes pseudo-bag features:
+Tier-1 produces a pseudo-bag feature set:
+
+```math
+\{h_{ij}:j\in\mathcal{B}_{im}\}
+\longrightarrow
+u_{im}.
+```
+
+DTFD-MIL compares feature distillation strategies that choose or aggregate
+features using derived instance evidence or attention-like scores:
+
+```text
+MaxS:
+    select the feature with maximum derived instance score
+
+MaxMinS:
+    use both maximum-score and minimum-score evidence
+
+MAS:
+    select by maximum attention score
+
+AFS:
+    aggregate or select features with a learned/attention-based feature rule
+```
+
+Mathematically, these strategies define a second generated target:
 
 ```math
 u_{im}
 =
-F_\phi(B_{im}),
+\Phi_{\mathrm{distill}}
+\left(
+\{h_{ij}\}_{j\in\mathcal{B}_{im}},
+\{\rho_{ij}^{(m)}\}_{j\in\mathcal{B}_{im}},
+\{a_{ij}^{(m)}\}_{j\in\mathcal{B}_{im}}
+\right).
 ```
 
-the slide model can learn:
+The feature $u_{im}$ is not an observed region label. It is an algorithmic
+summary chosen by the Tier-1 model.
+
+## Tier-2 Slide MIL
+
+The second tier treats distilled pseudo-bag features as instances:
 
 ```math
-z_i
+z_i^{(2)}
 =
-\mathcal{R}_\theta(\{u_{im}\}_{m=1}^{M_i}).
+\mathcal{R}_2(\{u_{im}\}_{m=1}^{M_i}),
 ```
 
-The supervision is no longer only $Y_i$; it includes the intermediate
-representation produced by the distillation process.
+```math
+\widehat p_i^{(2)}
+=
+\mathcal{H}_2(z_i^{(2)}).
+```
+
+The slide loss is:
+
+```math
+\mathcal{L}_2
+=
+\sum_i
+\mathrm{CE}(\widehat p_i^{(2)},Y_i).
+```
+
+The full logic is therefore:
+
+```math
+Y_i
+\to
+\{\widehat Y_{im}\}_m
+\to
+\{u_{im}\}_m
+\to
+\widehat Y_i.
+```
 
 ## Bias-Variance Tradeoff
 
 Pseudo-bags reduce bag size:
 
 ```math
-|B_{im}|
+|\mathcal{B}_{im}|
 \ll
 n_i.
 ```
 
-This improves optimization and localizes evidence, but increases label noise:
+This improves optimization and can concentrate evidence. But it changes the
+noise model from slide-label noise:
 
 ```math
-P(\widehat Y_{im}\ne Y_{im}^{\mathrm{true}})
+P(\widetilde Y_i\ne Y_i)
 ```
 
-can be high when slide labels are copied to all pseudo-bags.
+to pseudo-bag label noise:
+
+```math
+P(\widehat Y_{im}\ne Y_{im}^{\star}\mid Y_i).
+```
+
+Positive slides are the dangerous case because copied positive labels create
+many false-positive pseudo-bags.
 
 ## C/R/G/S Placement
 
 ```text
 G:
-    pseudo-bags may be random, clustered, spatial, or attention-defined
+    pseudo-bags are random partitions in DTFD-MIL, though other methods may use spatial or clustered splits
 
 C:
-    local pseudo-bag features are learned before global context
+    Tier-1 local MIL shapes pseudo-bag features before Tier-2 slide MIL
 
 R:
-    local and global readouts are coupled
+    local readout creates distilled pseudo-bag features; global readout aggregates them
 
 S:
-    slide labels are converted into pseudo-bag labels or teacher scores
+    observed slide labels are copied to pseudo-bags and converted into distilled features
 ```
 
 ## Dense Summary
 
-Pseudo-bag methods trade one hard weak-supervision problem:
+DTFD-MIL trades one weakly supervised problem:
 
 ```math
 Y_i
 \text{ supervises }
-n_i
-\text{ patches}
+\{h_{ij}\}_{j=1}^{n_i}
 ```
 
-for many smaller noisy problems:
+for a two-stage generated-target chain:
 
 ```math
+Y_i
+\to
 \widehat Y_{im}
-\text{ supervises }
-B_{im}.
+\to
+u_{im}
+\to
+\widehat Y_i.
 ```
 
-The method succeeds when pseudo-bag construction increases signal concentration
-more than it increases label noise.
+The method succeeds when smaller pseudo-bags and distilled features improve
+optimization more than copied slide labels corrupt local learning.

@@ -7,11 +7,11 @@ The key object is the supervision channel:
 ```math
 U
 \to
-S.
+S^{\mathrm{obs}}.
 ```
 
-The model never sees complete latent truth $U$. It sees $S$ and optimizes a
-surrogate objective.
+The model never sees complete latent truth $U$. It sees $S^{\mathrm{obs}}$,
+may generate extra targets $\widehat U_t$, and optimizes a surrogate objective.
 
 ## Files
 
@@ -21,3 +21,5 @@ surrogate objective.
 - `04_noise_and_identifiability_matrix.md`: what is identifiable under each signal.
 - `05_design_checklist.md`: questions every weak-supervision method should answer.
 - `06_information_and_elbo_view.md`: data processing, missing information, and variational bounds.
+- `07_assumption_theorem_template.md`: theorem-style reporting block for method notes.
+- `08_toy_counterexamples.md`: minimal worlds where weak supervision cannot identify the desired latent object.

@@ -19,13 +19,16 @@ Which components are actually needed for the task?
 Define the supervision:
 
 ```math
-S_i
+S_i^{\mathrm{obs}}
 \sim
 Q(S\mid U_i,H_i,G_i).
 ```
 
-Is $S_i$ a bag label, noisy label, partial annotation, pseudo-label, contrastive
-pair, report-derived label, or mixture?
+Is $S_i^{\mathrm{obs}}$ a bag label, noisy label, partial annotation,
+contrastive pair, report-derived label, or mixture?
+
+Do not put model-generated pseudo-labels here unless they are genuinely
+observed from outside the training algorithm.
 
 ## 3. Bag Map
 
@@ -73,11 +76,14 @@ For pseudo-labels, define:
 ```math
 \widehat U_i
 =
-\Psi_\theta(H_i,G_i,S_i).
+\Psi_t(H_i,G_i,S_i^{\mathrm{obs}},\theta_t,\mathcal{D}).
 ```
 
 Is $\Psi$ thresholding, top-k attention, teacher prediction, clustering, or
 pseudo-bag construction?
+
+State whether gradients flow through $\Psi_t$ or whether the generated target
+is treated as a stopped, fixed target during the update.
 
 ## 7. Contrastive Relation
 
@@ -96,7 +102,7 @@ What latent equivalence relation does $a\sim b$ approximate?
 State what is identifiable:
 
 ```math
-S
+S^{\mathrm{obs}}
 \Rightarrow
 Y?
 \quad
@@ -114,7 +120,7 @@ Do not interpret an unidentifiable variable as if it were supervised.
 Every method should include one counterexample:
 
 ```text
-same observed supervision S
+same observed supervision S^{obs}
 different latent truth U
 same training loss
 different desired interpretation
@@ -148,7 +154,7 @@ G:
     how supervision shapes geometry
 
 S:
-    what signal is observed and how it is generated
+    what signal is observed and which targets are generated from it
 ```
 
 ## Dense Summary
@@ -158,7 +164,9 @@ A weak-supervision method is mathematically legible when the reader can fill:
 ```math
 U
 \xrightarrow{Q}
-S
+S^{\mathrm{obs}}
+\xrightarrow{\Psi}
+\widehat U
 \xrightarrow{\ell}
 \theta
 \xrightarrow{F_\theta}

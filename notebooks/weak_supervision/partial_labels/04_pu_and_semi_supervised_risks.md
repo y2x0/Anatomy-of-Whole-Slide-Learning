@@ -97,6 +97,82 @@ R_U^{-}(g)
 
 This is the basic PU correction.
 
+## Assumptions Behind The Correction
+
+The algebra above is not enough. PU risk correction also needs a sampling
+model for why positives are labeled.
+
+Let $L\in\{0,1\}$ indicate whether an instance receives a positive annotation.
+Under SCAR:
+
+```math
+P(L=1\mid Z=1,H,G)
+=
+c,
+```
+
+and:
+
+```math
+P(L=1\mid Z=0,H,G)
+=
+0.
+```
+
+Then labeled positives are representative of all positives:
+
+```math
+P(H\mid L=1,Z=1)
+=
+P(H\mid Z=1).
+```
+
+Under SAR, labeling can depend on observed covariates:
+
+```math
+P(L=1\mid Z=1,H,G)
+=
+c(H,G).
+```
+
+Under MNAR, labeling depends on unobserved morphology or difficulty:
+
+```math
+P(L=1\mid Z=1,H,G,U_{\mathrm{hidden}})
+```
+
+and the standard PU estimator is generally biased.
+
+## Class Prior And Non-Negative Correction
+
+The correction requires the class prior:
+
+```math
+\pi
+=
+P(Z=1).
+```
+
+If $\pi$ is wrong, the negative-risk estimate:
+
+```math
+R_U^{-}(g)-\pi R_1^{-}(g)
+```
+
+can become negative in finite samples. Non-negative PU methods replace this
+term by a constrained version:
+
+```math
+\max
+\left\{
+0,
+R_U^{-}(g)-\pi R_1^{-}(g)
+\right\}.
+```
+
+This is not just numerical hygiene. It acknowledges that the unbiased estimator
+can overfit by driving the estimated negative risk below zero.
+
 ## Consistency Regularization
 
 For unlabeled instances, a semi-supervised objective can impose:

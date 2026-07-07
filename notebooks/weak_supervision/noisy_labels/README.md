@@ -19,6 +19,7 @@ selection.
 - `03_robust_losses_and_small_loss_selection.md`: robust objectives and co-teaching logic.
 - `04_instance_noise_under_bag_labels.md`: how slide noise corrupts latent patch supervision.
 - `05_failure_modes.md`: unidentifiable noise and shortcut amplification.
+- `06_report_derived_labels_and_campanella.md`: report labels, case/slide mapping, and clinical weak supervision.
 
 ## C/R/G/S Placement
 

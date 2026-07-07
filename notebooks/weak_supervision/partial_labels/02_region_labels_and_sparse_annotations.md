@@ -5,7 +5,7 @@ Often supervision is not a patch label but a region label.
 Let regions be:
 
 ```math
-B_{ir}
+\mathcal{B}_{ir}
 \subset
 \{1,\ldots,n_i\},
 \qquad
@@ -17,7 +17,7 @@ A region label is:
 ```math
 Y_{ir}^{\mathrm{reg}}
 =
-\Gamma_r(\{Z_{ij}:j\in B_{ir}\}).
+\Gamma_r(\{Z_{ij}:j\in\mathcal{B}_{ir}\}).
 ```
 
 The map $\Gamma_r$ may be OR, burden, majority, or pathologist-defined.
@@ -29,7 +29,7 @@ For lesion-present annotation:
 ```math
 Y_{ir}^{\mathrm{reg}}
 =
-\max_{j\in B_{ir}}Z_{ij}.
+\max_{j\in\mathcal{B}_{ir}}Z_{ij}.
 ```
 
 The region likelihood is:
@@ -38,39 +38,42 @@ The region likelihood is:
 P_\theta(Y_{ir}^{\mathrm{reg}}=1\mid H_i)
 =
 1-
-\prod_{j\in B_{ir}}(1-p_{ij}).
+\prod_{j\in\mathcal{B}_{ir}}(1-p_{ij}).
 ```
 
 This is MIL inside the region.
 
 ## Region Burden Label
 
-If a region label means prevalence:
+If a region label means prevalence, define a burden scalar:
 
 ```math
-B_{ir}
+b_{ir}^{\star}
 =
-\frac{1}{|B_{ir}|}
-\sum_{j\in B_{ir}}Z_{ij}.
+\frac{1}{|\mathcal{B}_{ir}|}
+\sum_{j\in\mathcal{B}_{ir}}Z_{ij}.
 ```
 
-A continuous burden annotation $b_{ir}$ can be modeled with:
+A continuous burden annotation $b_{ir}^{\mathrm{obs}}$ can be modeled with:
 
 ```math
 \widehat b_{ir}
 =
-\frac{1}{|B_{ir}|}
-\sum_{j\in B_{ir}}p_{ij},
+\frac{1}{|\mathcal{B}_{ir}|}
+\sum_{j\in\mathcal{B}_{ir}}p_{ij},
 ```
 
-and:
+and a measurement-error likelihood:
 
 ```math
-\mathcal{L}_{\mathrm{burden}}
-=
-\sum_{i,r}
-(\widehat b_{ir}-b_{ir})^2.
+b_{ir}^{\mathrm{obs}}
+\sim
+\mathrm{Normal}
+(\widehat b_{ir},\sigma_{\mathrm{ann}}^2),
 ```
+
+or a binomial-style count likelihood if the annotation is a count. A naked MSE
+is only a Gaussian measurement-error assumption and should be stated as such.
 
 ## Sparse Point Annotation
 

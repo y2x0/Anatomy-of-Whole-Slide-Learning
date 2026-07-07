@@ -5,7 +5,7 @@ Partial labels observe some latent variables but not all of them.
 The supervision has the form:
 
 ```math
-S_i
+S_i^{\mathrm{obs}}
 =
 \{(a,y_a):a\in\mathcal{O}_i\},
 ```

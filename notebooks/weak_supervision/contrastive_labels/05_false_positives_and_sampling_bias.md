@@ -56,19 +56,52 @@ u_i^\top u_k
 
 ## Class Collision
 
-If negatives are sampled from the marginal:
+For a fixed anchor with class $Y_i=c$, a negative sampled from the marginal
+collides with the anchor class with probability:
 
 ```math
-k^-\sim P(k),
+P(Y_{k^-}=c\mid Y_i=c)
+=
+P(Y=c).
 ```
 
-then the probability of class collision is:
+Before conditioning on the anchor, the average collision probability is:
 
 ```math
 P(Y_{k^-}=Y_i)
 =
 \sum_c
-P(Y_i=c)^2.
+P(Y=c)^2.
+```
+
+This class-level formula is still too weak for pathology. The more relevant
+collision is latent morphology:
+
+```math
+P(U_{k^-}\sim U_i\mid Y_i=c),
+```
+
+where $U$ may include tissue state, grade, organ, stain, treatment effect, or
+subtype. Two objects can collide morphologically even when their observed labels
+are different:
+
+```math
+Y_{k^-}
+\ne
+Y_i,
+\qquad
+U_{k^-}\sim U_i.
+```
+
+Likewise, two objects can share the observed label while representing different
+latent mechanisms:
+
+```math
+Y_{k^-}
+=
+Y_i,
+\qquad
+U_{k^-}\not\sim U_i.
 ```
 
 In imbalanced datasets, majority classes create many false negatives.

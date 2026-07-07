@@ -18,6 +18,7 @@ and often treats other sampled items as negatives.
 - `03_supervised_contrastive_mil.md`: slide-label positives and MIL ambiguity.
 - `04_multimodal_and_retrieval_pairs.md`: image-text, retrieval, and memory supervision.
 - `05_false_positives_and_sampling_bias.md`: false negatives, class collision, and cohort bias.
+- `06_wsi_contrastive_method_cards.md`: SC-MIL, SCL-WC, LACL, RetCCL/CTransPath, CONCH, and PLIP.
 
 ## C/R/G/S Placement
 

@@ -101,7 +101,7 @@ positive.
 Pseudo-labeling strengthens weak supervision by inventing missing labels:
 
 ```math
-S
+S^{\mathrm{obs}}
 \to
 \widehat U.
 ```

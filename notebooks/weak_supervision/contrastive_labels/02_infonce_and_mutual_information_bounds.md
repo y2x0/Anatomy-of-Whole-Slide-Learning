@@ -41,21 +41,55 @@ candidate set.
 
 ## Mutual Information Bound
 
-Under ideal sampling assumptions, InfoNCE lower bounds mutual information:
+Under ideal sampling assumptions, the expected InfoNCE objective lower bounds
+mutual information:
 
 ```math
 I(Q;K)
 \ge
 \log(M+1)
 -
-\mathcal{L}_{\mathrm{NCE}}.
+\mathbb{E}[\mathcal{L}_{\mathrm{NCE}}].
 ```
 
-This statement relies on negatives being sampled from the marginal and positives
-from the joint distribution.
+This statement is not a property of an arbitrary minibatch. It relies on:
+
+```math
+(q,k^+)
+\sim
+P_{QK},
+```
+
+```math
+k_m^-
+\sim
+P_K
+\quad
+\text{iid and independent of }q,
+```
+
+and on a critic rich enough to approximate a density ratio:
+
+```math
+\exp(f(q,k))
+\propto
+\frac{p(k\mid q)}{p(k)}.
+```
 
 In WSI, this can fail because negatives may share disease class, tissue type,
 organ, stain, or patient-level factors with the query.
+
+If negatives are sampled from a biased batch distribution $P_B$ rather than
+the population marginal $P_K$, the contrastive objective estimates a different
+classification problem:
+
+```math
+k_m^-
+\sim
+P_B
+\ne
+P_K.
+```
 
 ## Gradient Shape
 

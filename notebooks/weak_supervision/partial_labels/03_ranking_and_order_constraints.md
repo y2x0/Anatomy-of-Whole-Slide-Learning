@@ -57,15 +57,15 @@ For regions:
 r_{ir}
 =
 \mathcal{R}_{\mathrm{reg}}
-(\{h_{ij}:j\in B_{ir}\}).
+(\{h_{ij}:j\in\mathcal{B}_{ir}\}).
 ```
 
 If region $r$ is more suspicious than $s$:
 
 ```math
-B_{ir}
+\mathcal{B}_{ir}
 \succ
-B_{is},
+\mathcal{B}_{is},
 ```
 
 then:

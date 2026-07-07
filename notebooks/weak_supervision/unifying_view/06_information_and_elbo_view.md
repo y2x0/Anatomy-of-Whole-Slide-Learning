@@ -2,19 +2,19 @@
 
 Weak supervision can be understood as information loss.
 
-Let $U$ be the latent truth and $S$ the observed supervision:
+Let $U$ be the latent truth and $S^{\mathrm{obs}}$ the observed supervision:
 
 ```math
 U
 \to
-S.
+S^{\mathrm{obs}}.
 ```
 
-If $S$ is generated from $U$ through an observation channel, then by data
-processing:
+If $S^{\mathrm{obs}}$ is generated from $U$ through an observation channel, then
+by data processing:
 
 ```math
-I(U;S\mid H,G)
+I(U;S^{\mathrm{obs}}\mid H,G)
 \le
 H(U\mid H,G).
 ```
@@ -22,12 +22,12 @@ H(U\mid H,G).
 Usually:
 
 ```math
-I(U;S\mid H,G)
+I(U;S^{\mathrm{obs}}\mid H,G)
 <
 H(U\mid H,G),
 ```
 
-because $S$ is a compressed or corrupted view of $U$.
+because $S^{\mathrm{obs}}$ is a compressed or corrupted view of $U$.
 
 ## Missing Information
 
@@ -36,7 +36,7 @@ Define the missing information as:
 ```math
 \mathcal{M}
 =
-H(U\mid S,H,G).
+H(U\mid S^{\mathrm{obs}},H,G).
 ```
 
 If $\mathcal{M}=0$, the observed supervision identifies the latent truth.
@@ -47,12 +47,13 @@ If:
 \mathcal{M}>0,
 ```
 
-then multiple latent explanations remain possible after observing $S$.
+then multiple latent explanations remain possible after observing
+$S^{\mathrm{obs}}$.
 
 For bag labels:
 
 ```math
-S
+S^{\mathrm{obs}}
 =
 Y
 =
@@ -76,14 +77,16 @@ If $U$ were observed, one could maximize:
 \log P_\theta(U\mid H,G).
 ```
 
-But under weak supervision, the observed likelihood is:
+But under weak supervision, the observed likelihood must include the observation
+channel:
 
 ```math
-\log P_\theta(S\mid H,G)
+\log P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)
 =
 \log
 \sum_U
-P_\theta(S,U\mid H,G).
+Q_\alpha(S^{\mathrm{obs}}\mid U,H,G)
+P_\theta(U\mid H,G).
 ```
 
 The sum over $U$ is where latent ambiguity enters.
@@ -93,11 +96,13 @@ The sum over $U$ is where latent ambiguity enters.
 For any variational distribution $q(U)$:
 
 ```math
-\log P_\theta(S\mid H,G)
+\log P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)
 \ge
 \mathbb{E}_{q(U)}
 \left[
-\log P_\theta(S,U\mid H,G)
+\log Q_\alpha(S^{\mathrm{obs}}\mid U,H,G)
++
+\log P_\theta(U\mid H,G)
 -
 \log q(U)
 \right].
@@ -110,24 +115,26 @@ The gap is:
 \left(
 q(U)
 \;\|\;
-P_\theta(U\mid S,H,G)
+P_{\theta,\alpha}(U\mid S^{\mathrm{obs}},H,G)
 \right).
 ```
 
 Thus exact inference requires the posterior:
 
 ```math
-P_\theta(U\mid S,H,G).
+P_{\theta,\alpha}(U\mid S^{\mathrm{obs}},H,G).
 ```
 
-Weakly supervised WSI methods usually approximate this posterior implicitly.
+Weakly supervised WSI methods usually do not optimize this exact ELBO. The ELBO
+view is a diagnostic analogy unless the method explicitly defines $U$, $Q$, and
+a variational family $q$.
 
-## Method Families As Posterior Approximations
+## Method Families As Posterior Analogies
 
 Mean or attention MIL:
 
 ```text
-does not explicitly estimate U; learns a bag statistic predictive of S
+does not explicitly estimate U; learns a bag statistic predictive of observed supervision
 ```
 
 Max MIL:
@@ -158,7 +165,8 @@ q(U)
 \delta_{\Psi(a,Y)}
 ```
 
-on selected top/bottom attention instances.
+on selected top/bottom attention instances, but this is only an analogy unless a
+probabilistic model makes attention extremes a MAP estimate.
 
 Teacher-student:
 
@@ -185,24 +193,24 @@ If:
 ```math
 U
 \to
-S
+S^{\mathrm{obs}}
 \to
 \theta
 ```
 
 then the model cannot recover components of $U$ that leave no statistical trace
-in $S$ or $H,G$.
+in $S^{\mathrm{obs}}$ or $H,G$.
 
 For instance localization:
 
 ```math
-I(Z_j;S\mid H,G)
+I(Z_j;S^{\mathrm{obs}}\mid H,G)
 ```
 
 may be small even when:
 
 ```math
-I(Y;S\mid H,G)
+I(Y;S^{\mathrm{obs}}\mid H,G)
 ```
 
 is large.
@@ -212,18 +220,17 @@ fails.
 
 ## Sufficient Supervision
 
-A supervision signal $S$ is sufficient for a target $T(U)$ if:
+A supervision signal $S^{\mathrm{obs}}$ exactly recovers a target $T(U)$ if:
 
 ```math
-T(U)
-\perp
-U
-\mid
-S,H,G.
+H(T(U)\mid S^{\mathrm{obs}},H,G)
+=
+0.
 ```
 
-Equivalently, observing $S,H,G$ preserves all information about $T(U)$ needed
-for prediction.
+For prediction rather than exact recovery, the weaker useful statement is that
+the Bayes risk using $S^{\mathrm{obs}},H,G$ equals the Bayes risk using the full
+latent object $U,H,G$ for the target functional $T$.
 
 Bag labels may be sufficient for slide classification:
 
@@ -244,13 +251,13 @@ Weak supervision is information compression:
 ```math
 U
 \to
-S.
+S^{\mathrm{obs}}.
 ```
 
 The central quantity is:
 
 ```math
-H(U\mid S,H,G).
+H(U\mid S^{\mathrm{obs}},H,G).
 ```
 
 If this conditional entropy is large, any confident latent explanation requires

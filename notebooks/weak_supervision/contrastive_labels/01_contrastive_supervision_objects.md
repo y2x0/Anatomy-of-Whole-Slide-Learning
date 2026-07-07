@@ -31,7 +31,7 @@ and candidate negatives:
 The supervision signal is:
 
 ```math
-S
+S^{\mathrm{obs}}
 =
 (\mathcal{P},\mathcal{N}).
 ```

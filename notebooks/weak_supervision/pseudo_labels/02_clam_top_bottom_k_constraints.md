@@ -1,154 +1,266 @@
 # CLAM Top/Bottom-K Constraints
 
-CLAM uses slide labels to create pseudo-instance constraints from attention
-extremes.
+CLAM does not merely add a generic instance cross-entropy loss. Its auxiliary
+signal is a clustering constraint built from attention extremes. The observed
+signal is still the slide label:
 
-For class $c$:
+```math
+S_i^{\mathrm{obs}}
+=
+Y_i.
+```
+
+The generated target is a set of high-attention and low-attention patches:
+
+```math
+(\mathcal{T}_i^+(c),\mathcal{T}_i^-(c))
+=
+\Psi_{\mathrm{CLAM}}(A_i,Y_i).
+```
+
+CLAM is therefore a slide-label method plus an attention-derived instance
+constraint, not an instance-labeled method.
+
+Reference: [CLAM paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8711640/).
+
+## Attention Extremes
+
+For class $c$, let the class-specific attention score be:
 
 ```math
 a_{ij}^{(c)}
 =
-\mathrm{softmax}_j s_c(h_{ij}).
+\frac{\exp s_c(h_{ij})}
+{\sum_{\ell=1}^{n_i}\exp s_c(h_{i\ell})}.
 ```
 
-For a slide with label $Y_i=c$, define:
+For a slide whose observed class is $Y_i=c$, CLAM selects:
 
 ```math
-T_i^{+}(c)
+\mathcal{T}_i^+(c)
 =
 \mathrm{TopK}_{j}\ a_{ij}^{(c)},
 ```
 
 ```math
-T_i^{-}(c)
+\mathcal{T}_i^-(c)
 =
 \mathrm{BottomK}_{j}\ a_{ij}^{(c)}.
 ```
 
-The pseudo-label rule is:
+The implicit pseudo-labels are:
 
 ```math
 \widehat Z_{ij}^{(c)}
 =
-\begin{cases}
-1, & j\in T_i^{+}(c),\\
-0, & j\in T_i^{-}(c).
-\end{cases}
+1
+\quad
+j\in\mathcal{T}_i^+(c),
 ```
 
-Instances outside the selected extremes are unlabeled for the auxiliary loss.
+```math
+\widehat Z_{ij}^{(c)}
+=
+0
+\quad
+j\in\mathcal{T}_i^-(c).
+```
 
-## Auxiliary Loss
+Instances outside the selected extremes do not receive an auxiliary instance
+target.
 
-Let:
+## Smooth SVM Clustering Loss
+
+The CLAM auxiliary loss is usually described as instance-level clustering with
+a binary top-1 smooth SVM loss, not ordinary instance cross-entropy.
+
+Let the instance classifier for class branch $c$ produce two scores:
 
 ```math
 r_c(h)
 =
-P_\theta(Z^{(c)}=1\mid h).
+(r_{c0}(h),r_{c1}(h)).
 ```
 
-The instance loss is:
+For binary pseudo-label $y\in\{0,1\}$, the top-1 smooth SVM surrogate can be
+written schematically as:
 
 ```math
-\mathcal{L}_{\mathrm{inst}}^{(c)}
+\ell_{\mathrm{svm}}(r_c(h),y)
 =
--
-\frac{1}{K}
-\sum_{j\in T_i^{+}(c)}
-\log r_c(h_{ij})
--
-\frac{1}{K}
-\sum_{j\in T_i^{-}(c)}
-\log(1-r_c(h_{ij})).
+\tau
+\log
+\sum_{q\in\{0,1\}}
+\exp
+\left(
+\frac{
+\alpha\mathbf{1}\{q\ne y\}
++r_{cq}(h)-r_{cy}(h)
+}{\tau}
+\right).
 ```
 
-The total loss is:
+Here $\alpha$ is the margin parameter and $\tau$ smooths the hard maximum. The
+selected-extreme loss for the true class branch is:
 
 ```math
-\mathcal{L}
+\mathcal{L}_{\mathrm{inst}}^{\mathrm{in}}(i,c)
+=
+\frac{1}{2K}
+\left[
+\sum_{j\in\mathcal{T}_i^+(c)}
+\ell_{\mathrm{svm}}(r_c(h_{ij}),1)
++
+\sum_{j\in\mathcal{T}_i^-(c)}
+\ell_{\mathrm{svm}}(r_c(h_{ij}),0)
+\right].
+```
+
+The total training objective combines slide classification and the auxiliary
+clustering loss:
+
+```math
+\mathcal{L}_{\mathrm{CLAM}}
 =
 \mathcal{L}_{\mathrm{slide}}
 +
 \lambda
-\sum_c
-\mathcal{L}_{\mathrm{inst}}^{(c)}.
+\mathcal{L}_{\mathrm{inst}}.
 ```
 
-## Hard-EM Interpretation
+## CLAM-SB Versus CLAM-MB
 
-CLAM's top/bottom selection can be read as a restricted hard posterior:
+CLAM-SB uses a single attention branch for the slide representation:
 
 ```math
-\widehat Z_i
+z_i
 =
-\arg\max_{z\in\mathcal{Q}_K(a_i,Y_i)}
-q_\theta(z\mid H_i,Y_i),
+\sum_j a_{ij}v(h_{ij}),
 ```
 
-where $\mathcal{Q}_K$ is the set of assignments that label only the top and
-bottom $K$ attention patches.
+followed by a multi-class slide classifier.
 
-The selected pseudo-labels then shape the representation:
-
-```math
-H_i
-\to
-H_i'
-```
-
-but inference still uses:
+CLAM-MB uses class-specific attention branches:
 
 ```math
 z_i^{(c)}
 =
-\sum_j a_{ij}^{(c)}h_{ij}.
+\sum_j a_{ij}^{(c)}v_c(h_{ij}),
 ```
+
+and class-specific slide evidence:
+
+```math
+o_{ic}
+=
+g_c(z_i^{(c)}).
+```
+
+For subtype classification, CLAM-MB also uses a mutual-exclusivity assumption:
+high-attention patches for an absent class can be treated as negative examples
+for that class. For $c\ne Y_i$:
+
+```math
+\mathcal{T}_i^{\mathrm{out}}(c)
+=
+\mathrm{TopK}_{j}\ a_{ij}^{(c)},
+```
+
+```math
+\mathcal{L}_{\mathrm{inst}}^{\mathrm{out}}(i,c)
+=
+\frac{1}{K}
+\sum_{j\in\mathcal{T}_i^{\mathrm{out}}(c)}
+\ell_{\mathrm{svm}}(r_c(h_{ij}),0).
+```
+
+This is not a universally valid biological statement. It depends on the task
+being mutually exclusive at the slide level and on class-specific attention not
+locking onto shared morphology.
 
 ## Why It Helps
 
-Bag labels give weak gradients to instance features. The auxiliary loss adds a
-separation pressure:
+The slide loss only requires:
 
 ```math
-r_c(h_{ij})
-\to
-1
-\quad
-j\in T_i^{+}(c),
+g\left(\sum_j a_{ij}^{(c)}v_c(h_{ij})\right)
+\approx
+Y_i.
+```
+
+It does not require attention to identify true diagnostic patches. The
+clustering loss adds a stronger inductive bias:
+
+```math
+j\in\mathcal{T}_i^+(c)
+\Rightarrow
+r_{c1}(h_{ij})\uparrow,
 ```
 
 ```math
-r_c(h_{ij})
-\to
-0
-\quad
-j\in T_i^{-}(c).
+j\in\mathcal{T}_i^-(c)
+\Rightarrow
+r_{c1}(h_{ij})\downarrow.
 ```
 
-This can make attention more stable when high-attention patches are true
-witnesses.
+The mathematical bet is:
+
+```math
+P(Z_{ij}^{(c)}=1\mid j\in\mathcal{T}_i^+(c),Y_i=c)
+>
+P(Z_{ij}^{(c)}=1\mid Y_i=c).
+```
+
+If this enrichment condition is true, the auxiliary loss can stabilize the
+instance geometry.
 
 ## Why It Fails
 
-If early attention selects the wrong witness:
+If attention selects a shortcut witness:
 
 ```math
-T_i^{+}(c)
-\not\subset
-\{j:Z_{ij}^{(c)}=1\},
+\mathcal{T}_i^+(c)
+\cap
+\{j:Z_{ij}^{(c)}=1\}
+=
+\varnothing,
 ```
 
-then the auxiliary loss reinforces that error:
+then the auxiliary loss explicitly teaches the instance classifier that the
+shortcut is positive:
 
 ```math
-r_c(h_{ij})
+r_{c1}(h_{ij})
 \uparrow
 \quad
-\text{for false pseudo-positive }j.
+j\in\mathcal{T}_i^+(c).
 ```
 
-This is confirmation bias.
+The top/bottom rule is therefore a model-generated MNAR selection mechanism:
+
+```math
+P(j\in\mathcal{T}_i^+(c)\mid Z_{ij},H_i,\theta_t)
+\ne
+P(j\in\mathcal{T}_i^+(c)).
+```
+
+## Not A Literal EM Algorithm
+
+CLAM can be described as hard-assignment-like:
+
+```math
+\widehat Z_i^{\mathrm{sel}}
+=
+\Psi_{\mathrm{CLAM}}(A_i,Y_i).
+```
+
+But unless one specifies a likelihood for $Y_i$, $A_i$, and $Z_i$ such that
+top/bottom-k selection is the exact MAP posterior step, CLAM is not literally
+hard EM. The safer statement is:
+
+```text
+CLAM uses attention-selected pseudo-instance constraints.
+```
 
 ## C/R/G/S Placement
 
@@ -157,13 +269,13 @@ G:
     absent unless coordinates or regions are added externally
 
 C:
-    instance classifier and feature geometry are shaped by pseudo-labels
+    instance classifier and feature geometry are shaped by smooth-SVM clustering
 
 R:
-    class-specific attention selects pseudo-label sets and performs readout
+    attention both reads out the slide and selects pseudo-instance extremes
 
 S:
-    slide label plus attention-derived top/bottom-k pseudo-instance constraints
+    observed slide label plus attention-generated top/bottom-k constraints
 ```
 
 ## Dense Summary
@@ -177,8 +289,13 @@ Y_i
 into:
 
 ```math
-(Y_i,\widehat Z_{ij}\text{ for selected }j).
+\left(
+Y_i,
+\mathcal{T}_i^+(Y_i),
+\mathcal{T}_i^-(Y_i)
+\right).
 ```
 
-The extra labels are useful exactly when attention extremes approximate true
-latent instances.
+The auxiliary target is useful only when attention extremes are enriched for
+true class evidence. The method's strength and its failure mode are the same:
+it trusts its own attention.

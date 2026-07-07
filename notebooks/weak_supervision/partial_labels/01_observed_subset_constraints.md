@@ -19,7 +19,7 @@ A partial-label dataset observes labels only on a subset:
 The observed supervision is:
 
 ```math
-S_i
+S_i^{\mathrm{obs}}
 =
 \{(j,Z_{ij}):j\in\mathcal{O}_i\}.
 ```
@@ -38,7 +38,7 @@ If labels are observed exactly on $\mathcal{O}_i$, the partial supervised
 likelihood is:
 
 ```math
-P_\theta(S_i\mid H_i)
+P_\theta(S_i^{\mathrm{obs}}\mid H_i)
 =
 \prod_{j\in\mathcal{O}_i}
 P_\theta(Z_{ij}=s_{ij}\mid h_{ij}).
@@ -61,6 +61,9 @@ regularization terms.
 
 ## Masked Risk
 
+The target measure must be stated before writing a risk. A per-observed-patch
+risk is not the same as a per-slide risk.
+
 Let:
 
 ```math
@@ -81,7 +84,20 @@ The empirical masked risk is:
 }.
 ```
 
-This estimates the full instance risk only if missingness is ignorable.
+This estimates the risk over the observed annotation distribution. It estimates
+the full per-instance risk:
+
+```math
+R_{\mathrm{inst}}(\theta)
+=
+\mathbb{E}_{i,j}
+\left[
+\ell(g_\theta(h_{ij}),Z_{ij})
+\right]
+```
+
+only if missingness is ignorable and the sampling measure over $(i,j)$ matches
+the desired target measure.
 
 ## Missingness Assumption
 
@@ -115,13 +131,14 @@ If annotation probability is:
 P(M_{ij}=1\mid h_{ij},G_i),
 ```
 
-then an inverse-probability risk is:
+then a per-instance inverse-probability risk is:
 
 ```math
 \widehat R_{\mathrm{IPW}}(\theta)
 =
 \frac{1}{N}
 \sum_i
+\frac{1}{n_i}
 \sum_j
 \frac{M_{ij}}{\pi_{ij}}
 \ell(g_\theta(h_{ij}),Z_{ij}).
@@ -132,6 +149,10 @@ This is unbiased under correct $\pi_{ij}$ and positivity:
 ```math
 \pi_{ij}>0.
 ```
+
+If the target is per-slide rather than per-patch, the normalization changes. If
+the target is region burden, the target measure changes again. The IPW formula
+is not meaningful until that measure is named.
 
 ## C/R/G/S Placement
 
@@ -155,7 +176,7 @@ Partial labels are not just "some labels." They are labels plus a sampling
 mechanism:
 
 ```math
-S
+S^{\mathrm{obs}}
 =
 (M,M\odot Z).
 ```

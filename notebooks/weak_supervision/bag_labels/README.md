@@ -5,7 +5,7 @@ Bag labels are the default supervision object in WSI MIL.
 The observed signal is:
 
 ```math
-S_i
+S_i^{\mathrm{obs}}
 =
 Y_i,
 ```
@@ -22,7 +22,7 @@ Z_{ij}
 - `01_latent_instance_labels_and_bag_map.md`: latent patch labels and bag maps.
 - `02_standard_mil_assumptions.md`: max, collective, threshold, and distributional MIL.
 - `03_marginal_likelihood_and_posterior_ambiguity.md`: bag likelihood and non-identifiability.
-- `04_positive_unlabeled_bag_view.md`: negative bags, positive bags, and PU-style risk.
+- `04_negative_observed_and_contaminated_positive_bags.md`: negative-observed and contaminated-positive bag view.
 - `05_failure_modes.md`: witness ambiguity, shortcut witnesses, and prevalence mismatch.
 
 ## C/R/G/S Placement
