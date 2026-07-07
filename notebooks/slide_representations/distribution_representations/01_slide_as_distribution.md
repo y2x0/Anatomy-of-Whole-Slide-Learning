@@ -18,6 +18,34 @@ The distribution view says:
 
 The slide is the empirical distribution of patch embeddings.
 
+This is the same raw information as an unordered set with multiplicities. The
+distribution view becomes a different modeling claim only when the method
+chooses measure-level statistics, distances, prototypes, or density assumptions:
+
+```math
+\{h_{ij}\}_{j=1}^{n_i}
+\quad
+\longleftrightarrow
+\quad
+\mu_i
+=
+\frac{1}{n_i}\sum_j\delta_{h_{ij}}.
+```
+
+Thus:
+
+```text
+set:
+    finite collection, usually consumed by invariant/equivariant networks
+
+distribution:
+    empirical measure, usually consumed by statistics T(mu), distances, or
+    prototype assignments
+```
+
+The difference is not the stored patches. The difference is the hypothesis class
+allowed to act on them.
+
 This is stronger than saying "mean pooling." Mean pooling is only one statistic
 of $\mu_i$:
 

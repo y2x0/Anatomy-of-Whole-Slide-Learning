@@ -48,6 +48,7 @@ mathcal{H}:
 2. `02_adjacency_as_context_operator.md`
 3. `03_paper_placement_matrix.md`
 4. `04_extended_family_placement.md`
+5. `05_set_distribution_graph_equivalence.md`
 
 ## Core Claim
 

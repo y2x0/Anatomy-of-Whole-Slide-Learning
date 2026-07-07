@@ -116,16 +116,51 @@ Expanding:
 Empirically, this uses all pairwise kernel comparisons between patches in the
 two slides.
 
+For finite slides, the unbiased empirical estimate has the form:
+
+```math
+\widehat{\mathrm{MMD}}^2
+=
+\frac{1}{n_i(n_i-1)}
+\sum_{a\ne b}
+k(h_{ia},h_{ib})
++
+\frac{1}{n_k(n_k-1)}
+\sum_{a\ne b}
+k(h_{ka},h_{kb})
+-
+\frac{2}{n_i n_k}
+\sum_{a,b}
+k(h_{ia},h_{kb}).
+```
+
+The direct cost is:
+
+```math
+O(n_i^2+n_k^2+n_i n_k),
+```
+
+which is usually too large for naive WSI retrieval. This is why practical
+distribution distances often operate on prototypes, sketches, random features,
+or subsampled patches rather than every tile embedding.
+
 ## Distributional Retrieval
 
 Distribution distances can drive retrieval:
 
 ```math
+(k_1,\ldots,k_K)
+=
+\mathrm{argsort}_{k\ne i}
+\ d(\mu_i,\mu_k)
+\quad
+\text{ascending},
+```
+
+```math
 \mathcal{N}_K(i)
 =
-\mathrm{TopK}_{k}
--
-d(\mu_i,\mu_k).
+\{k_1,\ldots,k_K\}.
 ```
 
 The retrieved slides are those whose morphology distributions are closest under

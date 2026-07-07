@@ -13,9 +13,25 @@ E_{\text{FM}}(x_{ij}).
 Slide-level:
 
 ```math
+H_i^{\text{FM}}
+=
+\{(h_{ij},c_{ij})\}_{j=1}^{n_i}.
+```
+
+A slide-level foundation model then defines a packing or positional map and a
+long-context slide encoder:
+
+```math
+U_i
+=
+\mathcal{C}_{\text{FM}}
+\left(
+\{h_{ij}+p(c_{ij})\}_{j=1}^{n_i}
+\right),
+\qquad
 z_i
 =
-F_{\text{FM}}(\{x_{ij},c_{ij}\}_{j=1}^{n_i}).
+\mathcal{R}_{\text{FM}}(U_i).
 ```
 
 The slide is then represented as:
@@ -33,6 +49,13 @@ or, if patch tokens are retained:
 \qquad
 h_{ij}\in\mathcal{Z}_{\text{FM}}.
 ```
+
+This matters because $F_{\text{FM}}(S_i)$ is not a single neutral operation.
+Prov-GigaPath-style models use a tile encoder followed by a slide encoder that
+consumes tile embeddings and coordinates. Other slide-level foundation models may
+pack tokens differently, pool them differently, or align the final slide state
+with text. The latent object therefore includes the inherited tokenization,
+position encoding, context window, and pretraining readout.
 
 ## Pretrained Geometry
 

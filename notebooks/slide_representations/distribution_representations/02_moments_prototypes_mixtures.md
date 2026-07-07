@@ -74,6 +74,20 @@ m_{\mu_i}=m_{\mu_k}
 \mu_i=\mu_k.
 ```
 
+This is a population statement. At WSI scale the empirical kernel mean:
+
+```math
+\widehat m_{\mu_i}
+=
+\frac{1}{n_i}
+\sum_{j=1}^{n_i}k(h_{ij},\cdot)
+```
+
+has sampling error, and high-dimensional kernels can become noisy or
+computationally expensive. In practice, kernel summaries usually need
+subsampling, random features, prototype compression, or some other finite
+approximation before they are usable for $10^4$ to $10^5$ patches.
+
 Finite neural summaries approximate this idea with learned feature maps:
 
 ```math

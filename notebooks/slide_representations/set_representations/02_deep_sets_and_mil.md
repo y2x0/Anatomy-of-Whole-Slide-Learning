@@ -10,10 +10,14 @@ f(\{h_1,\ldots,h_n\})
 \right).
 ```
 
-The theorem should be read with conditions. For countable domains, invariant
-functions admit this kind of sum-decomposition with a suitable feature map. For
-continuous set functions on compact domains, neural implementations are best
-understood as approximation families. The important modeling lesson is:
+The theorem should be read with conditions. WSI embeddings live in continuous
+spaces such as $\mathbb{R}^{d}$, so the useful version for pathology is the
+compact-domain approximation view: continuous permutation-invariant functions on
+bounded sets can be approximated by transform-sum-head architectures under the
+usual regularity assumptions. Exact countable-domain decompositions are a
+separate mathematical case, not the main WSI setting.
+
+The important modeling lesson is:
 
 ```text
 per-instance transform, invariant sum, bag-level head
@@ -81,6 +85,28 @@ Classic positive-instance MIL can be written:
 \widehat{y}_i
 =
 \max_j g_\theta(h_{ij}).
+```
+
+The latent-label assumption behind this readout is:
+
+```math
+y_i=1
+\quad\Longleftrightarrow\quad
+\exists j
+\quad
+\text{such that}
+\quad
+y_{ij}=1,
+```
+
+or equivalently:
+
+```math
+y_i
+=
+\max_j y_{ij}
+\qquad
+y_{ij}\in\{0,1\}.
 ```
 
 The set statistic is:

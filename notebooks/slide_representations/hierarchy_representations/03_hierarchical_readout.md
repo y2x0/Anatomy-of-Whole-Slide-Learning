@@ -67,6 +67,131 @@ z_i
 
 Multiscale readout preserves signals that appear at different physical scales.
 
+## Worked Shape Sketches
+
+An HIPT-style hierarchy can be written as a two-stage token map. Suppose a slide
+is divided into $R_i$ regions, each containing up to $m$ local tiles. A local tile
+encoder gives:
+
+```math
+x_{irj}^{(0)}
+\in
+\mathbb{R}^{P\times P\times 3},
+\qquad
+h_{irj}^{(0)}
+=
+E_0(x_{irj}^{(0)})
+\in
+\mathbb{R}^{d_0}.
+```
+
+Region $r$ is therefore:
+
+```math
+H_{ir}^{(0)}
+=
+[h_{ir1}^{(0)},\ldots,h_{irm}^{(0)}]
+\in
+\mathbb{R}^{m\times d_0}.
+```
+
+A region encoder compresses local tokens:
+
+```math
+u_{ir}
+=
+E_1(H_{ir}^{(0)})
+\in
+\mathbb{R}^{d_1}.
+```
+
+The slide-level sequence is:
+
+```math
+U_i
+=
+[u_{i1},\ldots,u_{iR_i}]
+\in
+\mathbb{R}^{R_i\times d_1},
+```
+
+and the slide representation is:
+
+```math
+z_i
+=
+E_2(U_i)
+\in
+\mathbb{R}^{D}.
+```
+
+The HACT-style graph hierarchy has a different object. Let:
+
+```math
+G_i^{\text{cell}}
+=
+(V_i^{\text{cell}},E_i^{\text{cell}}),
+\qquad
+H_i^{\text{cell}}
+\in
+\mathbb{R}^{N_c\times d_c}.
+```
+
+Let tissue units be:
+
+```math
+G_i^{\text{tissue}}
+=
+(V_i^{\text{tissue}},E_i^{\text{tissue}}),
+\qquad
+|V_i^{\text{tissue}}|=N_t.
+```
+
+A hard cell-to-tissue assignment is:
+
+```math
+A_i
+\in
+\{0,1\}^{N_c\times N_t},
+\qquad
+\sum_{t=1}^{N_t}A_{ct}=1.
+```
+
+The initial tissue state can be:
+
+```math
+H_i^{\text{tissue},0}
+=
+D_i^{-1}A_i^\top H_i^{\text{cell}}W,
+\qquad
+D_{tt}
+=
+\sum_c A_{ct}.
+```
+
+Then tissue-level message passing gives:
+
+```math
+H_i^{\text{tissue},L}
+=
+\mathcal{C}_{\text{GNN}}
+\left(
+H_i^{\text{tissue},0},
+E_i^{\text{tissue}}
+\right),
+```
+
+followed by graph readout:
+
+```math
+z_i
+=
+\mathcal{R}_{\text{graph}}(H_i^{\text{tissue},L}).
+```
+
+HIPT-like hierarchies emphasize nested visual tokens. HACT-like hierarchies
+emphasize typed cross-scale assignment plus graph context.
+
 ## Regional Evidence Map
 
 A hierarchy can expose a regional score before global prediction:

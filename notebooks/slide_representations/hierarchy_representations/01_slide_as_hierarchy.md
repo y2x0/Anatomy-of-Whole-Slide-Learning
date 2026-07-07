@@ -60,7 +60,13 @@ The children of a coarse unit $u\in V_i^{(\ell+1)}$ are:
 If every unit has exactly one parent, the hierarchy is a tree or forest:
 
 ```math
-|\{\pi_i^{(\ell)}(v)\}|=1.
+\forall v\in V_i^{(\ell)}
+\quad
+\exists!\,u\in V_i^{(\ell+1)}
+\quad
+\text{such that}
+\quad
+\pi_i^{(\ell)}(v)=u.
 ```
 
 If a fine unit may contribute to multiple coarse regions, the object is a

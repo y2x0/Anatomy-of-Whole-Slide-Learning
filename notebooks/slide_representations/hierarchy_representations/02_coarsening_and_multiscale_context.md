@@ -178,7 +178,19 @@ Total:
 O(Rm^2+R^2).
 ```
 
-This is smaller than $O(n^2)$ when $m\ll n$ and $R\ll n$.
+This is smaller than flat $O(n^2)=O(R^2m^2)$ only in the regime where the
+number of regions is much smaller than the number of patches and each region is
+moderate in size. The hierarchy is a computational win when:
+
+```math
+Rm^2+R^2
+\ll
+R^2m^2.
+```
+
+If $R\approx n$ because the regions are tiny, the global $O(R^2)$ term recovers
+flat attention cost. If regions overlap heavily or multiple scales duplicate
+tokens, the actual cost can exceed the simple $O(Rm^2+R^2)$ accounting.
 
 The cost reduction is not free. It assumes that fine-scale interactions mostly
 matter within local regions, and that cross-region effects can be mediated by
