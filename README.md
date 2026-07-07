@@ -58,3 +58,11 @@ mathematically visible.
 The existing MIL material will eventually be encompassed here, but not as a
 public routing map and not as shallow taxonomy stubs. The goal is to build the
 math notes first.
+
+## Notebook Families
+
+- `notebooks/survival_modeling/`: how risk is represented, optimized, and
+  evaluated.
+- `notebooks/slide_representations/`: what mathematical object represents a
+  whole slide.
+- `notebooks/pooling_operators/`: what information survives aggregation.
