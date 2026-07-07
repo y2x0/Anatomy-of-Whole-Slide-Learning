@@ -31,7 +31,8 @@ Here:
 - `H` is the set, sequence, graph, hierarchy, distribution, or memory-derived
   collection of patch representations.
 - `G` is optional geometry.
-- `S` is optional sequence order.
+- `S` is optional supervision, such as labels, pseudo-labels, contrastive pairs,
+  survival targets, or pretraining signals.
 - `\mathcal C` is the context operator.
 - `\mathcal R` is the readout operator.
 - `z` is the surviving slide statistic.
@@ -66,3 +67,5 @@ math notes first.
 - `notebooks/slide_representations/`: what mathematical object represents a
   whole slide.
 - `notebooks/pooling_operators/`: what information survives aggregation.
+- `notebooks/wsi_geometry/`: how spatial information is encoded, ignored, or
+  learned.
