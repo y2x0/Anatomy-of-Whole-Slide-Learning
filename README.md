@@ -71,3 +71,6 @@ math notes first.
   learned.
 - `notebooks/weak_supervision/`: where supervision comes from and what latent
   pathology variables it actually constrains.
+- `notebooks/foundation_model_adaptation/`: how task information is injected
+  into frozen, prompted, parameter-efficient, or fully fine-tuned foundation
+  models.
