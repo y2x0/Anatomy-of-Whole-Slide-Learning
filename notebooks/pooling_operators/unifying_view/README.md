@@ -21,5 +21,5 @@ This folder keeps the pooling family aligned with the C/R/G/S framework.
 ## Files
 
 - `01_crgs_pooling_decomposition.md`: how C, R, G, and S specialize for pooling.
-- `02_paper_placement_matrix.md`: mean, max, ABMIL, DSMIL, CLAM, and PANTHER.
-
+- `02_paper_placement_matrix.md`: placement of major pooling families and anchor papers.
+- `03_surviving_statistic_matrix.md`: equivalence classes, blind spots, and stress tests.

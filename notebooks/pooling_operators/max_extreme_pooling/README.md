@@ -53,6 +53,8 @@ z_i
 - `01_max_as_extreme_statistic.md`: max as an extreme-value functional.
 - `02_logsumexp_softmax_limits.md`: smooth max, temperature, and gradients.
 - `03_sparse_positive_mil.md`: MIL OR assumptions and failure modes.
+- `04_topk_quantile_generalized_means.md`: upper-tail statistics between mean
+  and max.
 
 ## Core Claim
 

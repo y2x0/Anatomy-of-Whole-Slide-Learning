@@ -77,21 +77,37 @@ Each method should answer:
 6. What failure mode follows?
 ```
 
-## First Chunk
+## Folder Map
 
 ```text
 00_problem_setup.md
     pooling as a statistic, equivalence relation, and bottleneck
 
+moment_pooling/
+    raw moments
+    covariance and second moments
+    learned moment maps
+    kernel mean embeddings
+
 mean_pooling/
     mean as first moment
     mean after context
+    normalized versus unnormalized sums
     mean failure modes
 
 max_extreme_pooling/
     max as extreme statistic
+    top-k pooling
+    quantile pooling
     log-sum-exp and softmax limits
+    generalized means
     sparse-positive MIL
+
+noisy_or_pooling/
+    instance probability model
+    bag probability as logical OR
+    noisy-or gradients
+    identifiability failures
 
 attention_pooling/
     attention as learned measure
@@ -111,63 +127,11 @@ prototype_pooling/
     PANTHER GMM statistics
     prototype failure modes
 
-unifying_view/
-    C/R/G/S pooling decomposition
-    paper placement matrix
-```
-
-## Larger Map
-
-There are more useful pooling notes than the initial three families. The full
-pooling notebook should eventually include:
-
-```text
-moment_pooling/
-    first moments
-    covariance and second moments
-    learned moment maps
-    kernel mean embeddings
-
-mean_pooling/
-    raw mean
-    mean after context
-    normalized versus unnormalized sums
-    failure modes
-
-max_extreme_pooling/
-    hard max
-    top-k pooling
-    quantile pooling
-    log-sum-exp limits
-    generalized means
-
-noisy_or_pooling/
-    instance probability model
-    bag probability as logical OR
-    noisy-or gradients
-    identifiability failures
-
-attention_pooling/
-    learned reweighted measure
-    gated attention MIL
-    attention temperature
-    attention collapse
-
-class_specific_attention/
-    class-conditioned readouts
-    CLAM-style instance constraints
-    competing attention heads
-
-prototype_pooling/
-    soft histograms
-    mixture statistics
-    residual encodings
-    prototype drift
-
 distribution_pooling/
     CDF and quantile summaries
     optimal transport summaries
-    MMD and kernel distances
+    MMD and kernel sketches
+    geometry-aware distribution distances
 
 set_transformer_pooling/
     pooling by multihead attention
@@ -191,6 +155,7 @@ hierarchical_pooling/
     region-to-slide pooling
     scale-weighted pooling
     multiscale readouts
+    effective patch weights
 
 unifying_view/
     pooling as statistical functional
