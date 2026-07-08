@@ -62,15 +62,21 @@ math notes first.
 
 ## Notebook Families
 
-- `notebooks/survival_modeling/`: how risk is represented, optimized, and
-  evaluated.
-- `notebooks/slide_representations/`: what mathematical object represents a
-  whole slide.
-- `notebooks/pooling_operators/`: what information survives aggregation.
-- `notebooks/wsi_geometry/`: how spatial information is encoded, ignored, or
-  learned.
-- `notebooks/weak_supervision/`: where supervision comes from and what latent
-  pathology variables it actually constrains.
-- `notebooks/foundation_model_adaptation/`: how task information is injected
-  into frozen, prompted, parameter-efficient, or fully fine-tuned foundation
-  models.
+Current public notebook count: **331** markdown files.
+
+- ✅ `notebooks/survival_modeling/` (**65 markdown files**): how risk is
+  represented, optimized, and evaluated.
+- ✅ `notebooks/slide_representations/` (**44 markdown files**): what
+  mathematical object represents a whole slide.
+- ✅ `notebooks/pooling_operators/` (**65 markdown files**): what information
+  survives aggregation.
+- ✅ `notebooks/attention_taxonomy/` (**39 markdown files**): what weighting
+  mechanism is learned, normalized, supported, interpreted, and allowed to
+  survive.
+- ✅ `notebooks/wsi_geometry/` (**34 markdown files**): how spatial information
+  is encoded, ignored, or learned.
+- ✅ `notebooks/weak_supervision/` (**44 markdown files**): where supervision
+  comes from and what latent pathology variables it actually constrains.
+- ✅ `notebooks/foundation_model_adaptation/` (**40 markdown files**): how task
+  information is injected into frozen, prompted, parameter-efficient, or fully
+  fine-tuned foundation models.
