@@ -12,7 +12,8 @@ learning operator does after the graph exists.
 
 The first portion covers message passing foundations. The second uses
 Patch-GCN as an anchor WSI-specific graph learning model. The third uses HACT
-as an anchor hierarchical entity-graph model.
+as an anchor hierarchical entity-graph model. The fourth uses Chan et al.'s
+HEAT framework as an anchor heterogeneous WSI graph model.
 
 ```text
 message_passing_foundations/
@@ -36,9 +37,20 @@ hierarchical_graph_models/
     tissue-node readout and classification supervision
     HACT failure modes
 
+heterogeneous_graph_models/
+    heterogeneous WSI graph object
+    HoVer-Net pseudo-label node types
+    KimiaNet features and feature-space kNN edges
+    Pearson edge attributes
+    HEAT context operator
+    pseudo-label graph pooling
+    causal localization and failure modes
+    full HEAT forward map
+
 unifying_view/
     C/R/G/S placement for this first portion
     C/R/G/S comparison for Patch-GCN versus HACT
+    C/R/G/S comparison for Patch-GCN, HACT, and HEAT
 ```
 
 ## Core Object
@@ -145,3 +157,8 @@ here.
   learning, jumping knowledge, BRACS dataset, and entity-graph evaluation.
   https://doi.org/10.1016/j.media.2021.102264
   https://arxiv.org/abs/2102.11057
+- Chan et al. "Histopathology Whole Slide Image Analysis With Heterogeneous
+  Graph Representation Learning." CVPR 2023. Heterogeneous patch graph,
+  HoVer-Net pseudo-label node types, Pearson edge attributes, HEAT message
+  passing, pseudo-label graph pooling, and causal localization.
+  https://arxiv.org/abs/2307.04189
