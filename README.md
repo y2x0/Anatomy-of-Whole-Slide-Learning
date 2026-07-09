@@ -62,7 +62,7 @@ math notes first.
 
 ## Notebook Families
 
-Current public notebook count: **331** markdown files.
+Current public notebook count: **352** markdown files.
 
 - ✅ `notebooks/survival_modeling/` (**65 markdown files**): how risk is
   represented, optimized, and evaluated.
@@ -73,6 +73,8 @@ Current public notebook count: **331** markdown files.
 - ✅ `notebooks/attention_taxonomy/` (**39 markdown files**): what weighting
   mechanism is learned, normalized, supported, interpreted, and allowed to
   survive.
+- `notebooks/graph_learning_taxonomy/` (**21 markdown files, in progress**):
+  how information moves through graph message-passing and WSI graph operators.
 - ✅ `notebooks/wsi_geometry/` (**34 markdown files**): how spatial information
   is encoded, ignored, or learned.
 - ✅ `notebooks/weak_supervision/` (**44 markdown files**): where supervision
