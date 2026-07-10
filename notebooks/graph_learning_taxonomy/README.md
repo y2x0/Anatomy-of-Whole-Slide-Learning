@@ -13,7 +13,8 @@ learning operator does after the graph exists.
 The first portion covers message passing foundations. The second uses
 Patch-GCN as an anchor WSI-specific graph learning model. The third uses HACT
 as an anchor hierarchical entity-graph model. The fourth uses Chan et al.'s
-HEAT framework as an anchor heterogeneous WSI graph model.
+HEAT framework as an anchor heterogeneous WSI graph model. The fifth uses WiKG
+as an anchor directed dynamic graph model.
 
 ```text
 message_passing_foundations/
@@ -47,10 +48,29 @@ heterogeneous_graph_models/
     causal localization and failure modes
     full HEAT forward map
 
+dynamic_graph_models/
+    slide object and released-code mean injection
+    asymmetric head-tail roles and dynamic support
+    directed score geometry
+    hard top-k normalization and stability
+    relation embeddings and two-stage normalization
+    dense discovery, scaling, and batching
+    paper versus code triplet compatibility
+    knowledge attention and dual interaction
+    attention limits, gradients, and surviving statistic
+    mean, max, and attention graph readouts
+    LayerNorm, classification, and cross-entropy
+    topology, aggregation, and reproducibility failures
+    construction and context-to-prediction tensor maps
+    complete WiKG composition
+
 unifying_view/
     C/R/G/S placement for this first portion
     C/R/G/S comparison for Patch-GCN versus HACT
     C/R/G/S comparison for Patch-GCN, HACT, and HEAT
+    C/R/G/S comparison for Patch-GCN, HACT, HEAT, and WiKG
+    graph geometry, supervision, and surviving statistics
+    graph design matrix and unified failure principle
 ```
 
 ## Core Object
@@ -162,3 +182,8 @@ here.
   HoVer-Net pseudo-label node types, Pearson edge attributes, HEAT message
   passing, pseudo-label graph pooling, and causal localization.
   https://arxiv.org/abs/2307.04189
+- Li et al. "Dynamic Graph Representation with Knowledge-aware Attention for
+  Histopathology Whole Slide Image Analysis." CVPR 2024. Learned directed
+  top-k graph construction, head-tail relation embeddings, knowledge-aware
+  attention, and dual-interaction node updates.
+  https://arxiv.org/abs/2403.07719
