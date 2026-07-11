@@ -91,14 +91,19 @@ negative_free_pathology_pretraining/
     HIPT hierarchical self-distillation and frozen scale boundaries
     UNI, Virchow, and Phikon pathology scaling maps
     WSI interface, C/R/G/S synthesis, and failure matrix
+
+wsi_cross_slide_contrast/
+    whole-bag, selected-subbag, and mixed-bag cross-slide objects
+    SCL-WC class-specific attention and pseudo-instance support
+    positive-negative subspaces and complementary first moments
+    positive, negative, and hard-negative memory banks
+    exact WSCL objective, gradients, and support feedback
+    SC-MIL bag-level supervised contrast and curriculum geometry
+    cross-slide augmentation boundary, leakage, and identifiability
+    C/R/G/S synthesis and design matrix
 ```
 
-Later portions will treat the pathology families already listed in the private
-research map:
-
-```text
-WSI and cross-slide contrast
-```
+The planned contrastive-learning portions are now complete.
 
 ## Boundary With Weak Supervision
 
