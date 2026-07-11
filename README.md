@@ -62,7 +62,7 @@ math notes first.
 
 ## Notebook Families
 
-Current public notebook count: **443** markdown files.
+Current public notebook count: **453** markdown files.
 
 - ✅ `notebooks/survival_modeling/` (**65 markdown files**): how risk is
   represented, optimized, and evaluated.
@@ -73,10 +73,11 @@ Current public notebook count: **443** markdown files.
 - ✅ `notebooks/attention_taxonomy/` (**39 markdown files**): what weighting
   mechanism is learned, normalized, supported, interpreted, and allowed to
   survive.
-- `notebooks/contrastive_learning/` (**60 markdown files, objective
-  foundations plus instance, cluster-guided, multimodal image-text, and graph
-  contrast portions complete**): what defines similarity, which statistical
-  contrast is estimated, and what representation geometry survives.
+- `notebooks/contrastive_learning/` (**70 markdown files, objective
+  foundations plus instance, cluster-guided, multimodal image-text, graph
+  contrast, and negative-free pathology portions complete**): what defines
+  similarity, which statistical contrast is estimated, and what representation
+  geometry survives.
 - ✅ `notebooks/graph_learning_taxonomy/` (**52 markdown files**):
   how information moves through graph message-passing and WSI graph operators.
 - ✅ `notebooks/wsi_geometry/` (**34 markdown files**): how spatial information

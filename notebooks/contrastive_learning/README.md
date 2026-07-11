@@ -82,13 +82,21 @@ graph_contrast/
     augmentation quotients and destructive graph invariance
     GRACE's node-level objective and dual corruption geometry
     graph automorphisms, false negatives, and WSI C/R/G/S synthesis
+
+negative_free_pathology_pretraining/
+    negative-free statistical objects and collapse solutions
+    DINO teacher-student distributions, centering, sharpening, and multi-crop
+    iBOT masked patch-token distillation
+    DINOv2 image, patch, assignment-balance, and KoLeo objectives
+    HIPT hierarchical self-distillation and frozen scale boundaries
+    UNI, Virchow, and Phikon pathology scaling maps
+    WSI interface, C/R/G/S synthesis, and failure matrix
 ```
 
 Later portions will treat the pathology families already listed in the private
 research map:
 
 ```text
-negative-free pathology pretraining
 WSI and cross-slide contrast
 ```
 
