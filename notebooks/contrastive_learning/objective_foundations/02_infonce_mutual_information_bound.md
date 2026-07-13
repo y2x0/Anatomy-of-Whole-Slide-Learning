@@ -82,6 +82,12 @@ I(A;K)
 \mathcal{L}_{N}(f).
 ```
 
+The right-hand side is a lower bound, not an unbiased estimate of mutual
+information. It can be negative or vacuous for a weak critic, even though
+mutual information is nonnegative. A positive reported value requires the
+specified candidate experiment and only certifies information up to the
+`log(N)` ceiling.
+
 ## Exact Classification Decomposition
 
 Let:
