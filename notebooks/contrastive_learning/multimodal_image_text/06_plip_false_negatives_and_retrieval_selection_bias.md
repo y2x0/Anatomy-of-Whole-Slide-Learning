@@ -11,7 +11,7 @@ Primary anchor:
 Suppose one post-level text `t` accompanies `m` images:
 
 ```math
-\left{
+\left\{
 x_1,ldots,x_m
 \right}
 \longleftrightarrow
@@ -93,7 +93,7 @@ The selected subset is approximately:
 ```math
 \mathcal{D}_{\mathrm{sel}}
 =
-\left{
+\left\{
 (x,t):
 \min_{q\in\mathcal{Q}}d_0(x,q)
 \le
