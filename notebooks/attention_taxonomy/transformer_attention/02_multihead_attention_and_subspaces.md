@@ -45,6 +45,10 @@ O^{(1)},\ldots,O^{(M)}
 W_O.
 ```
 
+The concatenation is not a guarantee that `M` independent statistics survive.
+The output projection can mix or suppress head coordinates, and the value
+projections can map different heads into overlapping subspaces.
+
 ## Heads As Parallel Measures
 
 For token `u`, head `m` defines:
@@ -88,6 +92,24 @@ HW_V^{(r)}.
 
 If all heads attend similarly and project similarly, the effective number of
 heads is smaller than the architectural number.
+
+One possible diagnostic for attention diversity is the normalized pairwise
+distance:
+
+```math
+D_A
+=
+\frac{1}{M(M-1)}
+\sum_{m\ne r}
+\frac{\|A^{(m)}-A^{(r)}\|_F^2}
+{\|A^{(m)}\|_F^2+\|A^{(r)}\|_F^2+\varepsilon}.
+```
+
+Value-space diversity can be checked separately, for example through the
+principal angles or normalized overlap of the column spaces of
+`W_V^(m)`. High `D_A` without value-space diversity, or high value-space
+diversity without different attention measures, does not by itself imply that
+the final representation contains distinct interpretable mechanisms.
 
 ## WSI Interpretation
 
