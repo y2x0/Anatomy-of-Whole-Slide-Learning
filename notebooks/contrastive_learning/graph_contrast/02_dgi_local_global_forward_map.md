@@ -51,7 +51,7 @@ for every permutation matrix `P`.
 
 ## Corrupted Path
 
-A corruption function generates:
+A general corruption notation is:
 
 ```math
 \left(
@@ -64,6 +64,24 @@ A corruption function generates:
 X,A
 \right).
 ```
+
+The original DGI construction is the narrower feature-shuffling corruption:
+
+```math
+\widetilde X
+=
+P_{\pi}X,
+\qquad
+\widetilde A
+=
+A,
+```
+
+where `P_{\pi}` is a random permutation matrix over node rows. Thus the
+paper's negative graph preserves the message-passing topology and changes
+which node features are assigned to each rooted neighborhood. Edge deletion,
+node dropping, or other changes to `A` belong to later generalizations, not to
+this exact DGI instantiation.
 
 The shared encoder gives:
 
@@ -121,7 +139,8 @@ an anisotropic cross-statistic through `W`.
 
 ## Exact Objective
 
-For `N` positive and `M` corrupted local representations, DGI maximizes:
+For `N` positive and `M` corrupted local representations (with `M=N` in the
+standard one-corruption-per-node construction), DGI maximizes:
 
 ```math
 \mathcal{J}_{\mathrm{DGI}}
