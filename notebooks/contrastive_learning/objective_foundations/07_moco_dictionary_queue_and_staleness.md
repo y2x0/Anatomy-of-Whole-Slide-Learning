@@ -143,7 +143,35 @@ L_{\theta}(v)
 ```
 
 Momentum reduces parameter drift but does not make old keys identical to
-current-encoder keys.
+current-encoder keys. If the query is normalized, the induced similarity error
+is bounded by:
+
+```math
+\left|
+q_t^\top k_t
+-
+q_t^\top k_{t-a}
+\right|
+\le
+\left\|
+k_t-k_{t-a}
+\right\|_2.
+```
+
+The corresponding contrastive-logit error is at most:
+
+```math
+\left|
+\frac{q_t^\top k_t}{\tau}
+-
+\frac{q_t^\top k_{t-a}}{\tau}
+\right|
+\le
+\frac{L_{\theta}(v)\Delta_{t,a}}{\tau}.
+```
+
+Queue staleness is therefore more consequential at low temperature, even when
+the underlying encoder drift is unchanged.
 
 ## Queue Age Distribution
 
