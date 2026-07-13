@@ -16,9 +16,13 @@ Primary anchor:
 Let an image and text be random variables:
 
 ```math
-Xinmathcal{X},
+X
+\in
+\mathcal{X},
 \qquad
-Tinmathcal{T}.
+T
+\in
+\mathcal{T}.
 ```
 
 The training corpus supplies samples:
