@@ -25,6 +25,9 @@ whether a whole slide is represented as a bag, hierarchy, or retrieved memory.
 10. `10_transfer_geometry_and_foundation_model_evaluation.md`
 11. `11_crgs_foundation_model_placement.md`
 
+The paper-specific and unifying-view folders deepen these objective notes into
+model-level derivations, evaluation matrices, and failure audits.
+
 ## Primary Sources
 
 - [CTransPath](https://pubmed.ncbi.nlm.nih.gov/35952419/)
