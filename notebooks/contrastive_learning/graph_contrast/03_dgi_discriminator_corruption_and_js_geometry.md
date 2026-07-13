@@ -176,11 +176,11 @@ Two node-embedding multisets can satisfy:
 
 ```math
 \left\{
-h_1,ldots,h_N
+h_1,\ldots,h_N
 \right\}
 \ne
 \left\{
-h'_1,ldots,h'_{N'}
+h'_1,\ldots,h'_{N'}
 \right\}
 ```
 
