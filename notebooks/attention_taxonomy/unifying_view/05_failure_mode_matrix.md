@@ -96,3 +96,42 @@ did the value encode the needed statistic?
 did the readout keep enough objects?
 is the heat map being overclaimed?
 ```
+
+## Minimal Diagnostic Record
+
+For a reported attention method, record at least:
+
+```math
+\Delta_{\mathrm{score}}
+=
+s_{\mathrm{positive}}
+-
+s_{\mathrm{background}},
+\qquad
+N_{\mathrm{eff}}
+=
+\exp(H(a)),
+```
+
+```math
+\mathrm{support\ recall}
+=
+\frac{|E\cap\widehat E|}{|E|}
+\quad
+\text{when an evidence set }E\text{ is available},
+```
+
+and the output-scale deletion effect:
+
+```math
+\Delta_j^{\mathrm{delete}}
+=
+\widehat y(H)
+-
+\widehat y(H\setminus\{h_j\}).
+```
+
+The first quantity tests score separation, the second tests concentration, the
+third tests whether support contains the claimed evidence, and the last tests
+the predictor rather than the visualization. None is sufficient alone, but a
+paper that reports none of them leaves the failure mode unmeasured.
