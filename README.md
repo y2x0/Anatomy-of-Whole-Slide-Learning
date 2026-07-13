@@ -62,7 +62,7 @@ math notes first.
 
 ## Notebook Families
 
-Current public notebook count: **582** markdown files.
+Current public notebook count: **594** markdown files.
 
 - ✅ `notebooks/survival_modeling/` (**65 markdown files**): how risk is
   represented, optimized, and evaluated.
@@ -90,3 +90,7 @@ Current public notebook count: **582** markdown files.
   counterfactual, graph/spatial, and survival explanations complete**):
   what an explanation targets, which model behavior it captures, and how
   faithfulness differs from plausibility or causality.
+- `notebooks/pathology_foundation_models/` (**12 markdown files, first
+  pretraining-object portion complete**): how pathology representations are
+  learned through contrastive, distillation, masked, multimodal, hierarchical,
+  and retrieval objectives.
