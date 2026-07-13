@@ -91,6 +91,22 @@ K
 \right\}.
 ```
 
+Writing `A_{\mathrm{val}}(K)` for the validation metric, the selected readout
+is more precisely:
+
+```math
+\widehat K
+=
+\arg\max_{K\in\{1,5,10,50,100\}}
+A_{\mathrm{val}}(K).
+```
+
+Thus `zero-shot` describes the absence of task-specific parameter fitting
+for the class prototypes, but not the absence of labeled validation data for
+the aggregation hyperparameter. The reported test score is consequently
+conditional on the finite candidate set and on the validation-selection
+procedure.
+
 ## The Surviving Statistic
 
 Sort class-specific scores:
