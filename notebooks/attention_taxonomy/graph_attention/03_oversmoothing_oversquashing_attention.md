@@ -39,6 +39,28 @@ for many nodes, then discriminative local morphology is washed out.
 Attention can slow smoothing by concentrating weights, but if every layer still
 averages neighbors, the risk remains.
 
+In the idealized fixed-topology case, if `A` is an irreducible and aperiodic
+row-stochastic matrix, then:
+
+```math
+\lim_{L\to\infty}A^L
+=
+\mathbf{1}\,\pi^\top,
+```
+
+for the stationary distribution `pi`. Consequently:
+
+```math
+\lim_{L\to\infty}A^LH
+=
+\mathbf{1}\,\pi^\top H,
+```
+
+so every node receives the same weighted average before feature transforms.
+Real graph-attention layers have data-dependent `A^(ell)`, residual paths, and
+nonlinearities, so this is a diagnostic limit rather than a universal theorem
+about every trained GAT.
+
 ## Oversquashing
 
 If many distant nodes influence one node through a small cut, information must
@@ -96,4 +118,3 @@ topology-dependent communication paths
 ```
 
 Attention is not a cure for wrong graph geometry.
-
