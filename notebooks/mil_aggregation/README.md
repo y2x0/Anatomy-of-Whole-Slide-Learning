@@ -19,8 +19,8 @@ foundations/
     C/R/G/S decomposition, and surviving-statistic design
 ```
 
-Later portions will derive hybrid MIL families from the mapped papers in the
-private research map.
+The completed portions derive the mapped MIL families from the private research
+map; the remaining work is source review and cross-family repair.
 
 The mean/attention portion is now in `mean_attention_mil/`.
 
