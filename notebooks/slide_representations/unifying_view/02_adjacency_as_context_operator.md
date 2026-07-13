@@ -328,14 +328,14 @@ pretraining geometry may not match the downstream clinical question
 
 | Interaction Structure | Model Family | Context Geometry |
 |---|---|---|
-| E=\varnothing | mean MIL, max MIL, simple Deep Sets | none before readout |
+| E = empty | mean MIL, max MIL, simple Deep Sets | none before readout |
 | E=K_n | set attention, Set Transformer | all-pairs learned relations |
-| path from \sigma | RNN, SSM, Mamba-style scan | order-local context |
+| path from sigma | RNN, SSM, Mamba-style scan | order-local context |
 | kNN or radius graph | Patch-GCN-style GNN | spatially local context |
 | learned dynamic graph | WiKG-style graph MIL | task-learned relational context |
 | typed hierarchy | HACT-style graph | multiscale tissue context |
-| parent map \pi | HIPT-style hierarchy | compositional scale context |
-| statistic T(\mu) | PANTHER or histogram-style distribution | morphology distribution context |
+| parent map pi | HIPT-style hierarchy | compositional scale context |
+| statistic T(mu) | PANTHER or histogram-style distribution | morphology distribution context |
 | memory graph | Yottixel/SISH-style retrieval | archive-neighborhood context |
 | pretrained geometry | UNI, Virchow, GigaPath, CONCH, PRISM, TITAN | inherited latent context |
 

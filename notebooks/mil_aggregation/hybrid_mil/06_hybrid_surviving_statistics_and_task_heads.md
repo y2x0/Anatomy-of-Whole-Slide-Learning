@@ -109,7 +109,8 @@ a^{\mathsf T}AH
 (A^{\mathsf T}a)^{\mathsf T}H.
 ```
 
-The effective fine-level weights are A^{\mathsf T}a. For a graph propagation
+The effective fine-level weights are obtained by multiplying the assignment
+transpose by the coarse attention weights. For a graph propagation
 matrix, the task head is weighting graph-diffused evidence, not raw patches.
 
 If R is nonlinear attention, then

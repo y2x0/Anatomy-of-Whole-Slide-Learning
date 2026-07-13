@@ -19,8 +19,8 @@ V_i^{(0)},V_i^{(1)},\ldots,V_i^{(L)},
 |V_i^{(\ell)}|=n_i^{(\ell)}.
 ```
 
-Level zero contains the finest modeled units. For every
-0\leq\ell<L, define a parent map
+Level zero contains the finest modeled units. For every non-final level, define a
+parent map
 
 ```math
 \pi_i^{(\ell)}:V_i^{(\ell)}\longrightarrow V_i^{(\ell+1)}.
@@ -72,11 +72,11 @@ m_{ib}^{(\ell)}
 \sum_{a=1}^{n_i^{(\ell)}}P_{iab}^{(\ell)}.
 ```
 
-A valid hard hierarchy has m_{ib}^{(\ell)}\geq 1 for every represented parent.
+A valid hard hierarchy has at least one child for every represented parent.
 If empty parent slots are retained for batching, they require an explicit mask
 rather than an implicit zero interpretation.
 
-Soft assignment replaces P_i^{(\ell)} with nonnegative weights:
+Soft assignment replaces the hard parent matrix with nonnegative weights:
 
 ```math
 A_i^{(\ell)}\in\mathbb R_{\geq 0}^{n_i^{(\ell)}\times n_i^{(\ell+1)}},
@@ -89,8 +89,8 @@ object from a partition hierarchy to an overlapping cover or routing graph.
 
 ## 3. Hierarchical permutation symmetry
 
-Let Q_i^{(\ell)} be a permutation matrix that reorders level-\ell units. A
-reordering preserves the hierarchy only if the assignment matrix transforms as
+Let Q at each level be a permutation matrix that reorders units. A reordering
+preserves the hierarchy only if the assignment matrix transforms as
 
 ```math
 P_i^{(\ell)}

@@ -27,9 +27,9 @@ The central object is a rooted forest of units:
 \right).
 ```
 
-The level-zero units may be patches or cells. A parent map
-\pi_i^{(\ell)} assigns each level-\ell unit to one level-\ell+1 unit. A
-hierarchical MIL model is therefore a composition of
+The level-zero units may be patches or cells. At each level, a parent map assigns
+each unit to exactly one unit at the next coarser level. A hierarchical MIL model
+is therefore a composition of
 
 ```math
 \text{fine context}

@@ -97,9 +97,9 @@ The attention weights now depend on neighborhoods. A high-weight instance is
 not necessarily locally positive; it may be a graph context that summarizes
 positive neighbors.
 
-For a class-specific readout with logit w_c^{\mathsf T}z, the effective
-fine-level contribution is no longer just alpha_j w_c^{\mathsf T}h_j because
-the score alpha_j depends on all contextual states.
+For a class-specific linear readout, the effective fine-level contribution is no
+longer just the attention weight times the class-specific projection of the patch
+state. The reason is that the score alpha_j depends on all contextual states.
 
 ## 4. Geometry determines what a hybrid can express
 

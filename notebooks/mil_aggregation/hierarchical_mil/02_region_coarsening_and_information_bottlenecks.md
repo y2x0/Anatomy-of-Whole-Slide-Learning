@@ -2,7 +2,7 @@
 
 ## 1. Linear coarsening
 
-Let H^{(\ell)} be child states at one level:
+Let H contain the child states at one level:
 
 ```math
 H^{(\ell)}
@@ -53,8 +53,8 @@ also depends on total routing mass.
 
 ## 2. Nullspace and indistinguishable configurations
 
-The linear map H\mapsto P^{\mathsf T}H has a nontrivial nullspace whenever
-n_\ell>n_{\ell+1}. Let Delta satisfy
+The linear map from child states to parent states has a nontrivial nullspace
+whenever the number of children exceeds the number of parents. Let Delta satisfy
 
 ```math
 P^{\mathsf T}\Delta=0.
@@ -74,9 +74,9 @@ For each feature coordinate, the dimension of the nullspace is
 n_\ell-\mathrm{rank}(P).
 ```
 
-With one nonempty disjoint parent for every column,
-rank(P)=n_{\ell+1}, so the coarsener removes
-n_\ell-n_{\ell+1} degrees of freedom per feature coordinate.
+With one nonempty disjoint parent for every column, the assignment matrix has full
+column rank, so the coarsener removes the difference between the child and parent
+counts in degrees of freedom per feature coordinate.
 
 The discarded subspace includes within-parent contrasts. For a parent b with
 children C_b, any perturbation satisfying
@@ -186,7 +186,8 @@ within-region attention plus region-level attention has rough pairwise cost
 O(Rm^2+R^2).
 ```
 
-This is less than flat O(n^2) only under a favorable regime such as R\ll n and
+This is less than flat O(n^2) only under a favorable regime such as far fewer
+regions than patches and
 balanced regions. A pathological split can make the first term large, and
 R close to n makes the second term approach flat attention. Hierarchy is an
 algorithmic opportunity, not a complexity guarantee.

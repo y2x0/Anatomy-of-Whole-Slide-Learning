@@ -379,18 +379,18 @@ This geometry is shaped by pretraining, not by the downstream task alone.
 
 ## Placement Table
 
-| Representation | \Omega_i | \mathcal{C} | \mathcal{R} | Surviving Statistic |
+| Representation | Omega | C | R | Surviving Statistic |
 |---|---:|---:|---:|---:|
-| Set mean MIL | none | identity | mean | first moment of \mu_i |
+| Set mean MIL | none | identity | mean | first moment of mu |
 | Attention MIL | none | instance scoring | weighted mean | learned first moment |
 | Set Transformer | complete learned relations | set attention | PMA or pool | interaction-aware set summary |
-| Sequence SSM | order \sigma_i | scan | final state or pool | compressed trajectory |
+| Sequence SSM | order sigma | scan | final state or pool | compressed trajectory |
 | Spatial GNN | adjacency A_i | message passing | graph pool | contextualized node statistic |
 | Heterogeneous graph | typed nodes and edges | typed message passing | multitype pool | typed relational summary |
-| Hierarchy | parent maps \pi_i | multiscale context | top or multiscale readout | scale-composed summary |
-| Distribution | empirical measure \mu_i | optional statistic map | T(\mu_i) | measure statistic |
-| Retrieval memory | external memory \mathcal{M} | nearest-neighbor context | query plus retrieved values | archive-conditioned statistic |
-| Foundation latent | pretrained map F_{\text{FM}} | frozen or adapted encoder | probe or slide head | pretrained latent coordinate |
+| Hierarchy | parent maps pi | multiscale context | top or multiscale readout | scale-composed summary |
+| Distribution | empirical measure mu | optional statistic map | T(mu) | measure statistic |
+| Retrieval memory | external memory M | nearest-neighbor context | query plus retrieved values | archive-conditioned statistic |
+| Foundation latent | pretrained map F_FM | frozen or adapted encoder | probe or slide head | pretrained latent coordinate |
 
 ## What This Decomposition Buys
 

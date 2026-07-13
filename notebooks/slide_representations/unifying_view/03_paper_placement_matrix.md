@@ -27,7 +27,7 @@ supervision.
 
 ## Matrix
 
-| Method | Slide Object | G_i | \mathcal{C} | \mathcal{R} | Surviving Statistic |
+| Method | Slide Object | G | C | R | Surviving Statistic |
 |---|---|---:|---:|---:|---:|
 | Deep Sets | unordered set | none | instance transform | sum or mean | transformed first moment |
 | ABMIL | unordered set | none | attention score per instance | weighted sum | learned weighted first moment |

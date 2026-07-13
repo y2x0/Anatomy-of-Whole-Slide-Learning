@@ -4,12 +4,12 @@ Foundation adaptation changes where task supervision enters C/R/G/S.
 
 | Adaptation | C | R | G | S | What Moves |
 |---|---|---|---|---|---|
-| Linear probe | frozen | frozen or fixed | inherited | labels train head | \omega |
-| Frozen feature MIL | post-encoder context may train | readout trains | optional downstream geometry | labels train C/R/H | \psi,\omega |
-| Prompt tuning | prompt-conditioned context | prompt score or head | inherited visual-text geometry | labels/words train prompts | \pi,\omega |
-| LoRA/adapters | low-rank or residual context update | depends on layer placement | mostly inherited | labels train small modules | \Delta_\eta,\omega |
-| Full fine-tuning | encoder context moves | readout moves | geometry can move | labels train all selected weights | \phi,\psi,\omega |
-| Retrieval-memory | retrieved cases condition context | vote/prototype/retrieval head | memory graph | labels live in memory | \mathcal{M} and metric |
+| Linear probe | frozen | frozen or fixed | inherited | labels train head | omega |
+| Frozen feature MIL | post-encoder context may train | readout trains | optional downstream geometry | labels train C/R/H | psi, omega |
+| Prompt tuning | prompt-conditioned context | prompt score or head | inherited visual-text geometry | labels/words train prompts | pi, omega |
+| LoRA/adapters | low-rank or residual context update | depends on layer placement | mostly inherited | labels train small modules | Delta_eta, omega |
+| Full fine-tuning | encoder context moves | readout moves | geometry can move | labels train all selected weights | phi, psi, omega |
+| Retrieval-memory | retrieved cases condition context | vote/prototype/retrieval head | memory graph | labels live in memory | memory M and metric |
 
 ## Readout Versus Encoder Adaptation
 

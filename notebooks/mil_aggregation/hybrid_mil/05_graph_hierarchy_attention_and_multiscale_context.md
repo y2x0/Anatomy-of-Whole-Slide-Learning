@@ -148,7 +148,8 @@ z
 \right).
 ```
 
-If coarsening occurs before graph construction, the support is A(P^{\mathsf T}H).
+If coarsening occurs before graph construction, the graph is built on the pooled
+states rather than on the original fine-scale states.
 If graph construction occurs before coarsening, it is A(H). These are generally
 different graphs and therefore different hypothesis classes.
 

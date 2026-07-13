@@ -64,8 +64,8 @@ coordinate-free set transformer.
 
 ## 4. Hierarchical transformer composition
 
-For a nested hierarchy, let H_i^{(\ell)} be tokens at level ell. A generic
-bottom-up transformer is
+For a nested hierarchy, let H at each level contain the tokens at that scale. A
+generic bottom-up transformer is
 
 ```math
 H_i^{(\ell+1)}

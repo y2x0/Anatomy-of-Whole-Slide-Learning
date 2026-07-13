@@ -98,7 +98,7 @@ where:
 \sum_{r=1}^{d}\alpha_r.
 ```
 
-First moments have |\alpha|=1. Second moments have |\alpha|=2. Higher
+First moments have total degree one. Second moments have total degree two. Higher
 moments capture more distribution shape but grow quickly in dimension.
 
 ## Central Moments

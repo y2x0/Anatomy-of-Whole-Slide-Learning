@@ -2,8 +2,8 @@
 
 ## 1. Readout is a choice at every boundary
 
-Let H^{(\ell)} be the states at level ell. A hierarchical model does not have
-one readout; it has a sequence
+Let H at each level denote the states at that scale. A hierarchical model does
+not have one readout; it has a sequence
 
 ```math
 H^{(\ell+1)}

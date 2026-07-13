@@ -2,8 +2,8 @@
 
 ## 1. Unified forward map
 
-Let H_i^{(0)} be fine-scale features and P_i^{(\ell)} parent maps. A generic
-hierarchical MIL model is
+Let H_i at level zero contain fine-scale features, and let each level have a
+parent assignment map. A generic hierarchical MIL model is
 
 ```math
 H_i^{(\ell+1)}

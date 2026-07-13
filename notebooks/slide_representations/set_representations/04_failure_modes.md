@@ -46,7 +46,8 @@ z_i
 \right).
 ```
 
-If |P_i|\ll n_i, the positive morphology has small weight.
+If the positive morphology occupies far fewer patches than the slide, it has small
+weight.
 
 ## 3. Attention Collapse
 

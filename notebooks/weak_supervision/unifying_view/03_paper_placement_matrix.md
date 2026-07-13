@@ -13,10 +13,10 @@ training pipeline. Each one has a different mathematical status.
 
 ## Compact Matrix
 
-| Method | Observed S^{\mathrm{obs}} | Generated target | Core mechanism | Identifiable from loss | Main non-identifiability |
+| Method | Observed S_obs | Generated target | Core mechanism | Identifiable from loss | Main non-identifiability |
 |---|---|---|---|---|---|
 | ABMIL | slide label Y_i | none | attention-weighted bag embedding | slide prediction function | attention as instance truth |
-| Campanella-style weak supervision | report/case-derived label \widetilde Y | slide/case mapping target | large-scale slide CE and aggregation | clinical-label predictor | slide-local diagnostic region |
+| Campanella-style weak supervision | report/case-derived label Y_tilde | slide/case mapping target | large-scale slide CE and aggregation | clinical-label predictor | slide-local diagnostic region |
 | CLAM | slide label Y_i | top/bottom-k attention constraints | slide CE plus smooth-SVM instance clustering | slide class and selected-extreme geometry | whether selected patches are true witnesses |
 | DSMIL | slide label Y_i | critical-instance index induced by max branch | dual-stream max witness plus bag relation branch | slide predictor with critical-instance bias | true instance labels |
 | DTFD-MIL | slide label Y_i | pseudo-bag labels and distilled features | Tier-1 pseudo-bag MIL, Grad-CAM evidence, Tier-2 MIL | slide predictor over distilled pseudo-bags | true pseudo-bag labels |
