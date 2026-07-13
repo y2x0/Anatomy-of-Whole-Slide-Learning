@@ -23,7 +23,7 @@ Here `beta` is inverse temperature.
 
 ## Limits
 
-As temperature becomes infinite:
+As temperature becomes infinite, equivalently as inverse temperature vanishes:
 
 ```math
 \beta\to 0
@@ -33,7 +33,7 @@ a_j^{(\beta)}
 \frac{1}{n}.
 ```
 
-As temperature becomes zero:
+As temperature tends to zero, equivalently as inverse temperature diverges:
 
 ```math
 \beta\to\infty
@@ -72,7 +72,7 @@ H(a)
 \log n.
 ```
 
-Hard attention gives:
+One-hot hard selection gives:
 
 ```math
 H(a)
@@ -98,6 +98,33 @@ N_2(a)
 
 These two diagnostics measure how many patches are effectively used.
 
+The entropy changes monotonically with inverse temperature. Let:
+
+```math
+Z(\beta)
+=
+\sum_j\exp(\beta s_j),
+\qquad
+H(\beta)
+=
+\log Z(\beta)
+-
+\beta\,\mathbb{E}_{a^{(\beta)}}[s].
+```
+
+Then:
+
+```math
+\frac{\mathrm{d}H}{\mathrm{d}\beta}
+=
+-\beta\,\mathrm{Var}_{a^{(\beta)}}(s)
+\le 0.
+```
+
+Thus increasing `beta` cannot increase attention entropy. It may have almost no
+effect when all scores are equal, and it can have a sharp effect when several
+scores are close to the maximum.
+
 ## Gradient Geometry
 
 For softmax:
@@ -119,7 +146,31 @@ With inverse temperature:
 ```
 
 Low temperature increases local sensitivity near uncertain decisions but can
-also saturate when one score dominates.
+also saturate when one score dominates. For the readout:
+
+```math
+m(\beta)
+=
+\sum_j a_j^{(\beta)}v_j,
+```
+
+the temperature derivative is:
+
+```math
+\frac{\mathrm{d}m}{\mathrm{d}\beta}
+=
+\sum_j
+a_j^{(\beta)}
+\left(
+s_j
+-
+\mathbb{E}_{a^{(\beta)}}[s]
+\right)v_j.
+```
+
+The readout therefore moves toward values associated with above-average scores;
+temperature changes the statistic itself, not merely the appearance of its
+weight map.
 
 ## Denominator Coupling
 
