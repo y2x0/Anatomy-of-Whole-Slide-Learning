@@ -30,3 +30,7 @@ The transformer portion is now in `transformer_mil/`.
 The graph MIL portion is now in `graph_mil/`. It derives graph-as-bag
 equivariance, Patch-GCN, HEAT, WiKG, HACT, graph readouts, graph-specific
 failure modes, and a C/R/G/S design matrix.
+
+The state-space MIL portion is now in `state_space_mil/`. It derives ordered
+bag symmetry, S4MIL, selective state spaces, MambaMIL, SR-Mamba reordering,
+state-space readouts, and failure modes.

@@ -62,7 +62,7 @@ math notes first.
 
 ## Notebook Families
 
-Current public notebook count: **648** markdown files.
+Current public notebook count: **657** markdown files.
 
 - ✅ `notebooks/survival_modeling/` (**65 markdown files**): how risk is
   represented, optimized, and evaluated.
@@ -94,6 +94,6 @@ Current public notebook count: **648** markdown files.
   objectives, paper-specific derivations, and a unifying view complete so far**): how pathology
   representations are learned through contrastive, distillation, masked,
   multimodal, hierarchical, and retrieval objectives.
-- `notebooks/mil_aggregation/` (**34 markdown files, foundations,
-  mean/attention, transformer, and graph portions complete**): how latent instances become bag predictions under different
+- `notebooks/mil_aggregation/` (**43 markdown files, foundations,
+  mean/attention, transformer, graph, and state-space portions complete**): how latent instances become bag predictions under different
   context, readout, geometry, and supervision operators.
