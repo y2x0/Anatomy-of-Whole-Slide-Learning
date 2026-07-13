@@ -22,11 +22,14 @@ b
 ```math
 z_i
 =
-g(b_i).
+\frac{g(b_i)}{\left\|g(b_i)\right\|_2}.
 ```
 
 SC-MIL applies supervised contrast after attention aggregation, avoiding
-direct propagation of slide labels to patches.
+direct propagation of slide labels to patches. With this normalization,
+`z_i^{\top}z_j` is cosine similarity. Omitting the normalization changes the
+critic to a norm-sensitive dot product and is not the forward map used in the
+paper's pseudocode.
 
 ## Exact Loss
 
