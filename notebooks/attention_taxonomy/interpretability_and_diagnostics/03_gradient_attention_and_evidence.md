@@ -30,6 +30,15 @@ a_j\delta v_j.
 ```
 
 This is a value-space perturbation. It treats the attention weights as fixed.
+By Cauchy-Schwarz, its magnitude obeys:
+
+```math
+|\delta o|
+\le
+a_j
+\|\nabla_z g(z)\|_2
+\|\delta v_j\|_2.
+```
 
 Thus a local sensitivity score is:
 
@@ -41,11 +50,14 @@ a_j
 \nabla_z g(z)
 \right\|
 \left\|
-v_j
+\delta v_j
 \right\|
 ```
 
-or, for a signed linear head:
+only after a perturbation scale `delta v_j` has been specified. Taking
+`delta v_j=-v_j` gives a perturbation-to-zero heuristic, not a universal
+evidence definition. For a signed linear head, the exact value-path
+contribution is instead:
 
 ```math
 e_j
