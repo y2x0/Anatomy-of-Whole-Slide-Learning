@@ -63,3 +63,61 @@ The safest conclusion is model-relative: under the specified edit mechanism,
 the trained system changes its output. Biological interpretation requires
 independent validation.
 
+## Counterfactual Optimization Contract
+
+Let X be the native WSI object and let X_cf belong to an explicitly defined
+feasibility set X_feas. A generic counterfactual solves
+
+```math
+X_{\mathrm{cf}}
+\in
+\underset{X'\in\mathcal X_{\mathrm{feas}}}{\arg\min}
+\left[
+\lambda_{\mathrm{target}}\ell_{\star}(f(X'))
+ +\lambda_{\mathrm{dist}}d(X',X)
+ +\lambda_{\mathrm{struct}}\Omega(X',X)
+\right].
+```
+
+The terms have different meanings. The target loss moves the model output, the
+distance penalizes change, and Omega encodes feasibility or structural costs.
+Dropping the feasibility set changes the explanation from a constrained
+counterfactual to an unconstrained adversarial example.
+
+For a WSI bag, an edit should also state whether it changes one patch, a region,
+the patch distribution, or the graph support:
+
+```math
+X_i
+=
+\left(H_i,G_i\right),
+\qquad
+X_i^{\mathrm{cf}}
+=
+\left(\mathsf I_H(H_i),\mathsf I_G(G_i),\mathsf I_C(C_i)\right).
+```
+
+Reassembling the edited object and rerunning the full C/R/G/S pipeline is required
+when the intervention changes context or geometry. Editing a rendered heatmap is
+not an intervention on the model input.
+
+## Validation Is A Vector, Not A Score
+
+The validation claims should be kept separate:
+
+```math
+\mathbf v(X_{\mathrm{cf}})
+=
+\left(
+\mathbf 1\{f(X_{\mathrm{cf}})\in\mathcal Y_{\star}\},
+d(X,X_{\mathrm{cf}}),
+\|X-X_{\mathrm{cf}}\|_0,
+\mathrm{plaus}(X_{\mathrm{cf}}),
+\mathrm{stable}(X_{\mathrm{cf}}),
+\mathrm{diverse}(X_{\mathrm{cf}})
+\right).
+```
+
+No single weighted sum of these coordinates proves validity. A high target
+success with an infeasible edit is not a valid counterfactual; a plausible edit
+that does not change the target is not a successful counterfactual.
