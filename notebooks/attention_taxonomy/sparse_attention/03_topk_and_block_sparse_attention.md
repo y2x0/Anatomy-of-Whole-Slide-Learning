@@ -140,8 +140,37 @@ Block attention with block size `b` costs:
 O(nbd).
 ```
 
-The computational gain is a modeling assumption: interactions outside the mask
-are impossible in that layer.
+For top-k attention, the displayed `O(nkd)` cost is valid only when each query
+already has a candidate set of size `c` with `c` near `k`. If every query must
+score all `n` sources before selecting its top `k`, the score computation still
+costs:
+
+```math
+O(n^2d),
+```
+
+followed by selection. Approximate nearest-neighbor search, coordinate windows,
+or an indexed graph can reduce the candidate-generation cost to approximately
+`O(ncd)`, after which top-k normalization costs `O(nkd)`.
+
+The computational gain is therefore inseparable from a support assumption:
+interactions outside the candidate set or mask are unavailable in that layer.
+
+## Hard Support As A Function
+
+Unlike softmax, top-k support is a discontinuous function of the scores at a
+tie. If `s_(k)` and `s_(k+1)` denote the k-th and `(k+1)`-th order statistics,
+then the selected set is locally stable only while:
+
+```math
+s_{(k)}
+>
+s_{(k+1)}.
+```
+
+When the gap approaches zero, an arbitrarily small score perturbation can
+replace one source with another. The resulting readout can change sharply when
+the two values differ, even if the score perturbation is tiny.
 
 ## Dense Summary
 
