@@ -142,7 +142,7 @@ the two corruption kernels.
 
 ## Invariance Is A Supervision Claim
 
-For downstream target `Y`, a semantically valid view mechanism should satisfy:
+The generative construction often implies:
 
 ```math
 Y
@@ -152,19 +152,29 @@ Y
 G
 ```
 
-only in the weak sense that the transformation does not alter the relevant
-label. A stronger usable condition is:
+when the corruption kernel samples `\widetilde G` from `G` without directly
+observing `Y`. This conditional independence is a Markov property, not a
+semantic-preservation guarantee. A label-preserving view mechanism instead
+requires, for `q(\widetilde G\mid G)`-almost every reachable pair:
 
 ```math
 p
 \left(
 Y\mid \widetilde G
 \right)
-\approx
+\equiv
 p
 \left(
 Y\mid G
 \right).
+```
+
+For deterministic labels, the corresponding requirement is:
+
+```math
+Y(G)
+=
+Y(\widetilde G).
 ```
 
 Graph contrast cannot verify this condition without task information. It
