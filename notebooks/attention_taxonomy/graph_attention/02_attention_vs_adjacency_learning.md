@@ -56,6 +56,20 @@ a_{uv}
 \alpha_{uv}\exp(e_{uv}).
 ```
 
+If `alpha_uv` is a nonnegative soft gate, the normalized coefficient is:
+
+```math
+a_{uv}
+=
+\frac{\alpha_{uv}\exp(e_{uv})}
+{\sum_r\alpha_{ur}\exp(e_{ur})}.
+```
+
+When every `alpha_uv` is strictly positive, this does not create a sparse
+topology; every candidate remains in the support. A genuinely learned support
+requires a hard gate, threshold, top-k rule, or a zero-valued mask. Soft
+adjacency and hard adjacency therefore belong to different inductive biases.
+
 Now the model learns both:
 
 ```text
