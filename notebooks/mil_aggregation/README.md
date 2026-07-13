@@ -38,3 +38,8 @@ The hierarchical MIL portion is now in `hierarchical_mil/`. It derives
 hierarchical bag objects, parent-map symmetry, region coarsening bottlenecks,
 DTFD pseudo-bags, HIPT nested tokens, the HACT boundary, hierarchical
 readouts, failure modes, and a C/R/G/S design matrix.
+
+The hybrid MIL portion is now in `hybrid_mil/`. It derives operator
+noncommutativity, graph-plus-attention, transformer-plus-hierarchy,
+state-space-plus-readout, multiscale graph hybrids, task-head interactions,
+hybrid failure modes, and open C/R/G/S design axes.
