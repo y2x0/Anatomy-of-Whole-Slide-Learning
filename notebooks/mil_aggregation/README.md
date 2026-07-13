@@ -19,9 +19,8 @@ foundations/
     C/R/G/S decomposition, and surviving-statistic design
 ```
 
-Later portions will derive mean/attention, transformer, graph, state-space,
-hierarchical, and hybrid MIL families from the mapped papers in the private
-research map.
+Later portions will derive hybrid MIL families from the mapped papers in the
+private research map.
 
 The mean/attention portion is now in `mean_attention_mil/`.
 
@@ -34,3 +33,8 @@ failure modes, and a C/R/G/S design matrix.
 The state-space MIL portion is now in `state_space_mil/`. It derives ordered
 bag symmetry, S4MIL, selective state spaces, MambaMIL, SR-Mamba reordering,
 state-space readouts, and failure modes.
+
+The hierarchical MIL portion is now in `hierarchical_mil/`. It derives
+hierarchical bag objects, parent-map symmetry, region coarsening bottlenecks,
+DTFD pseudo-bags, HIPT nested tokens, the HACT boundary, hierarchical
+readouts, failure modes, and a C/R/G/S design matrix.
