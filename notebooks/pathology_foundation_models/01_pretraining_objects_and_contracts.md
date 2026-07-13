@@ -31,7 +31,9 @@ L = objective being optimized;
 G = geometry in which representation similarity is measured.
 ```
 
-The learned embedding preserves the distinctions rewarded by this contract.
+The learned embedding is encouraged to preserve the distinctions rewarded by
+this contract; finite capacity and optimization can leave that preservation
+incomplete.
 
 ## 3. What “Foundation” Does Not Mean
 
@@ -59,4 +61,3 @@ z=\mathcal R(H;G),
 
 Pretraining changes `Phi`; adaptation and downstream aggregation determine how
 task information enters afterward.
-

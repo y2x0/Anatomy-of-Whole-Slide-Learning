@@ -96,5 +96,5 @@ validate on external cohorts
 check calibration, not only C-index
 ```
 
-Multimodal survival should prove that fusion improves the risk object, not just
-that more data streams were concatenated.
+Multimodal survival should demonstrate that fusion improves the reported risk
+object, not merely that more data streams were concatenated.

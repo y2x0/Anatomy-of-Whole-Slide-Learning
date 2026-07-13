@@ -88,7 +88,8 @@ Surviving statistic:
 weighted first moment
 ```
 
-Risk is assumed to be concentrated in patches that attention can identify.
+This imposes a witness-style inductive-bias assumption: prognostic signal is
+concentrated in patches that the attention/readout mechanism can identify.
 
 ### Graph Survival
 
