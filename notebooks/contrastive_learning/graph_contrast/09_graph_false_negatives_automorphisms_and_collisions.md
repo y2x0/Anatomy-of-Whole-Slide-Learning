@@ -30,6 +30,24 @@ h_{\pi(i)}
 h_i.
 ```
 
+For the same equality to hold after augmentation, the realized views must also
+preserve the automorphism:
+
+```math
+P_{\pi}\widetilde A^{(a)}P_{\pi}^{\top}
+=
+\widetilde A^{(a)},
+\qquad
+P_{\pi}\widetilde X^{(a)}
+=
+\widetilde X^{(a)}.
+```
+
+Under this condition, the two-view embeddings satisfy the corresponding
+equivariance relation. Independent edge or feature corruption can violate it,
+in which case the equality below is an idealized collision bound rather than
+an exact identity for every augmentation draw.
+
 If `j=\pi(i)`, GRACE simultaneously has:
 
 ```math
