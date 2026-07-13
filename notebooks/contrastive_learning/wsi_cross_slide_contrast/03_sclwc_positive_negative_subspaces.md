@@ -106,6 +106,40 @@ cross-entropies. The displayed probability sign is ambiguous unless the
 negative term denotes the opposite target consistently. We preserve the
 printed expression instead of inventing an unreported correction.
 
+If `p_n^{\mathrm{pos}}` is the positive-class probability from
+`F_n^{\mathrm{pos}}` and `p_n^{\mathrm{neg}}` is the negative-class probability
+from `F_n^{\mathrm{neg}}`, the coherent two-target cross-entropy would instead
+be:
+
+```math
+\mathcal{L}_{\mathrm{PNM}}^{\mathrm{CE}}
+=
+-\frac{1}{B}
+\sum_{n=1}^{B}
+\left(
+\log p_n^{\mathrm{pos}}
++
+\log p_n^{\mathrm{neg}}
+\right).
+```
+
+The difference is not cosmetic. The printed term is:
+
+```math
+\mathcal{L}_{\mathrm{PNM}}^{\mathrm{printed}}
+=
+-\log p_n^{\mathrm{pos}}
++
+\log p_n^{\mathrm{neg}},
+```
+
+so minimizing it rewards larger `p_n^{\mathrm{pos}}` but smaller
+`p_n^{\mathrm{neg}}`. That is opposite to the stated negative-aware objective
+if `p_n^{\mathrm{neg}}` is meant to be the probability of the negative class.
+The paper-faithful record should therefore retain the printed equation and
+label the BCE-sign reading as an interpretation, rather than silently claiming
+that the two objectives are equivalent.
+
 ## Surviving Statistic
 
 The PNM retains two complementary weighted first moments. Any patch multisets
