@@ -4,7 +4,9 @@ Primary anchor:
 
 - Filiot et al. "Scaling Self-Supervised Learning for Histopathology with
   Masked Image Modeling." medRxiv 2023.
-  https://arxiv.org/abs/2409.09173
+  https://www.medrxiv.org/content/10.1101/2023.07.21.23292757v2
+- Official Phikon implementation and release:
+  https://github.com/owkin/HistoSSLscaling
 
 The original Phikon study applies iBOT to histology and studies domain, data,
 and model scaling. Its objective is masked self-distillation, not pixel-level
