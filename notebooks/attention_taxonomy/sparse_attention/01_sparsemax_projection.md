@@ -36,6 +36,39 @@ p_j\ge 0,
 
 ## Closed Form
 
+The threshold form follows from the KKT conditions. Introduce a multiplier
+`lambda` for the simplex equality and nonnegative multipliers `mu_j` for the
+coordinate constraints:
+
+```math
+\mathcal{L}(p,\lambda,\mu)
+=
+\frac{1}{2}
+\|p-s\|_2^2
++
+\lambda
+\left(
+\sum_jp_j-1
+\right)
+-
+\sum_j\mu_jp_j.
+```
+
+Stationarity and complementary slackness give:
+
+```math
+p_j-s_j+\lambda-\mu_j
+=
+0,
+\qquad
+\mu_jp_j
+=
+0.
+```
+
+Therefore positive coordinates satisfy `p_j=s_j-lambda`, while inactive
+coordinates satisfy `p_j=0` and `s_j-lambda<=0`. Writing `tau=lambda` yields:
+
 The solution has the form:
 
 ```math
@@ -104,6 +137,11 @@ except at support-changing boundaries.
 
 Thus sparsemax creates exact zeros and zero gradients for excluded tokens.
 
+Within a fixed active set, sparsemax is affine in the scores. The map is
+continuous when the active set changes, but its Jacobian changes at support
+boundaries. The instability is therefore a derivative/support instability, not
+an arbitrary jump in the attention output.
+
 ## WSI Interpretation
 
 Sparsemax attention can mean:
@@ -139,4 +177,3 @@ only a subset of instances should survive the attention readout
 
 This is useful for sparse-positive MIL, but dangerous when weak evidence is
 distributed across tissue.
-
