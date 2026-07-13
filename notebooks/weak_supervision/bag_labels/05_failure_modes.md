@@ -24,7 +24,11 @@ The bag prediction can still be correct.
 
 ## Shortcut Witness
 
-Suppose an artifact feature $A_{ij}$ appears in positive slides:
+Suppose an artifact feature
+```math
+A_{ij}
+```
+appears in positive slides:
 
 ```math
 P(A=1\mid Y=1)
@@ -32,7 +36,11 @@ P(A=1\mid Y=1)
 P(A=1\mid Y=0).
 ```
 
-If an artifact patch predicts $Y$, max or attention MIL may select it as the
+If an artifact patch predicts
+```math
+Y
+```
+, max or attention MIL may select it as the
 witness:
 
 ```math
@@ -88,7 +96,11 @@ clean instance negatives.
 
 ## Attention Interpretation Failure
 
-Bag training identifies predictors of $Y$, not necessarily true patch labels:
+Bag training identifies predictors of
+```math
+Y
+```
+, not necessarily true patch labels:
 
 ```math
 a_{ij}

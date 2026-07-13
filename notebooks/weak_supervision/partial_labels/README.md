@@ -10,7 +10,11 @@ S_i^{\mathrm{obs}}
 \{(a,y_a):a\in\mathcal{O}_i\},
 ```
 
-where $\mathcal{O}_i$ is the observed subset of patches, regions, pairs, or
+where
+```math
+\mathcal{O}_i
+```
+is the observed subset of patches, regions, pairs, or
 constraints.
 
 ## Files

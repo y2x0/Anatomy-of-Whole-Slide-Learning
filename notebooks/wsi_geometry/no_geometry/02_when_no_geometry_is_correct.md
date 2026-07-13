@@ -21,7 +21,11 @@ y_i
 F(\widehat\mu_i)
 ```
 
-for some functional $F$, then coordinates are nuisance variables.
+for some functional
+```math
+F
+```
+, then coordinates are nuisance variables.
 
 Examples of distribution-like targets include:
 
@@ -79,7 +83,11 @@ z_i
 \mathcal{H}(z_i)
 ```
 
-is enough if $z_i$ preserves the morphology statistic needed by the task.
+is enough if
+```math
+z_i
+```
+preserves the morphology statistic needed by the task.
 
 Mean pooling assumes:
 
@@ -114,7 +122,11 @@ F(\widehat\mu_i)
 \right),
 ```
 
-where $\nu_{\theta,i}$ is a label-trained reweighting of the empirical
+where
+```math
+\nu_{\theta,i}
+```
+is a label-trained reweighting of the empirical
 distribution.
 
 ## C/R/G/S Placement

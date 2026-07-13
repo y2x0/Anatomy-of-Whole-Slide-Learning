@@ -33,7 +33,11 @@ r_i
 
 ## Gradient With Respect To Instance Probability
 
-The derivative of $r_i$ is:
+The derivative of
+```math
+r_i
+```
+is:
 
 ```math
 \frac{\partial r_i}{\partial p_{ik}}
@@ -72,7 +76,15 @@ Then:
 \prod_{j\ne k}(1-p_{ij}).
 ```
 
-When $r_i$ is already close to $1$, gradients shrink. Once the model finds one
+When
+```math
+r_i
+```
+ is already close to
+```math
+1
+```
+, gradients shrink. Once the model finds one
 high-probability patch, the bag is nearly explained.
 
 ## Negative Bag Loss Gradient
@@ -135,4 +147,3 @@ Noisy-or gradients encode competition through the complement:
 
 The operator accumulates weak probabilities, but it saturates once the bag is
 almost certainly positive.
-

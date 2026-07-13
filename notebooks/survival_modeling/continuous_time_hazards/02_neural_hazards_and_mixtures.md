@@ -8,7 +8,11 @@ A continuous-time neural hazard model parameterizes:
 \rho(g_\theta(t,z)),
 ```
 
-where $\rho$ enforces positivity.
+where
+```math
+\rho
+```
+enforces positivity.
 
 The most direct choice is:
 
@@ -26,7 +30,11 @@ g_\theta(t,z)
 \mathrm{MLP}_{\theta}([e(t),z]).
 ```
 
-Here $e(t)$ may be:
+Here
+```math
+e(t)
+```
+may be:
 
 ```text
 raw time

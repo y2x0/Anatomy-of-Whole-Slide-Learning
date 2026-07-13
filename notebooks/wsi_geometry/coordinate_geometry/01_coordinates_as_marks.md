@@ -33,9 +33,17 @@ u_{ij}
 \right),
 ```
 
-where $\eta$ is a coordinate encoding.
+where
+```math
+\eta
+```
+is a coordinate encoding.
 
-Then any pooling operator acts on $u_{ij}$:
+Then any pooling operator acts on
+```math
+u_{ij}
+```
+:
 
 ```math
 z_i
@@ -121,7 +129,11 @@ M_i^{(hc)}
 \frac{1}{n_i}\sum_{j=1}^{n_i}h_{ij}c_{ij}^{\top}.
 ```
 
-The cross moment $M_i^{(hc)}$ captures where embedding dimensions tend to occur.
+The cross moment
+```math
+M_i^{(hc)}
+```
+captures where embedding dimensions tend to occur.
 It is still a coarse statistic; it does not fully encode layout.
 
 ## C/R/G/S Placement

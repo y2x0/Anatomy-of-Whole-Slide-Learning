@@ -39,7 +39,11 @@ burden:
     how much tissue resembles prototype m?
 ```
 
-For WSI, this distinction matters because $n_i$ may reflect tissue area,
+For WSI, this distinction matters because
+```math
+n_i
+```
+may reflect tissue area,
 sampling density, or preprocessing.
 
 ## Residual Statistics
@@ -150,4 +154,3 @@ level 5:
 
 The more statistics survive, the less the slide collapses. The cost is higher
 dimension, noisier estimates, and less direct interpretability.
-

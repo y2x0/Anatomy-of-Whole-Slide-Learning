@@ -36,7 +36,15 @@ z_i^{(0)}
 \mathbb{R}^{D}.
 ```
 
-If the target $Y$ depends on slide information discarded by $F_{\phi_0}$:
+If the target
+```math
+Y
+```
+ depends on slide information discarded by
+```math
+F_{\phi_0}
+```
+:
 
 ```math
 I(Y;X\mid z^{(0)})
@@ -44,7 +52,11 @@ I(Y;X\mid z^{(0)})
 0,
 ```
 
-then a head on $z^{(0)}$ cannot be Bayes optimal.
+then a head on
+```math
+z^{(0)}
+```
+cannot be Bayes optimal.
 
 If instead:
 
@@ -75,7 +87,11 @@ g_\omega(z_i^{(0)}).
 ```
 
 The MLP can carve nonlinear boundaries in the frozen slide space, but it still
-cannot recover information absent from $z_i^{(0)}$.
+cannot recover information absent from
+```math
+z_i^{(0)}
+```
+.
 
 ## C/R/G/S Placement
 

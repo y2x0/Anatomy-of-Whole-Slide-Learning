@@ -19,7 +19,11 @@ f(\{h_1,\ldots,h_n\})
 f(\{h_{\pi(1)},\ldots,h_{\pi(n)}\})
 ```
 
-for every permutation $\pi$.
+for every permutation
+```math
+\pi
+```
+.
 
 ## Files
 

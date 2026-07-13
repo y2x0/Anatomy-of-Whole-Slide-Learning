@@ -117,7 +117,11 @@ P(h\mid Y=1)
 \pi P_1(h)+(1-\pi)P_0(h)
 ```
 
-is valid only if $P_0^{+}=P_0^{-}=P_0$.
+is valid only if
+```math
+P_0^{+}=P_0^{-}=P_0
+```
+.
 
 ## Naive Instance Training Bias
 
@@ -137,7 +141,19 @@ P(h\mid \widetilde Z=1)
 \pi P_1(h)+(1-\pi)P_0^{+}(h).
 ```
 
-The model may learn to separate $P_0^{+}$ from $P_0^{-}$ rather than $P_1$ from
+The model may learn to separate
+```math
+P_0^{+}
+```
+ from
+```math
+P_0^{-}
+```
+ rather than
+```math
+P_1
+```
+from
 negative tissue.
 
 ## Relation To PU Learning

@@ -119,7 +119,11 @@ vectors.
 
 ## Dense Interaction Statistic
 
-For attention matrix $A\in\mathbb{R}^{R\times n_i}$:
+For attention matrix
+```math
+A\in\mathbb{R}^{R\times n_i}
+```
+:
 
 ```math
 A_{rj}
@@ -128,7 +132,11 @@ A_{rj}
 {\sum_{\ell}\exp(q_r^\top k_{\ell})}.
 ```
 
-The morphology retrieved by pathway $r$ is:
+The morphology retrieved by pathway
+```math
+r
+```
+is:
 
 ```math
 u_{ir}=\sum_jA_{rj}v_{ij}.

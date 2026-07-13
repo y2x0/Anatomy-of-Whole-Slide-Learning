@@ -41,7 +41,11 @@ z_i
 (h_{i1},\ldots,h_{iK}).
 ```
 
-Early and late risk can depend on different coordinates of $z_i$:
+Early and late risk can depend on different coordinates of
+```math
+z_i
+```
+:
 
 ```math
 h_{ik}=\sigma(w_k^\top z_i+b_k).

@@ -21,7 +21,11 @@ s_{ijc}
 w_c^\top h_{ij}.
 ```
 
-The max instance score for class $c$ is:
+The max instance score for class
+```math
+c
+```
+is:
 
 ```math
 m_{ic}
@@ -62,7 +66,11 @@ v_{ij}
 Vh_{ij}.
 ```
 
-For class $c$, the critical query is:
+For class
+```math
+c
+```
+, the critical query is:
 
 ```math
 q_i^\star(c)
@@ -101,7 +109,11 @@ z_i^{(c)}
 \sum_j a_{ij}^{(c)}v_{ij}.
 ```
 
-The bag logit is then computed from $z_i^{(c)}$.
+The bag logit is then computed from
+```math
+z_i^{(c)}
+```
+.
 
 ## What Statistic Survives?
 
@@ -153,7 +165,11 @@ a false positive, the bag branch can amplify the wrong morphology.
 
 ## Coupling To Max Pooling
 
-Because $j_i^\star(c)$ comes from an argmax, the bag branch is discontinuously
+Because
+```math
+j_i^\star(c)
+```
+comes from an argmax, the bag branch is discontinuously
 coupled to the instance branch. A small change in instance scores can switch:
 
 ```math
@@ -184,4 +200,3 @@ z_i^{(c)}.
 The surviving statistic is a critical-instance-centered weighted first moment,
 plus an explicit max score. That is why DSMIL sits between max MIL and attention
 MIL.
-

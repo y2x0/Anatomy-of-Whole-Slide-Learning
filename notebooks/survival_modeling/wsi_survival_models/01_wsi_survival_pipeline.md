@@ -134,4 +134,11 @@ z_i&=\mathcal{R}(\widetilde{H}_i),\\
 ```
 
 The survival model is only as rich as the slide statistic that survives
-$\mathcal{C}$ and $\mathcal{R}$.
+```math
+\mathcal{C}
+```
+ and
+```math
+\mathcal{R}
+```
+.

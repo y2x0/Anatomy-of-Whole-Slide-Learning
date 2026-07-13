@@ -24,7 +24,11 @@ s_{i(n_i)}.
 
 ## Trimmed Mean
 
-For trim fraction $\alpha$, let:
+For trim fraction
+```math
+\alpha
+```
+, let:
 
 ```math
 k
@@ -120,6 +124,9 @@ to:
 \sum_{j\in\mathcal{I}_i}s_{ij},
 ```
 
-where $\mathcal{I}_i$ excludes extreme ranks. This protects against outliers but
+where
+```math
+\mathcal{I}_i
+```
+excludes extreme ranks. This protects against outliers but
 can remove rare true positives.
-

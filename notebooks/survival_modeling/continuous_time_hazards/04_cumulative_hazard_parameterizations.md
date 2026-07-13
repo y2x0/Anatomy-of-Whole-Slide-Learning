@@ -79,7 +79,11 @@ Then:
 \lambda_k(z)(t-\tau_{k-1})
 ```
 
-for $t\in(\tau_{k-1},\tau_k]$.
+for
+```math
+t\in(\tau_{k-1},\tau_k]
+```
+.
 
 This is continuous-time but close to discrete hazards. The interval hazard is:
 
@@ -104,13 +108,21 @@ boundaries.
 
 ## Direct Cumulative Hazard
 
-Instead of modeling $\lambda$, model:
+Instead of modeling
+```math
+\lambda
+```
+, model:
 
 ```math
 \Lambda_\theta(t,z)
 ```
 
-with monotonicity in $t$. Then:
+with monotonicity in
+```math
+t
+```
+. Then:
 
 ```math
 S_\theta(t,z)=\exp[-\Lambda_\theta(t,z)].
@@ -163,7 +175,11 @@ where:
 b_m(t)\ge0.
 ```
 
-Then $\lambda\ge0$, and:
+Then
+```math
+\lambda\ge0
+```
+, and:
 
 ```math
 \Lambda(t\mid z)
@@ -178,7 +194,11 @@ where:
 B_m(t)=\int_0^tb_m(u)\,du.
 ```
 
-If $B_m$ is known analytically, the likelihood is cheap and exact.
+If
+```math
+B_m
+```
+is known analytically, the likelihood is cheap and exact.
 
 For WSI:
 
@@ -209,7 +229,11 @@ Alternatively:
 \mathrm{softplus}(a_\theta(t,z))
 ```
 
-is nonnegative but not necessarily monotone in $t$. Nonnegativity alone is not
+is nonnegative but not necessarily monotone in
+```math
+t
+```
+. Nonnegativity alone is not
 enough.
 
 ## Likelihood Gradients
@@ -238,7 +262,11 @@ The gradient is:
 \nabla_\theta\lambda_\theta(u,z_i)\,du.
 ```
 
-For WSI representation $z_i$:
+For WSI representation
+```math
+z_i
+```
+:
 
 ```math
 \nabla_{z_i}\mathcal{L}_i

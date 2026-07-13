@@ -10,7 +10,11 @@ r_i
 \sum_j e_{ij}.
 ```
 
-The contribution of patch $j$ is:
+The contribution of patch
+```math
+j
+```
+is:
 
 ```math
 \Delta_{ij}
@@ -30,7 +34,11 @@ p_i
 \mathrm{sigmoid}(r_i).
 ```
 
-Patch $j$ changes the log-odds by:
+Patch
+```math
+j
+```
+changes the log-odds by:
 
 ```math
 \log\frac{p_i}{1-p_i}
@@ -54,7 +62,11 @@ p_i-p_i^{(-j)}
 \mathrm{sigmoid}(r_i-e_{ij}).
 ```
 
-This depends on the current score $r_i$. The same evidence unit changes
+This depends on the current score
+```math
+r_i
+```
+. The same evidence unit changes
 probability more near the decision boundary than in a saturated region.
 
 ## Positive And Negative Maps
@@ -82,7 +94,7 @@ r_i
 ```
 
 A faithful map should show both positive and negative evidence. Showing only
-$|e_{ij}|$ loses direction.
+|e_{ij}| loses direction.
 
 ## Dense Summary
 
@@ -95,4 +107,3 @@ Additive MIL gives exact credit assignment in the model's score space:
 ```
 
 Every patch has a direct, signed, non-normalized contribution.
-

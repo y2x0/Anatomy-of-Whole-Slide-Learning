@@ -10,7 +10,11 @@ The ideal fully supervised dataset would contain:
 \{(H_i,G_i,U_i)\}_{i=1}^{N},
 ```
 
-where $U_i$ contains all task-relevant truth:
+where
+```math
+U_i
+```
+contains all task-relevant truth:
 
 ```math
 U_i
@@ -47,7 +51,11 @@ The actual weakly supervised dataset contains observed supervision:
 \{(H_i,G_i,S_i^{\mathrm{obs}})\}_{i=1}^{N},
 ```
 
-where $S_i^{\mathrm{obs}}$ is observed supervision, not complete truth.
+where
+```math
+S_i^{\mathrm{obs}}
+```
+is observed supervision, not complete truth.
 
 ## Observation Channel
 
@@ -67,7 +75,11 @@ f_\theta(H_i,G_i)
 Y_i.
 ```
 
-It is to do so while only observing $S_i^{\mathrm{obs}}$:
+It is to do so while only observing
+```math
+S_i^{\mathrm{obs}}
+```
+:
 
 ```math
 S_i^{\mathrm{obs}}
@@ -228,7 +240,11 @@ target in a calibration or excess-risk sense. A useful statement has the form:
 \right),
 ```
 
-where $\psi$ is nondecreasing and the statement holds only under explicit
+where
+```math
+\psi
+```
+is nondecreasing and the statement holds only under explicit
 assumptions about the supervision channel. Directly subtracting weak and target
 losses is usually meaningless because they live on different observation spaces.
 
@@ -256,7 +272,11 @@ Q_\alpha(S^{\mathrm{obs}}\mid U,H,G)
 P_\theta(U\mid H,G).
 ```
 
-For continuous or structured $U$, the sum is replaced by an integral. This keeps
+For continuous or structured
+```math
+U
+```
+, the sum is replaced by an integral. This keeps
 the pathology model and the supervision channel separate.
 
 ## Identifiability
@@ -279,7 +299,11 @@ P_\theta(Y\mid H)
 P_{\theta'}(Y\mid H).
 ```
 
-If the observed objective only sees $Y$, it cannot distinguish these patch-level
+If the observed objective only sees
+```math
+Y
+```
+, it cannot distinguish these patch-level
 explanations.
 
 This is the source of attention-map ambiguity, pseudo-label drift, and
@@ -320,7 +344,15 @@ S^{\mathrm{obs}}
 \theta,
 ```
 
-where $U$ is the unobserved pathology truth and $S^{\mathrm{obs}}$ is the
+where
+```math
+U
+```
+ is the unobserved pathology truth and
+```math
+S^{\mathrm{obs}}
+```
+is the
 observed training signal.
 
 Pseudo-labeling adds:

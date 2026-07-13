@@ -47,7 +47,11 @@ If the method creates pseudo-labels, write:
 \Psi_t(H_i,G_i,S_i^{\mathrm{obs}},\theta_t,\mathcal{D})
 ```
 
-instead of treating $\widehat U_{i,t}$ as observed data.
+instead of treating
+```math
+\widehat U_{i,t}
+```
+as observed data.
 
 ## Surrogate Loss
 

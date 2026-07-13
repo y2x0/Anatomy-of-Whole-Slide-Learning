@@ -74,7 +74,15 @@ first moment under a learned, label-trained reweighting.
 
 ## What Is Context-Free Attention?
 
-In ABMIL, the score $s_{ij}$ is computed from $h_{ij}$ before pairwise mixing.
+In ABMIL, the score
+```math
+s_{ij}
+```
+ is computed from
+```math
+h_{ij}
+```
+before pairwise mixing.
 The only cross-instance operation is normalization:
 
 ```math
@@ -89,7 +97,11 @@ a new instance changes every weight through the denominator.
 
 ## Convex Hull Constraint
 
-If $v_\theta(h)=h$, then:
+If
+```math
+v_\theta(h)=h
+```
+, then:
 
 ```math
 z_i
@@ -99,8 +111,15 @@ z_i
 
 Attention cannot create a slide embedding outside the convex hull of instance
 embeddings. It can select, interpolate, or average; it cannot represent
-interactions unless those interactions are already encoded in $h_{ij}$ or
-$v_\theta(h_{ij})$.
+interactions unless those interactions are already encoded in
+```math
+h_{ij}
+```
+or
+```math
+v_\theta(h_{ij})
+```
+.
 
 With a nonlinear value map:
 
@@ -132,7 +151,11 @@ a_{ij}^{(\beta)}
 {\sum_\ell \exp(\beta s_{i\ell})}.
 ```
 
-As $\beta\to 0$:
+As
+```math
+\beta\to 0
+```
+:
 
 ```math
 a_{ij}^{(\beta)}
@@ -140,7 +163,11 @@ a_{ij}^{(\beta)}
 \frac{1}{n_i}.
 ```
 
-As $\beta\to\infty$, if the maximizer is unique:
+As
+```math
+\beta\to\infty
+```
+, if the maximizer is unique:
 
 ```math
 a_{ij}^{(\beta)}
@@ -201,4 +228,3 @@ z_i
 The cost is that every slide is compressed to one weighted first moment. All
 unweighted prevalence, multimodality, and spatial layout vanish unless they have
 already been encoded into the values being averaged.
-

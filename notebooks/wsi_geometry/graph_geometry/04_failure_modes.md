@@ -5,7 +5,15 @@ task.
 
 ## Wrong Adjacency
 
-If the true context relation is $E^\star$ but the model uses $E$, then message
+If the true context relation is
+```math
+E^\star
+```
+ but the model uses
+```math
+E
+```
+, then message
 passing computes:
 
 ```math

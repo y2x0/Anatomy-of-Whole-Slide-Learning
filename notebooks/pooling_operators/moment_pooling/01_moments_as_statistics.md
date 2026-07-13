@@ -98,7 +98,7 @@ where:
 \sum_{r=1}^{d}\alpha_r.
 ```
 
-First moments have $|\alpha|=1$. Second moments have $|\alpha|=2$. Higher
+First moments have |\alpha|=1. Second moments have |\alpha|=2. Higher
 moments capture more distribution shape but grow quickly in dimension.
 
 ## Central Moments
@@ -158,7 +158,17 @@ z_i
 }
 ```
 
-The operator is simple, but its power depends entirely on $\Phi$. A weak
-$\Phi$ gives mean-pooling collisions. A rich $\Phi$ approaches a learned
+The operator is simple, but its power depends entirely on
+```math
+\Phi
+```
+. A weak
+```math
+\Phi
+```
+ gives mean-pooling collisions. A rich
+```math
+\Phi
+```
+approaches a learned
 distribution embedding.
-

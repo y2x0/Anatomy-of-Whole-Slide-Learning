@@ -6,7 +6,11 @@ The cleanest way to unify set, sequence, and graph representations is to ask:
 Which instances are allowed to exchange information before readout?
 ```
 
-Let $G_i=(V_i,E_i)$ be an interaction graph over patch indices. A generic
+Let
+```math
+G_i=(V_i,E_i)
+```
+be an interaction graph over patch indices. A generic
 context layer can be written:
 
 ```math
@@ -23,7 +27,10 @@ m_j
 ```
 
 Different representation families choose different neighborhoods
-$\mathcal{N}_{G_i}(j)$.
+```math
+\mathcal{N}_{G_i}(j)
+```
+.
 
 ## Empty Graph
 
@@ -87,8 +94,16 @@ the update is:
 \right).
 ```
 
-This is message passing on the complete graph $K_n$ with learned directed edge
-weights $\alpha_{j\ell}$.
+This is message passing on the complete graph
+```math
+K_n
+```
+with learned directed edge
+weights
+```math
+\alpha_{j\ell}
+```
+.
 
 Set Transformer uses this idea while preserving permutation equivariance before
 the invariant pooling stage.
@@ -146,7 +161,15 @@ or:
 \|c_u-c_v\|\le r.
 ```
 
-Then $L$ message-passing layers produce an $L$-hop contextualization:
+Then
+```math
+L
+```
+ message-passing layers produce an
+```math
+L
+```
+-hop contextualization:
 
 ```math
 h_v^{(L)}
@@ -232,7 +255,11 @@ and a statistic:
 z_i=T(\mu_i).
 ```
 
-The context is implicit in the statistic $T$. For example, prototype assignment
+The context is implicit in the statistic
+```math
+T
+```
+. For example, prototype assignment
 uses a learned morphology codebook:
 
 ```math
@@ -301,14 +328,14 @@ pretraining geometry may not match the downstream clinical question
 
 | Interaction Structure | Model Family | Context Geometry |
 |---|---|---|
-| $E=\varnothing$ | mean MIL, max MIL, simple Deep Sets | none before readout |
-| $E=K_n$ | set attention, Set Transformer | all-pairs learned relations |
-| path from $\sigma$ | RNN, SSM, Mamba-style scan | order-local context |
+| E=\varnothing | mean MIL, max MIL, simple Deep Sets | none before readout |
+| E=K_n | set attention, Set Transformer | all-pairs learned relations |
+| path from \sigma | RNN, SSM, Mamba-style scan | order-local context |
 | kNN or radius graph | Patch-GCN-style GNN | spatially local context |
 | learned dynamic graph | WiKG-style graph MIL | task-learned relational context |
 | typed hierarchy | HACT-style graph | multiscale tissue context |
-| parent map $\pi$ | HIPT-style hierarchy | compositional scale context |
-| statistic $T(\mu)$ | PANTHER or histogram-style distribution | morphology distribution context |
+| parent map \pi | HIPT-style hierarchy | compositional scale context |
+| statistic T(\mu) | PANTHER or histogram-style distribution | morphology distribution context |
 | memory graph | Yottixel/SISH-style retrieval | archive-neighborhood context |
 | pretrained geometry | UNI, Virchow, GigaPath, CONCH, PRISM, TITAN | inherited latent context |
 

@@ -2,7 +2,11 @@
 
 Nested attention produces effective patch weights.
 
-Suppose region $r$ pools patches with weights:
+Suppose region
+```math
+r
+```
+pools patches with weights:
 
 ```math
 a_{ij\mid r},
@@ -46,7 +50,15 @@ w_{ij}^{\mathrm{eff}}
 b_{ir(j)}a_{ij\mid r(j)},
 ```
 
-where $r(j)$ is the region containing patch $j$.
+where
+```math
+r(j)
+```
+ is the region containing patch
+```math
+j
+```
+.
 
 ## Unequal Region Sizes
 
@@ -107,4 +119,3 @@ w_{ij}^{\mathrm{eff}}
 
 This exposes whether a method is really focusing on tissue or merely weighting
 regions unevenly.
-

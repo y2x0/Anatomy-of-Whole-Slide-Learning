@@ -13,7 +13,11 @@ T_{ab}
 P(\widetilde Y=b\mid Y=a).
 ```
 
-If $T$ is estimated poorly:
+If
+```math
+T
+```
+is estimated poorly:
 
 ```math
 \widehat T

@@ -20,7 +20,11 @@ A representation augments or quotients this collection:
 (H_i,\Omega_i),
 ```
 
-where $\Omega_i$ is the structure assigned to the slide.
+where
+```math
+\Omega_i
+```
+is the structure assigned to the slide.
 
 The full forward map is:
 
@@ -54,7 +58,11 @@ S:
     supervision and task signal
 ```
 
-The important point is that $\Omega_i$ changes which functions are natural,
+The important point is that
+```math
+\Omega_i
+```
+changes which functions are natural,
 which symmetries are valid, and which failures are expected.
 
 ## Set Representation
@@ -115,7 +123,11 @@ z_i
 \max_j g(h_{ij}).
 ```
 
-The surviving statistic is a functional of $\mu_i$.
+The surviving statistic is a functional of
+```math
+\mu_i
+```
+.
 
 ## Sequence Representation
 
@@ -150,7 +162,15 @@ z_i
 \mathcal{R}(u_{i1},\ldots,u_{in_i}).
 ```
 
-The order $\sigma_i$ is part of the representation. Changing $\sigma_i$ changes
+The order
+```math
+\sigma_i
+```
+ is part of the representation. Changing
+```math
+\sigma_i
+```
+changes
 the hypothesis class unless the model explicitly averages over orders or
 restores permutation invariance.
 
@@ -359,18 +379,18 @@ This geometry is shaped by pretraining, not by the downstream task alone.
 
 ## Placement Table
 
-| Representation | $\Omega_i$ | $\mathcal{C}$ | $\mathcal{R}$ | Surviving Statistic |
+| Representation | \Omega_i | \mathcal{C} | \mathcal{R} | Surviving Statistic |
 |---|---:|---:|---:|---:|
-| Set mean MIL | none | identity | mean | first moment of $\mu_i$ |
+| Set mean MIL | none | identity | mean | first moment of \mu_i |
 | Attention MIL | none | instance scoring | weighted mean | learned first moment |
 | Set Transformer | complete learned relations | set attention | PMA or pool | interaction-aware set summary |
-| Sequence SSM | order $\sigma_i$ | scan | final state or pool | compressed trajectory |
-| Spatial GNN | adjacency $A_i$ | message passing | graph pool | contextualized node statistic |
+| Sequence SSM | order \sigma_i | scan | final state or pool | compressed trajectory |
+| Spatial GNN | adjacency A_i | message passing | graph pool | contextualized node statistic |
 | Heterogeneous graph | typed nodes and edges | typed message passing | multitype pool | typed relational summary |
-| Hierarchy | parent maps $\pi_i$ | multiscale context | top or multiscale readout | scale-composed summary |
-| Distribution | empirical measure $\mu_i$ | optional statistic map | $T(\mu_i)$ | measure statistic |
-| Retrieval memory | external memory $\mathcal{M}$ | nearest-neighbor context | query plus retrieved values | archive-conditioned statistic |
-| Foundation latent | pretrained map $F_{\text{FM}}$ | frozen or adapted encoder | probe or slide head | pretrained latent coordinate |
+| Hierarchy | parent maps \pi_i | multiscale context | top or multiscale readout | scale-composed summary |
+| Distribution | empirical measure \mu_i | optional statistic map | T(\mu_i) | measure statistic |
+| Retrieval memory | external memory \mathcal{M} | nearest-neighbor context | query plus retrieved values | archive-conditioned statistic |
+| Foundation latent | pretrained map F_{\text{FM}} | frozen or adapted encoder | probe or slide head | pretrained latent coordinate |
 
 ## What This Decomposition Buys
 
@@ -380,13 +400,21 @@ The same readout means different things under different context operators:
 \frac{1}{n}\sum_j h_j
 ```
 
-is a raw first moment if $\mathcal{C}$ is identity, but:
+is a raw first moment if
+```math
+\mathcal{C}
+```
+is identity, but:
 
 ```math
 \frac{1}{n}\sum_j h_j^{(L)}
 ```
 
-is a first moment of contextualized states if $\mathcal{C}$ is a GNN,
+is a first moment of contextualized states if
+```math
+\mathcal{C}
+```
+is a GNN,
 Transformer, or sequence operator.
 
 Thus the question is not only:

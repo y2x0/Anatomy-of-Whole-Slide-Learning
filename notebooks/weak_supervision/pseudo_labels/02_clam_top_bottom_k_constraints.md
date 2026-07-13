@@ -25,7 +25,11 @@ Reference: [CLAM paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8711640/).
 
 ## Attention Extremes
 
-For class $c$, let the class-specific attention score be:
+For class
+```math
+c
+```
+, let the class-specific attention score be:
 
 ```math
 a_{ij}^{(c)}
@@ -34,7 +38,11 @@ a_{ij}^{(c)}
 {\sum_{\ell=1}^{n_i}\exp s_c(h_{i\ell})}.
 ```
 
-For a slide whose observed class is $Y_i=c$, CLAM selects:
+For a slide whose observed class is
+```math
+Y_i=c
+```
+, CLAM selects:
 
 ```math
 \mathcal{T}_i^+(c)
@@ -74,7 +82,11 @@ target.
 The CLAM auxiliary loss is usually described as instance-level clustering with
 a binary top-1 smooth SVM loss, not ordinary instance cross-entropy.
 
-Let the instance classifier for class branch $c$ produce two scores:
+Let the instance classifier for class branch
+```math
+c
+```
+produce two scores:
 
 ```math
 r_c(h)
@@ -82,7 +94,11 @@ r_c(h)
 (r_{c0}(h),r_{c1}(h)).
 ```
 
-For binary pseudo-label $y\in\{0,1\}$, the top-1 smooth SVM surrogate can be
+For binary pseudo-label
+```math
+y\in\{0,1\}
+```
+, the top-1 smooth SVM surrogate can be
 written schematically as:
 
 ```math
@@ -100,7 +116,15 @@ written schematically as:
 \right).
 ```
 
-Here $\alpha$ is the margin parameter and $\tau$ smooths the hard maximum. The
+Here
+```math
+\alpha
+```
+ is the margin parameter and
+```math
+\tau
+```
+smooths the hard maximum. The
 selected-extreme loss for the true class branch is:
 
 ```math
@@ -158,7 +182,11 @@ g_c(z_i^{(c)}).
 
 For subtype classification, CLAM-MB also uses a mutual-exclusivity assumption:
 high-attention patches for an absent class can be treated as negative examples
-for that class. For $c\ne Y_i$:
+for that class. For
+```math
+c\ne Y_i
+```
+:
 
 ```math
 \mathcal{T}_i^{\mathrm{out}}(c)
@@ -254,7 +282,19 @@ CLAM can be described as hard-assignment-like:
 \Psi_{\mathrm{CLAM}}(A_i,Y_i).
 ```
 
-But unless one specifies a likelihood for $Y_i$, $A_i$, and $Z_i$ such that
+But unless one specifies a likelihood for
+```math
+Y_i
+```
+,
+```math
+A_i
+```
+, and
+```math
+Z_i
+```
+such that
 top/bottom-k selection is the exact MAP posterior step, CLAM is not literally
 hard EM. The safer statement is:
 

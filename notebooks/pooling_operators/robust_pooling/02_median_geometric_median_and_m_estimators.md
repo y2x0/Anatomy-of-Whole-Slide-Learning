@@ -4,7 +4,11 @@ Median-style pooling estimates robust location instead of an average.
 
 ## Coordinatewise Median
 
-For each coordinate $r$:
+For each coordinate
+```math
+r
+```
+:
 
 ```math
 z_{ir}
@@ -97,4 +101,3 @@ with:
 ```
 
 It is useful for artifact resistance and dangerous for sparse-positive tasks.
-

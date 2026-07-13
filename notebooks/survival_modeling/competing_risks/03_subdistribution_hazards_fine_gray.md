@@ -3,13 +3,21 @@
 Fine-Gray regression targets the cumulative incidence function more directly
 than cause-specific hazards.
 
-For cause $c$, define:
+For cause
+```math
+c
+```
+, define:
 
 ```math
 F_c(t\mid z)=\Pr(T\le t,J=c\mid z).
 ```
 
-The subdistribution survival for cause $c$ is:
+The subdistribution survival for cause
+```math
+c
+```
+is:
 
 ```math
 S_c^{\text{sub}}(t\mid z)
@@ -123,13 +131,24 @@ The Fine-Gray coefficient describes effects on:
 F_c(t\mid z),
 ```
 
-not on the immediate biological rate of cause $c$ among those still
+not on the immediate biological rate of cause
+```math
+c
+```
+among those still
 event-free.
 
 ## Why This Distinction Matters
 
-A covariate can increase the cause-specific hazard for cause $c$, but also
-increase the competing event hazard so strongly that the CIF for cause $c$
+A covariate can increase the cause-specific hazard for cause
+```math
+c
+```
+, but also
+increase the competing event hazard so strongly that the CIF for cause
+```math
+c
+```
 decreases.
 
 Mathematically:
@@ -144,7 +163,15 @@ F_c(t\mid z)
 \lambda_c(u\mid z)\,du.
 ```
 
-Changing any $\lambda_r$ changes $F_c$.
+Changing any
+```math
+\lambda_r
+```
+ changes
+```math
+F_c
+```
+.
 
 ## WSI Interpretation
 
@@ -158,7 +185,11 @@ For WSI survival:
 ```
 
 This says the slide representation directly orders cumulative incidence for
-event $c$.
+event
+```math
+c
+```
+.
 
 That can be the right target for clinical prediction:
 

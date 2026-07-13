@@ -3,7 +3,11 @@
 Competing risks appear when more than one mutually exclusive event type can
 terminate observation.
 
-For patient $i$:
+For patient
+```math
+i
+```
+:
 
 ```math
 T_i=\min_{c\in\{1,\ldots,C\}}T_{ic},
@@ -21,7 +25,19 @@ X_i=\min(T_i,C_i),
 \Delta_i=\delta_iJ_i.
 ```
 
-Here $\Delta_i=0$ means censoring, and $\Delta_i=c$ means event type $c$.
+Here
+```math
+\Delta_i=0
+```
+ means censoring, and
+```math
+\Delta_i=c
+```
+ means event type
+```math
+c
+```
+.
 
 The core question is:
 

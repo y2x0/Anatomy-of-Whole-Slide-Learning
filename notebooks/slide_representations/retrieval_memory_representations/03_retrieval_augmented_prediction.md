@@ -26,7 +26,11 @@ This is nonparametric. The training data remain visible at inference time.
 
 ## Retrieval-Augmented Embedding
 
-Let retrieved values be embeddings $v_k$. A retrieved context vector is:
+Let retrieved values be embeddings
+```math
+v_k
+```
+. A retrieved context vector is:
 
 ```math
 r_i

@@ -6,17 +6,25 @@ Weak supervision is limited by what the observed signal identifies.
 
 | Supervision | Observed | Identifies Well | Does Not Identify | Extra Assumption Needed |
 |---|---|---|---|---|
-| Clean bag label | $Y=\Gamma(Z)$ | bag-level prediction | true instance labels | correct bag map and witness/burden assumption |
-| Noisy bag label | $\widetilde Y$ | noisy-label prediction | clean $Y$, instances | noise channel $T$ or robust noise assumption |
-| Partial labels | $M\odot U$ | labeled subset | unlabeled subset | missingness model |
-| Region label | $\Gamma_R(Z_R)$ | region event | patch labels inside region | region bag map |
-| Pseudo-label | $\widehat U_t=\Psi_t(H,G,S^{\mathrm{obs}},\theta_t,\mathcal{D})$ | teacher/model belief | true latent state | pseudo-label accuracy or correction |
-| Contrastive pair | $a\sim b$ | relation geometry | class probability or patch truth | valid positive and negative construction |
+| Clean bag label | Y=\Gamma(Z) | bag-level prediction | true instance labels | correct bag map and witness/burden assumption |
+| Noisy bag label | \widetilde Y | noisy-label prediction | clean Y, instances | noise channel T or robust noise assumption |
+| Partial labels | M\odot U | labeled subset | unlabeled subset | missingness model |
+| Region label | \Gamma_R(Z_R) | region event | patch labels inside region | region bag map |
+| Pseudo-label | \widehat U_t=\Psi_t(H,G,S^{\mathrm{obs}},\theta_t,\mathcal{D}) | teacher/model belief | true latent state | pseudo-label accuracy or correction |
+| Contrastive pair | a\sim b | relation geometry | class probability or patch truth | valid positive and negative construction |
 | Report-derived label | text-to-label output | report mention pattern | full slide truth | report extraction and clinical semantics |
 
 ## Identifiability Definition
 
-A latent object $U$ is identifiable from $S^{\mathrm{obs}}$ if:
+A latent object
+```math
+U
+```
+ is identifiable from
+```math
+S^{\mathrm{obs}}
+```
+if:
 
 ```math
 P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)
@@ -77,7 +85,15 @@ matches the task.
 
 ## Fisher Information View
 
-For parameters $\theta$, observed supervision $S^{\mathrm{obs}}$ provides
+For parameters
+```math
+\theta
+```
+, observed supervision
+```math
+S^{\mathrm{obs}}
+```
+provides
 Fisher information when the observed likelihood is correctly specified:
 
 ```math
@@ -131,7 +147,11 @@ v^\top
 0
 ```
 
-with positive probability, then direction $v$ is invisible to the weak
+with positive probability, then direction
+```math
+v
+```
+is invisible to the weak
 supervision but visible to the complete latent labels. Those directions are
 where instance explanations can change without changing the observed-label
 likelihood.

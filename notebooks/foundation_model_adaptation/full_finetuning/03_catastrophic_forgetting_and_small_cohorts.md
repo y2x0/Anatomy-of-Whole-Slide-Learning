@@ -2,7 +2,15 @@
 
 Fine-tuning on a small cohort can overwrite broad pretrained knowledge.
 
-Let $P_0$ be the pretraining distribution and $P_T$ the downstream task
+Let
+```math
+P_0
+```
+ be the pretraining distribution and
+```math
+P_T
+```
+the downstream task
 distribution. Pretraining optimized:
 
 ```math
@@ -23,12 +31,24 @@ Fine-tuning optimizes:
 \ell_T(f_\phi(x),y).
 ```
 
-If $P_T$ is small or biased, $\phi_T$ may improve the task validation set while
+If
+```math
+P_T
+```
+ is small or biased,
+```math
+\phi_T
+```
+may improve the task validation set while
 damaging general morphology representation.
 
 ## Overfitting Signal
 
-With small $N$ and many parameters:
+With small
+```math
+N
+```
+and many parameters:
 
 ```math
 \dim(\phi)

@@ -26,7 +26,11 @@ m_k
 \{0,1\}
 ```
 
-for parameter $\Theta_k$. The update is:
+for parameter
+```math
+\Theta_k
+```
+. The update is:
 
 ```math
 \Theta_k
@@ -74,7 +78,11 @@ retrieval:
 
 ## Gradient Reachability
 
-A task can only change a quantity $q$ if:
+A task can only change a quantity
+```math
+q
+```
+if:
 
 ```math
 \frac{\partial q}{\partial \Theta_k}
@@ -82,7 +90,11 @@ A task can only change a quantity $q$ if:
 0
 ```
 
-for some trainable $\Theta_k$. If the encoder is frozen:
+for some trainable
+```math
+\Theta_k
+```
+. If the encoder is frozen:
 
 ```math
 \frac{\partial h}{\partial \phi}
@@ -94,7 +106,11 @@ for some trainable $\Theta_k$. If the encoder is frozen:
 m_\phi=0,
 ```
 
-then $h$ is not task-adapted.
+then
+```math
+h
+```
+is not task-adapted.
 
 ## Dense Summary
 

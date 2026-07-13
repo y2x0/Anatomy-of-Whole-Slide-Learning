@@ -2,7 +2,15 @@
 
 Vision-language pathology models align image and text embeddings.
 
-For image $x$ and class prompt $p_c$:
+For image
+```math
+x
+```
+ and class prompt
+```math
+p_c
+```
+:
 
 ```math
 u
@@ -32,7 +40,15 @@ The predicted class is:
 
 ## Prompt-Defined Boundary
 
-Between classes $a$ and $b$, the decision boundary is:
+Between classes
+```math
+a
+```
+ and
+```math
+b
+```
+, the decision boundary is:
 
 ```math
 u^\top v_a

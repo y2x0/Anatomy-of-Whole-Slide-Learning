@@ -8,7 +8,15 @@ A memory bank stores labeled or unlabeled exemplars:
 \{(m_k,s_k)\}_{k=1}^{K},
 ```
 
-where $m_k$ is an embedding and $s_k$ is metadata, label, text, report, or
+where
+```math
+m_k
+```
+ is an embedding and
+```math
+s_k
+```
+is metadata, label, text, report, or
 prototype identity.
 
 For a query:
@@ -84,5 +92,9 @@ Memory adaptation moves task information into:
 \mathcal{M}
 ```
 
-and the metric over $\mathcal{M}$. The model's prediction is only as good as
+and the metric over
+```math
+\mathcal{M}
+```
+. The model's prediction is only as good as
 the memory coverage and similarity notion.

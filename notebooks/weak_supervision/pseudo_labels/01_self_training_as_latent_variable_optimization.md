@@ -2,7 +2,15 @@
 
 Pseudo-labeling can be written as approximate latent-variable optimization.
 
-Let $Z_i$ be hidden instance labels and $Y_i$ observed bag labels.
+Let
+```math
+Z_i
+```
+ be hidden instance labels and
+```math
+Y_i
+```
+observed bag labels.
 
 The ideal objective is:
 
@@ -19,7 +27,11 @@ P_\theta(Y_i\mid H_i)
 P_\theta(Y_i,z_i\mid H_i).
 ```
 
-The sum over $z_i$ is often hard or poorly identified. Pseudo-labeling replaces
+The sum over
+```math
+z_i
+```
+is often hard or poorly identified. Pseudo-labeling replaces
 the posterior with a model-generated point estimate:
 
 ```math
@@ -73,7 +85,11 @@ q_i(z)
 \delta_{\widehat z_{i,t}}(z).
 ```
 
-The M-step then treats $\widehat z_{i,t}$ as truth. This is legitimate EM only
+The M-step then treats
+```math
+\widehat z_{i,t}
+```
+as truth. This is legitimate EM only
 when:
 
 ```math
@@ -169,7 +185,11 @@ The training target changes as the model changes:
 \ell(\theta,\Psi_{\theta}(H)).
 ```
 
-Most implementations stop gradients through $\Psi_\theta$:
+Most implementations stop gradients through
+```math
+\Psi_\theta
+```
+:
 
 ```math
 \nabla_\theta

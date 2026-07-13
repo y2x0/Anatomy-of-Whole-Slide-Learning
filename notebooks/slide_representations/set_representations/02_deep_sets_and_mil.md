@@ -11,7 +11,11 @@ f(\{h_1,\ldots,h_n\})
 ```
 
 The theorem should be read with conditions. WSI embeddings live in continuous
-spaces such as $\mathbb{R}^{d}$, so the useful version for pathology is the
+spaces such as
+```math
+\mathbb{R}^{d}
+```
+, so the useful version for pathology is the
 compact-domain approximation view: continuous permutation-invariant functions on
 bounded sets can be approximated by transform-sum-head architectures under the
 usual regularity assumptions. Exact countable-domain decompositions are a
@@ -60,7 +64,11 @@ This is a Deep Set with:
 \rho=\text{task head},
 ```
 
-plus normalization by $n_i$.
+plus normalization by
+```math
+n_i
+```
+.
 
 It preserves only the first moment of the patch embedding distribution.
 
@@ -74,7 +82,11 @@ z_i=\frac{1}{n_i}\sum_j\phi_\theta(h_{ij}).
 
 The transform can map patches into a space where the mean is more informative.
 
-For example, if $\phi_\theta$ maps tumor-like patches to a high-risk coordinate,
+For example, if
+```math
+\phi_\theta
+```
+maps tumor-like patches to a high-risk coordinate,
 then the mean estimates prevalence of that morphology.
 
 ## Max MIL
@@ -119,7 +131,11 @@ This is an extreme-value statistic, not a first moment. It is useful for sparse
 positives but unstable when patch-level evidence is noisy.
 
 Max pooling is still permutation invariant and can be approximated by smooth
-sum-style statistics. For scalar scores $s_j=g_\theta(h_j)$:
+sum-style statistics. For scalar scores
+```math
+s_j=g_\theta(h_j)
+```
+:
 
 ```math
 \max_j s_j
@@ -226,7 +242,11 @@ v_k.
 ```
 
 Set Transformer also introduces pooling by multihead attention. With seed
-vectors $s_m$:
+vectors
+```math
+s_m
+```
+:
 
 ```math
 z_m

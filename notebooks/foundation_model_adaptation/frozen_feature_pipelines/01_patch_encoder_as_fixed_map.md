@@ -30,7 +30,15 @@ The downstream predictor is:
 \right).
 ```
 
-Only $\psi$ and $\omega$ are trained:
+Only
+```math
+\psi
+```
+ and
+```math
+\omega
+```
+are trained:
 
 ```math
 \nabla_{\phi_0}\mathcal{L}
@@ -71,7 +79,11 @@ f_{\phi_0}(x)
 f_{\phi_0}(x'),
 ```
 
-then no downstream deterministic head can separate them using only $h$:
+then no downstream deterministic head can separate them using only
+```math
+h
+```
+:
 
 ```math
 T(h)
@@ -91,7 +103,10 @@ d_0(x,x')
 
 Downstream MIL inherits this geometry before labels act. A kNN graph, prototype
 assignment, or attention score built from frozen features is therefore based on
-$d_0$, not on a task-learned metric unless an additional map is trained.
+```math
+d_0
+```
+, not on a task-learned metric unless an additional map is trained.
 
 ## C/R/G/S Placement
 
@@ -122,4 +137,8 @@ H_i
 ```
 
 This is computationally efficient and stable, but every downstream method is
-bounded by the information preserved in $H_i$.
+bounded by the information preserved in
+```math
+H_i
+```
+.

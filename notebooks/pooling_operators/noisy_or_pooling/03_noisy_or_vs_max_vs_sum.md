@@ -81,7 +81,11 @@ If:
 p_{ij}=p
 ```
 
-for all $j$, then:
+for all
+```math
+j
+```
+, then:
 
 ```math
 r_i^{\mathrm{or}}
@@ -89,7 +93,11 @@ r_i^{\mathrm{or}}
 1-(1-p)^{n_i}.
 ```
 
-For small $p$:
+For small
+```math
+p
+```
+:
 
 ```math
 1-(1-p)^{n_i}
@@ -97,7 +105,11 @@ For small $p$:
 n_i p.
 ```
 
-For large $n_i p$, it saturates:
+For large
+```math
+n_i p
+```
+, it saturates:
 
 ```math
 r_i^{\mathrm{or}}
@@ -132,4 +144,3 @@ and the bag probability is the union probability.
 
 It is the wrong readout when instances are strongly correlated or when the task
 depends on prevalence rather than at-least-one evidence.
-

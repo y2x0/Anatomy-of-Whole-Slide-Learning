@@ -54,7 +54,11 @@ X_i
 \{(h_{ij},c_{ij})\}_{j=1}^{n_i}.
 ```
 
-The geometry $G_i$ is any structure on the coordinate set:
+The geometry
+```math
+G_i
+```
+is any structure on the coordinate set:
 
 ```math
 G_i
@@ -248,7 +252,11 @@ Geometry asks:
 Which spatial differences are visible to the model?
 ```
 
-The answer depends on where $G_i$ enters:
+The answer depends on where
+```math
+G_i
+```
+enters:
 
 ```text
 G in C:

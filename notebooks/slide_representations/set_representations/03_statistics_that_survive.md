@@ -93,7 +93,11 @@ Survives:
 \mathbb{E}_{j\sim a_i}[v(h_{ij})].
 ```
 
-The attention distribution $a_i$ changes which parts of the empirical measure
+The attention distribution
+```math
+a_i
+```
+changes which parts of the empirical measure
 matter.
 
 ## Distribution Summary

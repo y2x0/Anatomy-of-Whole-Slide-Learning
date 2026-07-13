@@ -30,11 +30,19 @@ S_k
 \Pr(T>\tau_k\mid z).
 ```
 
-Suppress $i$ for readability.
+Suppress
+```math
+i
+```
+for readability.
 
 ## Hazard To Survival
 
-Survival through interval $k$:
+Survival through interval
+```math
+k
+```
+:
 
 ```math
 S_k
@@ -56,7 +64,11 @@ S_k=S_{k-1}(1-h_k).
 
 ## Hazard To PMF
 
-The event probability in interval $k$ is:
+The event probability in interval
+```math
+k
+```
+is:
 
 ```math
 p_k
@@ -75,7 +87,11 @@ p_k
 h_k\prod_{\ell=1}^{k-1}(1-h_\ell).
 ```
 
-The remaining tail mass after $K$ intervals is:
+The remaining tail mass after
+```math
+K
+```
+intervals is:
 
 ```math
 p_{>K}=S_K=\prod_{\ell=1}^K(1-h_\ell).
@@ -89,7 +105,11 @@ So:
 
 ## PMF To Survival
 
-If a model predicts $p_1,\ldots,p_K,p_{>K}$, then:
+If a model predicts
+```math
+p_1,\ldots,p_K,p_{>K}
+```
+, then:
 
 ```math
 S_k
@@ -123,11 +143,19 @@ h_k
 \frac{p_k}{1-\sum_{\ell=1}^{k-1}p_\ell}.
 ```
 
-This is valid only when $S_{k-1}>0$.
+This is valid only when
+```math
+S_{k-1}>0
+```
+.
 
 ## Cumulative Incidence
 
-The cumulative event probability through time $\tau_k$ is:
+The cumulative event probability through time
+```math
+\tau_k
+```
+is:
 
 ```math
 F_k
@@ -165,7 +193,11 @@ Then:
 \log\sigma(-g_k).
 ```
 
-For an event in interval $r$, the log likelihood is:
+For an event in interval
+```math
+r
+```
+, the log likelihood is:
 
 ```math
 \log p_r
@@ -175,7 +207,11 @@ For an event in interval $r$, the log likelihood is:
 \log\sigma(g_r).
 ```
 
-For censoring after interval $r$:
+For censoring after interval
+```math
+r
+```
+:
 
 ```math
 \log S_r
@@ -229,7 +265,11 @@ p_k\ge0,
 \sum_kp_k+p_{>K}=1.
 ```
 
-A direct neural output for $S_k$ must enforce monotonicity separately.
+A direct neural output for
+```math
+S_k
+```
+must enforce monotonicity separately.
 
 ## WSI Consequence
 
@@ -259,7 +299,11 @@ F_k
 \sigma[-(w_\ell^\top z+b_\ell)].
 ```
 
-Thus a WSI discrete hazard head is not just $K$ independent classifiers. The
+Thus a WSI discrete hazard head is not just
+```math
+K
+```
+independent classifiers. The
 survival curve couples all earlier hazards multiplicatively.
 
 ## Dense Summary

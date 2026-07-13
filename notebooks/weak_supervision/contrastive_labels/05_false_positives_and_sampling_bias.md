@@ -56,7 +56,11 @@ u_i^\top u_k
 
 ## Class Collision
 
-For a fixed anchor with class $Y_i=c$, a negative sampled from the marginal
+For a fixed anchor with class
+```math
+Y_i=c
+```
+, a negative sampled from the marginal
 collides with the anchor class with probability:
 
 ```math
@@ -81,7 +85,11 @@ collision is latent morphology:
 P(U_{k^-}\sim U_i\mid Y_i=c),
 ```
 
-where $U$ may include tissue state, grade, organ, stain, treatment effect, or
+where
+```math
+U
+```
+may include tissue state, grade, organ, stain, treatment effect, or
 subtype. Two objects can collide morphologically even when their observed labels
 are different:
 

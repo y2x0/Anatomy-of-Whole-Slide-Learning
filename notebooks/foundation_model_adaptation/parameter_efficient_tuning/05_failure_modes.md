@@ -51,7 +51,11 @@ with:
 m>r,
 ```
 
-a rank-$r$ update may collapse or trade off axes.
+a rank-
+```math
+r
+```
+update may collapse or trade off axes.
 
 ## Dense Summary
 

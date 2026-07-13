@@ -61,7 +61,11 @@ D(\sigma)
 |\sigma(u)-\sigma(v)|.
 ```
 
-Here $E_{\text{spatial}}$ can be a grid, kNN, or radius-neighborhood
+Here
+```math
+E_{\text{spatial}}
+```
+can be a grid, kNN, or radius-neighborhood
 graph built from coordinates. Low distortion means spatial neighbors usually
 stay near each other in sequence space.
 
@@ -76,7 +80,11 @@ A model may learn or choose an order based on features:
 This can bring relevant patches closer in sequence space, but it introduces a
 new learned preprocessing step.
 
-If $\sigma_i$ depends on the slide features, the sequence object itself becomes
+If
+```math
+\sigma_i
+```
+depends on the slide features, the sequence object itself becomes
 model-dependent.
 
 In that case the forward map is better written:

@@ -102,7 +102,11 @@ This is the basic PU correction.
 The algebra above is not enough. PU risk correction also needs a sampling
 model for why positives are labeled.
 
-Let $L\in\{0,1\}$ indicate whether an instance receives a positive annotation.
+Let
+```math
+L\in\{0,1\}
+```
+indicate whether an instance receives a positive annotation.
 Under SCAR:
 
 ```math
@@ -153,7 +157,11 @@ The correction requires the class prior:
 P(Z=1).
 ```
 
-If $\pi$ is wrong, the negative-risk estimate:
+If
+```math
+\pi
+```
+is wrong, the negative-risk estimate:
 
 ```math
 R_U^{-}(g)-\pi R_1^{-}(g)
@@ -183,7 +191,11 @@ g_\theta(t_1(h))
 g_\theta(t_2(h)),
 ```
 
-where $t_1,t_2$ are augmentations.
+where
+```math
+t_1,t_2
+```
+are augmentations.
 
 The loss is:
 

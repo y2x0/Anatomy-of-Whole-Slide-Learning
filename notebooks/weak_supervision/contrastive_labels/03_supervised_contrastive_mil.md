@@ -2,7 +2,19 @@
 
 Supervised contrastive learning uses labels to define positives.
 
-For embeddings $u_i$ and labels $y_i$, positives for anchor $i$ are:
+For embeddings
+```math
+u_i
+```
+ and labels
+```math
+y_i
+```
+, positives for anchor
+```math
+i
+```
+are:
 
 ```math
 \mathcal{P}(i)
@@ -29,7 +41,11 @@ The supervised contrastive loss is:
 
 ## WSI Slide-Level Use
 
-If $u_i$ is a slide embedding:
+If
+```math
+u_i
+```
+is a slide embedding:
 
 ```math
 u_i

@@ -13,7 +13,15 @@ f_I(x)^\top f_T(p_c)
 }{\tau},
 ```
 
-where $p_c$ is the prompt for class $c$.
+where
+```math
+p_c
+```
+ is the prompt for class
+```math
+c
+```
+.
 
 ## Files
 

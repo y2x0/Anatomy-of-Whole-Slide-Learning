@@ -1,6 +1,10 @@
 # Data, CIFs, And Event Objects
 
-In ordinary survival analysis, one event time $T$ is modeled. In competing
+In ordinary survival analysis, one event time
+```math
+T
+```
+is modeled. In competing
 risks, there are latent event times:
 
 ```math
@@ -29,7 +33,11 @@ X=\min(T,C),
 \Delta=\delta J.
 ```
 
-The value $\Delta=0$ denotes censoring.
+The value
+```math
+\Delta=0
+```
+denotes censoring.
 
 ## Cause-Specific Probability Mass
 
@@ -115,8 +123,20 @@ F_c(t\mid z)
 S(u\mid z)\lambda_c(u\mid z)\,du.
 ```
 
-This identity is central: the cumulative incidence for cause $c$ depends on
-all causes through $S(u\mid z)$, not only on $\lambda_c$.
+This identity is central: the cumulative incidence for cause
+```math
+c
+```
+depends on
+all causes through
+```math
+S(u\mid z)
+```
+, not only on
+```math
+\lambda_c
+```
+.
 
 ## Why CIF Is Not One Minus Survival
 
@@ -132,7 +152,11 @@ In competing risks:
 F_c(t\mid z)\ne 1-S_c(t\mid z)
 ```
 
-unless $S_c$ is carefully defined in a counterfactual world where competing
+unless
+```math
+S_c
+```
+is carefully defined in a counterfactual world where competing
 events are removed. That counterfactual object is not the observed event process.
 
 The observed all-cause survival is:
@@ -141,7 +165,11 @@ The observed all-cause survival is:
 S(t\mid z)=1-\sum_cF_c(t\mid z).
 ```
 
-Each $F_c$ is a part of the event distribution.
+Each
+```math
+F_c
+```
+is a part of the event distribution.
 
 ## WSI Label Interpretation
 

@@ -47,7 +47,11 @@ The parent map is:
 \pi_i^{(\ell)}:V_i^{(\ell)}\to V_i^{(\ell+1)}.
 ```
 
-The children of a coarse unit $u\in V_i^{(\ell+1)}$ are:
+The children of a coarse unit
+```math
+u\in V_i^{(\ell+1)}
+```
+are:
 
 ```math
 \mathrm{Ch}(u)

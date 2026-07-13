@@ -1,6 +1,10 @@
 # Linear Probe Geometry
 
-Let $z_i\in\mathbb{R}^{D}$ be a frozen slide representation. A binary linear
+Let
+```math
+z_i\in\mathbb{R}^{D}
+```
+be a frozen slide representation. A binary linear
 probe is:
 
 ```math
@@ -21,14 +25,22 @@ The decision boundary is a hyperplane:
 
 ## Separability
 
-A dataset is linearly separable in frozen space if there exists $(w,b)$ such
+A dataset is linearly separable in frozen space if there exists
+```math
+(w,b)
+```
+such
 that:
 
 ```math
 y_i(w^\top z_i+b)>0
 ```
 
-for labels $y_i\in\{-1,1\}$. The margin is:
+for labels
+```math
+y_i\in\{-1,1\}
+```
+. The margin is:
 
 ```math
 \gamma

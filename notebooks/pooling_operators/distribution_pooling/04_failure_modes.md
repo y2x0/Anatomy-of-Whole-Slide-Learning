@@ -17,12 +17,19 @@ then any two slides with:
 T(\mu_i)=T(\mu_k)
 ```
 
-are indistinguishable to the head. Choosing the wrong $T$ creates collisions.
+are indistinguishable to the head. Choosing the wrong
+```math
+T
+```
+creates collisions.
 
 ## 2. Sample Complexity
 
 High-resolution statistics require many patches. If a statistic has dimension
-$M$, empirical estimation error can dominate when:
+```math
+M
+```
+, empirical estimation error can dominate when:
 
 ```math
 M
@@ -85,5 +92,7 @@ or the metric sees the wrong geometry.
 ```
 
 It should always be paired with the question: which equivalence relation does
-$T(\mu)$ impose on slides?
-
+```math
+T(\mu)
+```
+impose on slides?

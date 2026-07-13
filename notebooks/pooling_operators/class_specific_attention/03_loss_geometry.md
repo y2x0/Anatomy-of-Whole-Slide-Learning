@@ -47,7 +47,11 @@ For selected pseudo instances:
 j\in T_i^{+}(c)\cup T_i^{-}(c),
 ```
 
-the instance loss adds direct gradients to $h_{ij}$:
+the instance loss adds direct gradients to
+```math
+h_{ij}
+```
+:
 
 ```math
 \frac{\partial \mathcal{L}_{\text{inst}}}{\partial h_{ij}}
@@ -129,4 +133,3 @@ attention extremes should be clusterable as positive and negative evidence
 
 The method works when attention extremes are reliable. It fails when they are
 early-training artifacts or dataset shortcuts.
-

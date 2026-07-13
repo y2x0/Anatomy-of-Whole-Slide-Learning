@@ -23,7 +23,11 @@ we use:
 \mathcal{H}(z_i,\mathcal{M}(z_i)),
 ```
 
-where $\mathcal{M}$ is a memory or retrieval operator.
+where
+```math
+\mathcal{M}
+```
+is a memory or retrieval operator.
 
 ## Files
 

@@ -19,7 +19,15 @@ c_{ij}
 p\Delta q_{ij},
 ```
 
-where $p$ is tile width in pixels and $\Delta$ is microns per pixel.
+where
+```math
+p
+```
+ is tile width in pixels and
+```math
+\Delta
+```
+is microns per pixel.
 
 ## Dense Grid
 
@@ -69,7 +77,11 @@ M_i(q)
 
 ## Grid Neighborhood
 
-A radius-$m$ grid neighborhood is:
+A radius-
+```math
+m
+```
+grid neighborhood is:
 
 ```math
 \mathcal{N}_{m}(q)

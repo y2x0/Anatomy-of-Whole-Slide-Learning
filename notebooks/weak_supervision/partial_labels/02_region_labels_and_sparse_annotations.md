@@ -20,7 +20,11 @@ Y_{ir}^{\mathrm{reg}}
 \Gamma_r(\{Z_{ij}:j\in\mathcal{B}_{ir}\}).
 ```
 
-The map $\Gamma_r$ may be OR, burden, majority, or pathologist-defined.
+The map
+```math
+\Gamma_r
+```
+may be OR, burden, majority, or pathologist-defined.
 
 ## Region OR Label
 
@@ -54,7 +58,11 @@ b_{ir}^{\star}
 \sum_{j\in\mathcal{B}_{ir}}Z_{ij}.
 ```
 
-A continuous burden annotation $b_{ir}^{\mathrm{obs}}$ can be modeled with:
+A continuous burden annotation
+```math
+b_{ir}^{\mathrm{obs}}
+```
+can be modeled with:
 
 ```math
 \widehat b_{ir}
@@ -77,7 +85,11 @@ is only a Gaussian measurement-error assumption and should be stated as such.
 
 ## Sparse Point Annotation
 
-A point annotation at coordinate $a_{im}$ may label only a local neighborhood:
+A point annotation at coordinate
+```math
+a_{im}
+```
+may label only a local neighborhood:
 
 ```math
 \mathcal{N}(a_{im})

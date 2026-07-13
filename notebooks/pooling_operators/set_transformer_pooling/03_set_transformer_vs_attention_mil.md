@@ -68,7 +68,11 @@ a_{ij}
 f(h_{ij};H_i)
 ```
 
-where dependence on $H_i$ comes through softmax normalization.
+where dependence on
+```math
+H_i
+```
+comes through softmax normalization.
 
 Set Transformer states are functions of all instances:
 
@@ -118,4 +122,3 @@ Set Transformer asks:
 ```text
 which interaction-aware set statistics should learned seeds extract?
 ```
-

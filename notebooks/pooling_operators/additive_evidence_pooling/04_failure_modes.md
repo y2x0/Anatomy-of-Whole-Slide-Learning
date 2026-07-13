@@ -48,7 +48,11 @@ r_i
 \sum_{j,k} e_2(u_{ij},u_{ik})
 ```
 
-unless pairwise interactions are encoded into $u_{ij}$ before summation.
+unless pairwise interactions are encoded into
+```math
+u_{ij}
+```
+before summation.
 
 ## 4. Calibration Of Evidence Units
 
@@ -59,7 +63,11 @@ e_{ij}=e_\theta(u_{ij}).
 ```
 
 They are interpretable only up to the scale implied by the head and loss. A
-patch with evidence $2$ is not biologically twice as diseased unless the model
+patch with evidence
+```math
+2
+```
+is not biologically twice as diseased unless the model
 and calibration justify that interpretation.
 
 ## 5. Negative Evidence Ambiguity
@@ -87,4 +95,3 @@ or interactions matter more than individual contributions.
 
 Its strength is exact model credit assignment. Its weakness is the assumption
 that the slide score should decompose into independent patch scores.
-

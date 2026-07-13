@@ -2,7 +2,15 @@
 
 Weak supervision can be understood as information loss.
 
-Let $U$ be the latent truth and $S^{\mathrm{obs}}$ the observed supervision:
+Let
+```math
+U
+```
+ be the latent truth and
+```math
+S^{\mathrm{obs}}
+```
+the observed supervision:
 
 ```math
 U
@@ -10,7 +18,15 @@ U
 S^{\mathrm{obs}}.
 ```
 
-If $S^{\mathrm{obs}}$ is generated from $U$ through an observation channel, then
+If
+```math
+S^{\mathrm{obs}}
+```
+ is generated from
+```math
+U
+```
+through an observation channel, then
 by data processing:
 
 ```math
@@ -27,7 +43,15 @@ I(U;S^{\mathrm{obs}}\mid H,G)
 H(U\mid H,G),
 ```
 
-because $S^{\mathrm{obs}}$ is a compressed or corrupted view of $U$.
+because
+```math
+S^{\mathrm{obs}}
+```
+ is a compressed or corrupted view of
+```math
+U
+```
+.
 
 ## Missing Information
 
@@ -39,7 +63,11 @@ Define the missing information as:
 H(U\mid S^{\mathrm{obs}},H,G).
 ```
 
-If $\mathcal{M}=0$, the observed supervision identifies the latent truth.
+If
+```math
+\mathcal{M}=0
+```
+, the observed supervision identifies the latent truth.
 
 If:
 
@@ -48,7 +76,10 @@ If:
 ```
 
 then multiple latent explanations remain possible after observing
-$S^{\mathrm{obs}}$.
+```math
+S^{\mathrm{obs}}
+```
+.
 
 For bag labels:
 
@@ -71,7 +102,11 @@ label.
 
 ## Complete-Data Likelihood
 
-If $U$ were observed, one could maximize:
+If
+```math
+U
+```
+were observed, one could maximize:
 
 ```math
 \log P_\theta(U\mid H,G).
@@ -89,11 +124,19 @@ Q_\alpha(S^{\mathrm{obs}}\mid U,H,G)
 P_\theta(U\mid H,G).
 ```
 
-The sum over $U$ is where latent ambiguity enters.
+The sum over
+```math
+U
+```
+is where latent ambiguity enters.
 
 ## ELBO
 
-For any variational distribution $q(U)$:
+For any variational distribution
+```math
+q(U)
+```
+:
 
 ```math
 \log P_{\theta,\alpha}(S^{\mathrm{obs}}\mid H,G)
@@ -126,8 +169,20 @@ P_{\theta,\alpha}(U\mid S^{\mathrm{obs}},H,G).
 ```
 
 Weakly supervised WSI methods usually do not optimize this exact ELBO. The ELBO
-view is a diagnostic analogy unless the method explicitly defines $U$, $Q$, and
-a variational family $q$.
+view is a diagnostic analogy unless the method explicitly defines
+```math
+U
+```
+,
+```math
+Q
+```
+, and
+a variational family
+```math
+q
+```
+.
 
 ## Method Families As Posterior Analogies
 
@@ -145,7 +200,11 @@ q(U)
 \delta_{\widehat j}
 ```
 
-where $\widehat j$ is the selected witness.
+where
+```math
+\widehat j
+```
+is the selected witness.
 
 Noisy-or MIL:
 
@@ -198,8 +257,20 @@ S^{\mathrm{obs}}
 \theta
 ```
 
-then the model cannot recover components of $U$ that leave no statistical trace
-in $S^{\mathrm{obs}}$ or $H,G$.
+then the model cannot recover components of
+```math
+U
+```
+that leave no statistical trace
+in
+```math
+S^{\mathrm{obs}}
+```
+ or
+```math
+H,G
+```
+.
 
 For instance localization:
 
@@ -220,7 +291,15 @@ fails.
 
 ## Sufficient Supervision
 
-A supervision signal $S^{\mathrm{obs}}$ exactly recovers a target $T(U)$ if:
+A supervision signal
+```math
+S^{\mathrm{obs}}
+```
+ exactly recovers a target
+```math
+T(U)
+```
+if:
 
 ```math
 H(T(U)\mid S^{\mathrm{obs}},H,G)
@@ -229,8 +308,20 @@ H(T(U)\mid S^{\mathrm{obs}},H,G)
 ```
 
 For prediction rather than exact recovery, the weaker useful statement is that
-the Bayes risk using $S^{\mathrm{obs}},H,G$ equals the Bayes risk using the full
-latent object $U,H,G$ for the target functional $T$.
+the Bayes risk using
+```math
+S^{\mathrm{obs}},H,G
+```
+equals the Bayes risk using the full
+latent object
+```math
+U,H,G
+```
+ for the target functional
+```math
+T
+```
+.
 
 Bag labels may be sufficient for slide classification:
 

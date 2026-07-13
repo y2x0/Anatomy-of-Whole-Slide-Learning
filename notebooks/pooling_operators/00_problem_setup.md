@@ -95,7 +95,11 @@ Every pooling operator defines an equivalence relation:
 \mathcal{R}(\widetilde H_k).
 ```
 
-If two slides are equivalent under $\mathcal{R}$, the downstream head cannot
+If two slides are equivalent under
+```math
+\mathcal{R}
+```
+, the downstream head cannot
 distinguish them:
 
 ```math
@@ -140,7 +144,11 @@ z_i
 ```
 
 The same readout formula can preserve different information depending on what
-the context operator embedded into $u_{ij}$.
+the context operator embedded into
+```math
+u_{ij}
+```
+.
 
 ## Three Kinds Of Surviving Statistic
 

@@ -17,7 +17,15 @@ calibrated labels.
 
 ## Pairwise Ranking Constraint
 
-Let $r_\theta(a)$ be a score for item $a$. A pairwise annotation:
+Let
+```math
+r_\theta(a)
+```
+ be a score for item
+```math
+a
+```
+. A pairwise annotation:
 
 ```math
 a
@@ -60,7 +68,15 @@ r_{ir}
 (\{h_{ij}:j\in\mathcal{B}_{ir}\}).
 ```
 
-If region $r$ is more suspicious than $s$:
+If region
+```math
+r
+```
+ is more suspicious than
+```math
+s
+```
+:
 
 ```math
 \mathcal{B}_{ir}
@@ -150,5 +166,9 @@ Ranking supervision identifies score differences, not calibrated probabilities:
 r_a-r_b
 ```
 
-is constrained, but the absolute scale of $r$ is not. Ranking labels are useful
+is constrained, but the absolute scale of
+```math
+r
+```
+is not. Ranking labels are useful
 when relative severity is reliable and absolute class boundaries are noisy.

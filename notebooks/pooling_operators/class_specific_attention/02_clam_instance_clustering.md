@@ -7,7 +7,11 @@ instances for representation shaping.
 
 ## Slide-Level Attention
 
-For class $c$:
+For class
+```math
+c
+```
+:
 
 ```math
 a_{ij}^{(c)}
@@ -37,7 +41,11 @@ Slide supervision gives:
 
 ## Attention Extremes
 
-For the true slide class $y_i=c$, define the top-attention set:
+For the true slide class
+```math
+y_i=c
+```
+, define the top-attention set:
 
 ```math
 T_i^{+}(c)
@@ -58,7 +66,11 @@ class branch.
 
 ## Instance Classifier
 
-Let an instance classifier for class $c$ be:
+Let an instance classifier for class
+```math
+c
+```
+be:
 
 ```math
 r_c(h)
@@ -137,4 +149,3 @@ z_i^{(c)}.
 The slide prediction still sees only a class-conditioned weighted average, but
 training pressures the embedding space to make attention extremes more
 class-separable.
-

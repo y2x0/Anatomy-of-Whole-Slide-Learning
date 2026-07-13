@@ -15,7 +15,11 @@ The slide is represented only by the feature multiset.
 
 ## Invariance
 
-Let $P$ be a permutation matrix acting on the order of patch embeddings. A
+Let
+```math
+P
+```
+be a permutation matrix acting on the order of patch embeddings. A
 no-geometry model satisfies:
 
 ```math
@@ -121,7 +125,11 @@ ABMIL, CLAM, DSMIL, and many MIL baselines can be run in this regime when patch
 coordinates are not used by the model. They may still learn strong classifiers
 because patch morphology can be highly predictive. The geometry claim is only
 that spatial arrangement cannot affect prediction except through features
-already encoded in $h_{ij}$.
+already encoded in
+```math
+h_{ij}
+```
+.
 
 ## Dense Summary
 

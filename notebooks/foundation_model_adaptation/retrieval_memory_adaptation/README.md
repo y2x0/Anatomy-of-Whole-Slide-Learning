@@ -4,7 +4,11 @@ Retrieval-memory adaptation changes prediction by changing the memory bank,
 metric, prototypes, or retrieved context rather than necessarily changing model
 weights.
 
-For query slide embedding $z_i$ and memory:
+For query slide embedding
+```math
+z_i
+```
+and memory:
 
 ```math
 \mathcal{M}

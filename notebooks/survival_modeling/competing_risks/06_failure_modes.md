@@ -5,7 +5,15 @@ sound like "risk."
 
 ## 1. Treating Competing Events As Censoring
 
-If event $c'\ne c$ is treated as independent censoring for cause $c$, one
+If event
+```math
+c'\ne c
+```
+ is treated as independent censoring for cause
+```math
+c
+```
+, one
 implicitly asks a counterfactual question:
 
 ```text
@@ -13,7 +21,10 @@ what would happen if the competing event process did not exist?
 ```
 
 That may be useful for etiology, but it is not the observed probability of cause
-$c$ occurring first.
+```math
+c
+```
+occurring first.
 
 The observed prediction target is:
 
@@ -33,7 +44,11 @@ Fine-Gray estimates a subdistribution hazard:
 \frac{dF_c(t\mid z)/dt}{1-F_c(t\mid z)}.
 ```
 
-This is not the instantaneous rate of cause $c$ among event-free patients.
+This is not the instantaneous rate of cause
+```math
+c
+```
+among event-free patients.
 
 It is a regression device for the CIF.
 
@@ -110,7 +125,19 @@ PMF -> event-time/cause distribution
 ## Diagnostic Questions
 
 1. What are the event types?
-2. Is the target $\lambda_c(t)$, $F_c(t)$, or $p_{kc}$?
+2. Is the target
+```math
+\lambda_c(t)
+```
+,
+```math
+F_c(t)
+```
+, or
+```math
+p_{kc}
+```
+?
 3. Are competing events removed, retained, or modeled jointly?
 4. Do predicted CIFs sum to at most one?
 5. Does event type enter only at the final head or earlier in the WSI readout?

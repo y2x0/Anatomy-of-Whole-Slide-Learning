@@ -22,7 +22,15 @@ Y(x)
 Y(x'),
 ```
 
-then no downstream deterministic head can separate $x$ and $x'$ through frozen
+then no downstream deterministic head can separate
+```math
+x
+```
+ and
+```math
+x'
+```
+through frozen
 features.
 
 ## Wrong Invariance
@@ -48,7 +56,14 @@ signal.
 
 ## Cohort Shift
 
-Let $P_0(H,Y)$ be the pretraining/downstream source distribution and $P_1(H,Y)$
+Let
+```math
+P_0(H,Y)
+```
+ be the pretraining/downstream source distribution and
+```math
+P_1(H,Y)
+```
 the target cohort. A frozen probe estimates:
 
 ```math
@@ -61,7 +76,11 @@ but deploys under:
 P_1(Y\mid H).
 ```
 
-Even if $H$ is good, the conditional target can shift.
+Even if
+```math
+H
+```
+is good, the conditional target can shift.
 
 ## Aggregation Mismatch
 

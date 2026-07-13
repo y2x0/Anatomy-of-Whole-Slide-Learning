@@ -86,12 +86,23 @@ q_m(h)
 {\sum_{r=1}^{M}\exp(-\|h-c_r\|^2/\tau)}.
 ```
 
-As $\tau\to 0$, this approaches hard nearest-prototype assignment. As $\tau$
+As
+```math
+\tau\to 0
+```
+, this approaches hard nearest-prototype assignment. As
+```math
+\tau
+```
 increases, assignments become diffuse.
 
 ## Pushforward View
 
-Let $Q$ map embeddings to prototype assignment vectors:
+Let
+```math
+Q
+```
+map embeddings to prototype assignment vectors:
 
 ```math
 Q(h)
@@ -154,4 +165,3 @@ p_i
 It is useful when the task depends on morphology composition. It is weak when
 the task depends on rare patterns, spatial arrangement, or within-prototype
 variation.
-

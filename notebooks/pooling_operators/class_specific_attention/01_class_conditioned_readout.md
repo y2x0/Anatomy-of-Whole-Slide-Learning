@@ -18,7 +18,11 @@ Class-specific attention learns one measure per class:
 
 ## Class-Specific Scores
 
-For class $c$, define:
+For class
+```math
+c
+```
+, define:
 
 ```math
 s_{ij}^{(c)}
@@ -112,7 +116,11 @@ to be summarized by different tissue subsets.
 
 ## Statistic That Survives
 
-For class $c$, the statistic is:
+For class
+```math
+c
+```
+, the statistic is:
 
 ```math
 z_i^{(c)}
@@ -137,7 +145,10 @@ q_c^\top
 ```
 
 The class head and the class attention head interact. A patch matters for class
-$c$ only through both:
+```math
+c
+```
+only through both:
 
 ```text
 attention:
@@ -164,4 +175,3 @@ one slide measure per class
 The mathematical benefit is class-conditioned evidence selection. The cost is
 more heads, more pseudo-explanation ambiguity, and more opportunities for
 attention branches to specialize to shortcuts.
-

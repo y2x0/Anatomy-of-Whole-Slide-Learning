@@ -2,7 +2,11 @@
 
 Visual prompt tuning changes the input to a frozen visual encoder.
 
-For a patch or tile image $x$, a visual prompt can be:
+For a patch or tile image
+```math
+x
+```
+, a visual prompt can be:
 
 ```math
 \widetilde x
@@ -60,14 +64,22 @@ In a transformer layer, tokens attend to:
 [P_\eta;T].
 ```
 
-If $Q,K,V$ are frozen, prompt tokens change the attention output by adding new
+If
+```math
+Q,K,V
+```
+are frozen, prompt tokens change the attention output by adding new
 keys and values:
 
 ```math
 \mathrm{Attn}(T,[P_\eta;T],[P_\eta;T]).
 ```
 
-Thus task information enters the context operator without changing $Q,K,V$.
+Thus task information enters the context operator without changing
+```math
+Q,K,V
+```
+.
 
 ## Dense Summary
 

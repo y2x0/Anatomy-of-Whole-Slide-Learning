@@ -116,7 +116,11 @@ p_{im}
 \frac{1}{n_i}\sum_jq_{ijm}
 ```
 
-be the prevalence of prototype $m$.
+be the prevalence of prototype
+```math
+m
+```
+.
 
 Cox:
 
@@ -145,7 +149,11 @@ This treats the slide as a morphology distribution.
 
 ## MIL With Censored Loss
 
-For any MIL readout $z_i$, the loss may be:
+For any MIL readout
+```math
+z_i
+```
+, the loss may be:
 
 ```math
 \ell_i

@@ -24,12 +24,20 @@ w^\top z
 \text{scanner/site/stain}
 ```
 
-if that nuisance correlates with $Y$ in training. The representation can be
+if that nuisance correlates with
+```math
+Y
+```
+in training. The representation can be
 powerful and the probe can still learn the wrong axis.
 
 ## Small Sample Instability
 
-When $D\gg N$, many probe directions can fit training labels:
+When
+```math
+D\gg N
+```
+, many probe directions can fit training labels:
 
 ```math
 \{w:\mathrm{CE}(w)\approx 0\}

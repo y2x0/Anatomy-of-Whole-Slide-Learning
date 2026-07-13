@@ -10,7 +10,11 @@ Most WSI survival models use:
 h_{ij}=E_0(x_{ij}),
 ```
 
-where $E_0$ is fixed. Then train:
+where
+```math
+E_0
+```
+is fixed. Then train:
 
 ```math
 z_i=\mathcal{R}_{\theta}(\mathcal{C}_{\theta}(H_i)),

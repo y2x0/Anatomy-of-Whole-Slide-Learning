@@ -18,12 +18,24 @@ eta_i       = log-risk score
 exp(eta_i) = relative risk
 ```
 
-The model does not specify $\lambda_0(t)$ during training. It only learns
+The model does not specify
+```math
+\lambda_0(t)
+```
+during training. It only learns
 which patients should have larger or smaller hazard at every time.
 
 ## Relative Risk
 
-For two individuals $i$ and $j$:
+For two individuals
+```math
+i
+```
+ and
+```math
+j
+```
+:
 
 ```math
 \frac{\lambda(t\mid z_i)}{\lambda(t\mid z_j)}
@@ -34,9 +46,21 @@ For two individuals $i$ and $j$:
 \exp(\eta_i-\eta_j).
 ```
 
-The ratio does not depend on $t$. This is the proportional hazards assumption.
+The ratio does not depend on
+```math
+t
+```
+. This is the proportional hazards assumption.
 
-If patient $i$ is twice as risky as patient $j$ at one time, the model says
+If patient
+```math
+i
+```
+ is twice as risky as patient
+```math
+j
+```
+at one time, the model says
 that same multiplicative relationship holds at all times.
 
 ## Survival Curve Under Cox
@@ -49,7 +73,11 @@ The cumulative baseline hazard is:
 \int_0^t \lambda_0(u)\,du.
 ```
 
-For patient $i$:
+For patient
+```math
+i
+```
+:
 
 ```math
 \Lambda(t\mid z_i)
@@ -69,7 +97,15 @@ S(t\mid z_i)
 \exp[-\exp(\eta_i)\Lambda_0(t)].
 ```
 
-Training can estimate $\eta_i$ without estimating $\Lambda_0(t)$, but
+Training can estimate
+```math
+\eta_i
+```
+ without estimating
+```math
+\Lambda_0(t)
+```
+, but
 calibrated survival curves require a baseline hazard estimate afterward.
 
 ## What The Model Learns

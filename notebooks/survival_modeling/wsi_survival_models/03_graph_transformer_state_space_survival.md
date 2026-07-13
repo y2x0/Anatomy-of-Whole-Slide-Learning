@@ -87,7 +87,11 @@ Self-attention can model long-range patch interactions:
 \right)V.
 ```
 
-For survival, the transformer changes the context operator $\mathcal{C}$. The
+For survival, the transformer changes the context operator
+```math
+\mathcal{C}
+```
+. The
 risk object is still defined by the survival head.
 
 ## State-Space Survival
@@ -106,7 +110,11 @@ s_{j+1}=A_js_j+B_jh_{ij},
 \widetilde{h}_{ij}=C_js_j+D_jh_{ij}.
 ```
 
-Selective SSMs make $A_j,B_j,C_j$ input-dependent.
+Selective SSMs make
+```math
+A_j,B_j,C_j
+```
+input-dependent.
 
 Survival readout:
 

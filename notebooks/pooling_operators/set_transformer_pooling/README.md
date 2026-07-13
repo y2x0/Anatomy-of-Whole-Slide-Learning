@@ -17,7 +17,11 @@ Z_i
 \mathrm{MHA}(S,\widetilde H_i,\widetilde H_i),
 ```
 
-where $S$ is a learned set of seed vectors.
+where
+```math
+S
+```
+is a learned set of seed vectors.
 
 ## C/R/G/S Placement
 
@@ -57,4 +61,3 @@ a learned multi-query set summary.
 
 - Lee et al. "Set Transformer." ICML 2019.
   https://arxiv.org/abs/1810.00825
-

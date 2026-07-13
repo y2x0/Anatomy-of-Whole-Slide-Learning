@@ -30,7 +30,11 @@ V_i^{(\ell)}
 V_i^{(\ell+1)}.
 ```
 
-The children of a coarse node $u\in V_i^{(\ell+1)}$ are:
+The children of a coarse node
+```math
+u\in V_i^{(\ell+1)}
+```
+are:
 
 ```math
 \mathrm{Ch}(u)
@@ -124,5 +128,13 @@ Hierarchy geometry says:
 \text{fine units compose coarse units}.
 ```
 
-The parent map $\pi$ is the core object. If $\pi$ is wrong, the hierarchy routes
+The parent map
+```math
+\pi
+```
+ is the core object. If
+```math
+\pi
+```
+is wrong, the hierarchy routes
 information through the wrong biological units.

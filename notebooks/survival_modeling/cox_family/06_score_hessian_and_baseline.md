@@ -97,7 +97,11 @@ The Hessian is:
 V(X_i;\beta).
 ```
 
-Since each $V(X_i;\beta)$ is positive semidefinite:
+Since each
+```math
+V(X_i;\beta)
+```
+is positive semidefinite:
 
 ```math
 \ell(\beta)
@@ -115,7 +119,11 @@ The negative log partial likelihood has Hessian:
 
 ## Neural Cox Score
 
-For $\eta_i=f_\theta(z_i)$, define:
+For
+```math
+\eta_i=f_\theta(z_i)
+```
+, define:
 
 ```math
 p_{ij}
@@ -155,13 +163,25 @@ The gradient couples all risk-set members through the softmax.
 
 ## Breslow Baseline Recovery
 
-After fitting $\widehat{\beta}$ or $\widehat{\theta}$, define:
+After fitting
+```math
+\widehat{\beta}
+```
+ or
+```math
+\widehat{\theta}
+```
+, define:
 
 ```math
 \widehat{\eta}_i=f_{\widehat{\theta}}(z_i).
 ```
 
-For tied event set $D_t$, Breslow estimates:
+For tied event set
+```math
+D_t
+```
+, Breslow estimates:
 
 ```math
 \widehat{\Delta\Lambda}_0(t)
@@ -217,7 +237,11 @@ does not change:
 {\sum_{j\in R_i}\exp(\eta_j)},
 ```
 
-the partial likelihood identifies $\eta$ only up to an additive constant.
+the partial likelihood identifies
+```math
+\eta
+```
+only up to an additive constant.
 
 The baseline hazard absorbs the shift:
 
@@ -237,7 +261,11 @@ The exact risk set is cohort-level:
 R_i=\{j:X_j\ge X_i\}.
 ```
 
-Mini-batch Cox training often replaces $R_i$ by:
+Mini-batch Cox training often replaces
+```math
+R_i
+```
+by:
 
 ```math
 R_i^{(B)}=\{j\in B:X_j\ge X_i\}.

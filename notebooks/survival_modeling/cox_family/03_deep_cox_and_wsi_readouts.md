@@ -49,7 +49,11 @@ Then:
 \eta_i = f_\theta(z_i).
 ```
 
-The survival loss does not directly see patches. It sees only $z_i$.
+The survival loss does not directly see patches. It sees only
+```math
+z_i
+```
+.
 
 ## Common WSI Readouts
 
@@ -135,7 +139,11 @@ z_i = \Phi(z_i^{\mathrm{path}},z_i^{\mathrm{omic}}),
 ```
 
 Pathomic Fusion, PORPOISE, MCAT, and SurvPath-style models differ mostly in the
-fusion operator $\Phi$ and the biological structure imposed on omics features.
+fusion operator
+```math
+\Phi
+```
+and the biological structure imposed on omics features.
 
 ## What Changes And What Does Not
 

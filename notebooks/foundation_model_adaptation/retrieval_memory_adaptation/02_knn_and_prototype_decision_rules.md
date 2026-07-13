@@ -2,7 +2,11 @@
 
 The simplest retrieval head is k-nearest-neighbor prediction.
 
-For query $z_i$, define:
+For query
+```math
+z_i
+```
+, define:
 
 ```math
 \mathcal{N}_K(i)

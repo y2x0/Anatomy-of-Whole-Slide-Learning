@@ -1,6 +1,10 @@
 # Problem Setup
 
-A whole-slide image $S_i$ is too large to model directly. The usual first step
+A whole-slide image
+```math
+S_i
+```
+is too large to model directly. The usual first step
 is to tile the slide:
 
 ```math
@@ -9,7 +13,15 @@ S_i
 \{x_{ij}\}_{j=1}^{n_i},
 ```
 
-where each $x_{ij}$ is a patch. A patch encoder $E$ gives:
+where each
+```math
+x_{ij}
+```
+ is a patch. A patch encoder
+```math
+E
+```
+gives:
 
 ```math
 h_{ij}=E(x_{ij})\in\mathbb{R}^{d}.
@@ -25,7 +37,11 @@ The slide must then be represented by some mathematical object:
 H_i=\{h_{ij}\}_{j=1}^{n_i}.
 ```
 
-Here $\Gamma_i$ contains optional structure:
+Here
+```math
+\Gamma_i
+```
+contains optional structure:
 
 ```text
 coordinates
@@ -69,7 +85,15 @@ Example:
 z_i=\frac{1}{n_i}\sum_{j=1}^{n_i}h_{ij}
 ```
 
-is a set readout if $H_i$ is an unordered set. If $h_{ij}$ are contextualized by
+is a set readout if
+```math
+H_i
+```
+ is an unordered set. If
+```math
+h_{ij}
+```
+are contextualized by
 a graph first, the same formula becomes the mean of graph-contextualized node
 states.
 
@@ -85,7 +109,11 @@ Set:
 \mathcal{F}(\{h_{\pi(1)},\ldots,h_{\pi(n)}\})
 ```
 
-for every permutation $\pi$.
+for every permutation
+```math
+\pi
+```
+.
 
 Sequence:
 
@@ -105,7 +133,11 @@ Graph:
 P\mathcal{F}(H,A)
 ```
 
-for node permutation matrix $P$.
+for node permutation matrix
+```math
+P
+```
+.
 
 ## Starting Objects
 

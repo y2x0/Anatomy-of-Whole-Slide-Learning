@@ -17,7 +17,11 @@ or:
 (z_i,\mathcal{T}),
 ```
 
-where $\mathcal{T}$ is a shared text embedding space.
+where
+```math
+\mathcal{T}
+```
+is a shared text embedding space.
 
 ## Image-Text Contrastive Alignment
 
@@ -33,7 +37,11 @@ t_i
 F_{\text{text}}(R_i),
 ```
 
-where $R_i$ is a report, caption, diagnosis string, or generated description.
+where
+```math
+R_i
+```
+is a report, caption, diagnosis string, or generated description.
 
 Contrastive alignment uses:
 
@@ -114,7 +122,11 @@ At inference, the slide embedding can be used without the report:
 z_i=F_{\text{image}}(S_i).
 ```
 
-But the geometry of $z_i$ still reflects report supervision.
+But the geometry of
+```math
+z_i
+```
+still reflects report supervision.
 
 PRISM- and TITAN-style models fit this pattern: slide-level visual embeddings
 are trained to interact with report or caption representations, enabling
@@ -149,7 +161,11 @@ z_i^\top t_q
 \text{large}
 ```
 
-for the correct query $q$.
+for the correct query
+```math
+q
+```
+.
 
 ## Dense Summary
 

@@ -13,11 +13,18 @@ O(n_i^2).
 
 For WSI bags with many patches, this can be prohibitive. ISAB reduces cost using
 inducing points, but then information must pass through a bottleneck of size
-$M$.
+```math
+M
+```
+.
 
 ## 2. Inducing-Point Bottleneck
 
-With $M$ inducing points:
+With
+```math
+M
+```
+inducing points:
 
 ```math
 A_i
@@ -25,7 +32,15 @@ A_i
 \mathrm{MHA}(I,H_i,H_i).
 ```
 
-If $M$ is too small, rare morphologies may never be represented in $A_i$.
+If
+```math
+M
+```
+ is too small, rare morphologies may never be represented in
+```math
+A_i
+```
+.
 
 ## 3. Seed Collapse
 
@@ -74,4 +89,3 @@ or geometry is needed but absent.
 
 Its strength is interaction-aware invariant readout. Its cost is computation and
 the risk of compressing rare evidence before pooling.
-

@@ -3,7 +3,11 @@
 Neural competing-risk models often parameterize the full event-time/cause
 distribution directly.
 
-Discretize time into $K$ bins. A model outputs:
+Discretize time into
+```math
+K
+```
+bins. A model outputs:
 
 ```math
 p_{ikc}
@@ -19,7 +23,11 @@ p_{ikc}\ge0,
 \sum_{k=1}^{K}\sum_{c=1}^{C}p_{ikc}+p_{i,>K}=1.
 ```
 
-A softmax over $KC+1$ cells enforces this:
+A softmax over
+```math
+KC+1
+```
+cells enforces this:
 
 ```math
 (p_{i11},\ldots,p_{iKC},p_{i,>K})
@@ -51,7 +59,19 @@ The model predicts the full discrete competing-risk distribution.
 
 ## Likelihood
 
-If subject $i$ has event $c$ in interval $r$:
+If subject
+```math
+i
+```
+ has event
+```math
+c
+```
+ in interval
+```math
+r
+```
+:
 
 ```math
 \mathcal{L}_i^{\text{event}}
@@ -59,7 +79,15 @@ If subject $i$ has event $c$ in interval $r$:
 -\log p_{irc}.
 ```
 
-If subject $i$ is censored in interval $r$, the observed event time exceeds
+If subject
+```math
+i
+```
+ is censored in interval
+```math
+r
+```
+, the observed event time exceeds
 the censoring time:
 
 ```math
@@ -129,7 +157,11 @@ function, but the structure is likelihood plus ranking over CIFs.
 
 ## Relation To Hazard Models
 
-A PMF model outputs $p_{kc}$. A cause-specific discrete hazard model outputs:
+A PMF model outputs
+```math
+p_{kc}
+```
+. A cause-specific discrete hazard model outputs:
 
 ```math
 h_{kc}
@@ -143,7 +175,11 @@ The total interval hazard is:
 h_{k\bullet}=\sum_c h_{kc}.
 ```
 
-Survival to the start of interval $k$ is:
+Survival to the start of interval
+```math
+k
+```
+is:
 
 ```math
 S_{k-1}

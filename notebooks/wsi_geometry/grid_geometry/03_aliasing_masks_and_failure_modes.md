@@ -47,7 +47,11 @@ E_\phi(I_i|_{B(q,p)}).
 ```
 
 If the relevant biological structure is smaller than or badly aligned with the
-tile size $p$, the grid representation aliases it:
+tile size
+```math
+p
+```
+, the grid representation aliases it:
 
 ```math
 I_i
@@ -80,7 +84,11 @@ The boundary is algorithmic, not biological.
 
 ## Scan-Order Distortion
 
-A sequence order $\sigma$ induces path distance:
+A sequence order
+```math
+\sigma
+```
+induces path distance:
 
 ```math
 d_{\sigma}(q,q')

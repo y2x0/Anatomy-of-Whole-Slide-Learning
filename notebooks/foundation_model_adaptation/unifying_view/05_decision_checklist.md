@@ -38,7 +38,11 @@ If the encoder changes, write:
 \Delta_\eta\in\mathcal{A}.
 ```
 
-Then define $\mathcal{A}$:
+Then define
+```math
+\mathcal{A}
+```
+:
 
 ```text
 low-rank

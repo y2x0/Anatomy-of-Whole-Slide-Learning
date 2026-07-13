@@ -20,7 +20,11 @@ z_i
 
 ## MMD View
 
-For a kernel $k$, the squared MMD between two slide distributions is:
+For a kernel
+```math
+k
+```
+, the squared MMD between two slide distributions is:
 
 ```math
 \mathrm{MMD}^2(\mu_i,\mu_k)
@@ -60,7 +64,11 @@ z_i
 \mathbb{E}_{\mu_i}[\varphi(u)].
 ```
 
-The choice of $\varphi$ decides which differences survive. Random features,
+The choice of
+```math
+\varphi
+```
+decides which differences survive. Random features,
 learned features, and prototype assignments are all sketching maps.
 
 ## Computational Cost
@@ -77,7 +85,11 @@ Sketch pooling costs:
 O(n_iM)
 ```
 
-to compute $z_i$, then:
+to compute
+```math
+z_i
+```
+, then:
 
 ```math
 O(M)
@@ -114,6 +126,13 @@ z_i
 }
 ```
 
-Its value comes from choosing $\varphi$ so that task-relevant distribution
-differences become linear differences in $z_i$.
-
+Its value comes from choosing
+```math
+\varphi
+```
+so that task-relevant distribution
+differences become linear differences in
+```math
+z_i
+```
+.

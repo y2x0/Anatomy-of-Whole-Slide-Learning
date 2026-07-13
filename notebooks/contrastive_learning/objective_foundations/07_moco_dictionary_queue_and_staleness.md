@@ -42,7 +42,7 @@ vectors:
 ```math
 \mathcal{Q}_t
 =
-\left{
+\left\{
 k_{t-a_r}^{(r)}
 \right\}_{r=1}^{K},
 ```

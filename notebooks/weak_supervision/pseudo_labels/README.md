@@ -20,7 +20,11 @@ The generated target is:
 \Psi_t(H_i,G_i,S_i^{\mathrm{obs}},\theta_t,\mathcal{D}),
 ```
 
-where $\Psi$ may depend on the current model, a frozen teacher, an external
+where
+```math
+\Psi
+```
+may depend on the current model, a frozen teacher, an external
 clusterer, or a previous training stage.
 
 ## Files

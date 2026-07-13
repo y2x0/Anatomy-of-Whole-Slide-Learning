@@ -10,11 +10,18 @@ G(t\mid z)=\Pr(C>t\mid z)
 ```
 
 be the censoring survival function. In many applications, a marginal
-$G(t)$ is estimated by Kaplan-Meier on censoring times.
+```math
+G(t)
+```
+is estimated by Kaplan-Meier on censoring times.
 
 ## Horizon Binary Target
 
-At horizon $t$:
+At horizon
+```math
+t
+```
+:
 
 ```math
 Y_i(t)=\mathbf{1}[T_i\le t].
@@ -27,7 +34,11 @@ event occurs by t
 or subject is still observed after t
 ```
 
-It is unobserved if censored before $t$.
+It is unobserved if censored before
+```math
+t
+```
+.
 
 ## IPCW Risk
 
@@ -72,7 +83,11 @@ Under independent censoring:
 T\perp C\mid z,
 ```
 
-the observed event-before-$t$ indicator is:
+the observed event-before-
+```math
+t
+```
+indicator is:
 
 ```math
 \mathbf{1}[X\le t,\delta=1]
@@ -80,10 +95,18 @@ the observed event-before-$t$ indicator is:
 \mathbf{1}[T\le t,T\le C].
 ```
 
-Weighting by $1/G(T)$ corrects the probability of being observed at the event
+Weighting by
+```math
+1/G(T)
+```
+corrects the probability of being observed at the event
 time.
 
-The observed event-free-after-$t$ indicator is:
+The observed event-free-after-
+```math
+t
+```
+indicator is:
 
 ```math
 \mathbf{1}[X>t]
@@ -91,7 +114,11 @@ The observed event-free-after-$t$ indicator is:
 \mathbf{1}[T>t,C>t].
 ```
 
-Weighting by $1/G(t)$ corrects the probability of being uncensored through
+Weighting by
+```math
+1/G(t)
+```
+corrects the probability of being uncensored through
 the horizon.
 
 ## Instability Near Tail
@@ -121,7 +148,11 @@ from slide representation:
 z_i=\mathcal{R}(\mathcal{C}(H_i)).
 ```
 
-The gradient is a supervised classification gradient at $t^\star$, weighted
+The gradient is a supervised classification gradient at
+```math
+t^\star
+```
+, weighted
 by censoring.
 
 This can be useful when the clinical question is a fixed horizon:

@@ -21,9 +21,20 @@ A Cox head gives:
 \eta_i=f_\theta(z_i).
 ```
 
-The loss only depends on the slide through $\eta_i$. Therefore the survival
-statistic is whatever part of $H_i$ changes risk-set ordering after
-$\mathcal{C},\mathcal{R},f_\theta$.
+The loss only depends on the slide through
+```math
+\eta_i
+```
+. Therefore the survival
+statistic is whatever part of
+```math
+H_i
+```
+changes risk-set ordering after
+```math
+\mathcal{C},\mathcal{R},f_\theta
+```
+.
 
 ## Linear Attention MIL Cox
 
@@ -68,7 +79,11 @@ evidence.
 
 ## Attention Gradient
 
-For one event $i$, the Cox loss is:
+For one event
+```math
+i
+```
+, the Cox loss is:
 
 ```math
 \mathcal{L}_i
@@ -76,7 +91,11 @@ For one event $i$, the Cox loss is:
 -\eta_i+\log\sum_{k\in R_i}\exp(\eta_k).
 ```
 
-For slide $m\in R_i$:
+For slide
+```math
+m\in R_i
+```
+:
 
 ```math
 \frac{\partial\mathcal{L}_i}{\partial z_m}
@@ -98,11 +117,27 @@ If attention weights are treated as fixed for the moment:
 (p_{im}-\mathbf{1}[m=i])a_{mj}w.
 ```
 
-Thus event slides receive negative pressure along $w$; competing risk-set
-slides receive positive pressure along $w$, weighted by their Cox softmax
+Thus event slides receive negative pressure along
+```math
+w
+```
+; competing risk-set
+slides receive positive pressure along
+```math
+w
+```
+, weighted by their Cox softmax
 probability.
 
-If $a_{mj}$ depends on $h_{mj}$, an additional term appears:
+If
+```math
+a_{mj}
+```
+ depends on
+```math
+h_{mj}
+```
+, an additional term appears:
 
 ```math
 \frac{\partial\eta_m}{\partial h_{mj}}
@@ -169,7 +204,11 @@ That statistic is sparse but brittle.
 
 ## Prototype Cox
 
-Let prototypes be $c_1,\ldots,c_M$. Define soft assignments:
+Let prototypes be
+```math
+c_1,\ldots,c_M
+```
+. Define soft assignments:
 
 ```math
 q_{ijm}
@@ -267,7 +306,15 @@ If two slide encoders produce scores related by a monotone transformation:
 ```
 
 they can preserve concordance. But the Cox partial likelihood is not invariant
-to scaling $a$, because softmax denominators change. Larger $a$ sharpens
+to scaling
+```math
+a
+```
+, because softmax denominators change. Larger
+```math
+a
+```
+sharpens
 risk-set probabilities:
 
 ```math

@@ -1,6 +1,10 @@
 # C/R/G/S Geometry Decomposition
 
-WSI geometry is the $G$ in:
+WSI geometry is the
+```math
+G
+```
+in:
 
 ```math
 \widetilde H_i
@@ -145,14 +149,14 @@ adaptive:
 
 ## C/R/G/S Table
 
-| Geometry | $\mathcal{C}$ | $\mathcal{R}$ | $G$ | $S$ |
+| Geometry | \mathcal{C} | \mathcal{R} | G | S |
 |---|---|---|---|---|
-| none | patchwise or set context | invariant pooling | $\varnothing$ | slide label |
-| coordinate | coordinate-aware features or attention | spatial statistics | $C_i$ | task loss may reward location |
-| grid | convolution, windows, scan | grid/window pooling | lattice $\Lambda_i$ | augmentation and task loss |
-| graph | message passing | graph pooling | adjacency $A_i$ | task loss, graph regularizers |
-| hierarchy | cross-scale context | region-to-slide pooling | parent maps $\pi$ | scale objectives, pseudo labels |
-| learned topology | dynamic message passing | dynamic graph pooling | $A_\theta(H,C)$ | task loss and topology priors |
+| none | patchwise or set context | invariant pooling | \varnothing | slide label |
+| coordinate | coordinate-aware features or attention | spatial statistics | C_i | task loss may reward location |
+| grid | convolution, windows, scan | grid/window pooling | lattice \Lambda_i | augmentation and task loss |
+| graph | message passing | graph pooling | adjacency A_i | task loss, graph regularizers |
+| hierarchy | cross-scale context | region-to-slide pooling | parent maps \pi | scale objectives, pseudo labels |
+| learned topology | dynamic message passing | dynamic graph pooling | A_\theta(H,C) | task loss and topology priors |
 
 ## Dense Summary
 

@@ -36,7 +36,11 @@ For multimodal retrieval:
 k_r\in\{z_r,t_r\},
 ```
 
-where $t_r$ is a text or report embedding.
+where
+```math
+t_r
+```
+is a text or report embedding.
 
 ## Similarity Functions
 
@@ -151,7 +155,11 @@ m_i
 \sum_{r=1}^{N}\alpha_{ir}v_r.
 ```
 
-Hard top-$K$ retrieval is a sparse approximation:
+Hard top-
+```math
+K
+```
+retrieval is a sparse approximation:
 
 ```math
 \alpha_{ir}=0

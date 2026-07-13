@@ -13,14 +13,14 @@ training pipeline. Each one has a different mathematical status.
 
 ## Compact Matrix
 
-| Method | Observed $S^{\mathrm{obs}}$ | Generated target | Core mechanism | Identifiable from loss | Main non-identifiability |
+| Method | Observed S^{\mathrm{obs}} | Generated target | Core mechanism | Identifiable from loss | Main non-identifiability |
 |---|---|---|---|---|---|
-| ABMIL | slide label $Y_i$ | none | attention-weighted bag embedding | slide prediction function | attention as instance truth |
-| Campanella-style weak supervision | report/case-derived label $\widetilde Y$ | slide/case mapping target | large-scale slide CE and aggregation | clinical-label predictor | slide-local diagnostic region |
-| CLAM | slide label $Y_i$ | top/bottom-k attention constraints | slide CE plus smooth-SVM instance clustering | slide class and selected-extreme geometry | whether selected patches are true witnesses |
-| DSMIL | slide label $Y_i$ | critical-instance index induced by max branch | dual-stream max witness plus bag relation branch | slide predictor with critical-instance bias | true instance labels |
-| DTFD-MIL | slide label $Y_i$ | pseudo-bag labels and distilled features | Tier-1 pseudo-bag MIL, Grad-CAM evidence, Tier-2 MIL | slide predictor over distilled pseudo-bags | true pseudo-bag labels |
-| Cluster-to-Conquer | slide label $Y_i$ | local clusters and copied patch labels | k-means sampling, patch CE, slide CE, KL attention regularization | slide predictor under cluster sampling | cluster diagnostic meaning |
+| ABMIL | slide label Y_i | none | attention-weighted bag embedding | slide prediction function | attention as instance truth |
+| Campanella-style weak supervision | report/case-derived label \widetilde Y | slide/case mapping target | large-scale slide CE and aggregation | clinical-label predictor | slide-local diagnostic region |
+| CLAM | slide label Y_i | top/bottom-k attention constraints | slide CE plus smooth-SVM instance clustering | slide class and selected-extreme geometry | whether selected patches are true witnesses |
+| DSMIL | slide label Y_i | critical-instance index induced by max branch | dual-stream max witness plus bag relation branch | slide predictor with critical-instance bias | true instance labels |
+| DTFD-MIL | slide label Y_i | pseudo-bag labels and distilled features | Tier-1 pseudo-bag MIL, Grad-CAM evidence, Tier-2 MIL | slide predictor over distilled pseudo-bags | true pseudo-bag labels |
+| Cluster-to-Conquer | slide label Y_i | local clusters and copied patch labels | k-means sampling, patch CE, slide CE, KL attention regularization | slide predictor under cluster sampling | cluster diagnostic meaning |
 | SC-MIL | slide labels | same-label positive pairs | supervised contrastive slide embeddings plus CE | label-discriminative slide geometry | same-label morphology equivalence |
 | SCL-WC | slide labels plus selected cross-slide relations | weakly consistent positives/negatives | self-supervised features plus weak contrastive refinement | relation-conditioned representation | correctness of cross-slide relation |
 | LACL | labels plus lesion-aware pair construction | lesion-filtered queues/pairs | lesion-aware contrastive objective | geometry under lesion heuristic | true lesion equivalence |
@@ -140,7 +140,11 @@ It generates top and bottom attention sets:
 \Psi_{\mathrm{CLAM}}(A_i,Y_i).
 ```
 
-For $Y_i=c$:
+For
+```math
+Y_i=c
+```
+:
 
 ```math
 \mathcal{T}_i^+(c)
@@ -209,7 +213,11 @@ s_{ijc}
 g_c(h_{ij}).
 ```
 
-The critical instance for class $c$ is induced by a max operation:
+The critical instance for class
+```math
+c
+```
+is induced by a max operation:
 
 ```math
 j_i^\star(c)
@@ -410,7 +418,11 @@ classification. SC-MIL uses a training curriculum:
 \mathcal{L}_{\mathrm{CE}},
 ```
 
-where $\beta_t$ decays so training progressively shifts from bag-level
+where
+```math
+\beta_t
+```
+decays so training progressively shifts from bag-level
 representation learning to classifier learning.
 
 The assumption is:
@@ -510,7 +522,15 @@ The contrastive objective is standard in form:
 }.
 ```
 
-The novelty is the construction of $\mathcal{P}$ and $\mathcal{N}$, not the
+The novelty is the construction of
+```math
+\mathcal{P}
+```
+ and
+```math
+\mathcal{N}
+```
+, not the
 softmax. The method assumes lesion-aware selection reduces class collision:
 
 ```math
@@ -595,7 +615,15 @@ The image-text contrastive loss is:
 ```
 
 This supervision can encode richer semantics than a class label. But it does
-not guarantee that every local visual feature in $x_i$ is described by $t_i$:
+not guarantee that every local visual feature in
+```math
+x_i
+```
+ is described by
+```math
+t_i
+```
+:
 
 ```math
 (x_i,t_i)\text{ paired}

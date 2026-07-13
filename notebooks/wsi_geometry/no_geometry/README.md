@@ -56,5 +56,9 @@ f(H_i)
 f(PH_i)
 ```
 
-for any permutation $P$ of patch order. This is exactly right for some tasks and
+for any permutation
+```math
+P
+```
+of patch order. This is exactly right for some tasks and
 catastrophically wrong for others.

@@ -53,7 +53,11 @@ F_{\text{slide}}
 \right).
 ```
 
-If $F_{\text{slide}}$ is pretrained, the slide representation itself is
+If
+```math
+F_{\text{slide}}
+```
+is pretrained, the slide representation itself is
 foundation-level:
 
 ```math

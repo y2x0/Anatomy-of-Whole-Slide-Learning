@@ -49,7 +49,11 @@ normalization:
 \frac{\partial z_i}{\partial h_{ij}}.
 ```
 
-The derivative $\partial z_i/\partial h_{ij}$ includes:
+The derivative
+```math
+\partial z_i/\partial h_{ij}
+```
+includes:
 
 ```text
 value path:
@@ -61,7 +65,11 @@ score path:
 
 ## Computational Constraint
 
-For WSIs, $n_i$ can be large. Full fine-tuning cost scales with:
+For WSIs,
+```math
+n_i
+```
+can be large. Full fine-tuning cost scales with:
 
 ```math
 \sum_i n_i

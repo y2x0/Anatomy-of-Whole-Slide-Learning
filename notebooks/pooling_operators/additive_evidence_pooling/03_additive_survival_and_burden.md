@@ -46,7 +46,11 @@ These make different biological assumptions.
 
 ## Tissue Area Correction
 
-If each tile corresponds to area $A$, then:
+If each tile corresponds to area
+```math
+A
+```
+, then:
 
 ```math
 \eta_i
@@ -67,7 +71,15 @@ sampling. Area weighting or normalization must match the biological question.
 
 ## Prototype Additive Risk
 
-If prototype prevalence is $p_{im}$ and tissue amount is $n_i$, a burden-like
+If prototype prevalence is
+```math
+p_{im}
+```
+ and tissue amount is
+```math
+n_i
+```
+, a burden-like
 prototype score is:
 
 ```math
@@ -99,4 +111,3 @@ They are risky when:
 ```text
 patch count reflects preprocessing rather than biology
 ```
-

@@ -1,6 +1,10 @@
 # C/R/G/S Pooling Decomposition
 
-Pooling is the $\mathcal{R}$ part of the full whole-slide map:
+Pooling is the
+```math
+\mathcal{R}
+```
+part of the full whole-slide map:
 
 ```math
 H_i
@@ -12,7 +16,11 @@ z_i
 \widehat y_i.
 ```
 
-The point of the pooling notes is to make $\mathcal{R}$ mathematically explicit.
+The point of the pooling notes is to make
+```math
+\mathcal{R}
+```
+mathematically explicit.
 
 ## C: Context Operator
 
@@ -45,7 +53,11 @@ prototype assignment:
     u_ij may include q_ijm or responsibilities
 ```
 
-The same readout can mean different things depending on $\mathcal{C}$.
+The same readout can mean different things depending on
+```math
+\mathcal{C}
+```
+.
 
 ## R: Readout Operator
 
@@ -94,7 +106,11 @@ z_i
 ```
 
 Each readout defines an equivalence relation: two slides collide when they have
-the same $z_i$.
+the same
+```math
+z_i
+```
+.
 
 ## G: Geometry
 
@@ -122,7 +138,11 @@ q_{ijm}
 \exp(-d_G(h_{ij},c_m)).
 ```
 
-For prototype pooling, $G$ can be prototype geometry:
+For prototype pooling,
+```math
+G
+```
+can be prototype geometry:
 
 ```math
 C_{mn}
@@ -130,8 +150,20 @@ C_{mn}
 \|c_m-c_n\|^2.
 ```
 
-For graph pooling, $G$ is adjacency. For hierarchy pooling, $G$ is parent-child
-structure. For sequence pooling, $G$ is order.
+For graph pooling,
+```math
+G
+```
+ is adjacency. For hierarchy pooling,
+```math
+G
+```
+is parent-child
+structure. For sequence pooling,
+```math
+G
+```
+is order.
 
 ## S: Supervision
 
@@ -155,7 +187,15 @@ S_i
 (y_i,T_i^{+},T_i^{-})
 ```
 
-where $T_i^{+}$ and $T_i^{-}$ are pseudo-instance sets induced by attention.
+where
+```math
+T_i^{+}
+```
+ and
+```math
+T_i^{-}
+```
+are pseudo-instance sets induced by attention.
 
 PANTHER:
 
@@ -173,12 +213,20 @@ S_i
 (X_i,\delta_i)
 ```
 
-and the same $z_i$ may be trained under Cox, hazard, ranking, or competing-risk
+and the same
+```math
+z_i
+```
+may be trained under Cox, hazard, ranking, or competing-risk
 losses.
 
 ## Surviving Statistic
 
-The surviving statistic is the information in $z_i$:
+The surviving statistic is the information in
+```math
+z_i
+```
+:
 
 ```text
 mean:
@@ -210,4 +258,3 @@ S says what pressure shaped the statistic.
 
 Pooling is not just an implementation detail. It is the mathematical contract
 between the slide representation and the task head.
-

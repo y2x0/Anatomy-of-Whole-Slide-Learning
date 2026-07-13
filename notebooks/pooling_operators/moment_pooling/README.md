@@ -8,7 +8,11 @@ The core question:
 Which expectations of the instance distribution should survive?
 ```
 
-Given contextualized instance states $u_{ij}$ and empirical measure:
+Given contextualized instance states
+```math
+u_{ij}
+```
+and empirical measure:
 
 ```math
 \mu_i
@@ -66,4 +70,3 @@ z_i
 - Deep Sets: transform and sum as a universal set-learning template.
 - Distribution representations: moments and kernel means as finite statistics
   of the empirical patch measure.
-

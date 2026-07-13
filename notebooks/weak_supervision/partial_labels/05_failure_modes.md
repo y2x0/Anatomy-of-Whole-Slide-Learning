@@ -97,5 +97,9 @@ S^{\mathrm{obs}}
 (M,M\odot U).
 ```
 
-The mask $M$ is part of the supervision signal. Ignoring it can turn helpful
+The mask
+```math
+M
+```
+is part of the supervision signal. Ignoring it can turn helpful
 partial information into biased training.

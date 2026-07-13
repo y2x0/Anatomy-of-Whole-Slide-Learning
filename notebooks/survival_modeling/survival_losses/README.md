@@ -1,6 +1,10 @@
 # Survival Losses
 
-A survival loss defines which observed facts about $(X_i,\delta_i)$ are used
+A survival loss defines which observed facts about
+```math
+(X_i,\delta_i)
+```
+are used
 and which risk object is trained.
 
 The central split:

@@ -24,7 +24,11 @@ This is permutation invariant:
 \max_j s_{i\pi(j)}
 ```
 
-for every permutation $\pi$.
+for every permutation
+```math
+\pi
+```
+.
 
 ## Extreme-Value Functional
 
@@ -71,7 +75,11 @@ y_i=1
 \exists j:\ y_{ij}=1.
 ```
 
-If $s_{ij}$ estimates instance positivity, then:
+If
+```math
+s_{ij}
+```
+estimates instance positivity, then:
 
 ```math
 \max_j s_{ij}

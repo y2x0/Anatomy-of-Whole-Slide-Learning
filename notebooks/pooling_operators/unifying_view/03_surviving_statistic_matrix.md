@@ -12,7 +12,15 @@ z_i
 \mathcal{R}(\widetilde H_i),
 ```
 
-then the readout cannot distinguish slides $i$ and $i'$ whenever:
+then the readout cannot distinguish slides
+```math
+i
+```
+ and
+```math
+i'
+```
+whenever:
 
 ```math
 \mathcal{R}(\widetilde H_i)
@@ -30,11 +38,11 @@ follows from the induced equivalence class.
 | Mean pooling | first moment | same average state | rare extremes, multimodality | one strong positive patch diluted by many negatives |
 | Additive pooling | total burden | same summed evidence | confounds bag size with evidence | same fraction positive, different tissue area |
 | Max pooling | largest score | same top instance | prevalence and context | one positive patch vs hundreds of positives |
-| Top-k pooling | upper-tail average | same top-k multiset | choice of $k$ | disease area smaller or larger than $k$ |
+| Top-k pooling | upper-tail average | same top-k multiset | choice of k | disease area smaller or larger than k |
 | Quantile pooling | selected order statistic | same quantile | features outside chosen quantile | mixed distribution with same upper quantile |
-| Generalized mean | temperature-dependent tail moment | same power mean | unstable interpolation between mean and max | high $p$ amplifies artifacts |
+| Generalized mean | temperature-dependent tail moment | same power mean | unstable interpolation between mean and max | high p amplifies artifacts |
 | Noisy-or pooling | product of negative probabilities | same non-event product | calibration and independence | many tiny false probabilities saturate slide risk |
-| Attention pooling | weighted first moment | same attention-weighted average | attention collapse, non-identifiability | two attention maps yield same $z_i$ |
+| Attention pooling | weighted first moment | same attention-weighted average | attention collapse, non-identifiability | two attention maps yield same z_i |
 | Class-specific attention | class-conditioned weighted moment | same per-class readout | class competition and pseudo-label noise | high-attention negatives shaped as positives |
 | Set Transformer PMA | seed-query summaries | same learned query outputs | seed redundancy, quadratic context cost | two seeds attend to same mode |
 | Prototype pooling | component prevalence and residuals | same prototype histogram/residuals | prototype misspecification | two morphologies assigned to one component |
@@ -122,8 +130,15 @@ S:
     decides which differences are rewarded by the learning objective
 ```
 
-The same $\mathcal{R}$ can behave very differently under different
-$\mathcal{C}$. A mean after a graph neural network is a mean of
+The same
+```math
+\mathcal{R}
+```
+can behave very differently under different
+```math
+\mathcal{C}
+```
+. A mean after a graph neural network is a mean of
 contextualized states. A mean before context is only a first moment of isolated
 patch embeddings.
 
@@ -145,8 +160,24 @@ H_B
 \{n,n,\ldots,n\},
 ```
 
-where $p$ is a strongly positive patch and $n$ is background. Mean pooling
-fails when $n_i$ is large and $p$ has small mass. Max and noisy-or should
+where
+```math
+p
+```
+ is a strongly positive patch and
+```math
+n
+```
+is background. Mean pooling
+fails when
+```math
+n_i
+```
+ is large and
+```math
+p
+```
+has small mass. Max and noisy-or should
 succeed if the patch scorer is calibrated.
 
 ### Prevalence Test
@@ -165,7 +196,15 @@ H_B
 
 Max pooling cannot distinguish these if the strongest positive patch has the
 same score. Mean, additive, top-k, and distribution pooling can distinguish
-them if the representation separates $p$ and $n$.
+them if the representation separates
+```math
+p
+```
+ and
+```math
+n
+```
+.
 
 ### Layout Test
 
@@ -178,9 +217,21 @@ coordinates:
 \{(h_j,c'_j)\}_{j=1}^{n}.
 ```
 
-Any pooling operator that ignores $G$ must treat them as identical. Graph,
+Any pooling operator that ignores
+```math
+G
+```
+must treat them as identical. Graph,
 hierarchical, and geometry-aware distribution methods can separate them only if
-layout affects either $\mathcal{C}$ or $\mathcal{R}$.
+layout affects either
+```math
+\mathcal{C}
+```
+ or
+```math
+\mathcal{R}
+```
+.
 
 ### Artifact Test
 

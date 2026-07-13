@@ -19,23 +19,39 @@ while:
 \mu_i\ne\mu_k.
 ```
 
-The downstream head cannot separate them because it only sees $z_i$.
+The downstream head cannot separate them because it only sees
+```math
+z_i
+```
+.
 
 ## 2. Rare Event Dilution
 
-If a rare positive morphology occupies fraction $\epsilon_i$ of patches, then a
+If a rare positive morphology occupies fraction
+```math
+\epsilon_i
+```
+of patches, then a
 bounded moment coordinate contributes at most:
 
 ```math
 O(\epsilon_i).
 ```
 
-Unless $\Phi$ amplifies rare evidence, moment pooling behaves like prevalence
+Unless
+```math
+\Phi
+```
+amplifies rare evidence, moment pooling behaves like prevalence
 estimation and can miss sparse positives.
 
 ## 3. High-Dimensional Sample Noise
 
-With $M$ moment coordinates:
+With
+```math
+M
+```
+moment coordinates:
 
 ```math
 z_i
@@ -44,7 +60,10 @@ z_i
 ```
 
 finite-patch estimation noise grows as the statistic becomes richer. A large
-$M$ can represent more distribution shape but may be noisy for small tissue
+```math
+M
+```
+can represent more distribution shape but may be noisy for small tissue
 regions or aggressive subsampling.
 
 ## 4. Lost Layout
@@ -58,11 +77,19 @@ Moment pooling is invariant to patch permutation:
 ```
 
 If layout matters, moments of individual states are insufficient unless context
-encoded spatial relationships into $u_{ij}$ before pooling.
+encoded spatial relationships into
+```math
+u_{ij}
+```
+before pooling.
 
 ## 5. Learned Shortcut Moments
 
-If $\Phi=\phi_\theta$ is trained by slide labels, it may learn nuisance
+If
+```math
+\Phi=\phi_\theta
+```
+is trained by slide labels, it may learn nuisance
 statistics:
 
 ```text
@@ -92,4 +119,3 @@ T(\mu_i)=T(\mu_k)
 \quad
 y_i\ne y_k.
 ```
-

@@ -6,7 +6,11 @@ ranking, and calibration.
 
 ## Horizon Risk
 
-At horizon $\tau_k$, risk is cumulative incidence:
+At horizon
+```math
+\tau_k
+```
+, risk is cumulative incidence:
 
 ```math
 r_i(\tau_k)
@@ -18,7 +22,15 @@ F_i(\tau_k)
 1-\prod_{\ell=1}^{k}(1-h_{i\ell}).
 ```
 
-The derivative of horizon risk with respect to hazard $h_{im}$, for $m\le k$,
+The derivative of horizon risk with respect to hazard
+```math
+h_{im}
+```
+, for
+```math
+m\le k
+```
+,
 is:
 
 ```math
@@ -31,7 +43,11 @@ Early hazards affect all later horizon risks.
 
 ## Expected Event Time
 
-Using interval representatives $\bar{\tau}_k$:
+Using interval representatives
+```math
+\bar{\tau}_k
+```
+:
 
 ```math
 \widehat{\mathbb{E}}[T_i]
@@ -66,7 +82,11 @@ i\prec j
 X_i<X_j,\ \delta_i=1.
 ```
 
-At horizon $\tau_k$, a pairwise logistic ranking loss can be:
+At horizon
+```math
+\tau_k
+```
+, a pairwise logistic ranking loss can be:
 
 ```math
 \mathcal{L}_{\mathrm{rank}}
@@ -114,18 +134,38 @@ ranking acts on horizon risk or expected time
 calibration acts on predicted probabilities at time horizons
 ```
 
-If $\alpha$ is too large, the model may rank well while losing probabilistic
+If
+```math
+\alpha
+```
+is too large, the model may rank well while losing probabilistic
 meaning.
 
 ## IPCW Brier Score
 
-For horizon $t$, the binary event indicator is:
+For horizon
+```math
+t
+```
+, the binary event indicator is:
 
 ```math
 Y_i(t)=\mathbf{1}[T_i\le t].
 ```
 
-But $Y_i(t)$ may be unobserved if subject $i$ is censored before $t$.
+But
+```math
+Y_i(t)
+```
+ may be unobserved if subject
+```math
+i
+```
+ is censored before
+```math
+t
+```
+.
 
 Let:
 
@@ -153,7 +193,11 @@ This evaluates calibrated survival probability, not just ranking.
 
 ## Calibration At A Horizon
 
-At time $\tau_k$, group subjects by predicted risk:
+At time
+```math
+\tau_k
+```
+, group subjects by predicted risk:
 
 ```math
 \widehat{F}_i(\tau_k)=1-\widehat{S}_i(\tau_k).
@@ -186,7 +230,11 @@ Likelihood gradients train each time bin:
 \sum_km_{ik}(h_{ik}-y_{ik})w_k.
 ```
 
-Ranking at horizon $K^\star$ trains a compressed risk:
+Ranking at horizon
+```math
+K^\star
+```
+trains a compressed risk:
 
 ```math
 r_i=1-\prod_{k\le K^\star}(1-h_{ik}).
@@ -223,7 +271,11 @@ F_i(\tau_k),
 \right\}.
 ```
 
-Different $\rho$ define different patient orderings.
+Different
+```math
+\rho
+```
+define different patient orderings.
 
 ## Dense Summary
 

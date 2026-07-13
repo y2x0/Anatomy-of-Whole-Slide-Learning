@@ -2,7 +2,11 @@
 
 Adapters insert a small trainable residual module into a frozen network.
 
-For hidden state $u_\ell$:
+For hidden state
+```math
+u_\ell
+```
+:
 
 ```math
 u_{\ell+1}
@@ -36,7 +40,11 @@ Reference: [Adapter modules](https://arxiv.org/abs/1902.00751).
 
 ## Low-Dimensional Residual
 
-The adapter perturbation lies in the column space of $W_{\mathrm{up}}$:
+The adapter perturbation lies in the column space of
+```math
+W_{\mathrm{up}}
+```
+:
 
 ```math
 A_\eta(u)
@@ -49,7 +57,11 @@ bottleneck.
 
 ## Relation To LoRA
 
-If $\sigma$ is identity:
+If
+```math
+\sigma
+```
+is identity:
 
 ```math
 A_\eta(u)

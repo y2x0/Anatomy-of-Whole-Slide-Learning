@@ -64,7 +64,11 @@ r_i
 e_{i1}+\cdots+e_{in_i}.
 ```
 
-Removing patch $k$ changes the score by:
+Removing patch
+```math
+k
+```
+changes the score by:
 
 ```math
 r_i-r_i^{(-k)}
@@ -129,4 +133,3 @@ r_i
 
 It is interpretable because each patch has an exact signed contribution to the
 bag score.
-

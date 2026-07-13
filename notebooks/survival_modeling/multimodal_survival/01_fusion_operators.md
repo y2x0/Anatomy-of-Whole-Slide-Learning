@@ -47,7 +47,11 @@ This assumes modalities contribute additively after projection.
 
 ## Gated Fusion
 
-For modality $m$:
+For modality
+```math
+m
+```
+:
 
 ```math
 \alpha_i^{m}

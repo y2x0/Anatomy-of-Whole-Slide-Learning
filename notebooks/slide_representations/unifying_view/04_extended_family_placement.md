@@ -17,7 +17,11 @@ H_i
 z_i.
 ```
 
-The difference is the type of $\mathcal{X}_i$.
+The difference is the type of
+```math
+\mathcal{X}_i
+```
+.
 
 ## Hierarchy
 
@@ -235,7 +239,7 @@ pretraining geometry may not align with the downstream phenotype
 | Family | Slide Object | Context Source | Readout | Hidden Assumption |
 |---|---|---|---|---|
 | Hierarchy | nested tissue units | parent maps and scale | top or multiscale pool | biology composes across chosen scales |
-| Distribution | empirical measure | statistic or prototype map | $T(\mu)$ | prevalence captures the signal |
+| Distribution | empirical measure | statistic or prototype map | T(\mu) | prevalence captures the signal |
 | Retrieval memory | query plus neighbors | external archive | neighbor-weighted context | nearest cases are useful precedent |
 | Foundation latent | pretrained embedding | pretraining objective | probe, prompt, or adapter | latent geometry transfers |
 

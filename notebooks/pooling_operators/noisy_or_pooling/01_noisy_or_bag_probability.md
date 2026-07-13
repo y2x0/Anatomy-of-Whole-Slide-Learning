@@ -55,7 +55,11 @@ y_i=0
 y_{i1}=0,\ldots,y_{in_i}=0.
 ```
 
-If each instance independently fails with probability $1-p_{ij}$, multiply the
+If each instance independently fails with probability
+```math
+1-p_{ij}
+```
+, multiply the
 failure probabilities.
 
 ## Bag Logit
@@ -77,11 +81,19 @@ Binary cross-entropy is:
 -(1-y_i)\log(1-r_i).
 ```
 
-The readout itself is the probability $r_i$, not a vector embedding.
+The readout itself is the probability
+```math
+r_i
+```
+, not a vector embedding.
 
 ## Small-Probability Approximation
 
-If all $p_{ij}$ are small:
+If all
+```math
+p_{ij}
+```
+are small:
 
 ```math
 \prod_j(1-p_{ij})
@@ -129,4 +141,3 @@ Noisy-or pooling is:
 ```
 
 It is the probabilistic readout for an at-least-one-positive bag assumption.
-

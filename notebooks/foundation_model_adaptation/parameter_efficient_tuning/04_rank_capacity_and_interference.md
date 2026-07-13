@@ -24,7 +24,15 @@ r.
 
 ## Task Direction Condition
 
-Suppose the ideal update is $\Delta W^\star$. A rank-$r$ LoRA update can
+Suppose the ideal update is
+```math
+\Delta W^\star
+```
+. A rank-
+```math
+r
+```
+LoRA update can
 represent it only if:
 
 ```math
@@ -44,7 +52,11 @@ If this is large, the adaptation class is too small.
 
 ## Layer Placement
 
-Let updates be allowed only in layers $\mathcal{L}$:
+Let updates be allowed only in layers
+```math
+\mathcal{L}
+```
+:
 
 ```math
 \Delta_\eta
@@ -58,8 +70,16 @@ fixing the underlying representation.
 
 ## Interference
 
-A small update can still damage pretrained geometry. Let $z_0(x)$ be the frozen
-embedding and $z_\eta(x)$ the adapted embedding. Drift is:
+A small update can still damage pretrained geometry. Let
+```math
+z_0(x)
+```
+be the frozen
+embedding and
+```math
+z_\eta(x)
+```
+the adapted embedding. Drift is:
 
 ```math
 D_{\mathrm{drift}}

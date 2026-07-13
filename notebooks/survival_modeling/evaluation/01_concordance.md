@@ -2,7 +2,15 @@
 
 Concordance evaluates whether predicted risk orders patients correctly.
 
-Let $r_i$ be a scalar risk score. A pair $(i,j)$ is comparable if:
+Let
+```math
+r_i
+```
+ be a scalar risk score. A pair
+```math
+(i,j)
+```
+is comparable if:
 
 ```math
 X_i<X_j,
@@ -10,7 +18,15 @@ X_i<X_j,
 \delta_i=1.
 ```
 
-Then subject $i$ had an observed event before subject $j$ was known to fail
+Then subject
+```math
+i
+```
+ had an observed event before subject
+```math
+j
+```
+was known to fail
 or be censored.
 
 ## Harrell C-Index
@@ -86,11 +102,19 @@ estimated from training data. A schematic IPCW estimator is:
 }.
 ```
 
-The truncation $\tau$ avoids regions where censoring weights become unstable.
+The truncation
+```math
+\tau
+```
+avoids regions where censoring weights become unstable.
 
 ## Survival-Curve Models Need A Risk Functional
 
-If a model outputs $\widehat{S}_i(t)$, concordance still requires:
+If a model outputs
+```math
+\widehat{S}_i(t)
+```
+, concordance still requires:
 
 ```math
 r_i=\rho[\widehat{S}_i].
@@ -110,7 +134,11 @@ r_i=-\int_0^{\tau}\widehat{S}_i(t)\,dt,
 r_i=-\mathrm{median}_{\widehat{S}_i}(T).
 ```
 
-Different $\rho$ can produce different C-indices.
+Different
+```math
+\rho
+```
+can produce different C-indices.
 
 ## WSI Consequence
 

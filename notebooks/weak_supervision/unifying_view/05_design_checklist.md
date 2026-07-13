@@ -24,7 +24,11 @@ S_i^{\mathrm{obs}}
 Q(S\mid U_i,H_i,G_i).
 ```
 
-Is $S_i^{\mathrm{obs}}$ a bag label, noisy label, partial annotation,
+Is
+```math
+S_i^{\mathrm{obs}}
+```
+a bag label, noisy label, partial annotation,
 contrastive pair, report-derived label, or mixture?
 
 Do not put model-generated pseudo-labels here unless they are genuinely
@@ -40,7 +44,11 @@ Y_i
 \Gamma(Z_i).
 ```
 
-Is $\Gamma$ max, noisy-or, additive burden, threshold, distributional, or
+Is
+```math
+\Gamma
+```
+max, noisy-or, additive burden, threshold, distributional, or
 something else?
 
 ## 4. Noise Model
@@ -79,10 +87,18 @@ For pseudo-labels, define:
 \Psi_t(H_i,G_i,S_i^{\mathrm{obs}},\theta_t,\mathcal{D}).
 ```
 
-Is $\Psi$ thresholding, top-k attention, teacher prediction, clustering, or
+Is
+```math
+\Psi
+```
+thresholding, top-k attention, teacher prediction, clustering, or
 pseudo-bag construction?
 
-State whether gradients flow through $\Psi_t$ or whether the generated target
+State whether gradients flow through
+```math
+\Psi_t
+```
+or whether the generated target
 is treated as a stopped, fixed target during the update.
 
 ## 7. Contrastive Relation
@@ -95,7 +111,11 @@ For contrastive learning, define:
 \{(a,b):a\sim b\}.
 ```
 
-What latent equivalence relation does $a\sim b$ approximate?
+What latent equivalence relation does
+```math
+a\sim b
+```
+approximate?
 
 ## 8. Identifiability Claim
 

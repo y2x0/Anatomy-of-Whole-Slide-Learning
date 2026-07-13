@@ -53,7 +53,11 @@ where:
 }.
 ```
 
-If $Q,K,V$ are trained, the retrieval metric is adapted. If they are frozen,
+If
+```math
+Q,K,V
+```
+are trained, the retrieval metric is adapted. If they are frozen,
 only the memory supplies task information.
 
 ## Dense Summary

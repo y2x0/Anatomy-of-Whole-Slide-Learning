@@ -27,7 +27,11 @@ k^\star
 \mathrm{sim}(z_i,z_k).
 ```
 
-If $z$ encodes stain, scanner, tissue amount, or organ more strongly than
+If
+```math
+z
+```
+encodes stain, scanner, tissue amount, or organ more strongly than
 disease mechanism, retrieval follows those shortcuts.
 
 The model may retrieve:
@@ -44,13 +48,21 @@ clinically similar disease
 
 ## 3. Memory Drift
 
-A memory bank built at time $t_0$:
+A memory bank built at time
+```math
+t_0
+```
+:
 
 ```math
 \mathcal{M}_{t_0}
 ```
 
-may not match data at time $t_1$:
+may not match data at time
+```math
+t_1
+```
+:
 
 ```math
 p_{t_0}(z,y)\ne p_{t_1}(z,y).

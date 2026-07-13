@@ -29,7 +29,11 @@ r_i
 ```
 
 Once saturated, the model loses resolution among positive slides. A mildly
-positive slide and a strongly positive slide can both map near $1$.
+positive slide and a strongly positive slide can both map near
+```math
+1
+```
+.
 
 ## 3. Instance Probability Non-Identifiability
 
@@ -86,4 +90,3 @@ or patch probabilities are interpreted as true labels.
 ```
 
 The operator is a probabilistic OR, not a calibrated lesion burden estimator.
-

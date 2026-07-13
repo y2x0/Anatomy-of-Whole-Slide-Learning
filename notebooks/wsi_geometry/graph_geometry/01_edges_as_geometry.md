@@ -14,7 +14,11 @@ Edges define which units are allowed to exchange information before readout.
 
 ## Coordinate kNN
 
-Given coordinates $c_{ij}$:
+Given coordinates
+```math
+c_{ij}
+```
+:
 
 ```math
 \mathcal{N}_k(j)

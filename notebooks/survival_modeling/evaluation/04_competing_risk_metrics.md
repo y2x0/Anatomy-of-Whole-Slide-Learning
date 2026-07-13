@@ -12,7 +12,11 @@ Evaluation should respect event type.
 
 ## Cause-Specific Horizon Brier Score
 
-At horizon $t$, define:
+At horizon
+```math
+t
+```
+, define:
 
 ```math
 Y_{ic}(t)=\mathbf{1}[T_i\le t,J_i=c].
@@ -25,7 +29,11 @@ The predicted probability is:
 ```
 
 An IPCW Brier score has the same censoring logic as survival Brier, but the
-target is cause-specific event occurrence by $t$:
+target is cause-specific event occurrence by
+```math
+t
+```
+:
 
 ```math
 \mathrm{BS}_{c}(t)
@@ -37,11 +45,19 @@ Y_{ic}(t)-\widehat{F}_{ic}(t)
 \right]^2.
 ```
 
-Weights account for whether $Y_{ic}(t)$ is observed under censoring.
+Weights account for whether
+```math
+Y_{ic}(t)
+```
+is observed under censoring.
 
 ## Cause-Specific AUC
 
-At horizon $t$:
+At horizon
+```math
+t
+```
+:
 
 ```math
 \mathrm{AUC}_{c}(t)
@@ -53,8 +69,19 @@ T_i\le t,J_i=c,\ T_j>t
 ).
 ```
 
-Controls may be defined as event-free at $t$, or sometimes as not having cause
-$c$ by $t$. The definition must be stated.
+Controls may be defined as event-free at
+```math
+t
+```
+, or sometimes as not having cause
+```math
+c
+```
+ by
+```math
+t
+```
+. The definition must be stated.
 
 ## Probability Constraint
 
@@ -64,7 +91,19 @@ Predicted CIFs must satisfy:
 \sum_c\widehat{F}_{ic}(t)\le1
 ```
 
-for all $t$, and each $\widehat{F}_{ic}(t)$ must be nondecreasing in $t$.
+for all
+```math
+t
+```
+, and each
+```math
+\widehat{F}_{ic}(t)
+```
+ must be nondecreasing in
+```math
+t
+```
+.
 
 Metric reporting should check validity:
 
@@ -97,7 +136,11 @@ Then:
 }.
 ```
 
-The risk score $r_{ic}$ may be:
+The risk score
+```math
+r_{ic}
+```
+may be:
 
 ```math
 r_{ic}=\widehat{F}_{ic}(t^\star)

@@ -24,7 +24,11 @@ Geometry is too weak when:
 I(Y;G\mid H)>0
 ```
 
-but the model ignores or underuses $G$.
+but the model ignores or underuses
+```math
+G
+```
+.
 
 Example:
 
@@ -92,7 +96,11 @@ interfaces.
 
 ## Geometry Leakage
 
-Geometry leakage occurs when $G$ encodes nonbiological information:
+Geometry leakage occurs when
+```math
+G
+```
+encodes nonbiological information:
 
 ```math
 G
@@ -102,7 +110,11 @@ A
 Y,
 ```
 
-where $A$ is artifact, institution, scanner, stain protocol, or tissue
+where
+```math
+A
+```
+is artifact, institution, scanner, stain protocol, or tissue
 processing.
 
 The model may then learn:
@@ -156,4 +168,8 @@ the shortcut it risks
 the counterexample it cannot solve
 ```
 
-That is the clean way to debug $G$ in C/R/G/S.
+That is the clean way to debug
+```math
+G
+```
+in C/R/G/S.

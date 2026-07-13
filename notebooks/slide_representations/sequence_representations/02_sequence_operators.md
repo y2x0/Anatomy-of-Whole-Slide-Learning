@@ -30,7 +30,11 @@ or:
 z=\mathrm{Pool}(u_1,\ldots,u_n).
 ```
 
-The state $s_j$ summarizes previous tokens.
+The state
+```math
+s_j
+```
+summarizes previous tokens.
 
 ## Transformer Operator
 
@@ -61,10 +65,18 @@ A sequence transformer usually adds positional encoding:
 H'=H+P.
 ```
 
-Without $P$, self-attention is permutation equivariant, not sequence-aware.
+Without
+```math
+P
+```
+, self-attention is permutation equivariant, not sequence-aware.
 
 With full attention, every token can interact with every other token. The
-interaction graph is complete; the sequence enters through $P$ or through
+interaction graph is complete; the sequence enters through
+```math
+P
+```
+or through
 relative position terms, not through a path constraint.
 
 ## State-Space Operator
@@ -93,8 +105,15 @@ Then:
 s_{j+1}=A_js_j+B_jh_j.
 ```
 
-This is path-structured context. Information from token $k$ can affect token
-$j$ only through the intervening scan states.
+This is path-structured context. Information from token
+```math
+k
+```
+can affect token
+```math
+j
+```
+only through the intervening scan states.
 
 The readout can be:
 

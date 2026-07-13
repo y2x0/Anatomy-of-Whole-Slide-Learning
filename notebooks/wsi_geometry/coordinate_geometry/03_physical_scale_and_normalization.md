@@ -26,7 +26,11 @@ c_{ij}^{\mathrm{px}}
 (x_{ij}^{\mathrm{px}},y_{ij}^{\mathrm{px}}).
 ```
 
-If the scanner resolution is $r_i$ microns per pixel, the physical coordinate
+If the scanner resolution is
+```math
+r_i
+```
+microns per pixel, the physical coordinate
 is:
 
 ```math
@@ -43,7 +47,11 @@ Distances should be compared in physical units:
 r_i\|c_{ij}^{\mathrm{px}}-c_{ik}^{\mathrm{px}}\|_2.
 ```
 
-If $r_i$ changes across slides, fixed pixel radii do not represent fixed tissue
+If
+```math
+r_i
+```
+changes across slides, fixed pixel radii do not represent fixed tissue
 distances.
 
 ## Normalized Coordinates
@@ -82,16 +90,28 @@ segmentation.
 
 ## Scale Index
 
-If patches are extracted at magnification level $\ell$, each coordinate has a
+If patches are extracted at magnification level
+```math
+\ell
+```
+, each coordinate has a
 scale:
 
 ```math
 (h_{ij}^{(\ell)},c_{ij}^{(\ell)},\Delta_\ell),
 ```
 
-where $\Delta_\ell$ is the physical width of a patch at that level.
+where
+```math
+\Delta_\ell
+```
+is the physical width of a patch at that level.
 
-Two patches with the same coordinate but different $\Delta_\ell$ represent
+Two patches with the same coordinate but different
+```math
+\Delta_\ell
+```
+represent
 different fields of view. A multiscale method should therefore model:
 
 ```math

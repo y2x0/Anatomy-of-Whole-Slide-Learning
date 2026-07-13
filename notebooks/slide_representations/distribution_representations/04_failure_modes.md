@@ -57,7 +57,15 @@ If prototypes are poorly chosen, many morphologies share one assignment:
 q_m(h_a)\approx q_m(h_b)
 ```
 
-even when $h_a$ and $h_b$ are biologically different.
+even when
+```math
+h_a
+```
+ and
+```math
+h_b
+```
+are biologically different.
 
 Then:
 
@@ -118,9 +126,29 @@ Retrieval or classification may use:
 \|p_i-p_k\|_2
 ```
 
-even though prototype geometry matters. If prototypes $c_a$ and $c_b$ are close,
-moving mass from $a$ to $b$ should be less severe than moving it to a distant
-prototype $c_r$.
+even though prototype geometry matters. If prototypes
+```math
+c_a
+```
+ and
+```math
+c_b
+```
+are close,
+moving mass from
+```math
+a
+```
+ to
+```math
+b
+```
+should be less severe than moving it to a distant
+prototype
+```math
+c_r
+```
+.
 
 Euclidean histogram distance ignores this unless the representation encodes
 ground geometry.
@@ -128,8 +156,16 @@ ground geometry.
 ## Diagnostic Questions
 
 1. Is the task about prevalence or arrangement?
-2. Which statistic $T(\mu)$ survives?
-3. Can two clinically different slides collide under $T$?
+2. Which statistic
+```math
+T(\mu)
+```
+survives?
+3. Can two clinically different slides collide under
+```math
+T
+```
+?
 4. Are prototypes interpretable and stable across cohorts?
 5. Does the distance respect geometry between morphologies?
 

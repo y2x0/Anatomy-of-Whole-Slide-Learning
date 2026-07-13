@@ -58,7 +58,15 @@ For patches near tissue boundaries, local neighborhoods are truncated:
 |\mathcal{N}(k)|
 ```
 
-even if $j$ and $k$ are biologically similar. This can bias local density,
+even if
+```math
+j
+```
+ and
+```math
+k
+```
+are biologically similar. This can bias local density,
 attention, and graph aggregation.
 
 ## Rotation And Orientation

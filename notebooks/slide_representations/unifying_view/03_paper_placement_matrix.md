@@ -14,12 +14,20 @@ z_i
 \widehat{y}_i.
 ```
 
-Here $G_i$ denotes geometry or relation structure and $S_i$ denotes task
+Here
+```math
+G_i
+```
+ denotes geometry or relation structure and
+```math
+S_i
+```
+denotes task
 supervision.
 
 ## Matrix
 
-| Method | Slide Object | $G_i$ | $\mathcal{C}$ | $\mathcal{R}$ | Surviving Statistic |
+| Method | Slide Object | G_i | \mathcal{C} | \mathcal{R} | Surviving Statistic |
 |---|---|---:|---:|---:|---:|
 | Deep Sets | unordered set | none | instance transform | sum or mean | transformed first moment |
 | ABMIL | unordered set | none | attention score per instance | weighted sum | learned weighted first moment |
@@ -213,7 +221,11 @@ Set Transformer introduces complete-graph attention among instances:
 v_\ell.
 ```
 
-Pooling by multihead attention can be written with seed vectors $s_m$:
+Pooling by multihead attention can be written with seed vectors
+```math
+s_m
+```
+:
 
 ```math
 z_m

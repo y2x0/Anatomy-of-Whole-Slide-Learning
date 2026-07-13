@@ -2,7 +2,11 @@
 
 This folder aligns WSI geometry with the repository-wide C/R/G/S framework.
 
-Geometry is the structure $G_i$ that tells the model which spatial relations are
+Geometry is the structure
+```math
+G_i
+```
+that tells the model which spatial relations are
 visible.
 
 ## Files

@@ -3,7 +3,11 @@
 Ranking losses optimize the order of risk scores rather than the probability of
 event times.
 
-A pair $(i,j)$ is comparable when:
+A pair
+```math
+(i,j)
+```
+is comparable when:
 
 ```math
 X_i<X_j,
@@ -11,7 +15,15 @@ X_i<X_j,
 \delta_i=1.
 ```
 
-Subject $i$ had an observed event before subject $j$ left observation.
+Subject
+```math
+i
+```
+ had an observed event before subject
+```math
+j
+```
+left observation.
 
 ## Generic Pairwise Ranking
 
@@ -36,7 +48,15 @@ where:
 A_{ij}=\mathbf{1}[X_i<X_j,\delta_i=1].
 ```
 
-The function $\phi$ is decreasing when $r_i>r_j$.
+The function
+```math
+\phi
+```
+ is decreasing when
+```math
+r_i>r_j
+```
+.
 
 Examples:
 
@@ -105,12 +125,20 @@ r_i=\sum_k\widehat{h}_{ik},
 r_i=\widehat{F}_i(t^\star).
 ```
 
-Different $\rho$ can produce different rankings. The ranking loss optimizes
+Different
+```math
+\rho
+```
+can produce different rankings. The ranking loss optimizes
 the chosen functional, not the whole curve.
 
 ## Ranking For Competing Risks
 
-For cause $c$:
+For cause
+```math
+c
+```
+:
 
 ```math
 A_{ij}^{(c)}
@@ -144,7 +172,11 @@ For WSI:
 r_i=\rho(\mathcal{H}(\mathcal{R}(\mathcal{C}(H_i)))).
 ```
 
-The ranking loss sees only $r_i$. If the aggregator discards morphology that
+The ranking loss sees only
+```math
+r_i
+```
+. If the aggregator discards morphology that
 matters for calibration but not ranking, the loss will not recover it.
 
 This is why ranking can produce high C-index but poor survival curves.

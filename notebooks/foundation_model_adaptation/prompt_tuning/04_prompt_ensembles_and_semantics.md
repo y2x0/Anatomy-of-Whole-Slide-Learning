@@ -2,7 +2,11 @@
 
 Prompt ensembling averages multiple text queries for the same class.
 
-Let prompts for class $c$ be:
+Let prompts for class
+```math
+c
+```
+be:
 
 ```math
 p_{c1},\ldots,p_{cM}.

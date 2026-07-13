@@ -2,7 +2,15 @@
 
 Teacher-student methods create pseudo-labels from a teacher model.
 
-Let teacher parameters be $\phi$ and student parameters be $\theta$.
+Let teacher parameters be
+```math
+\phi
+```
+ and student parameters be
+```math
+\theta
+```
+.
 
 The teacher prediction is:
 
@@ -36,7 +44,11 @@ p_i
 \right).
 ```
 
-With temperature $T$:
+With temperature
+```math
+T
+```
+:
 
 ```math
 q_i^{(T)}
@@ -75,7 +87,11 @@ P_\phi(Y\mid t_2(H_i))
 \right\|_2^2.
 ```
 
-This assumes augmentations $t_1,t_2$ preserve the label.
+This assumes augmentations
+```math
+t_1,t_2
+```
+preserve the label.
 
 ## Instance-Level Teacher
 

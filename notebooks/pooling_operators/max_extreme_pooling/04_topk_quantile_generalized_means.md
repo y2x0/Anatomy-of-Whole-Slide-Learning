@@ -13,7 +13,15 @@ g_\theta(u_{ij}).
 
 ## Top-K Pooling
 
-Let $I_K(i)$ be the indices of the $K$ largest scores:
+Let
+```math
+I_K(i)
+```
+ be the indices of the
+```math
+K
+```
+largest scores:
 
 ```math
 I_K(i)
@@ -49,7 +57,11 @@ set of high-evidence patches.
 
 ## Quantile Pooling
 
-For a quantile level $\alpha\in(0,1)$, define:
+For a quantile level
+```math
+\alpha\in(0,1)
+```
+, define:
 
 ```math
 Q_i(\alpha)
@@ -66,12 +78,20 @@ F_i(t)
 \sum_j \mathbf{1}\{s_{ij}\le t\}.
 ```
 
-High quantiles such as $Q_i(0.95)$ preserve near-extreme evidence while being
+High quantiles such as
+```math
+Q_i(0.95)
+```
+preserve near-extreme evidence while being
 less sensitive to a single outlier than max pooling.
 
 ## Generalized Mean
 
-For positive transformed scores $r_{ij}>0$, the generalized mean is:
+For positive transformed scores
+```math
+r_{ij}>0
+```
+, the generalized mean is:
 
 ```math
 M_p(r_i)
@@ -96,7 +116,11 @@ Limits:
 \max_j r_{ij}.
 ```
 
-Increasing $p$ makes the readout more extreme-focused.
+Increasing
+```math
+p
+```
+makes the readout more extreme-focused.
 
 ## C/R/G/S Placement
 
@@ -130,4 +154,3 @@ max:
 ```
 
 The design question is how many high-evidence patches should define the bag.
-

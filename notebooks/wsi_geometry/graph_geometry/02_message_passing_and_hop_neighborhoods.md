@@ -2,7 +2,11 @@
 
 Graph geometry becomes useful through message passing.
 
-Let $h_j^{(0)}$ be node features. A generic graph layer is:
+Let
+```math
+h_j^{(0)}
+```
+be node features. A generic graph layer is:
 
 ```math
 m_j^{(\ell)}
@@ -26,7 +30,11 @@ m_j^{(\ell)}
 \right).
 ```
 
-After $L$ layers:
+After
+```math
+L
+```
+layers:
 
 ```math
 h_j^{(L)}
@@ -37,7 +45,11 @@ F_\theta
 \right).
 ```
 
-The graph distance $d_G$ defines the context radius.
+The graph distance
+```math
+d_G
+```
+defines the context radius.
 
 ## GCN-Style Linear Smoothing
 

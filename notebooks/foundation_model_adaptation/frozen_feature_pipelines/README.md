@@ -49,4 +49,8 @@ S:
 
 Frozen features are strongest when the target is linearly or readout-separably
 encoded in the pretrained geometry. They fail when the needed pathology
-direction was never represented by $f_{\phi_0}$.
+direction was never represented by
+```math
+f_{\phi_0}
+```
+.

@@ -75,7 +75,11 @@ correct direction depends on the intended geometry.
 
 ## Prior Graph Regularization
 
-Given a physical prior graph $A^{0}$:
+Given a physical prior graph
+```math
+A^{0}
+```
+:
 
 ```math
 \mathcal{L}_{\mathrm{prior}}

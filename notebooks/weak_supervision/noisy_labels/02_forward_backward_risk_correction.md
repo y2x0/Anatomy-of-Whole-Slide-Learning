@@ -33,7 +33,11 @@ T^\top p_\theta(x)
 \right]_{\widetilde y}.
 ```
 
-This matches the observed noisy label distribution while keeping $p_\theta$ as
+This matches the observed noisy label distribution while keeping
+```math
+p_\theta
+```
+as
 the clean posterior model.
 
 This requires:
@@ -47,7 +51,11 @@ This requires:
 
 ## Backward Correction
 
-Let $\ell(y,p)$ be the vector of losses for each clean class:
+Let
+```math
+\ell(y,p)
+```
+be the vector of losses for each clean class:
 
 ```math
 \ell(p)
@@ -76,7 +84,11 @@ Then:
 \ell(Y,p).
 ```
 
-This is unbiased when $T$ is correct and invertible, but it can have high
+This is unbiased when
+```math
+T
+```
+is correct and invertible, but it can have high
 variance and can produce negative loss values.
 
 Invertibility is not a technical footnote. If two true classes are corrupted
@@ -101,10 +113,22 @@ p
 \frac{\widetilde p-\rho_-}{1-\rho_+-\rho_-}.
 ```
 
-If $\rho_++\rho_-$ is close to $1$, correction is unstable because the
+If
+```math
+\rho_++\rho_-
+```
+ is close to
+```math
+1
+```
+, correction is unstable because the
 denominator is small.
 
-The corrected posterior must also stay in $[0,1]$:
+The corrected posterior must also stay in
+```math
+[0,1]
+```
+:
 
 ```math
 0
@@ -160,7 +184,11 @@ negative slide can still suppress true positive patches.
 
 ## Estimating The Transition Matrix
 
-Many corrections assume $T$ is known. In WSI, it usually is not.
+Many corrections assume
+```math
+T
+```
+is known. In WSI, it usually is not.
 
 Anchor-point estimation assumes there are examples with:
 

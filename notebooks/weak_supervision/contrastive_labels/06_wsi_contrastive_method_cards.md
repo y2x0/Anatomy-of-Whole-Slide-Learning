@@ -11,8 +11,15 @@ S^{\mathrm{obs}}
 \mathcal{N},
 ```
 
-where $\mathcal{P}$ is a set of pairs or groups to pull together, and
-$\mathcal{N}$ is a sampled set to push apart.
+where
+```math
+\mathcal{P}
+```
+is a set of pairs or groups to pull together, and
+```math
+\mathcal{N}
+```
+is a sampled set to push apart.
 
 ## SC-MIL
 
@@ -21,8 +28,15 @@ bag embeddings.
 
 Reference: [SC-MIL paper](https://openaccess.thecvf.com/content/WACV2024/papers/Juyal_SC-MIL_Supervised_Contrastive_Multiple_Instance_Learning_for_Imbalanced_Classification_in_WACV_2024_paper.pdf).
 
-Let $z_i$ be a slide embedding from a MIL encoder. The positive set for anchor
-$i$ is:
+Let
+```math
+z_i
+```
+be a slide embedding from a MIL encoder. The positive set for anchor
+```math
+i
+```
+is:
 
 ```math
 \mathcal{P}(i)
@@ -67,7 +81,11 @@ SC-MIL combines the two with a training-time curriculum:
 \mathcal{L}_{\mathrm{CE}},
 ```
 
-where $\beta_t$ decays over training. Early updates emphasize balanced
+where
+```math
+\beta_t
+```
+decays over training. Early updates emphasize balanced
 bag-level feature geometry; later updates emphasize classifier fitting.
 
 The method's supervision assumption is:
@@ -168,7 +186,15 @@ sets rather than using naive batch negatives.
 
 Reference: [LACL paper](https://arxiv.org/abs/2206.13115).
 
-Let $q_i$ be an anchor embedding and let $\mathcal{Q}_c$ be a class-specific or
+Let
+```math
+q_i
+```
+ be an anchor embedding and let
+```math
+\mathcal{Q}_c
+```
+be a class-specific or
 lesion-refined memory queue. A contrastive denominator may be restricted to:
 
 ```math

@@ -10,8 +10,20 @@ U
 S^{\mathrm{obs}}.
 ```
 
-The model never sees complete latent truth $U$. It sees $S^{\mathrm{obs}}$,
-may generate extra targets $\widehat U_t$, and optimizes a surrogate objective.
+The model never sees complete latent truth
+```math
+U
+```
+. It sees
+```math
+S^{\mathrm{obs}}
+```
+,
+may generate extra targets
+```math
+\widehat U_t
+```
+, and optimizes a surrogate objective.
 
 ## Files
 

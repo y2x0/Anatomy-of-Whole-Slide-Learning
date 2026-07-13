@@ -11,7 +11,11 @@ A hard parent map:
 \pi(v)=u
 ```
 
-forces fine unit $v$ to belong to one parent. If a biological structure crosses
+forces fine unit
+```math
+v
+```
+to belong to one parent. If a biological structure crosses
 the boundary between two regions, the hierarchy splits one object into separate
 summaries.
 
@@ -59,7 +63,11 @@ This is sparse-positive dilution inside the hierarchy.
 
 ## 3. Scale Mismatch
 
-Suppose the task-relevant pattern has physical scale $r^\star$. A hierarchy
+Suppose the task-relevant pattern has physical scale
+```math
+r^\star
+```
+. A hierarchy
 offers scales:
 
 ```math
@@ -72,13 +80,21 @@ If:
 r^\star\ll\Delta_\ell
 ```
 
-then level $\ell$ is too coarse. If:
+then level
+```math
+\ell
+```
+is too coarse. If:
 
 ```math
 r^\star\gg\Delta_\ell
 ```
 
-then level $\ell$ is too local.
+then level
+```math
+\ell
+```
+is too local.
 
 Scale mismatch means the model either fragments the signal or smears it.
 

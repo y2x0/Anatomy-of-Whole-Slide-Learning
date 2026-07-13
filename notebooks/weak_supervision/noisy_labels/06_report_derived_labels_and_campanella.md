@@ -18,8 +18,15 @@ It is usually:
 E_{\mathrm{report}}(R_{\mathrm{case}}),
 ```
 
-where $R_{\mathrm{case}}$ is clinical/pathology text or metadata and
-$E_{\mathrm{report}}$ is an extraction rule.
+where
+```math
+R_{\mathrm{case}}
+```
+is clinical/pathology text or metadata and
+```math
+E_{\mathrm{report}}
+```
+is an extraction rule.
 
 Campanella et al. style training uses reported diagnoses at scale rather than
 manual pixel annotations. That scale helps, but the supervision channel has

@@ -53,7 +53,11 @@ F_k
 (\phi_k-\phi_{0k})^2.
 ```
 
-Large $F_k$ discourages movement in parameters important to the pretrained
+Large
+```math
+F_k
+```
+discourages movement in parameters important to the pretrained
 objective.
 
 ## Dense Summary

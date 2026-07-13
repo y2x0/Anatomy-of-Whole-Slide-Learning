@@ -35,7 +35,11 @@ f(t\mid z)
 
 ## Likelihood With Censoring
 
-For observed pair $(X_i,\delta_i)$:
+For observed pair
+```math
+(X_i,\delta_i)
+```
+:
 
 ```math
 p(X_i,\delta_i\mid z_i)
@@ -44,7 +48,11 @@ f(X_i\mid z_i)^{\delta_i}
 S(X_i\mid z_i)^{1-\delta_i}.
 ```
 
-Using $f=\lambda S$:
+Using
+```math
+f=\lambda S
+```
+:
 
 ```math
 \log p_i
@@ -93,7 +101,11 @@ The integral term:
 
 penalizes accumulated hazard before the observed time.
 
-For censored patients $\delta_i=0$, only the integral appears. The model is
+For censored patients
+```math
+\delta_i=0
+```
+, only the integral appears. The model is
 penalized for assigning too much hazard before censoring.
 
 ## Positivity Constraint

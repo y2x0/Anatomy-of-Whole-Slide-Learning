@@ -58,7 +58,11 @@ Full self-attention costs:
 O(n_i^2).
 ```
 
-ISAB introduces $M$ inducing points:
+ISAB introduces
+```math
+M
+```
+inducing points:
 
 ```math
 I
@@ -92,7 +96,15 @@ up to constants and heads.
 
 ## What Survives?
 
-SAB/ISAB belongs to $\mathcal{C}$, not $\mathcal{R}$. The final readout still
+SAB/ISAB belongs to
+```math
+\mathcal{C}
+```
+, not
+```math
+\mathcal{R}
+```
+. The final readout still
 decides what survives:
 
 ```math
@@ -101,7 +113,11 @@ Z_i
 \mathrm{PMA}(S,\widetilde H_i).
 ```
 
-The difference is that each $\widetilde h_{ij}$ may already contain pairwise or
+The difference is that each
+```math
+\widetilde h_{ij}
+```
+may already contain pairwise or
 global set context.
 
 ## C/R/G/S Placement
@@ -134,4 +150,3 @@ Z_i.
 
 Context makes states interaction-aware. PMA decides which learned statistics of
 those states survive.
-

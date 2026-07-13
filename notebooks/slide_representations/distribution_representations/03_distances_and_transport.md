@@ -1,6 +1,10 @@
 # Distances And Transport
 
-Once a slide is a distribution $\mu_i$, comparing slides becomes a problem of
+Once a slide is a distribution
+```math
+\mu_i
+```
+, comparing slides becomes a problem of
 comparing probability measures.
 
 ## Euclidean Distance Between Summaries
@@ -19,7 +23,15 @@ d(i,k)
 \|z_i-z_k\|_2.
 ```
 
-This is cheap, but it only compares the statistic $T$. If $T$ discards
+This is cheap, but it only compares the statistic
+```math
+T
+```
+. If
+```math
+T
+```
+discards
 multimodality, the distance cannot recover it.
 
 ## Histogram Divergence
@@ -61,7 +73,11 @@ These distances treat prototypes as categories unless ground geometry is added.
 
 ## Optimal Transport
 
-Let prototype centers be $c_1,\ldots,c_M$. Define a transport cost:
+Let prototype centers be
+```math
+c_1,\ldots,c_M
+```
+. Define a transport cost:
 
 ```math
 C_{mn}

@@ -17,7 +17,15 @@ lateral:
 
 ## Bottom-Up Coarsening
 
-Given children $\mathrm{Ch}(u)$ of a parent node $u$, bottom-up coarsening
+Given children
+```math
+\mathrm{Ch}(u)
+```
+ of a parent node
+```math
+u
+```
+, bottom-up coarsening
 computes:
 
 ```math
@@ -151,14 +159,29 @@ neighborhood information into the parent.
 
 ## Computational Benefit
 
-If there are $n$ patches and full attention costs:
+If there are
+```math
+n
+```
+patches and full attention costs:
 
 ```math
 O(n^2),
 ```
 
-a hierarchy can split the slide into $R$ regions, each with $m$ patches, where
-$n=Rm$.
+a hierarchy can split the slide into
+```math
+R
+```
+ regions, each with
+```math
+m
+```
+patches, where
+```math
+n=Rm
+```
+.
 
 Local attention within regions costs:
 
@@ -178,7 +201,11 @@ Total:
 O(Rm^2+R^2).
 ```
 
-This is smaller than flat $O(n^2)=O(R^2m^2)$ only in the regime where the
+This is smaller than flat
+```math
+O(n^2)=O(R^2m^2)
+```
+only in the regime where the
 number of regions is much smaller than the number of patches and each region is
 moderate in size. The hierarchy is a computational win when:
 
@@ -188,9 +215,21 @@ Rm^2+R^2
 R^2m^2.
 ```
 
-If $R\approx n$ because the regions are tiny, the global $O(R^2)$ term recovers
+If
+```math
+R\approx n
+```
+ because the regions are tiny, the global
+```math
+O(R^2)
+```
+term recovers
 flat attention cost. If regions overlap heavily or multiple scales duplicate
-tokens, the actual cost can exceed the simple $O(Rm^2+R^2)$ accounting.
+tokens, the actual cost can exceed the simple
+```math
+O(Rm^2+R^2)
+```
+accounting.
 
 The cost reduction is not free. It assumes that fine-scale interactions mostly
 matter within local regions, and that cross-region effects can be mediated by

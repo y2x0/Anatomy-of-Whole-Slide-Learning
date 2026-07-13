@@ -27,11 +27,19 @@ y_i\log\widehat p_i
 \right].
 ```
 
-The probe learns a direction $w$ in frozen representation space.
+The probe learns a direction
+```math
+w
+```
+in frozen representation space.
 
 ## Multiclass Probe
 
-For $C$ classes:
+For
+```math
+C
+```
+classes:
 
 ```math
 o_i

@@ -14,7 +14,11 @@ the model learns:
 a_{ij}^{(c)}
 ```
 
-for each class $c$.
+for each class
+```math
+c
+```
+.
 
 The core question:
 

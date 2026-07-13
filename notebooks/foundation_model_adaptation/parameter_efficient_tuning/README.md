@@ -13,7 +13,11 @@ The generic form is:
 \Delta_\eta\in\mathcal{A}_{\mathrm{small}}.
 ```
 
-The constraint set $\mathcal{A}_{\mathrm{small}}$ is the method.
+The constraint set
+```math
+\mathcal{A}_{\mathrm{small}}
+```
+is the method.
 
 ## Files
 

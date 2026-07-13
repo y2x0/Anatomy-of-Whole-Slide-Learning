@@ -11,7 +11,15 @@ The core abstraction is:
 T_{\phi_0,\eta}(X,S),
 ```
 
-where $\phi_0$ is pretrained and $\eta$ is the adaptation state.
+where
+```math
+\phi_0
+```
+ is pretrained and
+```math
+\eta
+```
+is the adaptation state.
 
 ## Files
 

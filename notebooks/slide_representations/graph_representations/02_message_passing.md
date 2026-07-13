@@ -8,7 +8,11 @@ Initialize:
 h_v^{(0)}=h_v.
 ```
 
-Layer $\ell$:
+Layer
+```math
+\ell
+```
+:
 
 ```math
 m_v^{(\ell)}
@@ -23,7 +27,11 @@ h_v^{(\ell+1)}
 \phi_\ell(h_v^{(\ell)},m_v^{(\ell)}).
 ```
 
-After $L$ layers:
+After
+```math
+L
+```
+layers:
 
 ```math
 \widetilde{H}=\{h_v^{(L)}\}_{v\in V}.
@@ -97,7 +105,19 @@ This is the correct symmetry for graph node states.
 
 ## Receptive Field
 
-After $L$ message-passing layers, $h_v^{(L)}$ depends on nodes within $L$ hops:
+After
+```math
+L
+```
+ message-passing layers,
+```math
+h_v^{(L)}
+```
+ depends on nodes within
+```math
+L
+```
+hops:
 
 ```math
 h_v^{(L)}
@@ -145,7 +165,15 @@ give arbitrary graph expressivity.
 
 ## Bottlenecks And Oversquashing
 
-If many distant nodes must influence $v$ through a small cut $B$, then their
+If many distant nodes must influence
+```math
+v
+```
+ through a small cut
+```math
+B
+```
+, then their
 information is compressed into bounded-dimensional messages:
 
 ```math
@@ -156,7 +184,7 @@ information is compressed into bounded-dimensional messages:
 h_v^{(L)}.
 ```
 
-When $|U|$ is large, $|B|$ is small, and message dimension is fixed, long-range
+When |U| is large, |B| is small, and message dimension is fixed, long-range
 signals can be squashed before reaching the readout. Increasing depth expands
 the receptive field but does not automatically increase the capacity of narrow
 graph cuts.

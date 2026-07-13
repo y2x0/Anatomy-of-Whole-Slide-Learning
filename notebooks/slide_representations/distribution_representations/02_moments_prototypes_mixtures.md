@@ -1,6 +1,10 @@
 # Moments, Prototypes, And Mixtures
 
-Distribution representations differ by how they compress $\mu_i$.
+Distribution representations differ by how they compress
+```math
+\mu_i
+```
+.
 
 ## Moment Family
 
@@ -86,7 +90,15 @@ This is a population statement. At WSI scale the empirical kernel mean:
 has sampling error, and high-dimensional kernels can become noisy or
 computationally expensive. In practice, kernel summaries usually need
 subsampling, random features, prototype compression, or some other finite
-approximation before they are usable for $10^4$ to $10^5$ patches.
+approximation before they are usable for
+```math
+10^4
+```
+ to
+```math
+10^5
+```
+patches.
 
 Finite neural summaries approximate this idea with learned feature maps:
 
@@ -140,7 +152,11 @@ p(h)
 \mathcal{N}(h;\mu_m,\Sigma_m).
 ```
 
-For slide $i$, infer responsibilities:
+For slide
+```math
+i
+```
+, infer responsibilities:
 
 ```math
 \gamma_{ijm}
@@ -186,7 +202,11 @@ summarized by component usage and deviations.
 
 ## Fisher Vector View
 
-For a generative model $p_\theta(h)$, the Fisher score is:
+For a generative model
+```math
+p_\theta(h)
+```
+, the Fisher score is:
 
 ```math
 G_{\theta}(\mu_i)

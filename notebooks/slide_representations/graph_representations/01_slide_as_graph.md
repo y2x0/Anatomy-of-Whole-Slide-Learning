@@ -20,7 +20,11 @@ If there are edge features:
 e_{iuv}\in\mathbb{R}^{r}
 ```
 
-for $(u,v)\in E_i$, then:
+for
+```math
+(u,v)\in E_i
+```
+, then:
 
 ```math
 \mathcal{X}_i=(V_i,E_i,H_i,E_i^{\text{feat}}).
@@ -91,7 +95,11 @@ A_{uv}=g_\theta(h_u,h_v,c_u,c_v).
 
 A graph model should be invariant to node relabeling.
 
-For permutation matrix $P$:
+For permutation matrix
+```math
+P
+```
+:
 
 ```math
 H'=PH,

@@ -78,7 +78,11 @@ s_c(X)
 f_I(X)^\top f_T(p_c).
 ```
 
-The prompt $p_c$ is part of the classifier. Prompt engineering is therefore a
+The prompt
+```math
+p_c
+```
+is part of the classifier. Prompt engineering is therefore a
 supervision design choice, not a cosmetic detail.
 
 ## PRISM And TITAN

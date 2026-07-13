@@ -1,6 +1,14 @@
 # Label Noise Channel
 
-Let $Y$ be the true label and $\widetilde Y$ the observed label.
+Let
+```math
+Y
+```
+ be the true label and
+```math
+\widetilde Y
+```
+the observed label.
 
 A noisy-label channel is:
 
@@ -10,7 +18,11 @@ T_{ab}
 P(\widetilde Y=b\mid Y=a).
 ```
 
-For $C$ classes:
+For
+```math
+C
+```
+classes:
 
 ```math
 T
@@ -91,7 +103,11 @@ Thus:
 (1-\rho_+-\rho_-)p(x)+\rho_-.
 ```
 
-If $\rho_++\rho_-<1$, the true posterior is:
+If
+```math
+\rho_++\rho_-<1
+```
+, the true posterior is:
 
 ```math
 p(x)

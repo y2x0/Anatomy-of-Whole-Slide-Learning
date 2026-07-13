@@ -13,7 +13,15 @@ T(U)
 T(U').
 ```
 
-If the loss only sees $S^{\mathrm{obs}}$, it cannot identify $T(U)$ without an
+If the loss only sees
+```math
+S^{\mathrm{obs}}
+```
+, it cannot identify
+```math
+T(U)
+```
+without an
 extra assumption.
 
 ## Bag Label Witness Ambiguity
@@ -95,7 +103,15 @@ P(\widetilde Y\mid Y=0)
 P(\widetilde Y\mid Y=1).
 ```
 
-No classifier trained only from $\widetilde Y$ can recover $Y$ from the label
+No classifier trained only from
+```math
+\widetilde Y
+```
+ can recover
+```math
+Y
+```
+from the label
 channel alone. This is why transition-matrix invertibility is not optional.
 
 ## Partial Label Mask Bias
@@ -108,7 +124,11 @@ Z=1,
 T\in\{A,B\}.
 ```
 
-Assume annotators only mark obvious subtype $A$:
+Assume annotators only mark obvious subtype
+```math
+A
+```
+:
 
 ```math
 P(M=1\mid Z=1,T=A)=1,
@@ -135,7 +155,11 @@ positive subtype.
 
 ## Pseudo-Label Confirmation Bias
 
-Suppose the true witness is patch $1$:
+Suppose the true witness is patch
+```math
+1
+```
+:
 
 ```math
 Z
@@ -143,7 +167,11 @@ Z
 (1,0,0).
 ```
 
-Early attention selects patch $2$:
+Early attention selects patch
+```math
+2
+```
+:
 
 ```math
 \mathcal{T}^{+}
@@ -192,7 +220,11 @@ Y_i
 Y_k.
 ```
 
-A supervised contrastive denominator treats $k$ as negative:
+A supervised contrastive denominator treats
+```math
+k
+```
+as negative:
 
 ```math
 k
@@ -227,7 +259,11 @@ The report label is positive:
 1.
 ```
 
-Only slide $s_1$ contains diagnostic tissue:
+Only slide
+```math
+s_1
+```
+contains diagnostic tissue:
 
 ```math
 Y_{s_1}=1,
@@ -245,7 +281,11 @@ If the case label is copied to both slides:
 1,
 ```
 
-then slide $s_2$ becomes a false-positive training example. The supervision
+then slide
+```math
+s_2
+```
+becomes a false-positive training example. The supervision
 channel identifies a case-level fact, not a slide-local fact.
 
 ## Dense Summary

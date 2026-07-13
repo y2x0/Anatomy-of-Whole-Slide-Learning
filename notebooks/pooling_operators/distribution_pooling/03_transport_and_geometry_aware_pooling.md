@@ -75,7 +75,11 @@ regularization blurs transport plans.
 
 ## Geometry-Aware Readout
 
-Instead of storing only $p_i$, one can store geometry-aware moments:
+Instead of storing only
+```math
+p_i
+```
+, one can store geometry-aware moments:
 
 ```math
 z_i
@@ -119,4 +123,3 @@ not all prototype mistakes are equally bad
 
 It says that moving mass between similar morphologies should cost less than
 moving mass between distant morphologies.
-

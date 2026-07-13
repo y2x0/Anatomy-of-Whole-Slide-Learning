@@ -56,7 +56,11 @@ P_\theta(Y_i=1\mid H_i)
 
 ## Posterior Instance Probability
 
-For a positive bag, the posterior probability that instance $j$ is positive is:
+For a positive bag, the posterior probability that instance
+```math
+j
+```
+is positive is:
 
 ```math
 P_\theta(Z_{ij}=1\mid Y_i=1,H_i)
@@ -101,7 +105,11 @@ For a positive bag loss:
 -\log P_i.
 ```
 
-The derivative with respect to $p_{ij}$ is:
+The derivative with respect to
+```math
+p_{ij}
+```
+is:
 
 ```math
 \frac{\partial \mathcal{L}_i^{+}}{\partial p_{ij}}
@@ -162,8 +170,15 @@ Formally, if:
 1-\prod_j(1-p'_{ij})
 ```
 
-for every observed bag, then the bag likelihood cannot distinguish $p$ from
-$p'$.
+for every observed bag, then the bag likelihood cannot distinguish
+```math
+p
+```
+from
+```math
+p'
+```
+.
 
 ## Dense Summary
 

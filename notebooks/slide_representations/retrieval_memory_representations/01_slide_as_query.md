@@ -23,7 +23,11 @@ z_i,
 \right),
 ```
 
-where $m_k$ may include reports, metadata, diagnoses, survival outcomes, or
+where
+```math
+m_k
+```
+may include reports, metadata, diagnoses, survival outcomes, or
 patch-level evidence.
 
 ## Query Encoder
@@ -72,7 +76,15 @@ Given a database:
 \{(z_k,v_k)\}_{k=1}^{N},
 ```
 
-with keys $z_k$ and values $v_k$, retrieve:
+with keys
+```math
+z_k
+```
+ and values
+```math
+v_k
+```
+, retrieve:
 
 ```math
 \mathcal{N}_K(i)
@@ -123,7 +135,11 @@ The prediction may be:
 \widehat p_i(y).
 ```
 
-This is $K$-nearest-neighbor prediction in slide representation space.
+This is
+```math
+K
+```
+-nearest-neighbor prediction in slide representation space.
 
 ## Retrieval As Explanation
 

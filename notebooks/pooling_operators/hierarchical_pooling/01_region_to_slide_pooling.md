@@ -8,7 +8,11 @@ R_i
 \{1,\ldots,M_i\}.
 ```
 
-Each region $r$ has child patches:
+Each region
+```math
+r
+```
+has child patches:
 
 ```math
 \mathrm{Ch}(r)
@@ -112,4 +116,3 @@ Hierarchical pooling changes the order of compression:
 
 The benefit is scale structure. The risk is premature loss of patch-level
 evidence.
-

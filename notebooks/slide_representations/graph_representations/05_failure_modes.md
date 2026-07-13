@@ -99,5 +99,9 @@ objects:
 (H,A)
 ```
 
-but the adjacency matrix is an inductive bias. If $A$ is wrong, the model's
+but the adjacency matrix is an inductive bias. If
+```math
+A
+```
+is wrong, the model's
 context is wrong.

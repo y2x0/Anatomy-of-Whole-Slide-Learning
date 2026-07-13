@@ -3,8 +3,19 @@
 Survival learning differs from ordinary supervised learning because the target
 is only partially observed.
 
-For each individual $i$, there is an event time $T_i$ and a censoring time
-$C_i$. We observe:
+For each individual
+```math
+i
+```
+, there is an event time
+```math
+T_i
+```
+and a censoring time
+```math
+C_i
+```
+. We observe:
 
 ```math
 X_i = \min(T_i,C_i),
@@ -12,7 +23,19 @@ X_i = \min(T_i,C_i),
 \delta_i = \mathbf{1}[T_i \le C_i].
 ```
 
-If $\delta_i=1$, the event occurred at $X_i$. If $\delta_i=0$, the only
+If
+```math
+\delta_i=1
+```
+, the event occurred at
+```math
+X_i
+```
+. If
+```math
+\delta_i=0
+```
+, the only
 known fact is:
 
 ```math
@@ -44,7 +67,11 @@ f(t\mid x) = \frac{\partial}{\partial t}F(t\mid x)
 \frac{\Pr(t\le T<t+\Delta t\mid T\ge t,x)}{\Delta t}.
 ```
 
-The hazard $\lambda$ is not a probability. It is an instantaneous event rate.
+The hazard
+```math
+\lambda
+```
+is not a probability. It is an instantaneous event rate.
 It connects to survival by:
 
 ```math
@@ -65,7 +92,11 @@ f(t\mid x)
 
 ## Whole-Slide Inputs
 
-For computational pathology, the covariate $x_i$ is not usually a small vector.
+For computational pathology, the covariate
+```math
+x_i
+```
+is not usually a small vector.
 It is a slide:
 
 ```math
@@ -97,7 +128,11 @@ G = geometry, graph, order, or hierarchy
 S = supervision and censoring structure
 ```
 
-Then the survival head maps $z_i$ into a risk object:
+Then the survival head maps
+```math
+z_i
+```
+into a risk object:
 
 ```math
 \mathcal{H}(z_i)

@@ -25,7 +25,11 @@ The task head then computes:
 
 ## Learned Moment Interpretation
 
-Each coordinate of $\phi_\theta(u)$ is a learned statistic:
+Each coordinate of
+```math
+\phi_\theta(u)
+```
+is a learned statistic:
 
 ```math
 z_{ir}
@@ -33,8 +37,19 @@ z_{ir}
 \frac{1}{n_i}\sum_j \phi_{\theta,r}(u_{ij}).
 ```
 
-If $\phi_{\theta,r}$ behaves like an indicator of a morphology, $z_{ir}$
-estimates prevalence. If it behaves like a risk score, $z_{ir}$ estimates
+If
+```math
+\phi_{\theta,r}
+```
+ behaves like an indicator of a morphology,
+```math
+z_{ir}
+```
+estimates prevalence. If it behaves like a risk score,
+```math
+z_{ir}
+```
+estimates
 average risk evidence.
 
 ## Kernel Mean Embedding
@@ -140,6 +155,9 @@ z_i
 }
 ```
 
-The better $\phi_\theta$ separates task-relevant morphology, the less damaging
+The better
+```math
+\phi_\theta
+```
+separates task-relevant morphology, the less damaging
 the final average becomes.
-

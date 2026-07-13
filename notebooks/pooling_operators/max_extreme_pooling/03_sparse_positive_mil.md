@@ -62,7 +62,11 @@ The predicted probability can be:
 \sigma(r_i),
 ```
 
-where $\sigma$ is a sigmoid function.
+where
+```math
+\sigma
+```
+is a sigmoid function.
 
 This means one high-scoring patch can drive the whole slide prediction.
 
@@ -148,13 +152,21 @@ The observed loss is bag-level:
 \ell(\widehat p_i,y_i).
 ```
 
-Patch labels are unobserved. Even if $y_i=1$, the data only imply:
+Patch labels are unobserved. Even if
+```math
+y_i=1
+```
+, the data only imply:
 
 ```math
 \exists j:\ y_{ij}=1.
 ```
 
-They do not identify which $j$ is positive.
+They do not identify which
+```math
+j
+```
+is positive.
 
 Many instance-label assignments are compatible with the same bag label:
 

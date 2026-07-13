@@ -108,13 +108,21 @@ Output:
 p_{ik}=\Pr(T_i\in I_k\mid z_i).
 ```
 
-Loss for event interval $r$:
+Loss for event interval
+```math
+r
+```
+:
 
 ```math
 -\log p_{ir}.
 ```
 
-Loss for censoring at $r$:
+Loss for censoring at
+```math
+r
+```
+:
 
 ```math
 -\log\sum_{k>r}p_{ik}.
@@ -152,7 +160,11 @@ event patients should have higher risk than later-observed patients
 
 ## IPCW Horizon Loss
 
-At horizon $t$, target:
+At horizon
+```math
+t
+```
+, target:
 
 ```math
 Y_i(t)=\mathbf{1}[T_i\le t].

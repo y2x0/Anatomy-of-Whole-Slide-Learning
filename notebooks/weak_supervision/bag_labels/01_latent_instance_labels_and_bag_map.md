@@ -18,7 +18,11 @@ Z_i
 Z_{ij}\in\{0,1\}.
 ```
 
-In bag-label MIL, $Z_i$ is unobserved. The observed label is:
+In bag-label MIL,
+```math
+Z_i
+```
+is unobserved. The observed label is:
 
 ```math
 Y_i
@@ -32,7 +36,11 @@ for some bag map:
 \Gamma:\{0,1\}^{n_i}\to\{0,1\}.
 ```
 
-Different MIL assumptions are different choices of $\Gamma$.
+Different MIL assumptions are different choices of
+```math
+\Gamma
+```
+.
 
 ## Standard OR Map
 
@@ -161,5 +169,16 @@ Y_i
 \Gamma(Z_i)
 ```
 
-is many-to-one. The loss observes the image of $Z_i$ under $\Gamma$, not $Z_i$
+is many-to-one. The loss observes the image of
+```math
+Z_i
+```
+ under
+```math
+\Gamma
+```
+, not
+```math
+Z_i
+```
 itself.

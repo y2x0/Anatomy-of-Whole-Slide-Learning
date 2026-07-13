@@ -50,7 +50,11 @@ or, if patch tokens are retained:
 h_{ij}\in\mathcal{Z}_{\text{FM}}.
 ```
 
-This matters because $F_{\text{FM}}(S_i)$ is not a single neutral operation.
+This matters because
+```math
+F_{\text{FM}}(S_i)
+```
+is not a single neutral operation.
 Prov-GigaPath-style models use a tile encoder followed by a slide encoder that
 consumes tile embeddings and coordinates. Other slide-level foundation models may
 pack tokens differently, pool them differently, or align the final slide state
@@ -116,7 +120,11 @@ z_i=F_{\text{FM}}(S_i),
 \widehat y_i=\mathcal{H}_\theta(z_i),
 ```
 
-where only $\mathcal{H}_\theta$ is trained.
+where only
+```math
+\mathcal{H}_\theta
+```
+is trained.
 
 Adaptation changes the representation:
 
@@ -162,7 +170,11 @@ Multimodal latent:
 \mathcal{X}_i=(z_i,\mathcal{T}),
 ```
 
-where $\mathcal{T}$ is a text embedding space aligned to image space.
+where
+```math
+\mathcal{T}
+```
+is a text embedding space aligned to image space.
 
 Retrieval latent:
 

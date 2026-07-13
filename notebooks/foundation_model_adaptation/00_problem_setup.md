@@ -8,7 +8,11 @@ X_i
 \{(x_{ij},c_{ij})\}_{j=1}^{n_i}.
 ```
 
-A pretrained foundation model supplies parameters $\phi_0$. It may be a patch
+A pretrained foundation model supplies parameters
+```math
+\phi_0
+```
+. It may be a patch
 encoder:
 
 ```math
@@ -41,7 +45,11 @@ The adapted predictor is:
 T_{\phi_0,\eta}(X_i,S_i).
 ```
 
-The adaptation parameters $\eta$ define what can change.
+The adaptation parameters
+```math
+\eta
+```
+define what can change.
 
 ## Parameter Partition
 
@@ -136,7 +144,11 @@ A useful abstraction is:
 \Delta\in\mathcal{A}.
 ```
 
-The set $\mathcal{A}$ is method-specific:
+The set
+```math
+\mathcal{A}
+```
+is method-specific:
 
 ```text
 linear probe:
@@ -239,5 +251,9 @@ z
 \widehat y.
 ```
 
-The method's mathematical meaning is the constraint on $\Delta_\eta$ and the
+The method's mathematical meaning is the constraint on
+```math
+\Delta_\eta
+```
+and the
 place where task gradients are allowed to act.

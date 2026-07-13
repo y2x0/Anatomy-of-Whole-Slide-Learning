@@ -77,7 +77,11 @@ questions.
 
 ## Multi-Seed Readout
 
-With $K$ seeds:
+With
+```math
+K
+```
+seeds:
 
 ```math
 Z_i
@@ -100,7 +104,11 @@ moment.
 
 ## Permutation Invariance
 
-If $\widetilde H_i$ is permutation equivariant and PMA attends over the set, then
+If
+```math
+\widetilde H_i
+```
+is permutation equivariant and PMA attends over the set, then
 the output seed set is invariant to input order:
 
 ```math
@@ -125,4 +133,3 @@ Z_i
 
 It generalizes attention MIL from one learned scoring rule to multiple learned
 queries over contextualized set states.
-

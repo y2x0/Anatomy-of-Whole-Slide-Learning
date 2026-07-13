@@ -48,7 +48,11 @@ Ranking:
 \phi(r_j-r_i).
 ```
 
-If $\lambda_{\text{rank}}$ is too large, the model can sacrifice
+If
+```math
+\lambda_{\text{rank}}
+```
+is too large, the model can sacrifice
 calibration for ordering.
 
 ## Smoothness Across Time
@@ -68,7 +72,11 @@ A smoothness penalty:
 (g_{i,k+1}-2g_{ik}+g_{i,k-1})^2
 ```
 
-where $g_{ik}=\mathrm{logit}(h_{ik})$, penalizes jagged hazards.
+where
+```math
+g_{ik}=\mathrm{logit}(h_{ik})
+```
+, penalizes jagged hazards.
 
 This is useful when event bins are sparse, but it imposes an assumption that risk
 changes smoothly over time.

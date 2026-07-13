@@ -6,7 +6,11 @@ behavior.
 
 ## Log-Sum-Exp Pooling
 
-For instance scores $s_1,\ldots,s_n$, define:
+For instance scores
+```math
+s_1,\ldots,s_n
+```
+, define:
 
 ```math
 \mathrm{LSE}_{\beta}(s)
@@ -39,7 +43,15 @@ The standard bound is:
 \max_j s_j+\frac{\log n}{\beta}.
 ```
 
-Large $\beta$ makes the operator close to max. Small $\beta$ spreads influence
+Large
+```math
+\beta
+```
+ makes the operator close to max. Small
+```math
+\beta
+```
+spreads influence
 across more instances.
 
 ## Stabilized Form
@@ -96,7 +108,11 @@ a_j
 \mathrm{softmax}_{j}(\beta s).
 ```
 
-As $\beta\to\infty$:
+As
+```math
+\beta\to\infty
+```
+:
 
 ```math
 a_j
@@ -104,7 +120,11 @@ a_j
 \mathbf{1}\{j=j^\star\}.
 ```
 
-As $\beta$ decreases, more instances receive gradient.
+As
+```math
+\beta
+```
+decreases, more instances receive gradient.
 
 ## Softmax-Weighted Score Pooling
 
@@ -148,11 +168,19 @@ H(a)
 -\sum_j a_j\log a_j.
 ```
 
-Thus log-sum-exp rewards both high score and spread when $\beta$ is finite.
+Thus log-sum-exp rewards both high score and spread when
+```math
+\beta
+```
+is finite.
 
 ## Generalized Mean
 
-For nonnegative scores $s_j\ge0$, the generalized mean is:
+For nonnegative scores
+```math
+s_j\ge0
+```
+, the generalized mean is:
 
 ```math
 M_p(s)
@@ -177,7 +205,11 @@ Limits:
 \max_j s_j.
 ```
 
-The parameter $p$ controls how strongly the readout emphasizes large values.
+The parameter
+```math
+p
+```
+controls how strongly the readout emphasizes large values.
 
 ## Temperature As Inductive Bias
 
@@ -190,13 +222,21 @@ n_{\mathrm{eff}}
 \frac{1}{\sum_j a_j^2}.
 ```
 
-If $a$ is uniform:
+If
+```math
+a
+```
+is uniform:
 
 ```math
 n_{\mathrm{eff}}=n.
 ```
 
-If $a$ is one-hot:
+If
+```math
+a
+```
+is one-hot:
 
 ```math
 n_{\mathrm{eff}}=1.

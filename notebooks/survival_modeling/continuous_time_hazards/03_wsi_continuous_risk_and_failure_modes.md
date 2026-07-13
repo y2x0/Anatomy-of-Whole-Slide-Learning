@@ -66,7 +66,11 @@ b(t)+\sum_{m=1}^{M}p_{im}r_m(t)
 \right).
 ```
 
-Each prototype has a time-varying risk contribution $r_m(t)$.
+Each prototype has a time-varying risk contribution
+```math
+r_m(t)
+```
+.
 
 This is a clean mathematical bridge between prototype MIL and continuous
 survival.
@@ -114,7 +118,11 @@ If:
 \lambda_\theta(t,z)=\exp(g_\theta(t,z)),
 ```
 
-large values of $g_\theta$ create exploding hazards and gradients. Softplus
+large values of
+```math
+g_\theta
+```
+create exploding hazards and gradients. Softplus
 usually behaves better, but can still produce poorly calibrated tails.
 
 ## Failure Mode 3: Tail Extrapolation
@@ -137,7 +145,11 @@ readout:
 H_i \to z_i \to \lambda_i(t).
 ```
 
-If $z_i$ collapses rare morphology, the hazard function cannot use it.
+If
+```math
+z_i
+```
+collapses rare morphology, the hazard function cannot use it.
 
 ## Failure Mode 5: Overfitting Time
 

@@ -3,7 +3,11 @@
 The cause-specific hazard models the instantaneous rate of a particular event
 among subjects who have not experienced any event.
 
-For cause $c$:
+For cause
+```math
+c
+```
+:
 
 ```math
 \lambda_c(t\mid z)
@@ -48,22 +52,38 @@ The slide is mapped to a vector of cause-specific risk scores:
 
 ## Partial Likelihood By Cause
 
-For event type $c$, define:
+For event type
+```math
+c
+```
+, define:
 
 ```math
 D_c=\{i:\Delta_i=c\}.
 ```
 
-The risk set at event time $X_i$ remains:
+The risk set at event time
+```math
+X_i
+```
+remains:
 
 ```math
 R_i=\{j:X_j\ge X_i\}.
 ```
 
-Subjects who have a competing event before $X_i$ are not in the risk set
+Subjects who have a competing event before
+```math
+X_i
+```
+are not in the risk set
 because they are no longer event-free.
 
-The partial likelihood for cause $c$ is:
+The partial likelihood for cause
+```math
+c
+```
+is:
 
 ```math
 L_c
@@ -97,7 +117,15 @@ The total cause-specific Cox loss is:
 
 ## What Happens To Competing Events
 
-When fitting cause $c$, a subject with event $c'\ne c$ is treated as event
+When fitting cause
+```math
+c
+```
+, a subject with event
+```math
+c'\ne c
+```
+is treated as event
 free until their competing event time and then removed from the risk set.
 
 This is not the same as pretending the competing event never happened. It says:
@@ -109,7 +137,11 @@ after the competing event, the subject cannot experience cause c as first event.
 
 ## CIF From Cause-Specific Hazards
 
-Cause-specific models estimate $\lambda_c$. To get cumulative incidence:
+Cause-specific models estimate
+```math
+\lambda_c
+```
+. To get cumulative incidence:
 
 ```math
 \widehat{F}_c(t\mid z)
@@ -137,7 +169,11 @@ For cause-specific Cox:
 \widehat{\Lambda}_{0r}(u)\exp(\eta_r(z)).
 ```
 
-Therefore $F_c$ depends on all cause-specific models.
+Therefore
+```math
+F_c
+```
+depends on all cause-specific models.
 
 ## WSI Meaning
 
@@ -156,7 +192,10 @@ w_c^\top\mathcal{R}(\mathcal{C}(H_i;G_i)).
 ```
 
 The same slide representation may be probed by different cause vectors
-$w_c$. This allows:
+```math
+w_c
+```
+. This allows:
 
 ```text
 morphology predictive of cancer death
@@ -164,8 +203,16 @@ morphology predictive of recurrence
 morphology unrelated to non-cancer death
 ```
 
-But if all heads share the same collapsed $z_i$, cause-specific morphology
-discarded by $\mathcal{R}$ cannot be recovered.
+But if all heads share the same collapsed
+```math
+z_i
+```
+, cause-specific morphology
+discarded by
+```math
+\mathcal{R}
+```
+cannot be recovered.
 
 ## Dense Summary
 

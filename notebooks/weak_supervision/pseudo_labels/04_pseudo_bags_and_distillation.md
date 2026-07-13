@@ -12,7 +12,15 @@ References: [DTFD-MIL arXiv](https://arxiv.org/abs/2203.12081),
 
 ## Tier-1 Pseudo-Bag Partition
 
-For slide $i$, randomly partition instances into $M_i$ pseudo-bags:
+For slide
+```math
+i
+```
+, randomly partition instances into
+```math
+M_i
+```
+pseudo-bags:
 
 ```math
 \{1,\ldots,n_i\}
@@ -68,7 +76,11 @@ The Tier-1 loss copies the slide label to the pseudo-bag:
 \mathrm{CE}(\widehat p_{im}^{(1)},Y_i).
 ```
 
-This is noisy. If $Y_i=1$, many pseudo-bags can contain no positive evidence:
+This is noisy. If
+```math
+Y_i=1
+```
+, many pseudo-bags can contain no positive evidence:
 
 ```math
 Y_i=1,
@@ -92,7 +104,11 @@ z_{im}^{(1)}
 a_{ij}^{(m)}v(h_{ij}).
 ```
 
-The attention weight $a_{ij}^{(m)}$ is a readout coefficient. It is not, by
+The attention weight
+```math
+a_{ij}^{(m)}
+```
+is a readout coefficient. It is not, by
 itself, an instance probability:
 
 ```math
@@ -161,7 +177,11 @@ u_{im}
 \right).
 ```
 
-The feature $u_{im}$ is not an observed region label. It is an algorithmic
+The feature
+```math
+u_{im}
+```
+is not an observed region label. It is an algorithmic
 summary chosen by the Tier-1 model.
 
 ## Tier-2 Slide MIL

@@ -9,7 +9,11 @@ z_i
 \sum_j u_{ij}
 ```
 
-does not tell us enough. We must ask what $u_{ij}$ already contains.
+does not tell us enough. We must ask what
+```math
+u_{ij}
+```
+already contains.
 
 ## Raw Mean
 
@@ -37,7 +41,11 @@ z_i
 ```
 
 No explicit pairwise, spatial, or regional relation survives unless it is
-already encoded in $h_{ij}$.
+already encoded in
+```math
+h_{ij}
+```
+.
 
 ## Mean After Instance Transform
 
@@ -81,7 +89,11 @@ z_i
 ```
 
 This is a first moment of contextualized node states. The graph can encode local
-spatial neighborhoods into each $u_{ij}$ before averaging.
+spatial neighborhoods into each
+```math
+u_{ij}
+```
+before averaging.
 
 What survives:
 
@@ -141,7 +153,11 @@ v(h_{i\ell}).
 ```
 
 Thus mean after attention becomes a weighted average of value features, where the
-effective weight for instance $\ell$ is:
+effective weight for instance
+```math
+\ell
+```
+is:
 
 ```math
 \bar a_{\ell}
@@ -176,7 +192,15 @@ z_i
 The readout is order-invariant over the output states, but the states themselves
 are order-dependent.
 
-Changing $\sigma$ can change $u_{it}$:
+Changing
+```math
+\sigma
+```
+ can change
+```math
+u_{it}
+```
+:
 
 ```math
 u_{it}^{\sigma}

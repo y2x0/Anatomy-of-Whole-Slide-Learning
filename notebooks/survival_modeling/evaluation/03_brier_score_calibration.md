@@ -2,7 +2,11 @@
 
 The Brier score evaluates predicted survival probabilities, not just ordering.
 
-At horizon $t$, the event-free target is:
+At horizon
+```math
+t
+```
+, the event-free target is:
 
 ```math
 Y_i^{S}(t)=\mathbf{1}[T_i>t].
@@ -47,12 +51,31 @@ The IPCW Brier score is:
 \right].
 ```
 
-Events before $t$ have true survival status $0$. Subjects observed beyond
-$t$ have true survival status $1$.
+Events before
+```math
+t
+```
+ have true survival status
+```math
+0
+```
+. Subjects observed beyond
+```math
+t
+```
+ have true survival status
+```math
+1
+```
+.
 
 ## Integrated Brier Score
 
-For time range $[t_1,t_2]$:
+For time range
+```math
+[t_1,t_2]
+```
+:
 
 ```math
 \mathrm{IBS}
@@ -76,7 +99,11 @@ IBS evaluates the survival curve over time.
 
 ## Calibration
 
-Calibration at time $t$ asks:
+Calibration at time
+```math
+t
+```
+asks:
 
 ```math
 \Pr(T>t\mid \widehat{S}(t)=q)=q.
@@ -116,7 +143,11 @@ clinical trial stratification
 patient counseling
 ```
 
-If a model outputs only Cox risk score $\eta_i$, Brier score requires
+If a model outputs only Cox risk score
+```math
+\eta_i
+```
+, Brier score requires
 recovering:
 
 ```math

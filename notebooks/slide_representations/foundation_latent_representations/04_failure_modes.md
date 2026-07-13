@@ -29,7 +29,11 @@ Downstream linear probing:
 Wz_i+b
 ```
 
-can only use directions already linearly accessible in $z_i$.
+can only use directions already linearly accessible in
+```math
+z_i
+```
+.
 
 ## 2. Patch-Foundation Illusion
 

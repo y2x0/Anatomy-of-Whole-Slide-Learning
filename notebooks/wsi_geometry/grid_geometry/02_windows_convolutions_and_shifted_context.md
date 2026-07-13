@@ -23,7 +23,11 @@ a convolution layer computes:
 W_{\delta}H_i[q+\delta],
 ```
 
-where $\mathcal{K}$ is a finite kernel support.
+where
+```math
+\mathcal{K}
+```
+is a finite kernel support.
 
 This assumes translation sharing:
 
@@ -70,7 +74,11 @@ O(n_i^2)
 O(Bm^2),
 ```
 
-where $m$ is the number of tokens per window.
+where
+```math
+m
+```
+is the number of tokens per window.
 
 ## Shifted Windows
 

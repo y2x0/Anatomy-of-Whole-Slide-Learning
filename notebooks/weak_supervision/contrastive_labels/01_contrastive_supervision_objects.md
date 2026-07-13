@@ -110,7 +110,11 @@ Contrastive learning tries to make:
 u_a^\top u_b
 ```
 
-large when $M_{ab}=1$ and small for sampled negatives.
+large when
+```math
+M_{ab}=1
+```
+and small for sampled negatives.
 
 ## C/R/G/S Placement
 

@@ -34,7 +34,11 @@ For each WSI, patch embeddings are clustered locally:
 \{1,\ldots,K_i\}.
 ```
 
-The cluster $k$ is:
+The cluster
+```math
+k
+```
+is:
 
 ```math
 \mathcal{C}_{ik}
@@ -106,7 +110,11 @@ Y_i,
 j\in\mathcal{S}_i.
 ```
 
-If $p_{ij}$ is the patch prediction, the weak patch loss is:
+If
+```math
+p_{ij}
+```
+is the patch prediction, the weak patch loss is:
 
 ```math
 \mathcal{L}_{\mathrm{patch}}
@@ -134,7 +142,11 @@ by increasing coverage of relevant tissue modes.
 
 The method also regularizes attention so patches from the same local cluster do
 not collapse to an arbitrary single instance. Let attention weights inside
-cluster $k$ be normalized:
+cluster
+```math
+k
+```
+be normalized:
 
 ```math
 \bar a_{ij}^{(k)}
@@ -212,7 +224,11 @@ h_{ij},h_{i\ell}\in\mathcal{C}_{ik}
 Z_{ij}=Z_{i\ell}.
 ```
 
-Even if the cluster is coherent, copying $Y_i$ to every sampled patch still
+Even if the cluster is coherent, copying
+```math
+Y_i
+```
+to every sampled patch still
 assumes:
 
 ```math

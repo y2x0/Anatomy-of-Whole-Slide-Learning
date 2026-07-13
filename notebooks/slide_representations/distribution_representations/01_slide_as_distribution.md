@@ -47,7 +47,11 @@ The difference is not the stored patches. The difference is the hypothesis class
 allowed to act on them.
 
 This is stronger than saying "mean pooling." Mean pooling is only one statistic
-of $\mu_i$:
+of
+```math
+\mu_i
+```
+:
 
 ```math
 m_i
@@ -63,7 +67,11 @@ z_i=T(\mu_i).
 
 ## Distributional Equivalence
 
-Two slides are distributionally equivalent under statistic $T$ if:
+Two slides are distributionally equivalent under statistic
+```math
+T
+```
+if:
 
 ```math
 T(\mu_i)=T(\mu_k).
@@ -87,7 +95,11 @@ Many different morphology distributions can share the same first moment.
 
 ## Moment Representation
 
-A moment statistic uses functions $\phi_m$:
+A moment statistic uses functions
+```math
+\phi_m
+```
+:
 
 ```math
 z_{im}
@@ -131,7 +143,11 @@ variance.
 
 ## Histogram Representation
 
-Let $B_1,\ldots,B_M$ partition embedding space.
+Let
+```math
+B_1,\ldots,B_M
+```
+partition embedding space.
 
 The histogram statistic is:
 
@@ -159,7 +175,10 @@ This turns a slide into a morphology prevalence vector.
 ## Distribution Versus Prototype
 
 A prototype representation chooses learned or estimated centers
-$c_1,\ldots,c_M$ and summarizes the slide by assignments to those centers:
+```math
+c_1,\ldots,c_M
+```
+and summarizes the slide by assignments to those centers:
 
 ```math
 q_m(h)
@@ -199,4 +218,8 @@ z_i=T(\mu_i)
 ```
 
 A distribution representation makes the slide a measure over morphology. The
-central design problem is choosing $T$: the finite statistic that survives.
+central design problem is choosing
+```math
+T
+```
+: the finite statistic that survives.

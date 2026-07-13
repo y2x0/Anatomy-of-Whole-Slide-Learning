@@ -1,7 +1,11 @@
 # Robust Losses And Small-Loss Selection
 
 When the noise channel is unknown, robust learning changes the training
-dynamics rather than explicitly inverting $T$.
+dynamics rather than explicitly inverting
+```math
+T
+```
+.
 
 ## Memorization Assumption
 
@@ -79,7 +83,11 @@ noise.
 
 ## Generalized Cross Entropy
 
-For predicted probability $p_y$, generalized cross entropy is:
+For predicted probability
+```math
+p_y
+```
+, generalized cross entropy is:
 
 ```math
 \ell_q(p_y)
@@ -89,7 +97,11 @@ For predicted probability $p_y$, generalized cross entropy is:
 0<q\le 1.
 ```
 
-As $q\to 0$:
+As
+```math
+q\to 0
+```
+:
 
 ```math
 \ell_q(p_y)
@@ -97,7 +109,15 @@ As $q\to 0$:
 -\log p_y.
 ```
 
-For larger $q$, the loss is less sensitive to very small $p_y$, reducing the
+For larger
+```math
+q
+```
+, the loss is less sensitive to very small
+```math
+p_y
+```
+, reducing the
 effect of hard mislabeled samples.
 
 ## Symmetric Cross Entropy

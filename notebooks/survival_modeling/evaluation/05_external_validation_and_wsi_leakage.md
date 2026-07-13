@@ -11,13 +11,21 @@ If multiple slides exist per patient:
 S_{i1},S_{i2},\ldots,S_{im_i},
 ```
 
-all slides from patient $i$ must stay in the same split.
+all slides from patient
+```math
+i
+```
+must stay in the same split.
 
 Slide-level splitting leaks patient morphology and outcome.
 
 ## Institution Leakage
 
-Let $A_i$ be acquisition site. If:
+Let
+```math
+A_i
+```
+be acquisition site. If:
 
 ```math
 A_i\not\perp T_i

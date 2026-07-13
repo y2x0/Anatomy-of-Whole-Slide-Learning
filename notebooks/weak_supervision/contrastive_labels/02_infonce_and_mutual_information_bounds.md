@@ -2,7 +2,19 @@
 
 InfoNCE is a classification loss over positives and sampled negatives.
 
-For query $q$, positive key $k^+$, and negative keys $k_1^-,\ldots,k_M^-$:
+For query
+```math
+q
+```
+, positive key
+```math
+k^+
+```
+, and negative keys
+```math
+k_1^-,\ldots,k_M^-
+```
+:
 
 ```math
 \mathcal{L}_{\mathrm{NCE}}
@@ -19,7 +31,11 @@ For query $q$, positive key $k^+$, and negative keys $k_1^-,\ldots,k_M^-$:
 }.
 ```
 
-Here $\tau$ is temperature.
+Here
+```math
+\tau
+```
+is temperature.
 
 ## Softmax Classification View
 
@@ -79,8 +95,16 @@ and on a critic rich enough to approximate a density ratio:
 In WSI, this can fail because negatives may share disease class, tissue type,
 organ, stain, or patient-level factors with the query.
 
-If negatives are sampled from a biased batch distribution $P_B$ rather than
-the population marginal $P_K$, the contrastive objective estimates a different
+If negatives are sampled from a biased batch distribution
+```math
+P_B
+```
+rather than
+the population marginal
+```math
+P_K
+```
+, the contrastive objective estimates a different
 classification problem:
 
 ```math
@@ -119,7 +143,11 @@ The gradient pulls the query toward the positive:
 \nabla_q s_{k^+},
 ```
 
-and pushes it away from all candidates proportional to $\pi_k$:
+and pushes it away from all candidates proportional to
+```math
+\pi_k
+```
+:
 
 ```math
 \nabla_q\mathcal{L}
@@ -130,11 +158,19 @@ and pushes it away from all candidates proportional to $\pi_k$:
 \nabla_q s_{k^+}.
 ```
 
-Hard negatives with high $\pi_k$ dominate repulsion.
+Hard negatives with high
+```math
+\pi_k
+```
+dominate repulsion.
 
 ## Temperature
 
-Small $\tau$ sharpens the denominator:
+Small
+```math
+\tau
+```
+sharpens the denominator:
 
 ```math
 \pi_k
@@ -142,7 +178,11 @@ Small $\tau$ sharpens the denominator:
 \mathbf{1}\{k=\arg\max_\ell s_\ell\}.
 ```
 
-Large $\tau$ spreads gradients across more negatives.
+Large
+```math
+\tau
+```
+spreads gradients across more negatives.
 
 ## C/R/G/S Placement
 

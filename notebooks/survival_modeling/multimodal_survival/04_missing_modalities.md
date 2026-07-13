@@ -76,7 +76,11 @@ Missing modalities simply remove experts.
 
 ## Generative Imputation
 
-A model may infer missing modality $g$ from pathology:
+A model may infer missing modality
+```math
+g
+```
+from pathology:
 
 ```math
 q_\phi(z_i^g\mid z_i^p).

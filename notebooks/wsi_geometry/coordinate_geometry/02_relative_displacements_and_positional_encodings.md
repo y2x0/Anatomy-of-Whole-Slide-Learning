@@ -47,7 +47,11 @@ q(h_{ij})^\top k(h_{ik})
 b_\theta(d_{ijk}).
 ```
 
-The bias $b_\theta(d)$ favors or suppresses interactions by displacement.
+The bias
+```math
+b_\theta(d)
+```
+favors or suppresses interactions by displacement.
 
 ## Distance-Only Geometry
 
@@ -111,8 +115,16 @@ b_\theta(c_j-c_k)
 \right).
 ```
 
-If $b_\theta$ is strongly negative for large distances, the layer becomes
-local. If $b_\theta$ is nearly constant, the layer behaves like global
+If
+```math
+b_\theta
+```
+is strongly negative for large distances, the layer becomes
+local. If
+```math
+b_\theta
+```
+is nearly constant, the layer behaves like global
 attention.
 
 ## C/R/G/S Placement

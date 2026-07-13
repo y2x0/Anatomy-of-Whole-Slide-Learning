@@ -103,7 +103,11 @@ The notes are derivation-first. Each family should make explicit:
 
 ## Core Observed Data
 
-For patient or slide indexed by $i$:
+For patient or slide indexed by
+```math
+i
+```
+:
 
 ```math
 T_i = \text{event time},
@@ -119,9 +123,20 @@ X_i = \min(T_i,C_i),
 \delta_i = \mathbf{1}[T_i \le C_i].
 ```
 
-The pair $(X_i,\delta_i)$ is the survival label. Whole-slide pathology adds
-the high-dimensional object $S_i$, usually represented through patch features
-$H_i$.
+The pair
+```math
+(X_i,\delta_i)
+```
+is the survival label. Whole-slide pathology adds
+the high-dimensional object
+```math
+S_i
+```
+, usually represented through patch features
+```math
+H_i
+```
+.
 
 ## References To Anchor The First Pass
 

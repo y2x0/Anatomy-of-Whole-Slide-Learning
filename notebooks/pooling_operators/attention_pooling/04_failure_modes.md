@@ -58,7 +58,11 @@ Two models can agree on slide labels while producing different heatmaps.
 
 ## 4. High Attention Is Not Positive Evidence
 
-For class vector $q$:
+For class vector
+```math
+q
+```
+:
 
 ```math
 o_i
@@ -68,13 +72,25 @@ q^\top z_i
 \sum_j a_{ij}q^\top v_{ij}.
 ```
 
-Patch $j$ contributes positively only if:
+Patch
+```math
+j
+```
+contributes positively only if:
 
 ```math
 q^\top v_{ij}>0.
 ```
 
-A large $a_{ij}$ with negative $q^\top v_{ij}$ is high-weight negative evidence.
+A large
+```math
+a_{ij}
+```
+ with negative
+```math
+q^\top v_{ij}
+```
+is high-weight negative evidence.
 This is one reason attention maps should not be read as instance labels without
 additional assumptions.
 
@@ -94,7 +110,15 @@ y_i
 f(h_{ia},h_{ib})
 ```
 
-and neither $h_{ia}$ nor $h_{ib}$ is individually informative, independent
+and neither
+```math
+h_{ia}
+```
+ nor
+```math
+h_{ib}
+```
+is individually informative, independent
 attention may fail. A transformer, graph, or state-space context operator must
 encode the interaction before pooling.
 
@@ -142,4 +166,3 @@ Attention pooling fails when the learned measure:
 
 places mass on the wrong statistic. The heatmap is a trace of the readout, not a
 proof of biological causality.
-

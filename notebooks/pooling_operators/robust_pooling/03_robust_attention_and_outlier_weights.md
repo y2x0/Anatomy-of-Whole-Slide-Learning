@@ -11,7 +11,11 @@ a_{ij}
 {\sum_\ell\exp(s_{i\ell})}.
 ```
 
-The maximum weight can approach $1$:
+The maximum weight can approach
+```math
+1
+```
+:
 
 ```math
 \max_j a_{ij}
@@ -29,7 +33,11 @@ a_{ij}
 \tau.
 ```
 
-with $\tau\in[1/n_i,1]$. The constrained attention vector can be written as a
+with
+```math
+\tau\in[1/n_i,1]
+```
+. The constrained attention vector can be written as a
 capped-simplex problem:
 
 ```math

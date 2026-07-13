@@ -23,7 +23,14 @@ The empirical measure is:
 \sum_{j=1}^{n_i}\delta_{h_{ij}}.
 ```
 
-As carriers of unordered patch information, $H_i$ with multiplicity and $\mu_i$
+As carriers of unordered patch information,
+```math
+H_i
+```
+ with multiplicity and
+```math
+\mu_i
+```
 are equivalent. Each patch appears once in the multiset and once as an atom in
 the empirical measure.
 
@@ -37,7 +44,15 @@ The graph object adds relation data:
 V_i=\{1,\ldots,n_i\}.
 ```
 
-The edge set $E_i$ is not recoverable from $\mu_i$ unless the embedding already
+The edge set
+```math
+E_i
+```
+ is not recoverable from
+```math
+\mu_i
+```
+unless the embedding already
 encodes the relevant geometry. This is the first real break:
 
 ```text
@@ -58,7 +73,11 @@ f(H_i)
 f(\{h_{i\pi(j)}\}_{j=1}^{n_i})
 ```
 
-for any permutation $\pi$.
+for any permutation
+```math
+\pi
+```
+.
 
 A distribution model learns a functional:
 
@@ -70,7 +89,11 @@ F(\mu_i)
 \psi(T(\mu_i)).
 ```
 
-If $T$ is:
+If
+```math
+T
+```
+is:
 
 ```math
 T(\mu_i)
@@ -94,7 +117,11 @@ f(H_i,E_i)
 f(PH_i,PE_iP^\top),
 ```
 
-where $P$ permutes nodes and edges together.
+where
+```math
+P
+```
+permutes nodes and edges together.
 
 Thus the symmetry gets weaker as more structure is admitted:
 
@@ -111,7 +138,11 @@ graph:
 
 ## When They Collapse
 
-Graph collapses to set when the context operator ignores $E_i$:
+Graph collapses to set when the context operator ignores
+```math
+E_i
+```
+:
 
 ```math
 \mathcal{C}(H_i,E_i)=\mathcal{C}(H_i).
@@ -134,9 +165,21 @@ T(\mu_i)
 \int h\,d\mu_i(h).
 ```
 
-Distribution becomes richer than mean MIL when $T$ includes higher moments,
+Distribution becomes richer than mean MIL when
+```math
+T
+```
+includes higher moments,
 prototypes, mixture responsibilities, kernel features, or transport distances.
-But it is still blind to layout unless geometry enters $h$, $T$, or the metric.
+But it is still blind to layout unless geometry enters
+```math
+h
+```
+,
+```math
+T
+```
+, or the metric.
 
 ## Toy Counterexample: Same Measure, Different Layout
 
@@ -168,14 +211,26 @@ abababab
 babababa
 ```
 
-If patch embeddings are exactly $a$ or $b$, both slides have the same empirical
+If patch embeddings are exactly
+```math
+a
+```
+ or
+```math
+b
+```
+, both slides have the same empirical
 measure:
 
 ```math
 \mu_1=\mu_2.
 ```
 
-Any statistic $T(\mu)$ gives the same result for both slides. A graph or
+Any statistic
+```math
+T(\mu)
+```
+gives the same result for both slides. A graph or
 hierarchy can distinguish them only if spatial adjacency or region membership is
 included before readout.
 
@@ -211,8 +266,16 @@ A state-space or recurrent model sees an ordered list:
 (h_{i\sigma(1)},\ldots,h_{i\sigma(n_i)}).
 ```
 
-If $\sigma$ follows a raster scan, nearby sequence positions may be nearby on the
-slide. If $\sigma$ is random, the same model receives an arbitrary trajectory.
+If
+```math
+\sigma
+```
+follows a raster scan, nearby sequence positions may be nearby on the
+slide. If
+```math
+\sigma
+```
+is random, the same model receives an arbitrary trajectory.
 The bag is unchanged, but the sequence representation changes the inductive
 bias.
 

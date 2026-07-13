@@ -1,7 +1,11 @@
 # Likelihood Losses
 
 Likelihood losses are the cleanest survival objectives because they correspond
-to a probabilistic model for observed $(X,\delta)$.
+to a probabilistic model for observed
+```math
+(X,\delta)
+```
+.
 
 ## Continuous-Time Likelihood
 
@@ -40,7 +44,11 @@ censored observations add only survival-through-censoring
 
 ## Piecewise-Constant Hazard Likelihood
 
-For intervals $I_k=(\tau_{k-1},\tau_k]$, let:
+For intervals
+```math
+I_k=(\tau_{k-1},\tau_k]
+```
+, let:
 
 ```math
 \lambda_i(t)=\lambda_{ik}
@@ -48,7 +56,15 @@ For intervals $I_k=(\tau_{k-1},\tau_k]$, let:
 t\in I_k.
 ```
 
-If $X_i\in I_r$ and $\delta_i=1$:
+If
+```math
+X_i\in I_r
+```
+ and
+```math
+\delta_i=1
+```
+:
 
 ```math
 \mathcal{L}_i
@@ -60,7 +76,11 @@ If $X_i\in I_r$ and $\delta_i=1$:
 \lambda_{ir}(X_i-\tau_{r-1}).
 ```
 
-If censored in $I_r$:
+If censored in
+```math
+I_r
+```
+:
 
 ```math
 \mathcal{L}_i
@@ -82,7 +102,11 @@ h_{ik}
 \Pr(T_i\in I_k\mid T_i>\tau_{k-1},z_i).
 ```
 
-Event in interval $r$:
+Event in interval
+```math
+r
+```
+:
 
 ```math
 p_i
@@ -90,7 +114,11 @@ p_i
 h_{ir}\prod_{k<r}(1-h_{ik}).
 ```
 
-Censored after interval $r$:
+Censored after interval
+```math
+r
+```
+:
 
 ```math
 p_i
@@ -121,13 +149,21 @@ p_{ik}=\Pr(T_i\in I_k\mid z_i),
 p_{i,>K}=\Pr(T_i>\tau_K\mid z_i).
 ```
 
-Event in interval $r$:
+Event in interval
+```math
+r
+```
+:
 
 ```math
 \mathcal{L}_i=-\log p_{ir}.
 ```
 
-Censored after interval $r$:
+Censored after interval
+```math
+r
+```
+:
 
 ```math
 \mathcal{L}_i
@@ -138,7 +174,11 @@ Censored after interval $r$:
 \right].
 ```
 
-The PMF likelihood directly models $T$. It is not conditional on surviving
+The PMF likelihood directly models
+```math
+T
+```
+. It is not conditional on surviving
 earlier intervals.
 
 ## Cox Partial Likelihood As Profile Likelihood
@@ -149,7 +189,11 @@ Cox starts from:
 \lambda_i(t)=\lambda_0(t)\exp(\eta_i).
 ```
 
-Profiling out $\lambda_0$ gives:
+Profiling out
+```math
+\lambda_0
+```
+gives:
 
 ```math
 \mathcal{L}_{\text{Cox}}

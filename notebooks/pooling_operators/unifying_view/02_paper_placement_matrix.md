@@ -8,11 +8,11 @@ statistic reaches the slide-level head.
 
 ## Matrix
 
-| Family or paper anchor | $G$ | $\mathcal{C}$ | $\mathcal{R}$ | $S$ | Surviving Statistic |
+| Family or paper anchor | G | \mathcal{C} | \mathcal{R} | S | Surviving Statistic |
 |---|---|---|---|---|---|
-| Deep Sets / moment pooling | ignored unless encoded upstream | instance feature map $\phi$ | sum or mean of transformed instances | bag label | empirical moment of $\phi(h)$ |
+| Deep Sets / moment pooling | ignored unless encoded upstream | instance feature map \phi | sum or mean of transformed instances | bag label | empirical moment of \phi(h) |
 | Mean pooling | ignored by readout | identity or upstream context | normalized average | downstream slide loss | first moment |
-| Additive evidence pooling | ignored unless burden is spatially stratified | patch evidence map $e_\theta$ | unnormalized sum or exposure-normalized sum | slide label or survival loss | total evidence burden |
+| Additive evidence pooling | ignored unless burden is spatially stratified | patch evidence map e_\theta | unnormalized sum or exposure-normalized sum | slide label or survival loss | total evidence burden |
 | Max pooling | ignored unless scores encode it | instance scoring map | maximum or smooth maximum | positive-instance bag label | extreme score |
 | Top-k / quantile pooling | ignored by readout | instance scoring map | order statistic or trimmed extreme mean | bag label | upper-tail statistic |
 | Noisy-or MIL | ignored unless probabilities are local-context dependent | instance probability map | probability that at least one instance is positive | bag label under OR assumption | complement product of negative probabilities |
@@ -54,8 +54,16 @@ z_i
 ```
 
 This is the Deep Sets shape: the readout is a moment of a learned feature map.
-If $\phi_\theta$ is rich enough, the statistic can encode many distributional
-features; if $\phi_\theta$ is weak, the slide collapses to a small number of
+If
+```math
+\phi_\theta
+```
+is rich enough, the statistic can encode many distributional
+features; if
+```math
+\phi_\theta
+```
+is weak, the slide collapses to a small number of
 low-order moments.
 
 ## Mean Pooling
@@ -84,7 +92,11 @@ z_i
 
 Mean pooling preserves the first moment and discards sparse extremes,
 multimodality, and layout unless those features have already been encoded into
-the instance states $u_{ij}$.
+the instance states
+```math
+u_{ij}
+```
+.
 
 ## Additive Evidence Pooling
 
@@ -315,9 +327,21 @@ Z_i
 \mathrm{MHA}(Q=S, K=U_i, V=U_i),
 ```
 
-where $S\in\mathbb{R}^{k\times d}$ is a learned seed matrix. Set Transformer
-pooling preserves $k$ learned summaries, not one scalar attention distribution.
-When $k>1$, different seed queries can specialize to different slide-level
+where
+```math
+S\in\mathbb{R}^{k\times d}
+```
+is a learned seed matrix. Set Transformer
+pooling preserves
+```math
+k
+```
+learned summaries, not one scalar attention distribution.
+When
+```math
+k>1
+```
+, different seed queries can specialize to different slide-level
 statistics.
 
 ## Prototype And PANTHER-Style Pooling
@@ -376,7 +400,15 @@ Mathematically:
 \frac{1}{n_i}\sum_{j=1}^{n_i}\delta_{\psi_\theta(h_{ij})}.
 ```
 
-Distribution pooling applies a finite statistic $T$ to $\widehat\mu_i$:
+Distribution pooling applies a finite statistic
+```math
+T
+```
+ to
+```math
+\widehat\mu_i
+```
+:
 
 ```math
 z_i
@@ -384,7 +416,11 @@ z_i
 T(\widehat\mu_i).
 ```
 
-It differs from ordinary set pooling only when $T$ is chosen to preserve
+It differs from ordinary set pooling only when
+```math
+T
+```
+is chosen to preserve
 distributional information beyond a single learned first moment, such as
 quantiles, tail mass, kernel comparisons, or transport geometry.
 
@@ -413,7 +449,11 @@ z_i
 \sum_{j=1}^{n_i}\rho(\|u_{ij}-z\|).
 ```
 
-Mean pooling uses $\rho(t)=t^2$. Robust pooling uses a loss whose influence does
+Mean pooling uses
+```math
+\rho(t)=t^2
+```
+. Robust pooling uses a loss whose influence does
 not grow indefinitely. The surviving statistic is deliberately less sensitive
 to outliers, which is useful for artifacts but dangerous when the rare outlier
 is the diagnostic signal.

@@ -26,7 +26,11 @@ z_i
 \mathcal{H}(z_i).
 ```
 
-This folder studies $G_i$.
+This folder studies
+```math
+G_i
+```
+.
 
 ## Geometry Object
 
@@ -132,7 +136,11 @@ geometry:
 ```
 
 A graph representation stores adjacency directly. A set representation can still
-use coordinates if the context operator or readout consumes $C_i$. Conversely, a
+use coordinates if the context operator or readout consumes
+```math
+C_i
+```
+. Conversely, a
 graph with bad edges has geometry, but the wrong geometry.
 
 ## Anchor Papers

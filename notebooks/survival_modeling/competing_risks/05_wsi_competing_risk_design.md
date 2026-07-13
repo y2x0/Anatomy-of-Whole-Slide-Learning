@@ -8,7 +8,11 @@ H_i=\{h_{ij}\}_{j=1}^{n_i},
 z_i=\mathcal{R}(\mathcal{C}(H_i;G_i)).
 ```
 
-Competing-risk heads decide how $z_i$ becomes event-type-specific risk.
+Competing-risk heads decide how
+```math
+z_i
+```
+becomes event-type-specific risk.
 
 ## Shared Representation, Separate Cause Heads
 
@@ -28,7 +32,11 @@ For cause-specific Cox:
 
 The slide encoder is shared. Each cause gets a different linear risk direction.
 
-If $z_i$ is attention-pooled:
+If
+```math
+z_i
+```
+is attention-pooled:
 
 ```math
 z_i=\sum_j a_{ij}h_{ij},
@@ -101,7 +109,11 @@ which morphology supports event type c at time bin k?
 
 ## Prototype Competing Risks
 
-Let $p_{im}$ be prototype prevalence:
+Let
+```math
+p_{im}
+```
+be prototype prevalence:
 
 ```math
 p_{im}

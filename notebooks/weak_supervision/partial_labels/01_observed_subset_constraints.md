@@ -34,7 +34,11 @@ The unobserved set is:
 
 ## Partial Likelihood
 
-If labels are observed exactly on $\mathcal{O}_i$, the partial supervised
+If labels are observed exactly on
+```math
+\mathcal{O}_i
+```
+, the partial supervised
 likelihood is:
 
 ```math
@@ -96,7 +100,11 @@ R_{\mathrm{inst}}(\theta)
 \right]
 ```
 
-only if missingness is ignorable and the sampling measure over $(i,j)$ matches
+only if missingness is ignorable and the sampling measure over
+```math
+(i,j)
+```
+matches
 the desired target measure.
 
 ## Missingness Assumption
@@ -144,7 +152,11 @@ then a per-instance inverse-probability risk is:
 \ell(g_\theta(h_{ij}),Z_{ij}).
 ```
 
-This is unbiased under correct $\pi_{ij}$ and positivity:
+This is unbiased under correct
+```math
+\pi_{ij}
+```
+and positivity:
 
 ```math
 \pi_{ij}>0.
@@ -181,4 +193,8 @@ S^{\mathrm{obs}}
 (M,M\odot Z).
 ```
 
-If the mask $M$ is biased, the supervision channel is biased.
+If the mask
+```math
+M
+```
+is biased, the supervision channel is biased.

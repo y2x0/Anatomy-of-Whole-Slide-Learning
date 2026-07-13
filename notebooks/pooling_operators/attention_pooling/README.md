@@ -9,7 +9,11 @@ The core question:
 Which instances should define the slide statistic?
 ```
 
-For instance states $u_{ij}$, attention pooling computes:
+For instance states
+```math
+u_{ij}
+```
+, attention pooling computes:
 
 ```math
 a_{ij}

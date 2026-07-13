@@ -26,7 +26,15 @@ calibration plots
 horizon probability error
 ```
 
-Those require $\widehat{S}_i(t)$ or $\widehat{F}_i(t)$.
+Those require
+```math
+\widehat{S}_i(t)
+```
+ or
+```math
+\widehat{F}_i(t)
+```
+.
 
 ## Output: Survival Curve
 

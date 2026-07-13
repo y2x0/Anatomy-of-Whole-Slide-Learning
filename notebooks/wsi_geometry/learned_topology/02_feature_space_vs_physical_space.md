@@ -40,7 +40,15 @@ g_{\mathrm{feat}}(j,k)
 \lambda g_{\mathrm{phys}}(j,k).
 ```
 
-When $\lambda$ is large, learned topology is local. When $\lambda$ is small,
+When
+```math
+\lambda
+```
+ is large, learned topology is local. When
+```math
+\lambda
+```
+is small,
 the graph can connect distant morphology.
 
 ## What Relation Is Being Learned?

@@ -73,7 +73,11 @@ A transformer sequence uses:
 \widetilde{h}_{ij}=h_{ij}+p_j.
 ```
 
-Here $p_j$ is sequence position, not necessarily physical coordinate.
+Here
+```math
+p_j
+```
+is sequence position, not necessarily physical coordinate.
 
 If using spatial coordinates:
 

@@ -6,7 +6,11 @@ The graph is not neutral. It defines possible information flow.
 
 ## Coordinate kNN Graph
 
-Given patch coordinates $c_v\in\mathbb{R}^{2}$:
+Given patch coordinates
+```math
+c_v\in\mathbb{R}^{2}
+```
+:
 
 ```math
 \mathcal{N}(v)
@@ -139,7 +143,15 @@ The cross-level edge:
 (c,r)\in E_{\text{cell-tissue}}
 ```
 
-means cell $c$ belongs to or is spatially contained in tissue region $r$. This
+means cell
+```math
+c
+```
+ belongs to or is spatially contained in tissue region
+```math
+r
+```
+. This
 makes the graph a multiscale tissue object rather than a flat patch adjacency
 graph.
 

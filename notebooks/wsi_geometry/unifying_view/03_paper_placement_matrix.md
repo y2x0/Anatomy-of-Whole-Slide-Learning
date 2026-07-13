@@ -6,7 +6,7 @@ geometries.
 
 ## Matrix
 
-| Anchor | Geometry $G$ | $\mathcal{C}$ | $\mathcal{R}$ | $S$ | Geometry Statistic |
+| Anchor | Geometry G | \mathcal{C} | \mathcal{R} | S | Geometry Statistic |
 |---|---|---|---|---|---|
 | ABMIL / CLAM without coordinates | empty geometry | patchwise scoring or set attention | attention or class-specific pooling | slide label, pseudo-instance constraints for CLAM | morphology statistic without layout |
 | TransMIL | sequence or position-aware token structure | transformer attention over WSI tokens | slide token or pooled embedding | slide label | global token interaction with positional structure |

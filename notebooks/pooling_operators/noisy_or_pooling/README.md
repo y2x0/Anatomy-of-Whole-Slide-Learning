@@ -9,7 +9,11 @@ The core question:
 What is the probability that at least one instance triggers the bag label?
 ```
 
-For instance probabilities $p_{ij}$:
+For instance probabilities
+```math
+p_{ij}
+```
+:
 
 ```math
 P(y_i=1\mid H_i)
@@ -47,4 +51,3 @@ r_i
 - `02_log_space_gradients_and_limits.md`: stable computation and gradients.
 - `03_noisy_or_vs_max_vs_sum.md`: relation to extreme and additive evidence.
 - `04_failure_modes.md`: identifiability, saturation, and correlated instances.
-

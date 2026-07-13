@@ -8,7 +8,11 @@ The simplest WSI representation is:
 \{h_{ij}\}_{j=1}^{n_i}.
 ```
 
-No order is assumed. The index $j$ is only a label used to enumerate patches.
+No order is assumed. The index
+```math
+j
+```
+is only a label used to enumerate patches.
 
 The model should satisfy:
 
@@ -18,7 +22,11 @@ f(h_{i1},\ldots,h_{in_i})
 f(h_{i\pi(1)},\ldots,h_{i\pi(n_i)})
 ```
 
-for every permutation $\pi$.
+for every permutation
+```math
+\pi
+```
+.
 
 This is the core assumption behind classic MIL.
 
@@ -42,7 +50,11 @@ region hierarchy
 long-range tissue layout
 ```
 
-Any spatial signal must already be encoded inside $h_{ij}$ or reintroduced
+Any spatial signal must already be encoded inside
+```math
+h_{ij}
+```
+or reintroduced
 later through positional features.
 
 ## Empirical Measure View
@@ -55,7 +67,11 @@ A finite set can be written as an empirical measure:
 \frac{1}{n_i}\sum_{j=1}^{n_i}\delta_{h_{ij}}.
 ```
 
-A permutation-invariant slide function is a functional of $\mu_i$:
+A permutation-invariant slide function is a functional of
+```math
+\mu_i
+```
+:
 
 ```math
 f(H_i)=F(\mu_i).
@@ -95,7 +111,11 @@ z_i=\int h\,d\nu_i(h).
 
 ## MIL Assumption
 
-In weakly supervised WSI learning, the slide label $y_i$ is observed but patch
+In weakly supervised WSI learning, the slide label
+```math
+y_i
+```
+is observed but patch
 labels are not.
 
 Set MIL assumes:

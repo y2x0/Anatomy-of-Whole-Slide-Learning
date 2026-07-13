@@ -2,7 +2,15 @@
 
 Hierarchical models can read out at one scale or several scales.
 
-Let $H_i^{(\ell)}$ be the states at level $\ell$.
+Let
+```math
+H_i^{(\ell)}
+```
+ be the states at level
+```math
+\ell
+```
+.
 
 ## Top-Level Readout
 
@@ -14,7 +22,15 @@ z_i
 \mathcal{R}^{(L)}(H_i^{(L)}).
 ```
 
-If $V_i^{(L)}$ has a single slide node $r_i$, then:
+If
+```math
+V_i^{(L)}
+```
+ has a single slide node
+```math
+r_i
+```
+, then:
 
 ```math
 z_i=h_{r_i}^{(L)}.
@@ -70,7 +86,15 @@ Multiscale readout preserves signals that appear at different physical scales.
 ## Worked Shape Sketches
 
 An HIPT-style hierarchy can be written as a two-stage token map. Suppose a slide
-is divided into $R_i$ regions, each containing up to $m$ local tiles. A local tile
+is divided into
+```math
+R_i
+```
+ regions, each containing up to
+```math
+m
+```
+local tiles. A local tile
 encoder gives:
 
 ```math
@@ -85,7 +109,11 @@ E_0(x_{irj}^{(0)})
 \mathbb{R}^{d_0}.
 ```
 
-Region $r$ is therefore:
+Region
+```math
+r
+```
+is therefore:
 
 ```math
 H_{ir}^{(0)}
@@ -278,7 +306,15 @@ r_i
 \sum_{u\in V_i^{(\ell)}}\alpha_u e_u.
 ```
 
-Here $e_u$ is regional evidence and $\alpha_u$ is a region weight. This works
+Here
+```math
+e_u
+```
+ is regional evidence and
+```math
+\alpha_u
+```
+is a region weight. This works
 when multiple independent regions contribute to risk or class probability.
 
 Sparse lesion tasks may instead need:

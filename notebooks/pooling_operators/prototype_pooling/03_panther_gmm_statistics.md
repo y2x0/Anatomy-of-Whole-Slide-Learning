@@ -22,7 +22,15 @@ The prototypes are the mixture components:
 \{(\pi_m,\mu_m,\Sigma_m)\}_{m=1}^{M}.
 ```
 
-For patch $h_{ij}$, the responsibility of component $m$ is:
+For patch
+```math
+h_{ij}
+```
+, the responsibility of component
+```math
+m
+```
+is:
 
 ```math
 \gamma_{ijm}
@@ -52,7 +60,15 @@ The slide-specific component prevalence is:
 \sum_{j=1}^{n_i}\gamma_{ijm}.
 ```
 
-This estimates how much of slide $i$ belongs to morphology component $m$.
+This estimates how much of slide
+```math
+i
+```
+ belongs to morphology component
+```math
+m
+```
+.
 
 The simplest PANTHER-style slide vector is:
 
@@ -160,4 +176,3 @@ component prevalence plus component-specific deviation
 ```
 
 This is a distribution readout, not a patch-selection readout.
-

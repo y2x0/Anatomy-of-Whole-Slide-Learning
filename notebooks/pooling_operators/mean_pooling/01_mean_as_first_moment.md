@@ -35,7 +35,11 @@ Thus mean pooling is the first moment of the empirical instance distribution.
 
 ## Permutation Invariance
 
-For any permutation $\pi$:
+For any permutation
+```math
+\pi
+```
+:
 
 ```math
 \frac{1}{n_i}
@@ -47,7 +51,11 @@ For any permutation $\pi$:
 
 Mean pooling ignores order by construction. It can be valid only when the
 downstream target depends on composition rather than arrangement, or when
-arrangement has already been encoded into $u_{ij}$.
+arrangement has already been encoded into
+```math
+u_{ij}
+```
+.
 
 ## What A Linear Head Sees
 
@@ -118,7 +126,11 @@ then:
 \mathcal{H}(z_k)
 ```
 
-for every head $\mathcal{H}$.
+for every head
+```math
+\mathcal{H}
+```
+.
 
 The bottleneck is the statistic, not the head.
 
@@ -185,7 +197,11 @@ z_i
 ```
 
 The transform can make useful morphology counts visible. For example, if one
-coordinate of $\phi_\theta(u)$ approximates a tumor indicator, the mean estimates
+coordinate of
+```math
+\phi_\theta(u)
+```
+approximates a tumor indicator, the mean estimates
 tumor prevalence:
 
 ```math
@@ -226,8 +242,16 @@ z_i^{\text{sum}}
 n_i z_i^{\text{mean}}.
 ```
 
-If $n_i$ carries biological or sampling information, mean pooling removes it.
-If $n_i$ is mostly nuisance tissue area or tiling density, mean pooling can be
+If
+```math
+n_i
+```
+carries biological or sampling information, mean pooling removes it.
+If
+```math
+n_i
+```
+is mostly nuisance tissue area or tiling density, mean pooling can be
 the safer statistic.
 
 ## Dense Summary

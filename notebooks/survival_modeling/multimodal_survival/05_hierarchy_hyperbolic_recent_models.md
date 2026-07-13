@@ -125,7 +125,11 @@ This belongs in the representation layer:
 A survival-aware contrastive objective can encode that longer-surviving patients
 should be ordered differently from shorter-surviving patients.
 
-For comparable pair $i,j$:
+For comparable pair
+```math
+i,j
+```
+:
 
 ```math
 X_i<X_j,\quad \delta_i=1.

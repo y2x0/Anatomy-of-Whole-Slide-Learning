@@ -84,7 +84,11 @@ A_{\theta,i}^{(c)}
 A_\theta(H_i,C_i,c)
 ```
 
-for class or task index $c$.
+for class or task index
+```math
+c
+```
+.
 
 ## C/R/G/S Placement
 

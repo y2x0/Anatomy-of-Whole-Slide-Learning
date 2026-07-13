@@ -43,13 +43,28 @@ A calibrated probability can use:
 \mathrm{softmax}(o(z)/T).
 ```
 
-The temperature $T$ changes confidence without changing multiclass argmax when
-$T>0$.
+The temperature
+```math
+T
+```
+changes confidence without changing multiclass argmax when
+```math
+T>0
+```
+.
 
 ## Domain Shift
 
-Let the train distribution be $P_{\mathrm{tr}}(Z,Y)$ and the deployment
-distribution be $P_{\mathrm{te}}(Z,Y)$. A probe trained under:
+Let the train distribution be
+```math
+P_{\mathrm{tr}}(Z,Y)
+```
+and the deployment
+distribution be
+```math
+P_{\mathrm{te}}(Z,Y)
+```
+. A probe trained under:
 
 ```math
 P_{\mathrm{tr}}(Y\mid Z)

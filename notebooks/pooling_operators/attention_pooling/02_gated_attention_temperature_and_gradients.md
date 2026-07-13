@@ -1,6 +1,10 @@
 # Gated Attention, Temperature, And Gradients
 
-The gated attention variant in ABMIL replaces a single $\tanh$ score with a
+The gated attention variant in ABMIL replaces a single
+```math
+\tanh
+```
+score with a
 feature-wise interaction:
 
 ```math
@@ -55,12 +59,20 @@ sigmoid branch:
     soft selector or gate
 ```
 
-The gate can suppress a feature dimension even when the $\tanh$ branch is large.
+The gate can suppress a feature dimension even when the
+```math
+\tanh
+```
+branch is large.
 This makes the score more expressive than a single saturating projection.
 
 ## Softmax Temperature
 
-Introduce inverse temperature $\beta$:
+Introduce inverse temperature
+```math
+\beta
+```
+:
 
 ```math
 a_{ij}^{(\beta)}
@@ -77,7 +89,11 @@ H(a_i)
 -\sum_j a_{ij}\log a_{ij}.
 ```
 
-Increasing $\beta$ usually lowers entropy:
+Increasing
+```math
+\beta
+```
+usually lowers entropy:
 
 ```math
 \beta\uparrow
@@ -148,8 +164,15 @@ patch increases the class logit.
 
 ## Attention Is Competitive
 
-The same derivative shows why attention is competitive. Increasing $s_{i\ell}$
-does not only increase $a_{i\ell}$. It decreases other weights because:
+The same derivative shows why attention is competitive. Increasing
+```math
+s_{i\ell}
+```
+does not only increase
+```math
+a_{i\ell}
+```
+. It decreases other weights because:
 
 ```math
 \sum_j a_{ij}=1.
@@ -161,7 +184,11 @@ distributed across tissue.
 
 ## Attention Weight Versus Evidence
 
-The attention weight $a_{ij}$ is not itself a class probability. The final logit
+The attention weight
+```math
+a_{ij}
+```
+is not itself a class probability. The final logit
 depends on both the weight and the value:
 
 ```math
@@ -208,6 +235,13 @@ z_i
 \mathbb{E}_{j\sim a_i}[v_{ij}].
 ```
 
-The mathematical burden is on $s_\theta$ and $v_\theta$: they must make a single
+The mathematical burden is on
+```math
+s_\theta
+```
+ and
+```math
+v_\theta
+```
+: they must make a single
 weighted first moment sufficient for the slide-level task.
-

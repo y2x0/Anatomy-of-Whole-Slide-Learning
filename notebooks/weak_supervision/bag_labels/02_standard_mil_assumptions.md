@@ -23,7 +23,11 @@ j_i^\star
 \{j:Z_{ij}=1\}.
 ```
 
-But $j_i^\star$ is hidden. Max pooling estimates it by:
+But
+```math
+j_i^\star
+```
+is hidden. Max pooling estimates it by:
 
 ```math
 \widehat j_i
@@ -73,7 +77,11 @@ is different.
 
 ## Multi-Class MIL
 
-For $C$ classes:
+For
+```math
+C
+```
+classes:
 
 ```math
 Z_{ij}
@@ -81,7 +89,11 @@ Z_{ij}
 \{0,1,\ldots,C\}.
 ```
 
-A slide label $Y_i=c$ may mean:
+A slide label
+```math
+Y_i=c
+```
+may mean:
 
 ```math
 \exists j:Z_{ij}=c

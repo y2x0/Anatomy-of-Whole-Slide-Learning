@@ -24,7 +24,11 @@ If:
 C_i\not\perp A_i
 ```
 
-where $A_i$ is institution/scanner/cohort, then the survival loss may learn
+where
+```math
+A_i
+```
+is institution/scanner/cohort, then the survival loss may learn
 site-related features through censoring patterns.
 
 ## 3. Weak Event Counts

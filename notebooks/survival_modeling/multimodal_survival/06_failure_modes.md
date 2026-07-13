@@ -45,7 +45,15 @@ Attention between a gene/pathway token and a patch token:
 A_{rj}
 ```
 
-does not prove that pathway $r$ causes morphology $j$, or vice versa.
+does not prove that pathway
+```math
+r
+```
+ causes morphology
+```math
+j
+```
+, or vice versa.
 
 It is an interaction used for prediction.
 

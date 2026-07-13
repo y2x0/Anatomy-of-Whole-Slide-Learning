@@ -4,7 +4,11 @@ Mean pooling fails when the first moment is the wrong statistic.
 
 ## 1. Sparse Positive Dilution
 
-Suppose a small positive set $P_i$ contains the diagnostic patches:
+Suppose a small positive set
+```math
+P_i
+```
+contains the diagnostic patches:
 
 ```math
 P_i\subset\{1,\ldots,n_i\},
@@ -41,7 +45,11 @@ This is why mean pooling is weak for rare lesion detection.
 
 ## 2. Single-Patch Sensitivity Bound
 
-If one patch changes by $\Delta$:
+If one patch changes by
+```math
+\Delta
+```
+:
 
 ```math
 u_{ij}
@@ -102,7 +110,15 @@ their average, mean pooling erases the signal.
 
 ## 4. Nuisance Mass Dominance
 
-Let a slide contain relevant tissue $R_i$ and nuisance tissue $N_i$:
+Let a slide contain relevant tissue
+```math
+R_i
+```
+ and nuisance tissue
+```math
+N_i
+```
+:
 
 ```math
 \{1,\ldots,n_i\}
@@ -166,7 +182,11 @@ unless geometry has already been encoded into the instance states.
 
 ## 6. Gradient Spreading
 
-For a scalar loss $\mathcal{L}$:
+For a scalar loss
+```math
+\mathcal{L}
+```
+:
 
 ```math
 z_i

@@ -36,13 +36,13 @@ The same observed label can affect different parts of the pipeline.
 
 ## Matrix
 
-| Supervision | Observed $S^{\mathrm{obs}}$ | Generated target | $\mathcal{C}$ | $\mathcal{R}$ | $G$ | Main latent variable |
+| Supervision | Observed S^{\mathrm{obs}} | Generated target | \mathcal{C} | \mathcal{R} | G | Main latent variable |
 |---|---|---|---|---|---|---|
-| Bag label | $Y_i$ | none unless auxiliary rule added | instance features shaped only through bag loss | MIL aggregator approximates bag map | optional | $Z_{ij}$ |
-| Partial label | $M\odot U$ | imputed labels under a mask if used | direct gradients on observed subset | bag and partial readouts can be joint | annotation geometry | unobserved labels under mask |
-| Noisy label | $\widetilde Y_i$ | corrected posterior if noise model is inverted | features may fit corruption | readout predicts noisy or corrected label | possible noise correlate | true $Y_i$ |
-| Pseudo-label | usually $Y_i$ or partial labels | $\widehat U_t=\Psi_t(H,G,S^{\mathrm{obs}},\theta_t,\mathcal{D})$ | generated labels shape features | selects top-k, pseudo-bags, or teacher targets | optional | correctness of pseudo-label |
-| Contrastive relation | $\mathcal{P},\mathcal{N}$ or paired views/text | sampled positives and negatives | pairwise invariance shapes encoder | embedding object is contrasted | relation geometry | latent equivalence relation |
+| Bag label | Y_i | none unless auxiliary rule added | instance features shaped only through bag loss | MIL aggregator approximates bag map | optional | Z_{ij} |
+| Partial label | M\odot U | imputed labels under a mask if used | direct gradients on observed subset | bag and partial readouts can be joint | annotation geometry | unobserved labels under mask |
+| Noisy label | \widetilde Y_i | corrected posterior if noise model is inverted | features may fit corruption | readout predicts noisy or corrected label | possible noise correlate | true Y_i |
+| Pseudo-label | usually Y_i or partial labels | \widehat U_t=\Psi_t(H,G,S^{\mathrm{obs}},\theta_t,\mathcal{D}) | generated labels shape features | selects top-k, pseudo-bags, or teacher targets | optional | correctness of pseudo-label |
+| Contrastive relation | \mathcal{P},\mathcal{N} or paired views/text | sampled positives and negatives | pairwise invariance shapes encoder | embedding object is contrasted | relation geometry | latent equivalence relation |
 
 ## S In Context
 

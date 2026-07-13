@@ -2,7 +2,11 @@
 
 Soft prompt tuning replaces hand-written prompt tokens with learned vectors.
 
-For a class name token embedding $e_c$, define context vectors:
+For a class name token embedding
+```math
+e_c
+```
+, define context vectors:
 
 ```math
 P_\eta
@@ -20,7 +24,11 @@ v_c(\eta)
 f_T(p_1,\ldots,p_m,e_c).
 ```
 
-Only $\eta=\{p_k\}$ is trained:
+Only
+```math
+\eta=\{p_k\}
+```
+is trained:
 
 ```math
 \nabla_{\eta}\mathcal{L}\ne 0,

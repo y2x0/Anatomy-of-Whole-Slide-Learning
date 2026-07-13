@@ -78,7 +78,11 @@ z_i
 \mathcal{R}_\ell(\{h_v^{(\ell)}:v\in V_i^{(\ell)}\}).
 ```
 
-The weights $\beta_\ell$ choose scale emphasis.
+The weights
+```math
+\beta_\ell
+```
+choose scale emphasis.
 
 ## Effective Patch Weight
 
@@ -92,7 +96,11 @@ w_v^{\mathrm{eff}}
 a_{\pi^{(\ell)}(v_\ell)\mid v_\ell}^{(\ell)},
 ```
 
-where $v_{\ell+1}=\pi^{(\ell)}(v_\ell)$.
+where
+```math
+v_{\ell+1}=\pi^{(\ell)}(v_\ell)
+```
+.
 
 This product can make some fine regions nearly invisible.
 

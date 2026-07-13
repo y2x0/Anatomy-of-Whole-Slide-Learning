@@ -129,7 +129,7 @@ Adding a new patch with score `s_new` changes every old weight:
 a_j'
 =
 \frac{\exp(s_j)}
-\sum_{\ell=1}^{n}\exp(s_\ell)+\exp(s_{\mathrm{new}})}
+{\sum_{\ell=1}^{n}\exp(s_\ell)+\exp(s_{\mathrm{new}})}
 =
 a_j
 \frac{Z}{Z+\exp(s_{\mathrm{new}})}.
@@ -160,4 +160,3 @@ denominator competition
 
 The same attention architecture can behave like mean pooling, top-instance
 pooling, or something in between depending on this geometry.
-

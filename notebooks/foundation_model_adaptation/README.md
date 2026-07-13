@@ -87,8 +87,16 @@ z_i
 \mathcal{H}_{\eta}(z_i).
 ```
 
-The pretrained parameters $\phi_0$ may be fixed or adapted. The downstream
-parameters $\eta$ may live in the head, readout, prompt, low-rank update,
+The pretrained parameters
+```math
+\phi_0
+```
+may be fixed or adapted. The downstream
+parameters
+```math
+\eta
+```
+may live in the head, readout, prompt, low-rank update,
 adapter, memory bank, or the full encoder.
 
 ## Anchor Methods And Papers
@@ -123,7 +131,11 @@ Y
 \Delta_\eta\in\mathcal{A}.
 ```
 
-The adaptation family $\mathcal{A}$ defines the inductive bias:
+The adaptation family
+```math
+\mathcal{A}
+```
+defines the inductive bias:
 
 ```text
 linear probe:

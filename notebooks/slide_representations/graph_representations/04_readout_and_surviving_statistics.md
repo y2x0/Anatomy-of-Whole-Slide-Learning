@@ -26,7 +26,11 @@ Survives:
 first moment of contextualized node features
 ```
 
-The graph affects $h_v^{(L)}$, but the readout is still a mean.
+The graph affects
+```math
+h_v^{(L)}
+```
+, but the readout is still a mean.
 
 If two slides produce the same multiset of final node states:
 

@@ -2,7 +2,15 @@
 
 Time-dependent AUC evaluates discrimination at a time horizon.
 
-Let $M_i(t)$ be a marker or predicted risk at time $t$. Commonly:
+Let
+```math
+M_i(t)
+```
+ be a marker or predicted risk at time
+```math
+t
+```
+. Commonly:
 
 ```math
 M_i(t)=1-\widehat{S}_i(t).
@@ -10,7 +18,11 @@ M_i(t)=1-\widehat{S}_i(t).
 
 ## Cumulative/Dynamic Definition
 
-At horizon $t$, cumulative cases are:
+At horizon
+```math
+t
+```
+, cumulative cases are:
 
 ```math
 \mathcal{C}(t)=\{i:T_i\le t\}.
@@ -22,7 +34,11 @@ Dynamic controls are:
 \mathcal{D}(t)=\{i:T_i>t\}.
 ```
 
-Sensitivity at threshold $a$:
+Sensitivity at threshold
+```math
+a
+```
+:
 
 ```math
 \mathrm{TPR}(a,t)
@@ -48,7 +64,11 @@ The cumulative/dynamic AUC is:
 
 ## Incident/Dynamic Definition
 
-Incident cases are subjects failing near time $t$:
+Incident cases are subjects failing near time
+```math
+t
+```
+:
 
 ```math
 T_i\in[t,t+dt).
@@ -107,7 +127,11 @@ M_i(t)=\eta_i
 ```
 
 is time-independent. Cox can still have time-varying AUC because the case/control
-sets change with $t$.
+sets change with
+```math
+t
+```
+.
 
 ## WSI Use
 

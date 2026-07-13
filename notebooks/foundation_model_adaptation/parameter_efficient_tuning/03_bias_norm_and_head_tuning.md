@@ -12,7 +12,11 @@ u_{\ell+1}
 W_\ell u_\ell+b_\ell,
 ```
 
-bias tuning freezes $W_\ell$ and trains:
+bias tuning freezes
+```math
+W_\ell
+```
+and trains:
 
 ```math
 b_\ell.
@@ -58,7 +62,11 @@ Head tuning trains:
 \mathcal{H}_\omega(z),
 ```
 
-and nothing else. This is a nonlinear probe if $\mathcal{H}_\omega$ is an MLP.
+and nothing else. This is a nonlinear probe if
+```math
+\mathcal{H}_\omega
+```
+is an MLP.
 
 ## Expressivity
 

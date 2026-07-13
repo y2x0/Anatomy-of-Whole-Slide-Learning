@@ -8,7 +8,11 @@ r_{ij}
 \phi(u_{ij}).
 ```
 
-For scalar $r_{ij}$, the empirical CDF is:
+For scalar
+```math
+r_{ij}
+```
+, the empirical CDF is:
 
 ```math
 F_i(t)
@@ -19,7 +23,11 @@ F_i(t)
 
 ## Quantile Readout
 
-The $\alpha$ quantile is:
+The
+```math
+\alpha
+```
+quantile is:
 
 ```math
 Q_i(\alpha)
@@ -39,7 +47,11 @@ This preserves distribution shape along the chosen scalar feature.
 
 ## Histogram Readout
 
-For bins $B_1,\ldots,B_M$:
+For bins
+```math
+B_1,\ldots,B_M
+```
+:
 
 ```math
 p_{im}
@@ -103,4 +115,3 @@ what does the whole score distribution look like?
 
 This is useful when phenotype depends on tails, spread, or prevalence rather
 than only mean or max.
-

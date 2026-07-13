@@ -46,7 +46,7 @@ z_i
 \right).
 ```
 
-If $|P_i|\ll n_i$, the positive morphology has small weight.
+If |P_i|\ll n_i, the positive morphology has small weight.
 
 ## 3. Attention Collapse
 
@@ -109,7 +109,11 @@ Set representations assume:
 f(H)=f(PH)
 ```
 
-for every permutation $P$.
+for every permutation
+```math
+P
+```
+.
 
 If the label depends on anything not invariant to permutation, the set
 representation is underspecified.

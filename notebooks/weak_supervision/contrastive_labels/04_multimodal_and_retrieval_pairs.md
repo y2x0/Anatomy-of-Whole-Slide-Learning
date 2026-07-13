@@ -83,7 +83,15 @@ For retrieval, the supervision may be:
 k\in\mathcal{N}^{+}(i)
 ```
 
-if slide $k$ is considered relevant to query slide $i$.
+if slide
+```math
+k
+```
+ is considered relevant to query slide
+```math
+i
+```
+.
 
 A retrieval contrastive loss is:
 

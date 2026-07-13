@@ -109,7 +109,11 @@ P(T\mid z^p,z^g,\text{cancer type})
 
 may have type-specific baselines and interactions.
 
-A generic model can include cancer-type embedding $a_i$:
+A generic model can include cancer-type embedding
+```math
+a_i
+```
+:
 
 ```math
 z_i=\Phi(z_i^p,z_i^g,a_i),

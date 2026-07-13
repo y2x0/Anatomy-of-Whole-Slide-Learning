@@ -49,7 +49,11 @@ Mean pooling cannot distinguish them. Second-order pooling can.
 
 ## Bilinear Readout
 
-A task head can score covariance through a matrix $A$:
+A task head can score covariance through a matrix
+```math
+A
+```
+:
 
 ```math
 r_i
@@ -72,7 +76,15 @@ quadratic patch evidence function.
 
 ## Cross-Feature Co-Occurrence
 
-If $u_a$ measures one morphology coordinate and $u_b$ measures another, then:
+If
+```math
+u_a
+```
+ measures one morphology coordinate and
+```math
+u_b
+```
+measures another, then:
 
 ```math
 M_{iab}
@@ -82,7 +94,11 @@ M_{iab}
 
 captures within-patch co-activation. It does not capture two different patches
 co-occurring spatially unless context has already encoded neighborhood
-information into $u_{ij}$.
+information into
+```math
+u_{ij}
+```
+.
 
 ## Compression
 
@@ -134,4 +150,3 @@ z_i
 It repairs some mean collisions but still summarizes the slide as a distribution
 of individual states. It does not automatically preserve spatial arrangements
 or cross-patch motifs.
-

@@ -10,7 +10,11 @@ z_i=\mathcal{R}(\widetilde{H}_i),
 \widehat{Y}_i=\mathcal{H}(z_i).
 ```
 
-For survival, $S_i$ in the operator arguments should be read as supervision
+For survival,
+```math
+S_i
+```
+in the operator arguments should be read as supervision
 structure, not survival function.
 
 ## C: Context Operator

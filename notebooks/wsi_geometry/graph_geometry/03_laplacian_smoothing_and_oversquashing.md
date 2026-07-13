@@ -23,7 +23,11 @@ H^{(\ell+1)}
 \widehat A H^{(\ell)}.
 ```
 
-After $L$ layers:
+After
+```math
+L
+```
+layers:
 
 ```math
 H^{(L)}
@@ -54,7 +58,15 @@ diagnostic.
 
 ## Oversquashing
 
-Node $j$ after $L$ layers depends on:
+Node
+```math
+j
+```
+ after
+```math
+L
+```
+layers depends on:
 
 ```math
 B_L(j)
@@ -62,7 +74,7 @@ B_L(j)
 \{k:d_G(j,k)\le L\}.
 ```
 
-If $|B_L(j)|$ grows quickly but the hidden dimension stays fixed, many signals
+If |B_L(j)| grows quickly but the hidden dimension stays fixed, many signals
 must pass through a fixed-size vector:
 
 ```math
@@ -83,7 +95,11 @@ Suppose a diagnostic signal is a contrast across a boundary:
 \|h_j-h_k\|
 ```
 
-for adjacent nodes $j,k$. Smoothing can reduce:
+for adjacent nodes
+```math
+j,k
+```
+. Smoothing can reduce:
 
 ```math
 \Delta_{jk}^{(\ell)}

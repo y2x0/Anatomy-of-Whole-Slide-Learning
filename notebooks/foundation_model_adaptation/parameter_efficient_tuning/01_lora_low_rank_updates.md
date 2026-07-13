@@ -32,7 +32,11 @@ Reference: [LoRA](https://arxiv.org/abs/2106.09685).
 
 ## Forward Map
 
-For an input activation $u$:
+For an input activation
+```math
+u
+```
+:
 
 ```math
 Wu
@@ -54,7 +58,11 @@ The task-specific path is:
 \frac{\alpha}{r}B(Au).
 ```
 
-Thus task information enters through a rank-$r$ bottleneck.
+Thus task information enters through a rank-
+```math
+r
+```
+bottleneck.
 
 ## Parameter Count
 
@@ -89,7 +97,11 @@ Can the downstream morphology distinction be expressed as a low-rank change to
 attention or MLP layers?
 ```
 
-If the task requires many independent new directions, rank $r$ may be too
+If the task requires many independent new directions, rank
+```math
+r
+```
+may be too
 small.
 
 ## Dense Summary

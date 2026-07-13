@@ -20,8 +20,19 @@ V_i^{(0)},V_i^{(1)},\ldots,V_i^{(L)},
 \right),
 ```
 
-where $V_i^{(\ell)}$ is the set of units at scale $\ell$, and
-$\pi_i^{(\ell)}$ maps lower-scale units to parent units.
+where
+```math
+V_i^{(\ell)}
+```
+ is the set of units at scale
+```math
+\ell
+```
+, and
+```math
+\pi_i^{(\ell)}
+```
+maps lower-scale units to parent units.
 
 ## Files
 

@@ -25,7 +25,11 @@ coherent.
 
 ## 2. Too Many Prototypes
 
-If $M$ is very large, assignments become sparse:
+If
+```math
+M
+```
+is very large, assignments become sparse:
 
 ```math
 p_{im}
@@ -33,12 +37,20 @@ p_{im}
 0
 ```
 
-for many $m$. Estimates become noisy, and downstream heads can overfit rare
+for many
+```math
+m
+```
+. Estimates become noisy, and downstream heads can overfit rare
 prototype coordinates.
 
 ## 3. Too Few Prototypes
 
-If $M$ is too small:
+If
+```math
+M
+```
+is too small:
 
 ```math
 q_m(h)
@@ -102,7 +114,11 @@ Residual statistics:
 \sum_j\gamma_{ijm}\Sigma_m^{-1/2}(h_{ij}-\mu_m)
 ```
 
-are informative only when enough patch mass is assigned to component $m$. If:
+are informative only when enough patch mass is assigned to component
+```math
+m
+```
+. If:
 
 ```math
 \sum_j\gamma_{ijm}
@@ -126,4 +142,3 @@ Prototype pooling assumes:
 It is strongest for diffuse composition-like phenotypes. It is weakest for rare
 events, spatial motifs, and cohort shifts that move morphology away from the
 learned dictionary.
-

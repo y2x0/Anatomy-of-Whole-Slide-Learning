@@ -12,7 +12,11 @@ If local pooling maps:
 h_u,
 ```
 
-then all fine-level configurations with the same $h_u$ become equivalent:
+then all fine-level configurations with the same
+```math
+h_u
+```
+become equivalent:
 
 ```math
 \mathcal{R}_{\mathrm{local}}(A)
