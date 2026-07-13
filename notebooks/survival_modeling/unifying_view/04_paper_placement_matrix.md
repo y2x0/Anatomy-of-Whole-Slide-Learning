@@ -18,7 +18,8 @@ Nnet-survival:
     discrete hazards, masked likelihood
 
 DeepHit:
-    discrete PMF, likelihood plus ranking, competing risks
+    joint discrete event-time/cause PMF; CIF and survival are derived; likelihood
+    plus ranking term, competing risks
 
 Deep Cox Mixtures:
     mixture survival, latent regimes
@@ -86,8 +87,13 @@ fusion operator
 but often keep:
 
 ```text
-scalar survival risk
-C-index evaluation
+    scalar survival risk
+    C-index evaluation
 ```
+
+DeepHit is the useful counterexample in this matrix: its primary prediction is
+a discrete joint PMF rather than a scalar Cox score. A survival curve or
+cause-specific cumulative incidence function is computed from that PMF, so the
+output object and the evaluation target must be named separately.
 
 This is the gap: representation innovation is ahead of risk-object innovation.

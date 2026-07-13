@@ -177,11 +177,19 @@ The loss looks local at each event time, but the risk-set coupling is global.
 
 ## Key Takeaway
 
-The partial likelihood turns survival into repeated risk-set ranking:
+The partial likelihood is a product of conditional event probabilities over
+risk sets. It is therefore ranking-like, because each event is favored over
+patients who remain at risk at that time, but it is not merely a pairwise
+ranking loss: every risk-set member contributes through the shared log-sum-
+exp denominator, and the risk sets are determined by the observed follow-up
+times.
 
 ```text
-among everyone still at risk, the observed event should have high score.
+among everyone still at risk, assign the observed event the largest conditional
+event probability under the Cox model.
 ```
 
-That is powerful, but it means the learned WSI representation is optimized for
-relative ordering, not calibrated time prediction.
+That distinction matters for WSI interpretation. The learned representation is
+optimized for a proportional-hazards risk ordering and its induced likelihood,
+not for a calibrated survival curve unless a baseline hazard is estimated and
+the required modeling assumptions hold.
