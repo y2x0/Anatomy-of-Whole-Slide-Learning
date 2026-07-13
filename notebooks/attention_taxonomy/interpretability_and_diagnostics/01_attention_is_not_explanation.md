@@ -37,6 +37,38 @@ c_j
 a_j w^\top v_j.
 ```
 
+This is a decomposition of the observed logit, not a deletion effect. If patch
+`j` is removed and the remaining attention weights are renormalized, the
+model-level deletion effect is:
+
+```math
+\Delta_j
+=
+g
+\left(
+\sum_{k=1}^{n}a_kv_k
+\right)
+-
+g
+\left(
+\sum_{k\ne j}\widetilde a_{k\mid-j}v_k
+\right),
+```
+
+where:
+
+```math
+\widetilde a_{k\mid-j}
+=
+\frac{\exp(s_k)}
+{\sum_{r\ne j}\exp(s_r)}.
+```
+
+Even for a linear head, `Delta_j` includes the change in every remaining
+weight. For context attention or nonlinear encoders, removing one patch can
+also change downstream token states. A contribution decomposition and a
+counterfactual deletion effect answer different questions.
+
 High attention with negative evidence can reduce a class logit:
 
 ```math
