@@ -212,7 +212,7 @@ proportional-hazards restriction on the final risk representation.
 
 ## 7. Surviving-statistic ledger
 
-`text
+```text
 Boundary operator                  Dominant surviving statistic
 ---------------------------------------------------------------------------
 sum coarsening                     count-sensitive first moment
@@ -222,8 +222,7 @@ top-k selection                    selected order statistics
 prototype occupancy                soft distribution summary
 multiscale concatenation           several task-dependent summaries
 graph assignment plus sum          coarse statistic of fine graph states
-`
+```
 
 The ledger should be reported with the model. "Hierarchical attention" alone
 does not say what information reaches the task head.
-`

@@ -45,4 +45,3 @@ geometry seen by R.
 The anchor papers are already mapped in the private research map: DSMIL,
 TransMIL, Patch-GCN, HACT, WiKG, HIPT, DTFD-MIL, and MambaMIL. No source paper
 is added by this portion.
-`

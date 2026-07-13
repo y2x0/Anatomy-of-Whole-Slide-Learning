@@ -20,7 +20,7 @@ notation keeps the forward geometry G separate from the loss channel S.
 
 ## 2. Mapped paper placements
 
-`text
+```text
 Paper       Context C                       Readout R                Geometry G
 --------------------------------------------------------------------------------
 DSMIL       critical-instance and          max plus instance         feature
@@ -34,14 +34,14 @@ HIPT        nested transformer blocks      [CLS] at each scale       image pyram
 DTFD-MIL    Tier-1 and Tier-2 attention    selection or attention     random
                                             at two levels              pseudo-bags
 MambaMIL    Mamba or SR-Mamba scan         scalar attention mean      chosen order
-`
+```
 
 The table is a decomposition of the forward maps, not a claim that the papers
 use identical losses or training protocols.
 
 ## 3. Surviving-statistic matrix
 
-`text
+```text
 Composition                         First information made available
 --------------------------------------------------------------------------------
 graph then attention                relationally contextualized weighted moment
@@ -50,7 +50,7 @@ hierarchy then attention            product of local and coarse routing
 state space then mean               order-conditioned first moment
 dynamic graph then max              extreme of learned relational features
 pseudo-bag selection then attention selected candidate statistics plus coarse moment
-`
+```
 
 The first row of this table is not equivalent to attention over raw patches:
 context changes the feature being weighted.
@@ -94,14 +94,14 @@ S,
 
 and answer:
 
-`text
+```text
 - what object the slide is before context;
 - which interactions are available before compression;
 - which statistic reaches the task head;
 - what symmetry is preserved;
 - what failure mode is traded for the claimed gain;
 - which paper-specific component is genuinely new.
-`
+```
 
 ## 6. Final principle
 
@@ -125,4 +125,3 @@ The useful comparison is therefore
 ```
 
 That bracket is the mathematical signature of a whole-slide learner.
-`

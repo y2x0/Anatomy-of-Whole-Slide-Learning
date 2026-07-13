@@ -140,7 +140,7 @@ representation.
 
 ## 7. C/R/G/S placement
 
-`text
+```text
 C: dense or Nystrom-approximated self-attention plus feed-forward blocks.
 
 R: [CLS], mean, max, or attention readout after contextualization.
@@ -153,4 +153,4 @@ S: slide labels for weak supervision; self-supervised pretraining can initialize
 
 The hybrid signal is long-range context over non-independent tokens followed by a
 task-specific statistic.
-`
+```

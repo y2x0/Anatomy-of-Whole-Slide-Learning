@@ -2,11 +2,11 @@
 
 Source:
 
-`text
+```text
 Yang, Wang, and Chen, MambaMIL: Enhancing Long Sequence Modeling with
 Sequence Reordering in Computational Pathology, MICCAI 2024.
 https://arxiv.org/abs/2403.06800
-`
+```
 
 ## 1. Input Projection
 
@@ -156,7 +156,7 @@ survival likelihood.
 
 The released model exposes:
 
-`text
+```text
 Mamba:
     one forward selective scan
 
@@ -165,7 +165,7 @@ BiMamba:
 
 SRMamba:
     original-order branch plus segment-reordered branch
-`
+```
 
 Bidirectionality reduces direction asymmetry but does not make arbitrary patch
 order irrelevant. SR-Mamba changes the order in a structured way and restores
@@ -173,7 +173,7 @@ the reordered outputs before fusion.
 
 ## 5. C/R/G/S Placement
 
-`text
+```text
 C:
     stacked selective Mamba scans with convolution, gating, and residuals
 
@@ -185,4 +185,4 @@ G:
 
 S:
     classification cross-entropy or discrete hazard/survival head
-`
+```

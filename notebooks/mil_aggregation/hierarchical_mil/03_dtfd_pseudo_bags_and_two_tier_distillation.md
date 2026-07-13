@@ -2,11 +2,11 @@
 
 Source:
 
-`text
+```text
 Zhang et al., DTFD-MIL: Double-Tier Feature Distillation Multiple Instance
 Learning for Histopathology Whole Slide Image Classification, CVPR 2022.
 https://arxiv.org/abs/2203.12081
-`
+```
 
 ## 1. Why pseudo-bags are not just regions
 
@@ -278,7 +278,7 @@ uses coordinates, which the core DTFD formulation does not require.
 
 ## 7. C/R/G/S placement
 
-`text
+```text
 C: Tier-1 and Tier-2 gated attention scores.
 
 R: Tier-1 attention or selection distillation, followed by Tier-2 attention.
@@ -290,4 +290,4 @@ S: parent slide labels supervise both tiers, with inherited pseudo-bag labels
 
 Sparsity is handled by proposing local candidates and then re-aggregating them,
 not by proving that each pseudo-bag is semantically positive.
-`
+```

@@ -164,12 +164,11 @@ G,
 
 not only the final head name. At minimum state:
 
-`text
+```text
 - whether context sees coordinates, adjacency, hierarchy, or order;
 - whether the readout is sum, mean, max, attention, prototype, or [CLS];
 - whether the task head is scalar risk, hazards, classification logits, or
   retrieval distances;
 - which intermediate losses modify the representation;
 - which statistic is expected to survive each boundary.
-`
-`
+```

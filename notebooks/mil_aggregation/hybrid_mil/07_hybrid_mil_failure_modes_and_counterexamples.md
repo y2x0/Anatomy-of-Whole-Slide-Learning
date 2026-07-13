@@ -76,12 +76,12 @@ changing the model.
 
 A useful sanity test is to compare outputs under:
 
-`text
+```text
 - coordinate-preserving feature permutation;
 - feature-preserving coordinate permutation;
 - graph rewiring at fixed features;
 - parent-map rewiring at fixed fine states.
-`
+```
 
 Each perturbation isolates a different geometric assumption.
 
@@ -122,7 +122,7 @@ number of parent tokens must be reported together.
 
 A hybrid note should include at least four tests:
 
-`text
+```text
 1. same features, different graph or parent map;
 2. same set, different sequence order;
 3. same coarse statistic, different within-parent arrangement;
@@ -131,4 +131,4 @@ A hybrid note should include at least four tests:
 A model that gives the same answer on every pair may have discarded the claimed
 inductive bias. A model that gives different answers must explain which object
 changed.
-`
+```

@@ -66,13 +66,13 @@ regions under the selection rule, not only slide AUC.
 A hierarchy can leak information if parent construction uses annotations,
 patient-level labels, or test-slide statistics. Examples include:
 
-`text
+```text
 - using tumor masks to define regions before a supposedly weakly supervised
   experiment;
 - fitting a learned partition jointly on all slides before the train/test split;
 - using slide-level outcome information to choose parent regions;
 - allowing overlapping crops from one physical tissue area across data splits.
-`
+```
 
 Coordinate-based partitions are not automatically leakage, but label-dependent
 partitions are supervision and must be declared.
@@ -122,12 +122,12 @@ If a transformer or graph operates inside a parent, there may be no unique
 decomposition into child contributions at all. Explanations should therefore
 state whether they show:
 
-`text
+```text
 - parent selection;
 - local attention;
 - gradient attribution to the final output;
 - perturbation effect after recomputing all upstream summaries.
-`
+```
 
 These are different explanatory objects.
 
@@ -155,11 +155,11 @@ measured when routing is learned.
 
 ## 9. Failure-mode checklist
 
-`text
+```text
 1. Verify parent-map equivariance under unit permutation.
 2. Measure the fraction of signal-bearing children removed by each boundary.
 3. Report parent occupancy and the effective number of selected parents.
 4. Compare balanced and adversarial partitions.
 5. Audit partition construction for label and split leakage.
 6. Compare final-output attribution with local attention maps.
-`
+```

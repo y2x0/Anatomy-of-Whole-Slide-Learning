@@ -162,7 +162,7 @@ patch k. Holding A and alpha fixed measures a different local approximation.
 
 ## 7. C/R/G/S placement
 
-`text
+```text
 C: coordinate graph convolution for Patch-GCN; learned feature-support and
    knowledge-aware interactions for WiKG.
 
@@ -176,4 +176,4 @@ S: slide classification or survival labels, with any self-supervised feature
 
 The surviving statistic is a readout of relationally contextualized features,
 not a readout of independent patches.
-`
+```

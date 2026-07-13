@@ -172,7 +172,7 @@ N_r is the memory width, not the number of patches.
 
 ## 6. C/R/G/S Placement
 
-`text
+```text
 C:
     recurrent, structured convolutional, or selective state-space scan
 
@@ -184,4 +184,4 @@ G:
 
 S:
     slide label, survival target, patch auxiliary label, or multitask objective
-`
+```

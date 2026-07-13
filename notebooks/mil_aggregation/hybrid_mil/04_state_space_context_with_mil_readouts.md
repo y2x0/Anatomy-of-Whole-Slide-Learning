@@ -139,7 +139,7 @@ the model's inductive bias.
 
 ## 6. C/R/G/S placement
 
-`text
+```text
 C: fixed or selective state-space recurrence, including SR-Mamba reordering.
 
 R: endpoint, mean, max, or attention over state outputs.
@@ -152,4 +152,4 @@ S: slide classification or survival labels; sequence pretraining is an upstream
 
 The surviving statistic is a summary of an order-conditioned dynamical system,
 even when the final pooling operator is symmetric.
-`
+```

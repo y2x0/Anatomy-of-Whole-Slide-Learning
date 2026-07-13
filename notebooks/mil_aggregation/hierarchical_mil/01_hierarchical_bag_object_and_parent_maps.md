@@ -164,7 +164,7 @@ only to construct tokens or remains available to the predictor.
 
 ## 5. C/R/G/S placement
 
-`text
+```text
 C: within-level attention, graph, or token context plus parent-conditioned
    cross-level composition.
 
@@ -175,7 +175,7 @@ G: the parent maps, the level-wise supports, and any learned routing.
 S: slide labels, region labels, pseudo-labels, or self-supervised cross-view
    targets; the hierarchy itself is not supervision unless assignments are
    learned from labels.
-`
+```
 
 The defining surviving statistic is multiscale: a fine-scale statistic is
 computed, compressed into parent units, and then transformed again before the

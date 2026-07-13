@@ -165,7 +165,7 @@ must recompute the scan and the readout.
 
 ## 9. C/R/G/S Rule
 
-`text
+```text
 C:
     state is a compressed prefix statistic, not a set of independent patches
 
@@ -179,7 +179,7 @@ G:
 S:
     slide and patch supervision determine whether the state preserves global,
     local, or risk-relevant evidence
-`
+```
 
 The concise description is:
 

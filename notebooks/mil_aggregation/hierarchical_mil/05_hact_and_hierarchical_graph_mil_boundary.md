@@ -2,14 +2,14 @@
 
 Sources:
 
-`text
+```text
 Pati et al., HACT-Net: A Hierarchical Cell-to-Tissue Graph Neural Network for
 Histopathological Image Classification.
 https://arxiv.org/abs/2007.00584
 
 Pati et al., Hierarchical graph representations in digital pathology.
 https://arxiv.org/abs/2102.11057
-`
+```
 
 ## 1. Three meanings of hierarchy
 
@@ -107,7 +107,7 @@ fine-to-coarse bag whose assignment map is visible to the model.
 
 ## 3. Same C/R/G/S axes, different geometry
 
-`text
+```text
 DTFD:
     C = attention in two tiers
     R = pseudo-bag selection or attention, then parent-slide attention
@@ -125,7 +125,7 @@ HACT:
     R = assignment sum followed by tissue-node readout
     G = explicit cell graph, tissue graph, and assignment matrix
     S = slide labels, with pseudo-types available upstream
-`
+```
 
 The same four-way decomposition is useful because the context operator and
 geometry are independent design choices. A transformer can run on a hierarchy;
@@ -174,7 +174,7 @@ Each paper instantiates different C, R, and G.
 
 A new hierarchical MIL proposal should state four objects separately:
 
-`text
+```text
 1. the parent map or routing rule;
 2. the context operator before and after coarsening;
 3. the statistic retained at each boundary;
@@ -182,4 +182,4 @@ A new hierarchical MIL proposal should state four objects separately:
 
 Without those declarations, "hierarchical" only says that the implementation
 has more than one resolution.
-`
+```

@@ -2,10 +2,10 @@
 
 Source:
 
-`text
+```text
 Gu and Dao, Mamba: Linear-Time Sequence Modeling with Selective State Spaces.
 https://arxiv.org/abs/2312.00752
-`
+```
 
 ## 1. Input-Dependent Selection
 

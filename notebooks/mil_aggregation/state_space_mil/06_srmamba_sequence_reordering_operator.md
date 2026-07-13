@@ -2,11 +2,11 @@
 
 Source:
 
-`text
+```text
 Yang, Wang, and Chen, MambaMIL: Enhancing Long Sequence Modeling in
 Computational Pathology, MICCAI 2024.
 https://arxiv.org/abs/2403.06800
-`
+```
 
 ## 1. Segmenting A Long Sequence
 
@@ -185,13 +185,13 @@ X_i.
 
 The branches carry different trajectories:
 
-`text
+```text
 original scan:
     local sequence neighborhoods in the input order
 
 segment-transposed scan:
     cross-segment relationships at the same within-segment offset
-`
+```
 
 The residual keeps a direct path from the pre-block token sequence.
 

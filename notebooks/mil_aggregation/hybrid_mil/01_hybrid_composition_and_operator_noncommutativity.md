@@ -160,14 +160,13 @@ graph, transformer, hierarchy, or state-space context.
 
 For any proposed hybrid, write both legal orderings and ask:
 
-`text
+```text
 - Does the other ordering have a valid shape?
 - If valid, does it satisfy an intertwining or commutation relation?
 - Which operator first removes the fine-instance axis?
 - Does the final head see coordinates, adjacency, parent maps, or ordering?
 - Is the interpretation based on pre-context features or contextual features?
-`
+```
 
 These questions separate a genuinely new inductive bias from a new name for a
 known composition.
-`

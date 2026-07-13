@@ -165,7 +165,7 @@ trajectory collisions matter.
 
 ## 7. C/R/G/S Placement
 
-`text
+```text
 C:
     ordered recurrent or convolutional state-space context
 
@@ -178,4 +178,4 @@ G:
 
 S:
     slide label, survival bins, and optional patch labels
-`
+```

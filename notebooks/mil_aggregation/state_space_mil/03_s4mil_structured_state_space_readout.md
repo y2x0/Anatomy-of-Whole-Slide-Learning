@@ -2,11 +2,11 @@
 
 Source:
 
-`text
+```text
 Fillioux et al., Structured State Space Models for Multiple Instance Learning
 in Digital Pathology, MICCAI 2023.
 https://arxiv.org/abs/2306.15789
-`
+```
 
 ## 1. Patch Sequence
 
@@ -140,7 +140,7 @@ before max readout.
 
 ## 5. C/R/G/S Placement
 
-`text
+```text
 C:
     structured S4D state-space convolution over ordered patch features
 
@@ -152,4 +152,4 @@ G:
 
 S:
     slide label with optional patch-level auxiliary supervision
-`
+```

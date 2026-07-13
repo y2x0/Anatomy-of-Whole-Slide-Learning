@@ -2,9 +2,9 @@
 
 This portion asks:
 
-`text
+```text
 How does an ordered patch bag become a slide statistic through a finite state?
-`
+```
 
 State-space MIL changes the slide object before aggregation:
 
@@ -26,7 +26,7 @@ order-sensitive and lossy through its finite state dimension.
 
 ## Notes
 
-`text
+```text
 01_ordered_bag_and_state_space_symmetry.md
     sequence object, permutation dependence, padding, and shape map
 
@@ -50,7 +50,7 @@ order-sensitive and lossy through its finite state dimension.
 
 08_state_space_mil_failure_modes_and_crgs.md
     order artifacts, state compression, padding, long-range loss, and synthesis
-`
+```
 
 ## Source Boundary
 

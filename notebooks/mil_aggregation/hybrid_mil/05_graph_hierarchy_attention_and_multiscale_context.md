@@ -181,7 +181,7 @@ attribution theorem.
 
 ## 6. C/R/G/S placement
 
-`text
+```text
 C: fine graph message passing, coarse graph message passing, and optional
    type- or feature-conditioned attention.
 
@@ -192,4 +192,4 @@ G: fine graph, coarse graph, parent map, node types, and dynamic supports.
 S: slide labels, cell or tissue pseudo-types, and any auxiliary graph losses.
 
 This hybrid retains a coarse statistic of relationally contextualized fine states.
-`
+```

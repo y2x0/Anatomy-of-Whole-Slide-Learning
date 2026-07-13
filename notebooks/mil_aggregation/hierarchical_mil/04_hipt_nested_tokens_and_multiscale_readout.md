@@ -2,11 +2,11 @@
 
 Source:
 
-`text
+```text
 Chen et al., Scaling Vision Transformers to Gigapixel Images via Hierarchical
 Self-Supervised Learning, CVPR 2022.
 https://arxiv.org/abs/2206.02647
-`
+```
 
 ## 1. HIPT's slide object
 
@@ -217,7 +217,7 @@ cell-level distinctions that are removed by a [CLS] projection.
 
 ## 7. C/R/G/S placement
 
-`text
+```text
 C: self-attention and feed-forward context within each nested token sequence.
 
 R: [CLS] extraction at cell, patch, and region boundaries.
@@ -232,4 +232,4 @@ HIPT is hierarchical MIL when its nested token encoder is used to convert a
 variable-size WSI into a slide representation for weakly supervised prediction.
 It is also a foundation-style hierarchical representation learner; those are
 different axes of the same model.
-`
+```

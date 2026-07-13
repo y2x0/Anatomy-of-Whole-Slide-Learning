@@ -195,13 +195,13 @@ algorithmic opportunity, not a complexity guarantee.
 
 A coarsener should specify which of these invariants it intends:
 
-`text
+```text
 - replication invariance: mean or normalized attention;
 - density sensitivity: sum or count-augmented mean;
 - within-region arrangement: coordinates, local graph, or positional tokens;
 - rare-child retention: top-k or sparse attention with an explicit recall cost;
 - cross-region interaction: parent-level context after coarsening.
-`
+```
 
 The phrase region pooling is incomplete until the statistic, normalization, and
 information discarded by the region map are stated.

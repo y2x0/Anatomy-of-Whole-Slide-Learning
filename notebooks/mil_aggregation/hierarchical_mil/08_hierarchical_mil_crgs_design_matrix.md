@@ -41,7 +41,7 @@ operator from the object it acts on.
 
 ## 2. Paper placements
 
-`text
+```text
 Method       C                          R                         G
 --------------------------------------------------------------------------------
 DTFD-MIL     gated attention in        MaxS, MaxMinS, MAS,        random
@@ -51,14 +51,14 @@ HIPT         MHSA plus FFN at          [CLS] extraction at       nested spatial
 HACT         GNN at cell and           assignment sum, then     cell graph,
              tissue levels             tissue graph readout     tissue graph,
                                                                   B matrix
-`
+```
 
 The table deliberately distinguishes DTFD's random partition from HIPT's spatial
 nesting and HACT's explicit graph hierarchy.
 
 ## 3. Surviving-statistic placement
 
-`text
+```text
 Method       Boundary statistic       Slide statistic             Main loss
 --------------------------------------------------------------------------------
 DTFD-MIL     selected patch or        weighted pseudo-bag         slide BCE plus
@@ -67,7 +67,7 @@ HIPT         [CLS] token              transformer slide token     DINO plus
                                                                   downstream task
 HACT         cell-state sum per       tissue-node sum or          slide CE
              tissue parent            layerwise sum-concat         or task loss
-`
+```
 
 For DTFD, MaxS and MAS are sparse order-statistic-like choices while AFS is a
 weighted first moment. For HIPT, [CLS] is a learned nonlinear summary rather
@@ -83,13 +83,13 @@ the hierarchy may be algebraically redundant.
 
 It is not generally equivalent to a flat set model when:
 
-`text
+```text
 - parent identity changes the support of context;
 - the coarsener is nonlinear or selective;
 - fine coordinates are used before coarsening;
 - coarse tokens are the only inputs to the task head;
 - the number of children affects sum-scale features.
-`
+```
 
 A distribution summary is also not automatically equivalent to a hierarchy. A
 measure over features can retain global frequency information while discarding
@@ -115,7 +115,7 @@ P^{(\ell)},
 
 Then answer these questions:
 
-`text
+```text
 1. Is P fixed, random, coordinate-derived, graph-derived, or learned?
 2. Does C see only child features, or also parent geometry?
 3. Is R a sum, mean, attention, top-k, prototype, or [CLS] summary?
@@ -123,14 +123,14 @@ Then answer these questions:
 5. Which labels supervise intermediate levels?
 6. Does the final task require density, rarity, arrangement, or long-range
    co-occurrence?
-`
+```
 
 The strongest new methods are not those with the most levels. They are those
 whose hierarchy matches the statistic required by the task.
 
 ## 6. Final C/R/G/S interpretation
 
-`text
+```text
 C — how units interact before they are compressed:
     attention, transformer, graph message passing, or state-space context.
 
@@ -147,4 +147,4 @@ S — where the signal comes from:
 The C/R/G/S decomposition is not a taxonomy label pasted after training. It is a
 factorization of the forward map that makes the model's inductive bias and
 failure mode inspectable.
-`
+```
