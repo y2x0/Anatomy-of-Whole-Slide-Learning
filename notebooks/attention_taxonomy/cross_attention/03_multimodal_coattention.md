@@ -73,6 +73,11 @@ P\to M
 M\to P.
 ```
 
+Here the arrow denotes the query direction: `M -> P` means modality tokens
+query pathology tokens, so the resulting pathology-weighted values are written
+back into modality states. It does not mean that the two attention matrices
+are transposes or that information is exchanged along one symmetric edge.
+
 These are not inverses. They answer different questions:
 
 ```text
@@ -82,6 +87,11 @@ M -> P:
 P -> M:
     which pathway or clinical token contextualizes this tissue?
 ```
+
+The normalizations are over different axes: each `M -> P` row sums over the
+pathology tokens, while each `P -> M` row sums over the modality tokens. A
+pathology token can therefore receive high total mass from many modality
+queries even when no individual modality row is concentrated.
 
 ## MCAT-Style Survival Interpretation
 
@@ -112,4 +122,3 @@ Multimodal co-attention learns conditional measures:
 The strength is conditional alignment. The failure mode is imported geometry:
 the query modality may impose its own categories on tissue, even when those
 categories are not the task-relevant pathology structure.
-
