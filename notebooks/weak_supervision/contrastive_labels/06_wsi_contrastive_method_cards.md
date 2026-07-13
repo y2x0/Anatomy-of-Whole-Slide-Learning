@@ -107,7 +107,7 @@ slides are positives"; it combines task-agnostic feature extraction with three
 task-specific aggregation modules.
 
 Reference: [SCL-WC abstract](https://proceedings.neurips.cc/paper_files/paper/2022/hash/726204cea3ec27790a644e5b379175e3-Abstract-Conference.html),
-[SCL-WC PDF](https://openreview.net/pdf?id=1fKJLRTUdo).
+[SCL-WC paper](https://openreview.net/forum?id=1fKJLRTUdo).
 
 A compact decomposition is:
 
@@ -236,7 +236,7 @@ RetCCL and CTransPath are contrastive or self-supervised pathology
 representation learners used before downstream WSI MIL.
 
 References: [RetCCL](https://pubmed.ncbi.nlm.nih.gov/36270093/),
-[CTransPath](https://www.sciencedirect.com/science/article/abs/pii/S1361841522002043).
+[CTransPath](https://pubmed.ncbi.nlm.nih.gov/35952419/).
 
 The observed signal is not a diagnosis:
 
