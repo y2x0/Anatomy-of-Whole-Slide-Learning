@@ -61,6 +61,12 @@ The loss is:
 \frac{A}{A+B}.
 ```
 
+These derivatives condition on the selected support and treat every candidate
+feature as fixed. That is the optimization convention for the EMA target and
+memory-bank features: gradients update the online branch, while the target
+branch changes through its moving-average rule. The top-`S` search itself is
+also stop-gradient and contributes no derivative inside a fixed ranking cell.
+
 Define total positive probability:
 
 ```math
@@ -469,6 +475,11 @@ G_{t+1}
 Z_{t+1}
 \right).
 ```
+
+This is a discrete outer-loop update, not a differentiable graph layer. The
+gradient calculation above describes the inner loss after `G_t` has been
+selected; the change from `G_t` to `G_{t+1}` is a support refresh between
+optimization steps.
 
 An early neighborhood based on stain, scanner, compression, or organ identity
 can be strengthened because it becomes a positive relation in the next

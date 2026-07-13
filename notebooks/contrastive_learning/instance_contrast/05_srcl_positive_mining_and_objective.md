@@ -254,6 +254,13 @@ z_N^{-}
 The paper's figure and method describe the memory bank as the source of mined
 pseudo-positives and the current minibatch as the source of negatives.
 
+Because the bank is populated from previous minibatches, the current anchor's
+own target feature is not inserted into the bank before its top-`S` search.
+This prevents the ordinary paired target view from being selected merely by
+identity. It does not prevent duplicate images or near-duplicate patches from
+appearing in the bank, so the mining rule is not a proof that every selected
+pseudo-positive has a different source instance.
+
 ## Exact Log-Sum Positive Loss
 
 For one direction, SRCL uses:
@@ -360,6 +367,13 @@ z^{-}
 The notation compresses the expanded mined positive set into the positive
 argument. Operationally, each direction contains the paired view plus the
 selected memory positives.
+
+The displayed symmetry is a loss-level symmetry. During optimization, the
+online branch supplies the differentiated anchor and the target/shared-target
+branch supplies EMA features and mining queries; the target features are
+treated as stop-gradient values for that update. Thus the two terms share the
+same algebraic form without implying that the EMA parameters receive a
+backpropagated gradient.
 
 ## Positive-Set Classifier Interpretation
 
