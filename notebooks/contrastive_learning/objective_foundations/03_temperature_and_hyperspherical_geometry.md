@@ -157,6 +157,24 @@ Its entropy is:
 Small temperature tends to lower entropy; large temperature tends to increase
 it toward the logarithm of candidate-set size.
 
+Holding the similarities fixed, the derivative is exact:
+
+```math
+\frac{\partial\mathcal{H}_i}{\partial\tau}
+=
+\frac{
+\mathrm{Var}_{a\sim\pi_i(\tau)}[s_{ia}]
+}{\tau^3}
+\ge
+0.
+```
+
+Thus entropy is nondecreasing in temperature and strictly increases whenever
+the candidate similarities have nonzero Gibbs variance. The representation
+parameters can still change the similarities while `tau` is learned, so this
+monotonicity is a conditional statement about the normalization at fixed
+scores.
+
 ## Low-Temperature Limit
 
 The log-sum-exp limit is:
