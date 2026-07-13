@@ -73,6 +73,59 @@ H'
 \{h_u'\}_{u=1}^{n}.
 ```
 
+## Different Symmetry Contracts
+
+Suppose readout scores and values are pointwise functions:
+
+```math
+s_j
+=
+\psi(h_j),
+\qquad
+v_j
+=
+\phi(h_j),
+\qquad
+z(H)
+=
+\sum_j
+\mathrm{softmax}(s(H))_j
+v_j.
+```
+
+For any permutation matrix `P`, the score and value rows are permuted in the
+same way, so:
+
+```math
+z(PH)
+=
+z(H).
+```
+
+The readout is permutation invariant. It therefore cannot recover an ordering
+or layout that was not already encoded in each `h_j`.
+
+By contrast, an unmasked context layer satisfies:
+
+```math
+\mathrm{Attn}(PH)
+=
+P\,\mathrm{Attn}(H),
+```
+
+so it is permutation equivariant: permuting inputs permutes the updated token
+states. If the scores include a bias matrix `B` derived from coordinates,
+equivariance is retained only for permutations that preserve that bias:
+
+```math
+PBP^\top
+=
+B.
+```
+
+Graph masks and relative-position biases therefore do not merely improve
+attention. They change the symmetry contract of the operator.
+
 ## Complete-Graph Message Passing
 
 Self-attention can be written as message passing on a complete directed graph:
