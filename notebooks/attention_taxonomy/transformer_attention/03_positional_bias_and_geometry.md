@@ -100,6 +100,35 @@ mask:
 
 These are not interchangeable.
 
+## Symmetry And Units
+
+The transformation properties are also different. An absolute encoding can
+depend on the coordinate origin and scale:
+
+```math
+p(c)
+\ne
+p(c+t)
+```
+
+in general. A relative bias based only on coordinate differences is translation
+invariant:
+
+```math
+b((c_u+t)-(c_v+t))
+=
+b(c_u-c_v),
+```
+
+but it is rotation- or scale-invariant only if the chosen function has the
+corresponding property. For example, a bias of the form
+`b(||c_u-c_v||)` is rotation-invariant but still changes when coordinate units
+change unless the radius or distance is normalized.
+
+The mask has the same unit dependence. Replacing micron coordinates by pixel
+coordinates without transforming `r` changes the graph support, not merely the
+numeric value of a positional feature.
+
 ## WSI Caution
 
 Coordinates may be:
