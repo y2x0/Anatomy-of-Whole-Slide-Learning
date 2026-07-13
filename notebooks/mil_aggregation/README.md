@@ -23,3 +23,4 @@ Later portions will derive mean/attention, transformer, graph, state-space,
 hierarchical, and hybrid MIL families from the mapped papers in the private
 research map.
 
+The mean/attention portion is now in `mean_attention_mil/`.
