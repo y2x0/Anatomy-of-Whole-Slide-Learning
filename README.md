@@ -62,7 +62,7 @@ math notes first.
 
 ## Notebook Families
 
-Current public notebook count: **513** markdown files.
+Current public notebook count: **582** markdown files.
 
 - ✅ `notebooks/survival_modeling/` (**65 markdown files**): how risk is
   represented, optimized, and evaluated.
@@ -85,7 +85,8 @@ Current public notebook count: **513** markdown files.
 - ✅ `notebooks/foundation_model_adaptation/` (**40 markdown files**): how task
   information is injected into frozen, prompted, parameter-efficient, or fully
   fine-tuned foundation models.
-- `notebooks/explainability/` (**48 markdown files, mathematical foundations,
-  attention, gradient/saliency, and perturbation explanations complete**):
+- `notebooks/explainability/` (**117 markdown files, mathematical foundations,
+  attention, gradient/saliency, perturbation, prototype, concept,
+  counterfactual, graph/spatial, and survival explanations complete**):
   what an explanation targets, which model behavior it captures, and how
   faithfulness differs from plausibility or causality.

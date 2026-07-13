@@ -57,8 +57,65 @@ perturbation_explanations/
     WSI coalition semantics and computational limits
     HIPPO set interventions, necessity, sufficiency, and greedy search
     perturbation faithfulness and C/R/G/S synthesis
+
+prototype_explanations/
+    latent exemplars, mixture components, attention anchors, and sparse concepts
+    ProtoPNet similarity geometry, projection, and exact linear score credit
+    similarity, presence, contribution, necessity, and sufficiency distinctions
+    prototype purity, coverage, redundancy, utilization, and seed stability
+    PANTHER GMM responsibilities, EM moments, and assignment maps
+    PAMIL dual-branch prototype attention and agreement limits
+    ProtoMIL sparse concepts, visual representatives, and exact concept credit
+    prototype intervention semantics and C/R/G/S synthesis
+
+concept_explanations/
+    concept objects, explanation targets, and representation-relative semantics
+    CAV separation geometry and reference-set dependence
+    TCAV directional derivatives, population scores, and statistical units
+    ACE multiresolution segmentation, clustering, and concept desiderata
+    pathology concept validation and bias-discovery limits
+    concept completeness, dependence, and basis nonidentifiability
+    ProtoMIL sparse WSI concepts and exact linear score credit
+    GECKO language-derived concept priors, aggregation, and contrastive alignment
+    concept explanation C/R/G/S synthesis
+
+counterfactual_explanations/
+    counterfactual state spaces, optimization targets, and distance geometry
+    Wachter target search, robust scaling, and closest-world dependence
+    validity, plausibility, feasibility, actionability, and causality
+    DiCE set-valued explanations and determinantal diversity
+    HIPPO WSI bag deletion and addition counterfactuals
+    GMM-CeFlow human-interpretable features and quadratic boundary projection
+    surrogate fidelity and inverse-flow distortion
+    diffusion counterfactual geometry and generator-relative plausibility
+    MoPaDi linear and MIL-gradient morphology manipulation
+    counterfactual validation and C/R/G/S synthesis
+
+graph_spatial_explanations/
+    graph explanation objects, node/edge/path targets, and spatial semantics
+    HEAT leave-one-node localization and fixed-versus-rebuilt deletion
+    message-path attribution and heterogeneous type/edge credit
+    pseudo-label pooling and hierarchical cell-to-region localization
+    BioX-CPath stain-aware attention, entropy, and interaction scores
+    interpretable region graphs and integrated gradients
+    spatial rendering, topology interventions, and graph sanity checks
+    graph-spatial C/R/G/S synthesis and failure matrix
+
+survival_explanations/
+    risk, hazard, survival-curve, and competing-risk explanation targets
+    Cox patch credit and WSI attention risk heatmaps
+    graph survival node and topology effects
+    MCAT genomic-guided co-attention
+    C2MIL semantic intervention and topological causal subgraphs
+    survival explanation validation and C/R/G/S synthesis
+
+unifying_view/
+    explanation target ladder and C/R/G/S ledger
+    slide-object and resolution alignment
+    faithfulness, plausibility, and causality separation
+    failure matrix, sanity checks, design axes, and reporting rule
 ```
 
-Later portions will derive prototypes, concepts, counterfactuals, graph
-explanations, and survival explanations from the primary papers in the private
-research map.
+The Explainability family is now complete at the notebook level. Its final
+cross-family audit will be performed after the remaining top-level families are
+written.
