@@ -40,6 +40,21 @@ token pruning:
     changes the source set before attention
 ```
 
+If an efficient method replaces the exact attention matrix `A` by
+`\widetilde A` while keeping the value matrix `V` fixed, the immediate output
+error obeys:
+
+```math
+\|AV-\widetilde A V\|_F
+\le
+\|A-\widetilde A\|_2
+\|V\|_F.
+```
+
+This is an operator-approximation statement, not a guarantee of equal task
+performance. The value norm, later nonlinear layers, and the location of the
+approximation in a deep stack determine how that error propagates.
+
 For WSI, an "efficient" attention method only reduces cost if the expensive
 dense score matrix is avoided, approximated, or factorized before full
 materialization.
