@@ -198,7 +198,7 @@ each patch sampling:
 
 ## What Survives
 
-The node state after one mean GraphSAGE layer preserves:
+The node state after one mean GraphSAGE layer carries:
 
 ```text
 self feature

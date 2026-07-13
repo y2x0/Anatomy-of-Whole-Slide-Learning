@@ -54,7 +54,7 @@ A_{\theta}(H)
 
 but does not dominate the biological ontology of HACT or HEAT. HACT exposes
 cell containment explicitly. HEAT exposes pseudo-type and edge attributes.
-Patch-GCN preserves physical locality directly.
+Patch-GCN encodes physical locality directly in its coordinate-derived support.
 
 Conversely, those explicit structures cannot freely learn arbitrary distant
 directed relations without changing their graph constructor.

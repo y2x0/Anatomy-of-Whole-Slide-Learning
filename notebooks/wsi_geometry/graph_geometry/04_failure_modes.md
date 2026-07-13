@@ -51,7 +51,7 @@ The graph normalizes topology while distorting physical scale.
 
 ## Radius Graph Degree Artifacts
 
-Radius graphs preserve scale:
+Radius graphs encode a fixed coordinate-radius threshold:
 
 ```math
 \|c_j-c_k\|_2\le r.
