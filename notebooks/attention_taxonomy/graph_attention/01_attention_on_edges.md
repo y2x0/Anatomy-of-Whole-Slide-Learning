@@ -51,6 +51,36 @@ a_{uv}W h_v
 \right).
 ```
 
+For the original single-layer GAT parameterization, the score is specifically:
+
+```math
+e_{uv}
+=
+\mathrm{LeakyReLU}_{\lambda}
+\left(
+a^\top
+\left[
+Wh_u
+\Vert
+Wh_v
+\right]
+\right),
+```
+
+followed by:
+
+```math
+\alpha_{uv}
+=
+\frac{\exp(e_{uv})}
+{\sum_{r\in\mathcal{N}(u)}\exp(e_{ur})}.
+```
+
+The original GAT construction adds self-loops before normalization, so a node's
+own transformed state is among the candidates. This is a fixed-topology
+attention layer: the score changes edge weights but does not create an edge
+outside the supplied adjacency.
+
 ## Attention Matrix
 
 The graph attention matrix satisfies:
