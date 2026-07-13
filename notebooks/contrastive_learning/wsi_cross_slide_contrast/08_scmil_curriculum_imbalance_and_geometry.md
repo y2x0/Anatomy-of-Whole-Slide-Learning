@@ -22,6 +22,33 @@ Primary anchor:
 The contrastive weight decays, moving from representation geometry toward
 decision-boundary fitting.
 
+The paper's implementation uses a linear curriculum. If `r` is the current
+training iteration and `T` is the total number of iterations, then:
+
+```math
+\beta_r
+=
+1-
+\frac{r}{T},
+\qquad
+0\le r\le T.
+```
+
+Therefore:
+
+```math
+\mathcal{L}^{(0)}
+=
+\mathcal{L}_{\mathrm{SCL}},
+\qquad
+\mathcal{L}^{(T)}
+=
+\mathcal{L}_{\mathrm{CE}}.
+```
+
+The schedule is a training-time change in the objective, not a post-hoc
+reweighting of a fixed representation.
+
 ```math
 \nabla_{\theta}\mathcal{L}^{(t)}
 =
