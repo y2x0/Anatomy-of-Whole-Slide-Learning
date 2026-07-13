@@ -74,6 +74,26 @@ a(T(H)),
 then the explanation is not stable. Accuracy can remain high while attention
 maps shift.
 
+For dense maps on the same patch index set, report the total variation:
+
+```math
+\mathrm{TV}(a,a')
+=
+\frac{1}{2}
+\|a-a'\|_1.
+```
+
+For sparse or top-k maps, report support overlap instead:
+
+```math
+\mathrm{Jaccard}(S,S')
+=
+\frac{|S\cap S'|}{|S\cup S'|}.
+```
+
+These are stability diagnostics, not validity proofs. A stable shortcut map is
+still a shortcut map, and an unstable map can coexist with a correct predictor.
+
 ## Dense Summary
 
 A responsible attention explanation should report:
@@ -89,4 +109,3 @@ pathologist-facing tissue validation
 
 Without these, attention is a visualization of the computation, not a validated
 explanation.
-
