@@ -1,5 +1,7 @@
 # HIPT: Hierarchical DINO-Style Distillation
 
+Reference: [HIPT](https://arxiv.org/abs/2206.02647).
+
 ## 1. Three Scales
 
 HIPT builds representations at patch, region, and slide scales:
@@ -44,4 +46,3 @@ organization while discarding fine spatial arrangement inside a region.
 Patch linear probing and slide-level transfer measure different objects. A
 strong HIPT patch representation does not certify that its hierarchical slide
 readout is optimal for WSI survival or rare lesion detection.
-

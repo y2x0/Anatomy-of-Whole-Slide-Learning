@@ -1,5 +1,9 @@
 # Patch Versus Slide Pretraining Statistics
 
+References: [HIPT](https://arxiv.org/abs/2206.02647),
+[Prov-GigaPath](https://www.nature.com/articles/s41586-024-07441-w),
+[TITAN](https://www.nature.com/articles/s41591-025-03982-3).
+
 ## 1. Patch Statistic
 
 A patch foundation model learns
@@ -40,4 +44,3 @@ Patch-level objectives often weight slides by their number of sampled patches.
 Slide-level objectives weight patients or slides directly. This changes the
 effective training distribution and can bias rare disease or large-slide
 representation quality.
-

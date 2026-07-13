@@ -1,5 +1,8 @@
 # CONCH and PLIP: Image-Text Alignment
 
+References: [CONCH](https://arxiv.org/abs/2307.12914),
+[PLIP](https://pubmed.ncbi.nlm.nih.gov/37592105/).
+
 ## 1. Paired Representation
 
 For pathology image `x` and text `t`,

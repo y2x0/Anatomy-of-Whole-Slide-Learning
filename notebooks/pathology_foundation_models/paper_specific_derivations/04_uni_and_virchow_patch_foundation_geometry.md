@@ -1,5 +1,8 @@
 # UNI and Virchow: Patch Foundation Geometry
 
+References: [UNI](https://pmc.ncbi.nlm.nih.gov/articles/PMC11403354/),
+[Virchow](https://arxiv.org/abs/2309.07778).
+
 ## 1. Shared Patch-Level Contract
 
 UNI and Virchow learn broad pathology patch representations before downstream

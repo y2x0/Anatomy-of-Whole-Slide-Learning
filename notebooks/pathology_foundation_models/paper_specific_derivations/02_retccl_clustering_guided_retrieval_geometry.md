@@ -1,5 +1,7 @@
 # RetCCL: Clustering-Guided Retrieval Geometry
 
+Reference: [RetCCL](https://pubmed.ncbi.nlm.nih.gov/36270093/).
+
 ## 1. Instance Embeddings and Clusters
 
 Let patch embeddings be normalized as `u_i`. A clustering stage assigns each

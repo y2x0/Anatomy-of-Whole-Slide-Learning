@@ -1,17 +1,5 @@
 # Hierarchical MIL
 
-This is the hierarchical MIL portion.
-
-```math
-\mathcal H_i
-=
-\left(
-\{V_i^{(\ell)}\}_{\ell=0}^{L},
-\{\pi_i^{(\ell)}\}_{\ell=0}^{L-1}
-\right).
-```
-# Hierarchical MIL
-
 This portion asks how a slide-level predictor composes evidence across nested
 units rather than aggregating one flat patch bag.
 

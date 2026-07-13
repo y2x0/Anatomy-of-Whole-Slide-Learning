@@ -1,5 +1,9 @@
 # Foundation Model Transfer and Readout Limits
 
+References: [UNI](https://pmc.ncbi.nlm.nih.gov/articles/PMC11403354/),
+[Prov-GigaPath](https://www.nature.com/articles/s41586-024-07441-w),
+[TITAN](https://www.nature.com/articles/s41591-025-03982-3).
+
 ## 1. Frozen Transfer
 
 With frozen encoder `Phi`, downstream learning is restricted to
@@ -44,4 +48,3 @@ An interpretable downstream head explains the composition of the frozen
 representation, not necessarily how the foundation model learned its features.
 Pretraining objective, encoder attention, and downstream attention are separate
 explanation targets.
-

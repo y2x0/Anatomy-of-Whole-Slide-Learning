@@ -1,5 +1,7 @@
 # Prov-GigaPath: Tile-to-Slide Representation
 
+Reference: [Prov-GigaPath](https://www.nature.com/articles/s41586-024-07441-w).
+
 ## 1. Factorized WSI Encoder
 
 Prov-GigaPath separates tile encoding from slide encoding:
@@ -50,4 +52,3 @@ for a general permutation `pi`.
 
 Long context does not imply perfect context. Missing tiles, coordinate errors,
 regional batching, and finite receptive support can alter the slide statistic.
-

@@ -1,5 +1,7 @@
 # KEEP: Knowledge-Enhanced Pathology Alignment
 
+Reference: [KEEP](https://arxiv.org/html/2412.13126v1).
+
 ## 1. Knowledge-Conditioned Text
 
 KEEP augments visual-language alignment with pathology knowledge. Let a text
@@ -41,4 +43,3 @@ can impose a misleading alignment direction.
 Knowledge-enhanced zero-shot performance should be tested against plain text
 prompts, paraphrases, held-out diseases, and external institutions. Higher
 accuracy alone does not show that the learned explanations are medically valid.
-

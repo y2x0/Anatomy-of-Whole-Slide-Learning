@@ -1,5 +1,15 @@
 # Paper-Specific Foundation Model Failure Matrix
 
+References: [CTransPath](https://pubmed.ncbi.nlm.nih.gov/35952419/),
+[RetCCL](https://pubmed.ncbi.nlm.nih.gov/36270093/),
+[HIPT](https://arxiv.org/abs/2206.02647),
+[UNI](https://pmc.ncbi.nlm.nih.gov/articles/PMC11403354/),
+[Virchow](https://arxiv.org/abs/2309.07778),
+[CONCH](https://arxiv.org/abs/2307.12914),
+[Prov-GigaPath](https://www.nature.com/articles/s41586-024-07441-w),
+[TITAN](https://www.nature.com/articles/s41591-025-03982-3),
+[KEEP](https://arxiv.org/html/2412.13126v1).
+
 | Model family | Preserved statistic | Main failure | Audit |
 |---|---|---|---|
 | CTransPath | augmentation-invariant patch geometry | wrong positive invariance | pathology-aware augmentations |

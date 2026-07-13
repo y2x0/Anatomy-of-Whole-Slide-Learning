@@ -1,5 +1,7 @@
 # CTransPath: MoCo-Style Contrastive Learning with a Swin Encoder
 
+Reference: [CTransPath](https://pubmed.ncbi.nlm.nih.gov/35952419/).
+
 ## 1. Patch Object
 
 CTransPath represents a histopathology image patch with a hierarchical Swin
@@ -40,4 +42,3 @@ are included in the input or later slide aggregation.
 If two augmented views alter a rare diagnostic feature, the objective treats
 that feature as nuisance. If stain or scanner is stable within a batch, it may
 become a shortcut in the embedding geometry.
-

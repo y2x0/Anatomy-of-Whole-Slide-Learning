@@ -1,5 +1,7 @@
 # TITAN: Slide-Text and Retrieval Representation
 
+Reference: [TITAN](https://www.nature.com/articles/s41591-025-03982-3).
+
 ## 1. Slide-Level Object
 
 TITAN is a slide-level pathology foundation model. Its representation is not
@@ -41,4 +43,3 @@ quality of a slide model inherits its patch coverage and context operator.
 A retrieved report or slide supports semantic or morphological neighborhood
 similarity under the model. It does not establish that the retrieved case shares
 the same biological mechanism or outcome.
-
