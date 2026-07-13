@@ -179,7 +179,7 @@ if their first moments match.
 
 ## Mean Of Learned Features
 
-Deep Sets-style pooling uses:
+A learned mean feature map uses:
 
 ```math
 z_i
@@ -211,6 +211,12 @@ z_{im}
 ```
 
 The surviving statistic remains a first moment in learned feature space.
+
+This should not be conflated with the canonical Deep Sets representation, which
+uses a sum of transformed instances. A mean can reproduce a sum only when the
+cardinality `n_i` is fixed, supplied separately, or otherwise recoverable by the
+downstream model. With variable slide sizes, normalized mean pooling and Deep
+Sets sum pooling have different information content.
 
 ## Mean Versus Sum
 

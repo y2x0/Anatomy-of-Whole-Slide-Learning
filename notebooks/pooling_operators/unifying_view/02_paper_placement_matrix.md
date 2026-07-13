@@ -10,7 +10,7 @@ statistic reaches the slide-level head.
 
 | Family or paper anchor | G | \mathcal{C} | \mathcal{R} | S | Surviving Statistic |
 |---|---|---|---|---|---|
-| Deep Sets / moment pooling | ignored unless encoded upstream | instance feature map \phi | sum or mean of transformed instances | bag label | empirical moment of \phi(h) |
+| Deep Sets / learned moment pooling | ignored unless encoded upstream | instance feature map \phi | canonical sum, or normalized mean as a distinct variant | bag label | empirical sum/mean of \phi(h); cardinality is retained only by sum or an explicit count channel |
 | Mean pooling | ignored by readout | identity or upstream context | normalized average | downstream slide loss | first moment |
 | Additive evidence pooling | ignored unless burden is spatially stratified | patch evidence map e_\theta | unnormalized sum or exposure-normalized sum | slide label or survival loss | total evidence burden |
 | Max pooling | ignored unless scores encode it | instance scoring map | maximum or smooth maximum | positive-instance bag label | extreme score |
