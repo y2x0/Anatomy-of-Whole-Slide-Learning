@@ -32,6 +32,27 @@ F(\tilde M).
 The architecture appears multimodal, but the learned statistic may be mostly
 non-pathology.
 
+For a chosen output functional `F`, a model-level dominance diagnostic is:
+
+```math
+\Delta_P
+=
+\left|
+F(P,M)-F(P_0,M)
+\right|,
+\qquad
+\Delta_M
+=
+\left|
+F(P,M)-F(P,M_0)
+\right|,
+```
+
+where `P_0` and `M_0` are specified replacement or ablation inputs. These
+quantities should be evaluated with a distribution-preserving intervention
+when possible. They measure dependence of the trained predictor, not causal
+dependence of the patient outcome.
+
 ## Many-To-One Ambiguity
 
 Several tissue regions can satisfy a query:
@@ -46,6 +67,20 @@ q^\top k_{j_3}.
 
 Softmax distributes mass across them, but the final value average can blur
 distinct mechanisms.
+
+The relevant quantity is the value dispersion under the query measure:
+
+```math
+\mathrm{Var}_{a(q)}(v)
+=
+\sum_j
+a_j(q)
+\left(v_j-z(q)\right)
+\left(v_j-z(q)\right)^\top.
+```
+
+A large dispersion indicates that the conditional mean may hide multiple
+mechanisms even when the attention map is sharply localized in separate modes.
 
 ## Query Collapse
 
@@ -93,4 +128,3 @@ multiple queries collapse
 alignment is mistaken for evidence
 averaging blurs distinct source mechanisms
 ```
-
