@@ -12,7 +12,10 @@ v=\frac{f_{\mathrm{text}}(t)}{\|f_{\mathrm{text}}(t)\|_2}.
 
 The pair similarity is `u^T v`.
 
-## 2. Symmetric Objective
+## 2. Shared Alignment Abstraction
+
+The equations below describe the shared image-text contrastive component. They
+are not an assertion that CONCH and PLIP have identical full objectives.
 
 For batch size `B`,
 
@@ -24,8 +27,11 @@ For batch size `B`,
 ```
 
 and the text-to-image term reverses the roles. CONCH and PLIP differ in data,
-scale, architecture, and training details, but share this cross-modal geometry
-as a central interpretive object.
+scale, architecture, and training details. In particular, CONCH is a
+CoCa-style multimodal model with more than a bare CLIP loss, whereas PLIP is
+usually summarized through CLIP-like image-text alignment. The contrastive
+geometry is therefore a useful common coordinate system, not a complete
+reconstruction of either paper's training objective.
 
 ## 3. Prompt Readout
 
@@ -47,4 +53,3 @@ z_{ic}=\sum_j a_{ij}s_{ijc}.
 ```
 
 Its meaning combines image-text similarity, patch attention, and prevalence.
-

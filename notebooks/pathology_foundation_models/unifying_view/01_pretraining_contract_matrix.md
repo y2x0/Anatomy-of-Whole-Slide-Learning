@@ -14,7 +14,7 @@ with views `V`, relations `A`, loss `L`, and representation geometry `G`.
 | HIPT | multi-scale crops | teacher agreement | self-distillation | hierarchical representation |
 | UNI/Virchow | pathology patches | self-supervised views/tokens | visual SSL | broad patch geometry |
 | Phikon-style MIM | visible and masked tokens | hidden-content prediction | reconstruction | predictable morphology |
-| CONCH/PLIP | image and text | paired caption | symmetric contrast | semantic shared space |
+| CONCH/PLIP | image and text | paired caption | image-text alignment; exact losses differ | semantic shared space |
 | Prov-GigaPath | tiles and slide | slide context | slide-level pretraining | long-context WSI statistic |
 | TITAN | slide and report/text | paired slide semantics | multimodal alignment | retrieval-ready slide geometry |
 | KEEP | image and knowledge text | knowledge-conditioned pairing | enhanced alignment | knowledge-biased semantic space |
@@ -23,4 +23,3 @@ with views `V`, relations `A`, loss `L`, and representation geometry `G`.
 Model comparison is incomplete without the relation column. Two models called
 self-supervised can preserve different information because their positive pairs
 differ.
-

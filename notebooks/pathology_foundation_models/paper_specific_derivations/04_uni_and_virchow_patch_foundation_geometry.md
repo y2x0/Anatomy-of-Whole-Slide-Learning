@@ -14,8 +14,11 @@ encoder itself does not decide how a slide is represented.
 
 ## 2. Self-Supervised Distinction
 
-The papers use large-scale self-supervised visual pretraining with teacher,
-student, and/or masked-token components. A generic combined objective is
+UNI and Virchow are related by their patch-level foundation-model role, not by
+one shared loss equation. Their exact pretraining pipelines, data mixtures,
+architectures, and objective terms must be taken from their respective source
+papers. The following is only a comparison abstraction for a model that really
+combines view invariance, masking, and regularization:
 
 ```math
 \mathcal L
@@ -23,6 +26,11 @@ student, and/or masked-token components. A generic combined objective is
 +\lambda_{\mathrm{mask}}\mathcal L_{\mathrm{masked}}
 +\lambda_{\mathrm{reg}}\mathcal L_{\mathrm{regularize}}.
 ```
+
+It should not be read as a claim that UNI and Virchow optimize this same sum or
+that every term is present in both models. The safe paper-level statement is
+that both provide patch representations whose downstream geometry must be
+measured separately from the slide readout.
 
 The exact weights and implementation determine which patch variation survives;
 the model name alone does not specify that statistic.
@@ -44,4 +52,3 @@ benchmark.
 Patch-level training can overrepresent common tissue and underrepresent rare
 prognostic regions. A slide sampler or downstream aggregator must be audited
 for the resulting coverage imbalance.
-
