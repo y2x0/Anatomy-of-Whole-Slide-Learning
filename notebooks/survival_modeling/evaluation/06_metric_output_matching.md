@@ -54,7 +54,7 @@ integrated Brier score
 calibration at horizons
 ```
 
-Need to state:
+If a scalar ranking is reported from a curve, the risk functional must be stated:
 
 ```math
 r_i=\rho[\widehat{S}_i].
