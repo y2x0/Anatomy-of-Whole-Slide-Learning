@@ -64,15 +64,24 @@ V_v
 (HW_V)_v.
 ```
 
-This is message passing on the complete directed graph:
+This is message passing on the complete directed graph over token indices:
 
 ```math
 E
 =
-V\times V.
+\mathcal{V}\times\mathcal{V},
+\qquad
+\mathcal{V}
+=
+\{1,\ldots,n\}.
 ```
 
 Every token can send a message to every other token in one layer.
+
+The graph statement concerns only the support of the attention sublayer. It
+does not mean that the model learned a pathology graph, and it does not include
+the residual connection, output projection, normalization, or feed-forward
+subnetwork that may surround this sublayer.
 
 ## Permutation Equivariance
 
