@@ -5,7 +5,7 @@
 Let H^{(\ell)} be the states at level ell. A hierarchical model does not have
 one readout; it has a sequence
 
-`math
+```math
 H^{(\ell+1)}
 =
 \mathcal R_{\ell}
@@ -14,18 +14,18 @@ H^{(\ell)},P^{(\ell)}
 \right),
 \qquad
 \ell=0,\ldots,L-1,
-`
+```
 
 followed by a slide readout
 
-`math
+```math
 z_i
 =
 \mathcal R_{\mathrm{slide}}
 \left(
 H_i^{(L)}
 \right).
-`
+```
 
 The information that survives is the composition of all these operators.
 
@@ -33,20 +33,20 @@ The information that survives is the composition of all these operators.
 
 For hard assignments, additive transfer is
 
-`math
+```math
 u_b
 =
 \sum_{a:\pi(a)=b}h_a.
-`
+```
 
 Mean transfer is
 
-`math
+```math
 u_b
 =
 \frac{1}{m_b}
 \sum_{a:\pi(a)=b}h_a.
-`
+```
 
 Additive transfer preserves a count-sensitive first moment; mean transfer
 preserves a count-normalized first moment. If a parent-level classifier is
@@ -55,7 +55,7 @@ mean transfer does not.
 
 A hierarchical sum can still become nonlinear after coarse context:
 
-`math
+```math
 z
 =
 \rho_L
@@ -71,7 +71,7 @@ z
 \right)
 \right\}
 \right).
-`
+```
 
 The final statistic is therefore not simply the sum of all fine states.
 
@@ -79,35 +79,35 @@ The final statistic is therefore not simply the sum of all fine states.
 
 Within-parent attention is
 
-`math
+```math
 u_b
 =
 \sum_{a:\pi(a)=b}
 \alpha_{ab}h_a,
 \qquad
 \sum_{a:\pi(a)=b}\alpha_{ab}=1.
-`
+```
 
 Parent-level attention is
 
-`math
+```math
 z
 =
 \sum_{b=1}^{n_L}\beta_b u_b,
 \qquad
 \sum_{b=1}^{n_L}\beta_b=1.
-`
+```
 
 Expanding the composition gives an effective fine-unit weight
 
-`math
+```math
 z
 =
 \sum_a
 \left(
 \beta_{\pi(a)}\alpha_{a,\pi(a)}
 \right)h_a.
-`
+```
 
 The weight is a product of local and coarse routing. A patch can have a large
 local alpha and still have little final influence if its parent has small beta.
@@ -121,7 +121,7 @@ hierarchical prediction.
 
 A top-k parent readout is
 
-`math
+```math
 S_k(H)
 =
 \mathrm{TopK}_{b}
@@ -135,7 +135,7 @@ z
 \left(
 \{u_b:b\in S_k(H)\}
 \right).
-`
+```
 
 This changes the surviving statistic from a weighted first moment to a selected
 order statistic. MaxS DTFD is the limiting k=1 case at the fine-to-pseudo-bag
@@ -144,7 +144,7 @@ its candidates are already summaries.
 
 A prototype readout uses distances to learnable prototypes p_m:
 
-`math
+```math
 r_{bm}
 =
 \exp
@@ -155,7 +155,7 @@ r_{bm}
 z_m
 =
 \sum_b\beta_b r_{bm}.
-`
+```
 
 The slide statistic is now a vector of soft occupancy or similarity masses. It
 can retain distributional information that a single weighted mean discards, but
@@ -165,7 +165,7 @@ its reliability depends on the number and coverage of parent units.
 
 A model can retain several levels explicitly:
 
-`math
+```math
 z
 =
 \left[
@@ -177,7 +177,7 @@ z
 \middle\Vert
 \mathrm{Readout}_L(H^{(L)})
 \right].
-`
+```
 
 This reduces the irreversibility of a single coarse bottleneck, but it does not
 make the hierarchy lossless. Each Readout ell is itself a compression, and
@@ -188,15 +188,15 @@ never retained.
 
 For a Cox-style head, the final scalar can be
 
-`math
+```math
 \eta_i
 =
 w^{\mathsf T}z_i+b.
-`
+```
 
 For discrete hazards at horizons tau_k, the readout can produce K logits:
 
-`math
+```math
 \eta_{ik}
 =
 w_k^{\mathsf T}z_i+b_k,
@@ -204,7 +204,7 @@ w_k^{\mathsf T}z_i+b_k,
 h_{ik}
 =
 \sigma(\eta_{ik}).
-`
+```
 
 The hierarchy is upstream of the survival representation. A better region
 summary can improve risk prediction, but the scalar Cox head still imposes a

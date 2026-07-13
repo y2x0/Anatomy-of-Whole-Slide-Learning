@@ -5,9 +5,9 @@
 Let S be a permutation-invariant mean and C be an order-sensitive recurrence. In
 general,
 
-`math
+```math
 S(C(QH))\neq S(C(H)).
-`
+```
 
 The final mean cannot repair the order dependence created before pooling. A
 state-space model with mean readout remains order-conditioned.
@@ -19,9 +19,9 @@ two different adjacency matrices equivalent.
 
 Let P be a child-parent assignment and A a fine graph. If
 
-`math
+```math
 P^{\mathsf T}A\neq A_P P^{\mathsf T},
-`
+```
 
 then graph-then-coarsen and coarsen-then-graph produce different parent states.
 A model may therefore be sensitive to whether spatial neighbors are aggregated
@@ -36,9 +36,9 @@ transfer signal across that boundary before compression.
 A patch can contribute directly and through several contextual routes. With a
 residual graph layer,
 
-`math
+```math
 \widetilde H=(I+A)HW,
-`
+```
 
 a high-degree patch appears in its own state and in many neighbor states. A final
 sum can therefore amplify local density even if the task should be density
@@ -51,17 +51,17 @@ surviving statistic.
 
 Attention scores may become nearly uniform when contextual states collapse:
 
-`math
+```math
 \widetilde h_j\approx \widetilde h_k
 \quad\Longrightarrow\quad
 \alpha_j\approx\alpha_k.
-`
+```
 
 Alternatively, a single context state can dominate and produce
 
-`math
+```math
 \max_j\alpha_j\approx 1.
-`
+```
 
 The first hides localization; the second creates brittle sparse selection. Monitor
 attention entropy and compare against perturbation effects.
@@ -90,13 +90,13 @@ Each perturbation isolates a different geometric assumption.
 For z=R(C(H)), the attention score in R is not the derivative of z with
 respect to a pre-context instance. The correct total derivative is
 
-`math
+```math
 \frac{\partial z}{\partial h_k}
 =
 \sum_j
 \frac{\partial z}{\partial \widetilde h_j}
 \frac{\partial \widetilde h_j}{\partial h_k}.
-`
+```
 
 Deleting h_k also changes graph edges, transformer attention, state trajectories,
 or parent scores if those are recomputed. Any explanation that freezes those
@@ -106,13 +106,13 @@ objects is a conditional explanation.
 
 Adding operators can move rather than remove the bottleneck:
 
-`math
+```math
 O(n^2)
 \longrightarrow
 O(nm^2+m^2)
 \longrightarrow
 O(n d^2)
-`
+```
 
 may reduce dense pairwise cost but increase memory, routing, or feature
 projection cost. Approximation rank, number of graph edges, state dimension, and

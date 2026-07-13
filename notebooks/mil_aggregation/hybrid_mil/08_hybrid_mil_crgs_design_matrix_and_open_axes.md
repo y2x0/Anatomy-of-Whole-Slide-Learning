@@ -4,7 +4,7 @@
 
 A hybrid model can be represented as
 
-`math
+```math
 \mathcal H_{\omega}
 \circ
 \mathcal R_{\phi}
@@ -13,7 +13,7 @@ A hybrid model can be represented as
 \left(
 H_i,G_i,S_i
 \right),
-`
+```
 
 where S_i denotes any intermediate supervision or training-time target. The
 notation keeps the forward geometry G separate from the loss channel S.
@@ -60,7 +60,7 @@ context changes the feature being weighted.
 The mapped literature leaves combinations that are mathematically well-defined
 but underexplored:
 
-`math
+```math
 \begin{array}{c|c|c|c}
 \text{context} & \text{geometry} & \text{readout} & \text{question}\\
 \hline
@@ -73,7 +73,7 @@ but underexplored:
 \text{attention} & \text{learned routing} & \text{MMD summary} &
 \text{can routing and distribution be identified separately?}
 \end{array}
-`
+```
 
 An empty cell is not automatically a contribution. It is a design hypothesis
 that needs a statistical reason and a failure-mode analysis.
@@ -82,7 +82,7 @@ that needs a statistical reason and a failure-mode analysis.
 
 A new method should provide
 
-`math
+```math
 \left(
 C_\theta,
 R_\phi,
@@ -90,7 +90,7 @@ G,
 S,
 \mathcal L
 \right)
-`
+```
 
 and answer:
 
@@ -110,7 +110,7 @@ noncommuting operators define the inductive bias.
 
 The useful comparison is therefore
 
-`math
+```math
 \left[
 \text{object}
 \;\middle|\;
@@ -122,7 +122,7 @@ The useful comparison is therefore
 \;\middle|\;
 \text{supervision}
 \right].
-`
+```
 
 That bracket is the mathematical signature of a whole-slide learner.
 `

@@ -5,7 +5,7 @@
 Let a hybrid context operator produce contextual states T_i. The same T_i can
 feed distinct task heads:
 
-`math
+```math
 z_i^{(r)}
 =
 \mathcal R_r(T_i),
@@ -13,7 +13,7 @@ z_i^{(r)}
 \widehat y_i^{(r)}
 =
 \mathcal H_r(z_i^{(r)}).
-`
+```
 
 Changing only R changes which statistic the task can observe. Changing C changes
 the sufficient information available to every R.
@@ -22,13 +22,13 @@ the sufficient information available to every R.
 
 For binary classification with a linear head,
 
-`math
+```math
 \ell_i
 =
 w^{\mathsf T}z_i+b,
 \qquad
 \widehat p_i=\sigma(\ell_i).
-`
+```
 
 If z_i is a mean of contextual states, the head sees a first moment. If z_i is
 max pooled, it sees coordinatewise order statistics. If z_i is a prototype
@@ -41,7 +41,7 @@ final readout is a mean.
 
 For a scalar risk representation,
 
-`math
+```math
 \eta_i
 =
 w^{\mathsf T}z_i+b,
@@ -49,11 +49,11 @@ w^{\mathsf T}z_i+b,
 h(t\mid z_i)
 =
 h_0(t)\exp(\eta_i).
-`
+```
 
 The partial log-likelihood is
 
-`math
+```math
 \mathcal L_{\mathrm{Cox}}
 =
 -\sum_{i:\delta_i=1}
@@ -64,7 +64,7 @@ The partial log-likelihood is
 \sum_{j\in\mathcal R(t_i)}
 \exp(\eta_j)
 \right].
-`
+```
 
 A hybrid context can improve the covariate z_i, but the Cox head still uses one
 patient-specific risk score. It cannot represent time-varying crossings unless
@@ -75,21 +75,21 @@ hazards restriction is relaxed.
 
 At horizons tau_1 through tau_K, a vector head gives
 
-`math
+```math
 \eta_{ik}
 =
 w_k^{\mathsf T}z_i+b_k,
 \qquad
 h_{ik}=\sigma(\eta_{ik}).
-`
+```
 
 The survival probability at the end of interval k is
 
-`math
+```math
 \widehat S_i(\tau_k)
 =
 \prod_{r=1}^{k}(1-h_{ir}).
-`
+```
 
 A hybrid representation can be judged by whether it preserves information useful
 at multiple horizons. A single scalar slide mean may be adequate for a Cox head
@@ -101,27 +101,27 @@ matters.
 Suppose contextualization is linear T=AH and readout is a linear weight vector
 a:
 
-`math
+```math
 z
 =
 a^{\mathsf T}AH
 =
 (A^{\mathsf T}a)^{\mathsf T}H.
-`
+```
 
 The effective fine-level weights are A^{\mathsf T}a. For a graph propagation
 matrix, the task head is weighting graph-diffused evidence, not raw patches.
 
 If R is nonlinear attention, then
 
-`math
+```math
 z
 =
 \sum_j
 \frac{\exp q((AH)_j)}
 {\sum_k\exp q((AH)_k)}
 (AH)_j,
-`
+```
 
 and the effective weights depend on all instances. In this regime, no fixed
 linear surviving statistic exists globally.
@@ -130,19 +130,19 @@ linear surviving statistic exists globally.
 
 A shared hybrid representation can support classification and survival heads:
 
-`math
+```math
 \widehat y_i=\mathcal H_{\mathrm{cls}}(z_i),
 \qquad
 \eta_i=\mathcal H_{\mathrm{cox}}(z_i),
-`
+```
 
-`math
+```math
 \mathcal L
 =
 \mathcal L_{\mathrm{cls}}
 +
 \lambda_{\mathrm{surv}}\mathcal L_{\mathrm{Cox}}.
-`
+```
 
 The shared context is trained by both gradients. A feature that is useful for
 classification may dominate z even if it is weakly related to survival, so the
@@ -152,7 +152,7 @@ surviving statistic must be evaluated task by task.
 
 For a hybrid model, report the tuple
 
-`math
+```math
 \left(
 \mathcal C,
 \mathcal R,
@@ -160,7 +160,7 @@ G,
 \mathcal H,
 \mathcal L
 \right),
-`
+```
 
 not only the final head name. At minimum state:
 

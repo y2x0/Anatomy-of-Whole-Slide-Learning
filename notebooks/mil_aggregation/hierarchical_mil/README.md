@@ -2,14 +2,14 @@
 
 This is the hierarchical MIL portion.
 
-`math
+```math
 \mathcal H_i
 =
 \left(
 \{V_i^{(\ell)}\}_{\ell=0}^{L},
 \{\pi_i^{(\ell)}\}_{\ell=0}^{L-1}
 \right).
-`
+```
 # Hierarchical MIL
 
 This portion asks how a slide-level predictor composes evidence across nested
@@ -17,7 +17,7 @@ units rather than aggregating one flat patch bag.
 
 The central object is a rooted forest of units:
 
-`math
+```math
 \mathcal H_i
 =
 \left(
@@ -25,13 +25,13 @@ The central object is a rooted forest of units:
 \{\pi_i^{(\ell)}\}_{\ell=0}^{L-1},
 \{H_i^{(\ell)}\}_{\ell=0}^{L}
 \right).
-`
+```
 
 The level-zero units may be patches or cells. A parent map
 \pi_i^{(\ell)} assigns each level-\ell unit to one level-\ell+1 unit. A
 hierarchical MIL model is therefore a composition of
 
-`math
+```math
 \text{fine context}
 \longrightarrow
 \text{child-to-parent coarsening}
@@ -39,7 +39,7 @@ hierarchical MIL model is therefore a composition of
 \text{coarse context}
 \longrightarrow
 \text{slide readout}.
-`
+```
 
 The hierarchy changes the hypothesis class. A flat set model is invariant to
 all permutations of instances. A fixed hierarchy is invariant only to

@@ -12,15 +12,15 @@ https://arxiv.org/abs/2403.06800
 
 Let the input be:
 
-`math
+```math
 X_i
 \in
 \mathbb{R}^{L_i\times d}.
-`
+```
 
 Choose segment size R:
 
-`math
+```math
 N_i
 =
 \left\lceil\frac{L_i}{R}\right\rceil,
@@ -28,19 +28,19 @@ N_i
 L_i^{\mathrm{pad}}
 =
 RN_i.
-`
+```
 
 Pad with zero rows:
 
-`math
+```math
 X_i^{\mathrm{pad}}
 \in
 \mathbb{R}^{L_i^{\mathrm{pad}}\times d}.
-`
+```
 
 Define the segment array:
 
-`math
+```math
 \mathsf{X}_i[r,n,:]
 =
 X_i^{\mathrm{pad}}[nR+r,:],
@@ -48,34 +48,34 @@ X_i^{\mathrm{pad}}[nR+r,:],
 r=0,\ldots,R-1,
 \quad
 n=0,\ldots,N_i-1.
-`
+```
 
 Thus:
 
-`math
+```math
 \mathsf{X}_i
 \in
 \mathbb{R}^{R\times N_i\times d}.
-`
+```
 
 ## 2. The Reordered Sequence
 
 The original sequence visits each segment in order:
 
-`math
+```math
 X_i^{\mathrm{orig}}[nR+r,:]
 =
 \mathsf{X}_i[r,n,:].
-`
+```
 
 The reordered sequence visits the same within-segment position across all
 segments first:
 
-`math
+```math
 X_i^{\mathrm{reord}}[rN_i+n,:]
 =
 \mathsf{X}_i[r,n,:].
-`
+```
 
 Equivalently, transpose the first two axes of the padded segment array and
 flatten. Features do not change, but scan locality does.
@@ -84,15 +84,15 @@ flatten. Features do not change, but scan locality does.
 
 Normalize:
 
-`math
+```math
 X_i^{\prime}
 =
 \mathrm{Norm}(X_i).
-`
+```
 
 Then:
 
-`math
+```math
 Y_i
 =
 \mathrm{SSM}
@@ -105,11 +105,11 @@ Y_i
 \right)
 \right)
 \right).
-`
+```
 
 Use the gate:
 
-`math
+```math
 Z_i
 =
 \mathrm{SiLU}
@@ -120,19 +120,19 @@ Z_i
 X_i^{\prime\prime}
 =
 Z_i\odot Y_i.
-`
+```
 
 ## 4. Reordered Branch And Restoration
 
 The second branch scans:
 
-`math
+```math
 X_{i,r}^{\prime}
 =
 \mathrm{Norm}\left(X_i^{\mathrm{reord}}\right),
-`
+```
 
-`math
+```math
 Y_{i,r}
 =
 \mathrm{SSM}
@@ -145,23 +145,23 @@ Y_{i,r}
 \right)
 \right)
 \right).
-`
+```
 
 Let psi restore reordered outputs to original row positions:
 
-`math
+```math
 Y_{i,r}^{\mathrm{restored}}
 =
 \psi(Y_{i,r}).
-`
+```
 
 Gate after restoration:
 
-`math
+```math
 X_{i,r}^{\prime\prime}
 =
 Z_i\odot Y_{i,r}^{\mathrm{restored}}.
-`
+```
 
 Restoration is essential: adding a reordered output before undoing its
 permutation would pair a token's state with the wrong patch.
@@ -170,7 +170,7 @@ permutation would pair a token's state with the wrong patch.
 
 The paper's output equation is:
 
-`math
+```math
 X_i^{\mathrm{out}}
 =
 \mathrm{Linear}
@@ -181,7 +181,7 @@ X_{i,r}^{\prime\prime}
 \right)
 +
 X_i.
-`
+```
 
 The branches carry different trajectories:
 
@@ -199,13 +199,13 @@ The residual keeps a direct path from the pre-block token sequence.
 
 SR-Mamba does not average over all permutations:
 
-`math
+```math
 \mathcal{C}_{\mathrm{SR}}(X)
 \neq
 \frac{1}{|\mathfrak{S}_{L}|}
 \sum_{\sigma\in\mathfrak{S}_{L}}
 \mathcal{C}_{\mathrm{SSM}}(P_{\sigma}X).
-`
+```
 
 It evaluates two structured orders. The hypothesis class remains order-dependent,
 but it exposes a second scan geometry without quadratic all-pairs interaction.

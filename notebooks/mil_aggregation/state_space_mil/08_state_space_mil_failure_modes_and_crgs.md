@@ -4,27 +4,27 @@
 
 Take a two-token scalar bag:
 
-`math
+```math
 \mathcal{B}
 =
 \{u_1,u_2\},
 \qquad
 u_1\neq u_2.
-`
+```
 
 For recurrence and final-state readout:
 
-`math
+```math
 s_t
 =
 a s_{t-1}+b u_t,
 \qquad
 z=s_2.
-`
+```
 
 The two orders produce:
 
-`math
+```math
 z_{12}
 =
 ab u_1+b u_2,
@@ -32,15 +32,15 @@ ab u_1+b u_2,
 z_{21}
 =
 ab u_2+b u_1.
-`
+```
 
 Their difference is:
 
-`math
+```math
 z_{12}-z_{21}
 =
 b(a-1)(u_1-u_2).
-`
+```
 
 An SSM assigns different representations to the same unordered bag unless the
 recurrence is degenerate. This is useful when the order is meaningful and a
@@ -50,13 +50,13 @@ failure when the order is arbitrary.
 
 Let c_it be physical coordinates and sigma_i the scan order. Define:
 
-`math
+```math
 D(\sigma_i)
 =
 \frac{1}{|E_i^{\mathrm{spatial}}|}
 \sum_{(u,v)\in E_i^{\mathrm{spatial}}}
 \left|\sigma_i(u)-\sigma_i(v)\right|.
-`
+```
 
 High distortion separates spatial neighbors by many state updates. SR-Mamba
 adds a structured second scan, but its segment size R is still an inductive
@@ -66,20 +66,20 @@ choice rather than a proof of tissue geometry.
 
 The prefix map is:
 
-`math
+```math
 F_t:
 \mathbb{R}^{td}
 \longrightarrow
 \mathbb{R}^{N}.
-`
+```
 
 Distinct prefixes can collide:
 
-`math
+```math
 F_t(u_{1:t})
 =
 F_t(u_{1:t}^{\prime}).
-`
+```
 
 S4's structured basis and Mamba's selective gating change which collisions are
 likely; neither makes the state a lossless archive of all patches.
@@ -88,13 +88,13 @@ likely; neither makes the state a lossless archive of all patches.
 
 For a one-way scan:
 
-`math
+```math
 \frac{\partial y_t}{\partial u_k}
 =
 0
 \qquad
 \text{when }k>t.
-`
+```
 
 A late rare positive cannot alter earlier token states. Bidirectional Mamba and
 SR-Mamba add paths but do not eliminate direction and order sensitivity.
@@ -103,11 +103,11 @@ SR-Mamba add paths but do not eliminate direction and order sensitivity.
 
 If padded tokens are not inert:
 
-`math
+```math
 \mathcal{C}_{\mathrm{SSM}}(P_i,M_i)
 \neq
 \mathcal{C}_{\mathrm{SSM}}(P_i).
-`
+```
 
 The mask and de-padding operation are part of the representation contract, not
 a cosmetic batching detail.
@@ -116,13 +116,13 @@ a cosmetic batching detail.
 
 For output sequences Y and Y':
 
-`math
+```math
 \max_t Y_{t,r}
 =
 \max_t Y'_{t,r}
 \qquad
 \text{for every }r
-`
+```
 
 implies identical max-pooled vectors even when maximizing locations and
 trajectory order differ. Max is sensitive to extremes but blind to multiplicity
@@ -132,15 +132,15 @@ and position after context.
 
 For MambaMIL:
 
-`math
+```math
 z_i
 =
 \sum_t\alpha_{it}y_{it}.
-`
+```
 
 The total input-patch effect contains both score and state paths:
 
-`math
+```math
 \frac{\partial z_i}{\partial u_{ik}}
 =
 \sum_{t\ge k}
@@ -150,7 +150,7 @@ The total input-patch effect contains both score and state paths:
 \alpha_{it}
 \frac{\partial y_{it}}{\partial u_{ik}}
 \right].
-`
+```
 
 The attention weight alpha_it alone is not the total effect of patch k. Deletion
 must recompute the scan and the readout.
@@ -183,7 +183,7 @@ S:
 
 The concise description is:
 
-`math
+```math
 \boxed{
 \text{slide statistic}
 =
@@ -195,4 +195,4 @@ The concise description is:
 \right)
 \right)
 }.
-`
+```

@@ -15,7 +15,7 @@ https://arxiv.org/abs/2102.11057
 
 The word hierarchy hides three distinct operators:
 
-`math
+```math
 \text{DTFD:}
 \quad
 \text{random instance partition}
@@ -23,9 +23,9 @@ The word hierarchy hides three distinct operators:
 \text{pseudo-bag features}
 \longrightarrow
 \text{slide MIL};
-`
+```
 
-`math
+```math
 \text{HIPT:}
 \quad
 \text{nested image windows}
@@ -33,9 +33,9 @@ The word hierarchy hides three distinct operators:
 \text{nested transformer tokens}
 \longrightarrow
 \text{slide representation};
-`
+```
 
-`math
+```math
 \text{HACT:}
 \quad
 \text{cell graph}
@@ -43,7 +43,7 @@ The word hierarchy hides three distinct operators:
 \text{cell-to-tissue assignment}
 \longrightarrow
 \text{tissue graph}.
-`
+```
 
 Only the third makes the fine-to-coarse relation an explicit graph object.
 DTFD's parent relation is a training partition. HIPT's parent relation is a
@@ -53,7 +53,7 @@ spatial tokenization contract.
 
 For cells and tissue regions, HACT supplies
 
-`math
+```math
 \mathcal G_i
 =
 \left(
@@ -63,32 +63,32 @@ H_i^{\mathrm{tissue}},
 A_i^{\mathrm{tissue}},
 B_i
 \right),
-`
+```
 
 where B_i is the binary cell-to-tissue assignment matrix. A cell graph context
 operator produces
 
-`math
+```math
 \widetilde H_i^{\mathrm{cell}}
 =
 \mathcal C_{\theta}^{\mathrm{cell}}
 \left(
 H_i^{\mathrm{cell}},A_i^{\mathrm{cell}}
 \right).
-`
+```
 
 The assignment readout is
 
-`math
+```math
 U_i^{\mathrm{cell}\to\mathrm{tissue}}
 =
 B_i^{\mathsf T}\widetilde H_i^{\mathrm{cell}}.
-`
+```
 
 The tissue state is initialized by concatenating original tissue features and
 the transferred cell statistic:
 
-`math
+```math
 H_i^{\mathrm{tissue},0}
 =
 \left[
@@ -96,7 +96,7 @@ H_i^{\mathrm{tissue}}
 \middle\Vert
 U_i^{\mathrm{cell}\to\mathrm{tissue}}
 \right].
-`
+```
 
 A tissue graph operator then supplies cross-region context before the final
 tissue-node readout.
@@ -146,7 +146,7 @@ within-tissue contrasts unless later fine states are retained.
 
 A unified diagram is therefore not a claim of equivalence:
 
-`math
+```math
 \begin{array}{c}
 \text{fine units}
 \\
@@ -166,7 +166,7 @@ A unified diagram is therefore not a claim of equivalence:
 \\
 \text{slide statistic}
 \end{array}
-`
+```
 
 Each paper instantiates different C, R, and G.
 

@@ -6,7 +6,7 @@ TransMIL first constructs instance tokens and then applies transformer context
 before a slide-level prediction head. Let H_i be patch embeddings. A generic
 self-attention block is
 
-`math
+```math
 \widetilde H_i
 =
 \mathrm{MHSA}
@@ -15,7 +15,7 @@ H_i+E_i
 \right)
 +
 H_i+E_i,
-`
+```
 
 where E_i is a positional or spatial encoding. A learned readout then maps the
 contextual token set to a slide representation.
@@ -28,11 +28,11 @@ a bag readout.
 Full self-attention forms an n by n kernel-like score matrix. TransMIL uses a
 Nystrom-style approximation with m landmark tokens:
 
-`math
+```math
 \widetilde K
 =
 K_{nm}K_{mm}^{\dagger}K_{mn}.
-`
+```
 
 The approximation is a low-rank surrogate for the pairwise interaction matrix,
 where K_{nm} contains instance-to-landmark interactions and K_{mm} contains
@@ -46,14 +46,14 @@ addition to the transformer's token mixing.
 
 If E_i is built from patch coordinates, then the contextual states are
 
-`math
+```math
 \widetilde h_{ij}
 =
 \Phi
 \left(
 \{h_{ik}+e(x_{ik})\}_{k=1}^{n_i}
 \right)_j.
-`
+```
 
 Permuting H without permuting E changes the output. Simultaneously permuting
 tokens and their coordinate encodings preserves the slide object.
@@ -67,7 +67,7 @@ coordinate-free set transformer.
 For a nested hierarchy, let H_i^{(\ell)} be tokens at level ell. A generic
 bottom-up transformer is
 
-`math
+```math
 H_i^{(\ell+1)}
 =
 \mathcal R_{\ell}
@@ -78,18 +78,18 @@ H_i^{(\ell)},E_i^{(\ell)}
 \right),
 P_i^{(\ell)}
 \right).
-`
+```
 
 The final slide token is
 
-`math
+```math
 z_i
 =
 \mathcal R_{\mathrm{slide}}
 \left(
 H_i^{(L)}
 \right).
-`
+```
 
 HIPT instantiates this pattern with 256-token local aggregation stages and
 learned [CLS] summaries, followed by a region-level slide representation. The
@@ -112,7 +112,7 @@ compression and expensive long-range support.
 
 For contextual tokens T_i, possible readouts include
 
-`math
+```math
 z_i^{\mathrm{mean}}
 =
 \frac{1}{n_i}\sum_jT_{ij},
@@ -124,15 +124,15 @@ z_i^{\mathrm{max}}
 z_i^{\mathrm{cls}}
 =
 T_{i,\mathrm{CLS}},
-`
+```
 
 or attention
 
-`math
+```math
 z_i^{\mathrm{att}}
 =
 \sum_j\alpha_{ij}T_{ij}.
-`
+```
 
 The same transformer context can therefore feed different surviving statistics.
 Calling all such systems TransMIL-like does not identify the final

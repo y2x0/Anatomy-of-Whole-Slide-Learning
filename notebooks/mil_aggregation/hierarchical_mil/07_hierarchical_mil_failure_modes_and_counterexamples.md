@@ -8,7 +8,7 @@ destroy it before any coarse context is applied.
 
 Consider four fine instances with two possible partitions:
 
-`math
+```math
 P_A:
 \quad
 \{x_1,x_2\},\{x_3,x_4\},
@@ -16,7 +16,7 @@ P_A:
 P_B:
 \quad
 \{x_1,x_3\},\{x_2,x_4\}.
-`
+```
 
 Suppose the label depends on the pair interaction between x_1 and x_3. A
 within-parent operator followed by a parent-level mean can detect the relation
@@ -29,11 +29,11 @@ This is not an optimization failure. It is a representation mismatch.
 
 Let a parent use sum pooling. The two child configurations
 
-`math
+```math
 \{u+\delta,u-\delta\}
 \quad\text{and}\quad
 \{u,u\}
-`
+```
 
 have the same parent state 2u. Any later model that sees only the parent token
 must assign them the same output. The lost contrast is invisible regardless of
@@ -48,9 +48,9 @@ convex combination.
 Suppose a positive slide contains a small positive fraction p and DTFD creates
 pseudo-bags of size m. The chance that a pseudo-bag contains no positive patch is
 
-`math
+```math
 (1-p)^m.
-`
+```
 
 Inherited positive labels then train Tier 1 on examples that may be visually
 negative. Increasing the number of pseudo-bags creates more virtual bags but
@@ -83,11 +83,11 @@ If a parent map is produced by a sequence-sensitive algorithm, the hierarchy may
 change under a permutation of the same fine bag. For a set-derived hierarchy,
 the construction should satisfy
 
-`math
+```math
 \mathcal P(QH,QX)
 =
 Q_{\mathrm{parent}}\mathcal P(H,X)
-`
+```
 
 for every admissible permutation Q. Otherwise the model has an accidental
 ordering inductive bias in addition to its intended spatial bias.
@@ -97,9 +97,9 @@ ordering inductive bias in addition to its intended spatial bias.
 For n fine units, R regions, and m=n/R units per region, hierarchical attention
 has rough cost
 
-`math
+```math
 R m^2+R^2.
-`
+```
 
 The comparison against flat n^2 is favorable only if R is much smaller than n
 and the partition is balanced. One giant region gives a flat-scale quadratic
@@ -112,11 +112,11 @@ implementation cost.
 A high-scoring parent is not a proof that every child mattered. The final
 effective weight under two attention levels is
 
-`math
+```math
 \omega_a
 =
 \beta_{\pi(a)}\alpha_{a,\pi(a)}.
-`
+```
 
 If a transformer or graph operates inside a parent, there may be no unique
 decomposition into child contributions at all. Explanations should therefore
@@ -137,17 +137,17 @@ A fixed grid, random pseudo-bag partition, or cell-to-tissue assignment has a
 different uncertainty profile from a learned router. A learned hierarchy can
 adapt to morphology but may collapse to trivial assignments:
 
-`math
+```math
 A_{ab}\approx 1
 \quad\text{for one parent }b
-`
+```
 
 or diffuse routing:
 
-`math
+```math
 A_{ab}\approx \frac{1}{R}
 \quad\text{for all }b.
-`
+```
 
 The first reduces effective parent diversity; the second erases region identity.
 Assignment entropy, parent occupancy, and stability under perturbations should be

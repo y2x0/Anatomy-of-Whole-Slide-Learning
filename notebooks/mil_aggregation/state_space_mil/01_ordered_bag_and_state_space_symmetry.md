@@ -4,25 +4,25 @@
 
 For slide i, patch embeddings are initially a multiset:
 
-`math
+```math
 \mathcal{B}_i
 =
 \left\{
 h_{ij}\in\mathbb{R}^{d}:j=1,\ldots,n_i
 \right\}.
-`
+```
 
 An SSM requires an ordered sequence. Let sigma_i be a permutation:
 
-`math
+```math
 \sigma_i
 \in
 \mathfrak{S}_{n_i}.
-`
+```
 
 The actual SSM input is:
 
-`math
+```math
 U_i
 =
 \begin{bmatrix}
@@ -32,11 +32,11 @@ h_{i,\sigma_i(n_i)}^{\top}
 \end{bmatrix}
 \in
 \mathbb{R}^{n_i\times d}.
-`
+```
 
 The full map is:
 
-`math
+```math
 Y_i
 =
 \mathcal{C}_{\theta}^{\mathrm{SSM}}(U_i),
@@ -44,7 +44,7 @@ Y_i
 z_i
 =
 \mathcal{R}_{\theta}(Y_i).
-`
+```
 
 Even if R is invariant over output rows, the scan has already used sigma_i to
 define which token is earlier and which state receives memory.
@@ -53,7 +53,7 @@ define which token is earlier and which state receives memory.
 
 For a scalar recurrence:
 
-`math
+```math
 s_t
 =
 a s_{t-1}+b u_t,
@@ -63,31 +63,31 @@ y_t
 c s_t,
 \qquad
 s_0=0.
-`
+```
 
 After two tokens:
 
-`math
+```math
 y_2
 =
 c\left(ab u_1+b u_2\right).
-`
+```
 
 After swapping them:
 
-`math
+```math
 y_2^{\mathrm{swap}}
 =
 c\left(ab u_2+b u_1\right).
-`
+```
 
 Unless the recurrence is degenerate or the inputs coincide:
 
-`math
+```math
 y_2
 \neq
 y_2^{\mathrm{swap}}.
-`
+```
 
 The order is a geometry choice. Raster, Hilbert, learned, and file orders
 define different hypothesis classes.
@@ -96,19 +96,19 @@ define different hypothesis classes.
 
 A sequence operator generally does not satisfy:
 
-`math
+```math
 \mathcal{C}_{\theta}^{\mathrm{SSM}}(PU)
 =
 P\mathcal{C}_{\theta}^{\mathrm{SSM}}(U).
-`
+```
 
 A new permutation changes the ordered object:
 
-`math
+```math
 U_i^{\sigma'}
 =
 P_{\sigma'\leftarrow\sigma}U_i^\sigma.
-`
+```
 
 Evaluating several orders and averaging is a possible ensemble. A single scan
 does not regain set invariance merely because final pooling is a mean or max.
@@ -117,22 +117,22 @@ does not regain set invariance merely because final pooling is a mean or max.
 
 For batch length L_max, define:
 
-`math
+```math
 m_{it}
 =
 \mathbf{1}\left\{t\le n_i\right\}.
-`
+```
 
 A masked recurrence can be written:
 
-`math
+```math
 s_{it}
 =
 m_{it}
 \left(A_t s_{i,t-1}+B_tu_{it}\right)
 +
 (1-m_{it})s_{i,t-1}.
-`
+```
 
 Without a mask or an equivalent safe convention, padding can alter the state
 and slide prediction. MambaMIL pads when length is not divisible by its segment
@@ -142,7 +142,7 @@ size and de-pads after restoration.
 
 For U_i with shape n_i by d:
 
-`math
+```math
 U_i
 \in
 \mathbb{R}^{n_i\times d}
@@ -150,23 +150,23 @@ U_i
 Y_i
 \in
 \mathbb{R}^{n_i\times d_y}.
-`
+```
 
 For channel or head r, the finite state is:
 
-`math
+```math
 s_{i,t,r}
 \in
 \mathbb{R}^{N_r}.
-`
+```
 
 The state is a compressed prefix statistic:
 
-`math
+```math
 (u_{i1},\ldots,u_{it})
 \longmapsto
 s_{i,t,r}.
-`
+```
 
 N_r is the memory width, not the number of patches.
 

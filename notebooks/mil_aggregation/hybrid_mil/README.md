@@ -7,7 +7,7 @@ or only the parameterization.
 
 A generic hybrid model is
 
-`math
+```math
 \widehat y_i
 =
 \mathcal H_{\omega}
@@ -18,7 +18,7 @@ A generic hybrid model is
 \left(
 H_i,G_i
 \right).
-`
+```
 
 The composition becomes nontrivial when C changes the support, ordering, or
 geometry seen by R.

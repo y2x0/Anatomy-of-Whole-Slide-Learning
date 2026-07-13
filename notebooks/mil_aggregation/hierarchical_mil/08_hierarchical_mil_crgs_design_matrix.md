@@ -5,7 +5,7 @@
 Let H_i^{(0)} be fine-scale features and P_i^{(\ell)} parent maps. A generic
 hierarchical MIL model is
 
-`math
+```math
 H_i^{(\ell+1)}
 =
 \mathcal R_{\ell,\theta}
@@ -18,11 +18,11 @@ P_i^{(\ell)}
 \right),
 \qquad
 \ell=0,\ldots,L-1,
-`
+```
 
 followed by
 
-`math
+```math
 z_i
 =
 \mathcal R_{\mathrm{slide},\theta}
@@ -33,7 +33,7 @@ H_i^{(L)},G_i^{(L)}
 \widehat y_i
 =
 \mathcal H_{\omega}(z_i).
-`
+```
 
 Here C is within-level context, R is fine-to-coarse or slide readout, and G
 contains the geometry or support relation. The factorization separates the
@@ -100,7 +100,7 @@ co-occurrence but discard fine-level distributions at each boundary.
 
 A mathematically legible proposal should expose:
 
-`math
+```math
 \left(
 \mathcal C_\ell,
 \mathcal R_\ell,
@@ -111,7 +111,7 @@ P^{(\ell)},
 \mathcal R_{\mathrm{slide}},
 \qquad
 \mathcal H_{\omega}.
-`
+```
 
 Then answer these questions:
 

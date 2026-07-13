@@ -12,8 +12,8 @@ Suppose one post-level text `t` accompanies `m` images:
 
 ```math
 \left\{
-x_1,ldots,x_m
-\right}
+x_1,\ldots,x_m
+\right\}
 \longleftrightarrow
 t.
 ```
@@ -21,7 +21,7 @@ t.
 If converted into diagonal pairs, duplicate text embeddings satisfy:
 
 ```math
-v_1=cdots=v_m=v.
+v_1=\cdots=v_m=v.
 ```
 
 For any associated image `x_i`, the row-softmax probability assigned to its
@@ -98,7 +98,7 @@ The selected subset is approximately:
 \min_{q\in\mathcal{Q}}d_0(x,q)
 \le
 c
-\right}.
+\right\}.
 ```
 
 Training a new encoder on this set estimates compatibility conditional on

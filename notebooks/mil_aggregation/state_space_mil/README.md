@@ -8,7 +8,7 @@ How does an ordered patch bag become a slide statistic through a finite state?
 
 State-space MIL changes the slide object before aggregation:
 
-`math
+```math
 \mathcal{B}_i
 \xrightarrow{\;\sigma_i\;}
 U_i
@@ -18,7 +18,7 @@ Y_i
 z_i
 \xrightarrow{\;\mathcal{H}\;}
 \widehat y_i.
-`
+```
 
 The order is part of the representation, not an implementation detail. A
 state-space operator may have linear sequence-length complexity while remaining

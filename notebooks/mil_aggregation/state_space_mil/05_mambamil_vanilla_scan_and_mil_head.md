@@ -12,7 +12,7 @@ https://arxiv.org/abs/2403.06800
 
 The paper maps a patch sequence to:
 
-`math
+```math
 X_i
 =
 \begin{bmatrix}
@@ -22,17 +22,17 @@ x_{iL_i}^{\top}
 \end{bmatrix}
 \in
 \mathbb{R}^{L_i\times D}.
-`
+```
 
 The released implementation projects to width 512:
 
-`math
+```math
 H_i^{(0)}
 =
 \phi\left(X_iW_1+b_1\right)
 \in
 \mathbb{R}^{L_i\times 512}.
-`
+```
 
 The row order is retained by the vanilla Mamba branch.
 
@@ -40,15 +40,15 @@ The row order is retained by the vanilla Mamba branch.
 
 For one branch:
 
-`math
+```math
 X_i^{\prime}
 =
 \mathrm{Norm}\left(H_i^{(\ell)}\right).
-`
+```
 
 The paper writes the Mamba path as:
 
-`math
+```math
 Y_i
 =
 \mathrm{SSM}
@@ -61,11 +61,11 @@ Y_i
 \right)
 \right)
 \right).
-`
+```
 
 The gate is:
 
-`math
+```math
 Z_i
 =
 \mathrm{SiLU}
@@ -76,17 +76,17 @@ Z_i
 X_i^{\prime\prime}
 =
 Z_i\odot Y_i.
-`
+```
 
 Stacked blocks use residual addition:
 
-`math
+```math
 H_i^{(\ell+1)}
 =
 H_i^{(\ell)}
 +
 X_i^{\prime\prime}.
-`
+```
 
 The SSM is the context operator; convolution, normalization, gate, and residual
 determine how its state enters the token field.
@@ -96,49 +96,49 @@ determine how its state enters the token field.
 After the stacked blocks and final normalization, the released model scores each
 token:
 
-`math
+```math
 s_{it}
 =
 w_2^{\top}
 \tanh\left(W_1h_{it}+b_1\right)
 +
 b_2.
-`
+```
 
 Normalize across tokens:
 
-`math
+```math
 \alpha_{it}
 =
 \frac{\exp(s_{it})}
 {\sum_{u=1}^{L_i}\exp(s_{iu})}.
-`
+```
 
 The slide vector is:
 
-`math
+```math
 z_i
 =
 \sum_{t=1}^{L_i}
 \alpha_{it}h_{it}
 \in
 \mathbb{R}^{512}.
-`
+```
 
 The classifier is:
 
-`math
+```math
 \widehat p_i
 =
 \mathrm{softmax}
 \left(
 z_iW_{\mathrm{cls}}+b_{\mathrm{cls}}
 \right).
-`
+```
 
 For the survival configuration, output logits become hazard probabilities:
 
-`math
+```math
 \widehat h_{ik}
 =
 \sigma(\ell_{ik}),
@@ -147,7 +147,7 @@ For the survival configuration, output logits become hazard probabilities:
 =
 \prod_{r=1}^{k}
 \left(1-\widehat h_{ir}\right).
-`
+```
 
 This is a task-head choice after Mamba; the SSM does not imply a particular
 survival likelihood.
