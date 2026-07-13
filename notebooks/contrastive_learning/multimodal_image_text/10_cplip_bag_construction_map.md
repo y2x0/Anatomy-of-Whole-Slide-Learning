@@ -103,6 +103,37 @@ The same pretrained geometry both proposes and validates members. Generated
 descriptions outside its similarity region are removed even if clinically
 valid.
 
+Because generation and retrieval are pipeline operations rather than observed
+annotations, it is more precise to write the resulting bags as random sets:
+
+```math
+\mathcal{B}_i^t
+\sim
+\mathsf{K}_t
+\left(
+\cdot
+\mid
+\widehat v_i,h_i;\omega_t
+\right),
+```
+
+```math
+\mathcal{B}_i^v
+\sim
+\mathsf{K}_v
+\left(
+\cdot
+\mid
+\mathcal{B}_i^t,h_i;\omega_v
+\right).
+```
+
+Here `\mathsf{K}_t` includes language-model generation, retrieval, and
+thresholding, while `\mathsf{K}_v` includes text-to-image and image-to-image
+retrieval. Even if retrieval is deterministic after fixing the encoders, the
+generated text and any tie-breaking or sampling rule remain part of the
+induced supervision distribution.
+
 ## Visual Bag
 
 Visual concepts are retrieved from the selected dictionary prompt, enriched
