@@ -47,7 +47,10 @@ z
 h_{\mathrm{cls}}^{(L)}.
 ```
 
-The CLS token is a recurrent learned query updated by repeated attention.
+The CLS token is a learned state that participates in repeated self-attention.
+It is a query for the patch-to-CLS message, but it can also be a source for
+patch updates unless the attention mask prevents that direction. It is therefore
+not automatically a post-hoc pooling operator.
 
 ## PMA Seed Queries
 
@@ -75,6 +78,22 @@ Z
 =
 \{z_m\}_{m=1}^{M}.
 ```
+
+If PMA is applied after the contextual encoder, its source states are fixed for
+that readout step and the seeds do not alter the patch states in the same
+forward pass. Its factorization is consequently closer to:
+
+```math
+H
+\xrightarrow{\mathcal{C}}
+\widetilde H
+\xrightarrow{\mathcal{R}_{\mathrm{PMA}}}
+Z,
+```
+
+whereas a CLS design commonly puts the learned token inside the context
+operator. The two designs can have the same final shape while using different
+context operators and different information paths.
 
 With one seed:
 
@@ -108,15 +127,16 @@ the model can preserve multiple query-conditioned moments.
 
 ## Dense Summary
 
-CLS and PMA are readout attention mechanisms:
+CLS and PMA expose different readout mechanisms:
 
 ```text
 CLS:
-    one learned token accumulates context across layers
+    one learned token accumulates context inside the encoder and may also
+    broadcast context back to patch tokens
 
 PMA:
-    one or more learned seed queries read out final token states
+    one or more learned seed queries read out final token states after the
+    contextual encoder
 ```
 
 The readout determines which statistics survive after transformer context.
-
