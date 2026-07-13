@@ -54,6 +54,23 @@ N_{\mathrm{eff}}^{(2)}
 
 Both equal `n` under uniform attention and `1` under hard attention.
 
+For any probability vector:
+
+```math
+1
+\le
+N_{\mathrm{eff}}^{(2)}
+\le
+N_{\mathrm{eff}}^{(1)}
+\le
+n.
+```
+
+The normalized entropy `Hbar` is useful when bags have different patch counts,
+because raw entropy has a moving maximum `log(n)`. Effective support still has
+to be reported with `n`; a value of 100 means something different in a bag of
+1,000 patches than in a bag of 100,000.
+
 ## Top-k Mass
 
 Let:
@@ -109,6 +126,20 @@ The attention spatial variance is:
 This distinguishes concentrated local attention from diffuse slide-wide
 attention.
 
+The covariance trace has a direct interpretation:
+
+```math
+\mathrm{tr}(\Sigma_a)
+=
+\sum_j
+a_j
+\|c_j-\bar c\|_2^2.
+```
+
+It is measured in squared coordinate units. Spatial spread is therefore not
+comparable across pixel, micron, and normalized-slide coordinates until the
+coordinate system is fixed or the statistic is normalized.
+
 ## Dense Summary
 
 A useful attention report includes:
@@ -124,4 +155,3 @@ stability across augmentations
 
 The question is not "where is the heat map bright?" but "what measure did the
 model actually use?"
-
