@@ -27,27 +27,41 @@ Slide losses do not update the original image encoder.
 
 ## Class-Specific Attention
 
+For class `c`, the raw gated attention score is:
+
 ```math
-A_n
-\in
-\mathbb{R}^{L_n\times C}.
+a_{n,l}^{(c)}
+=
+\left(W_n^{(c)}\right)^{\top}
+\left[
+\tanh
+\left(
+\Theta_1 f_{n,l}
+\right)
+\odot
+\sigma
+\left(
+\Theta_2 f_{n,l}
+\right)
+\right],
 ```
 
-For class `c`:
+where `\Theta_1,\Theta_2\in\mathbb{R}^{M\times d}` and
+`W_n^{(c)}\in\mathbb{R}^{1\times M}`. The normalized class-specific weight is:
 
 ```math
-\alpha_{n,l}^{(c)}
+A_{n,l}^{(c)}
 =
 \frac{
 \exp
 \left(
-A_{n,l}^{(c)}
+a_{n,l}^{(c)}
 \right)
 }{
 \sum_{r=1}^{L_n}
 \exp
 \left(
-A_{n,r}^{(c)}
+a_{n,r}^{(c)}
 \right)
 },
 ```
@@ -56,8 +70,18 @@ A_{n,r}^{(c)}
 z_n^{(c)}
 =
 \sum_{l=1}^{L_n}
-\alpha_{n,l}^{(c)}
+A_{n,l}^{(c)}
 f_{n,l}.
+```
+
+Thus the paper's attention matrix contains normalized weights:
+
+```math
+A_n
+\in
+\mathbb{R}^{L_n\times C},
+\qquad
+\sum_{l=1}^{L_n}A_{n,l}^{(c)}=1.
 ```
 
 ## Pseudo-Instance Support
