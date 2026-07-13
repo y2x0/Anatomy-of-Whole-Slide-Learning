@@ -386,16 +386,18 @@ The queue changes the empirical prototype marginals used to assign current
 features:
 
 ```math
-q_b
+q_b^{\mathrm{queue}}
 =
-q_b
+\mathsf{Code}_b
 \left(
 Z_{\mathrm{current}},
 Z_{\mathrm{queue}}
 \right).
 ```
 
-It is assignment context, not a feature-negative dictionary.
+Here `Code_b` means the current-sample column normalization of the Sinkhorn
+solution computed on the concatenated feature matrix. It is assignment context,
+not a feature-negative dictionary.
 
 ## No-Gradient Code Path
 
