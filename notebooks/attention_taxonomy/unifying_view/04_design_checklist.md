@@ -115,3 +115,58 @@ failure mode
 
 If any of these are missing, the method is not mathematically legible yet.
 
+## Minimum Operator Record
+
+At minimum, write the dimensions and the forward map:
+
+```math
+Q
+\in
+\mathbb{R}^{m\times d_k},
+\qquad
+K
+\in
+\mathbb{R}^{n\times d_k},
+\qquad
+R
+\in
+\mathbb{R}^{n\times d_v},
+```
+
+```math
+A
+=
+\sigma_{\mathcal{A}}
+\left(
+\frac{QK^\top}{\sqrt{d_k}}+B
+\right),
+\qquad
+Z
+=
+AR.
+```
+
+Then state whether `Z` is a token field, a set of query summaries, or the
+final slide statistic. A method description that gives only an attention name
+but omits this record has not identified its aggregation operator.
+
+## Minimum Sanity Checks
+
+Before claiming a new inductive bias, test:
+
+```text
+permutation test:
+    does the claimed invariance/equivariance hold without geometry?
+
+support test:
+    can a zero mask or top-k rule delete the relevant instance?
+
+bag-size test:
+    how does duplicating background change the normalized statistic?
+
+value test:
+    can the stated value map encode the claimed surviving statistic?
+
+intervention test:
+    does removing the selected patch change the output after renormalization?
+```
