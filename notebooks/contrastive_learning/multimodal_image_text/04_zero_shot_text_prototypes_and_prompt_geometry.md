@@ -164,7 +164,7 @@ Q_c
 =
 \mathcal{R}_c
 \left(
-q_{1c},ldots,q_{nc}
+q_{1c},\ldots,q_{nc}
 \right).
 ```
 
