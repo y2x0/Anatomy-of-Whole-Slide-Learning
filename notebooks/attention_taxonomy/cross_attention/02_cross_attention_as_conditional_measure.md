@@ -85,6 +85,45 @@ Instead of one slide vector, the model preserves `M` query-conditioned moments.
 This is the readout logic behind seed-based set pooling and many learned-token
 readouts.
 
+## Query Sensitivity
+
+For a single query, write:
+
+```math
+z(q)
+=
+\sum_j a_j(q)v_j,
+\qquad
+a_j(q)
+=
+\mathrm{softmax}_j
+\left(
+\frac{q^\top k_j}{\sqrt{d_k}}
+\right).
+```
+
+Differentiating through the normalization gives:
+
+```math
+\frac{\partial z}{\partial q}
+=
+\frac{1}{\sqrt{d_k}}
+\sum_j
+a_j(q)
+v_j
+\left(
+k_j
+-
+\mathbb{E}_{a(q)}[k]
+\right)^\top.
+```
+
+Equivalently, the query Jacobian is a value-key cross-covariance under the
+attention measure. If value directions are uncorrelated with key directions,
+changing the query can change the weights without materially changing the
+readout. Query diversity should therefore be assessed in both attention space
+and value space.
+
 ## Alignment Versus Explanation
 
 The cross-attention row:
