@@ -49,6 +49,22 @@ v_b
 W_Vy_b.
 ```
 
+The projected shapes are:
+
+```math
+Q_X
+\in
+\mathbb{R}^{m\times d_k},
+\qquad
+K_Y
+\in
+\mathbb{R}^{n\times d_k},
+\qquad
+V_Y
+\in
+\mathbb{R}^{n\times d_v}.
+```
+
 Scores are:
 
 ```math
@@ -104,7 +120,7 @@ A_{X\to Y}
 =
 \mathrm{softmax}
 \left(
-Q_XK_Y^\top
+\frac{Q_XK_Y^\top}{\sqrt{d_k}}
 \right).
 ```
 
@@ -160,3 +176,7 @@ m_a
 
 Each query induces its own measure over the source object.
 
+This is an empirical measure over the observed source tokens. The notation
+does not imply that the model has learned a calibrated probability law over all
+possible tissues, genes, or words; it only specifies how the current finite
+source set is weighted for each query.
