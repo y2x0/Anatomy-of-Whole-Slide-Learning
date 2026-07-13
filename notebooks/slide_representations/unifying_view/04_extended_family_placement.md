@@ -1,251 +1,303 @@
-# Extended Family Placement
+# External Structure And Representation Boundaries
 
-This note places hierarchy, distribution, retrieval-memory, and foundation-latent
-representations into the same forward-map language.
+The phrase "slide representation" is often used for several different objects:
+patch features, spatial coordinates, a graph, a memory neighborhood, or a
+pretrained latent vector. These should not be merged casually. The same patch
+carrier can support different prediction objects depending on what is available
+to the model at inference time.
 
-The common map is:
+## One Carrier, Several Objects
 
-```math
-S_i
-\xrightarrow{\text{tile}}
-\{x_{ij},c_{ij}\}_{j=1}^{n_i}
-\xrightarrow{E}
-H_i
-\xrightarrow{\text{Rep}}
-\mathcal{X}_i
-\xrightarrow{\mathcal{F}}
-z_i.
-```
-
-The difference is the type of
-```math
-\mathcal{X}_i
-```
-.
-
-## Hierarchy
-
-Representation:
+Start with tiled observations:
 
 ```math
-\mathcal{X}_i
-=
-\left(
-\{V_i^{(\ell)}\}_{\ell=0}^{L},
-\{\pi_i^{(\ell)}\}_{\ell=0}^{L-1},
-\{H_i^{(\ell)}\}_{\ell=0}^{L}
-\right).
-```
-
-Context:
-
-```math
-H_i^{(\ell+1)}
-=
-\mathcal{R}_{\ell}
-\left(
-\mathcal{C}_{\ell}
-\{h_v^{(\ell)}:v\in\mathrm{Ch}(u)\}
-\right).
-```
-
-Readout:
-
-```math
-z_i
-=
-\psi_\theta
-\left(
-\mathcal{R}^{(0)}(H_i^{(0)}),
-\ldots,
-\mathcal{R}^{(L)}(H_i^{(L)})
-\right).
-```
-
-Survives:
-
-```text
-scale-composed tissue summaries
-```
-
-Failure mode:
-
-```text
-premature compression or wrong parent-child boundaries
-```
-
-## Distribution
-
-Representation:
-
-```math
-\mathcal{X}_i=\mu_i,
+X_i=\{(x_{ij},c_{ij})\}_{j=1}^{n_i},
 \qquad
-\mu_i
-=
-\frac{1}{n_i}\sum_j\delta_{h_{ij}}.
+h_{ij}=E_\phi(x_{ij}).
 ```
 
-Context:
+The patch carrier can then be exposed in different ways:
 
 ```math
-q_m(h)
-=
-\mathrm{Assign}(h,c_m)
+\begin{aligned}
+\mathcal X_i^{\mathrm{set}}
+&=\{h_{ij}\}_{j=1}^{n_i},\\
+\mathcal X_i^{\mathrm{seq}}
+&=(h_{i,\sigma_i(1)},\ldots,h_{i,\sigma_i(n_i)}),\\
+\mathcal X_i^{\mathrm{graph}}
+&=(V_i,E_i,H_i),\\
+\mathcal X_i^{\mathrm{dist}}
+&=\frac{1}{n_i}\sum_{j=1}^{n_i}\delta_{h_{ij}},\\
+\mathcal X_i^{\mathrm{hier}}
+&=(V_i^{(0:L)},\pi_i^{(0:L-1)},H_i^{(0:L)}).
+\end{aligned}
 ```
 
-or:
+The set and empirical distribution contain the same unordered patch
+multiplicities. The sequence, graph, and hierarchy add structure that is not
+recoverable from the empirical distribution alone.
+
+## Native Object Versus External Context
+
+Let a model use an object and an external structure:
 
 ```math
-\phi_\theta(h)
+\widehat y_i
 =
-\text{learned morphology statistic}.
+\mathcal H_\omega
+\left[
+\mathcal R_\psi
+\left(
+\mathcal C_\theta(\mathcal X_i;\mathcal M)
+\right)
+\right].
 ```
 
-Readout:
+Here the external object may be coordinates, a memory bank, a prompt, or a
+pretrained map. The distinction is:
+
+```text
+native representation:
+    part of the object whose invariances and sufficiency are being claimed
+
+external context:
+    an additional object consulted by the predictor at training or inference
+
+task readout:
+    the statistic actually exposed to the head
+```
+
+Calling every input to the forward pass "the representation" hides where the
+inductive bias enters.
+
+## Coordinates: Object Or Context
+
+Coordinates are part of the slide object when the model consumes:
+
+```math
+\mathcal X_i^{\mathrm{coord}}
+=
+\{(h_{ij},c_{ij})\}_{j=1}^{n_i}
+```
+
+and defines a transformation law under a coordinate change. They are only
+context for a set model when they are used to construct an adjacency matrix:
+
+```math
+E_i=\mathrm{kNN}(c_{i1},\ldots,c_{in_i}),
+\qquad
+\mathcal C(H_i;E_i).
+```
+
+In the second case, coordinates determine information flow but need not survive
+the final readout. A graph model can therefore use geometry without producing a
+geometric slide embedding.
+
+The distinction is testable. Hold H_i fixed and perturb coordinates:
+
+```math
+\Delta_{\mathrm{coord}}
+=
+\left\|
+\mathcal F(H_i,c_i)
+-
+\mathcal F(H_i,c_i')
+\right\|.
+```
+
+If the coordinate sensitivity is nonzero, the chosen model is
+coordinate-sensitive.
+That sensitivity may be intended spatial reasoning or an unstable preprocessing
+shortcut.
+
+## Sequence Order Is A Construction
+
+An unordered patch set does not contain a canonical sequence. A sequence model
+therefore needs an ordering map:
+
+```math
+\sigma_i
+=
+\Sigma(H_i,c_i,\xi_i),
+\qquad
+\mathcal X_i^{\mathrm{seq}}
+=
+(h_{i,\sigma_i(1)},\ldots,h_{i,\sigma_i(n_i)}).
+```
+
+If the ordering map is a deterministic raster or space-filling traversal, order
+can be a proxy for geometry. If the ordering is random, the model is being
+trained on randomly chosen trajectories. If the ordering depends on learned
+features, order itself becomes task-dependent.
+
+Two orderings of the same carrier can produce different outputs:
+
+```math
+\mathcal F_{\mathrm{seq}}(\mathcal X_i^{\mathrm{seq}})
+\ne
+\mathcal F_{\mathrm{seq}}(\mathcal X_i^{\mathrm{seq}}_\pi).
+```
+
+Sequence performance should therefore be reported with the ordering rule and
+its stability under alternative valid traversals.
+
+## Memory Is Not A Property Of One Slide
+
+A retrieval system uses a query and an archive:
+
+```math
+\mathcal X_i^{\mathrm{retr}}
+=
+(z_i,\mathcal M),
+\qquad
+\mathcal M=\{(k_r,v_r)\}_{r=1}^{R}.
+```
+
+The same query embedding can yield different predictions when the archive
+changes:
+
+```math
+\widehat y_i(\mathcal M)
+\ne
+\widehat y_i(\mathcal M').
+```
+
+Thus the prediction object is not the query embedding alone. It is the pair of
+the query embedding and the archive
+plus the retrieval rule. This creates two evaluation regimes:
+
+```text
+inductive:
+    the archive is fixed before evaluating a held-out slide
+
+transductive:
+    the archive may include related cases or same-patient material
+```
+
+Without this distinction, retrieval can turn patient or slide leakage into
+apparently strong representation quality.
+
+## Foundation Features Are Not Automatically A Slide Representation
+
+A patch foundation encoder gives:
+
+```math
+h_{ij}=E_{\phi_0}(x_{ij}).
+```
+
+This is a patch representation. A downstream WSI model still has to choose:
 
 ```math
 z_i
 =
+\mathcal R_\psi
 \left(
-\int q_1(h)\,d\mu_i(h),
-\ldots,
-\int q_M(h)\,d\mu_i(h)
+\mathcal C_\theta
+\left(
+\{h_{ij},c_{ij}\}_{j=1}^{n_i}
+\right)
 \right).
 ```
 
-Survives:
-
-```text
-morphology prevalence or distribution shape
-```
-
-Failure mode:
-
-```text
-geometry and rare events can disappear under finite statistics
-```
-
-## Retrieval Memory
-
-Representation:
+Only a pretrained slide encoder supplies a native map of the form:
 
 ```math
-\mathcal{X}_i
+z_i^{(0)}
 =
+F_{\phi_0}^{\mathrm{slide}}
 \left(
-q_i,
-\mathcal{M}(q_i)
-\right),
-```
-
-where:
-
-```math
-\mathcal{M}
-=
-\{(k_r,v_r)\}_{r=1}^{N}.
-```
-
-Context:
-
-```math
-\mathcal{M}(q_i)
-=
-\{(k_r,v_r):r\in\mathcal{N}_K(i)\}.
-```
-
-Readout:
-
-```math
-\widehat y_i
-=
-\mathcal{H}_\theta
-\left(
-q_i,
-\sum_{r\in\mathcal{N}_K(i)}w_{ir}v_r
+\{h_{ij},c_{ij}\}_{j=1}^{n_i}
 \right).
 ```
 
-Survives:
+Using a patch foundation model with mean or attention MIL does not make the
+result a pretrained slide representation. It makes a task-specific readout
+over pretrained patch features.
 
-```text
-query embedding plus memory neighborhood
-```
+## Equivalence Under A Readout
 
-Failure mode:
-
-```text
-retrieved neighbors may encode leakage or nuisance similarity
-```
-
-## Foundation Latent
-
-Representation:
+For any representation map T, define:
 
 ```math
-\mathcal{X}_i
-=
-F_{\text{FM}}(S_i)
+\mathcal X_i\sim_T\mathcal X_k
+\quad\Longleftrightarrow\quad
+T(\mathcal X_i)=T(\mathcal X_k).
 ```
 
-or:
+The downstream head cannot distinguish members of the same equivalence class.
+For a set or distribution statistic:
 
 ```math
-\mathcal{X}_i
-=
-\{E_{\text{FM}}(x_{ij})\}_{j=1}^{n_i}.
+\mu_i=\mu_k
+\quad\Longrightarrow\quad
+T(\mu_i)=T(\mu_k).
 ```
 
-Context:
+For a graph:
 
 ```math
-d_{\text{FM}}(a,b)
+(H_i,E_i)\sim_{\mathcal R\circ\mathcal C}(H_k,E_k)
+\quad\Longleftrightarrow\quad
+\mathcal R(\mathcal C(H_i,E_i))
 =
-\|F_{\text{FM}}(a)-F_{\text{FM}}(b)\|.
+\mathcal R(\mathcal C(H_k,E_k)).
 ```
 
-Readout:
+The graph may distinguish layouts before readout and still collapse them after
+pooling. Representation richness is therefore not the same as information
+surviving the full forward map.
 
-```math
-\widehat y_i
-=
-\mathcal{H}_\theta(F_{\text{FM}}(S_i)).
-```
+## Paper Placement Boundary
 
-or, for prompt-based prediction:
-
-```math
-p(y=c\mid S_i)
-=
-\frac{\exp(z_i^\top t_c/\tau)}
-{\sum_r\exp(z_i^\top t_r/\tau)}.
-```
-
-Survives:
+The following anchors illustrate different boundaries:
 
 ```text
-pretraining-shaped latent coordinates
+HIPT:
+    hierarchical slide tokens are part of the pretrained computation
+
+Patch-GCN:
+    coordinate graph is context before a global slide readout
+
+PANTHER:
+    prototype assignments define a distribution statistic over patches
+
+Prov-GigaPath:
+    a tile encoder is composed with a dedicated slide-level encoder
+
+RetCCL and Yottixel:
+    retrieval quality depends on an archive and a similarity geometry
 ```
 
-Failure mode:
+These are not interchangeable uses of the word representation. Each paper
+should state which object exists before the task head and which objects are
+consulted only as external context.
+
+## Reporting Rule
+
+Every slide-representation paper should report:
 
 ```text
-pretraining geometry may not align with the downstream phenotype
+carrier:
+    patches, cells, regions, or pretrained tokens
+
+structure:
+    set, order, graph, hierarchy, empirical measure, or memory query
+
+construction:
+    coordinates, segmentation, ordering, clustering, or learned topology
+
+context:
+    which entities can interact before readout
+
+readout:
+    exact statistic exposed to the task head
+
+external state:
+    memory bank, text prompts, pretrained encoder, or cohort-dependent object
+
+invariance:
+    which transformations leave the prediction unchanged
 ```
 
-## Combined Table
-
-| Family | Slide Object | Context Source | Readout | Hidden Assumption |
-|---|---|---|---|---|
-| Hierarchy | nested tissue units | parent maps and scale | top or multiscale pool | biology composes across chosen scales |
-| Distribution | empirical measure | statistic or prototype map | T(\mu) | prevalence captures the signal |
-| Retrieval memory | query plus neighbors | external archive | neighbor-weighted context | nearest cases are useful precedent |
-| Foundation latent | pretrained embedding | pretraining objective | probe, prompt, or adapter | latent geometry transfers |
-
-The design lesson:
-
-```text
-representation is not only what is computed from the slide;
-it is also what geometry, memory, or scale structure is allowed to define similarity.
-```
+The core question is not whether a model has a large embedding. It is which
+equivalences it imposes before the task is allowed to decide what matters.
