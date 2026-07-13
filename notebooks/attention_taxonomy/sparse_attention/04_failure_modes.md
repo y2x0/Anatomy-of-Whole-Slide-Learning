@@ -49,7 +49,24 @@ j\notin\widehat E
 j\in\widehat E.
 ```
 
-The output can change nonsmoothly near support boundaries.
+The regularity depends on the mechanism. Sparsemax and entmax are continuous
+normalizations with a changing Jacobian at support boundaries. Hard top-k changes
+the selected index set discontinuously at score ties; if the exchanged values
+differ, its readout can jump even when the score perturbation is arbitrarily
+small.
+
+Support stability should therefore be measured directly. For two perturbed
+versions of the same bag, define:
+
+```math
+\mathrm{Jaccard}(\widehat E,\widehat E')
+=
+\frac{|\widehat E\cap\widehat E'|}
+{|\widehat E\cup\widehat E'|}.
+```
+
+A sparse heat map with low support Jaccard is a brittle selector, regardless of
+how clean the single displayed map appears.
 
 ## Rare Distributed Evidence
 
@@ -107,4 +124,3 @@ Its main failure mode is simple:
 ```text
 the model cannot recover evidence it masked out
 ```
-
