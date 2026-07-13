@@ -66,6 +66,26 @@ PMA seed pooling
 attention survival readout
 ```
 
+The same local Q/K/V formula does not determine whether the operator belongs to
+`C` or `R`. The output shape and composition do:
+
+```math
+\mathcal{C}_{\theta}:
+\mathbb{R}^{n\times d}
+\to
+\mathbb{R}^{n\times d'},
+\qquad
+\mathcal{R}_{\theta}:
+\mathbb{R}^{n\times d'}
+\to
+\mathbb{R}^{m\times d''}.
+```
+
+An attention map with one target query and no token updates is naturally a
+readout. An `n`-query map that returns one state per token is naturally a
+context operator. A CLS token can occupy both roles across layers, so the
+architecture name alone does not fix the C/R placement.
+
 ## Geometry In Attention
 
 Geometry enters through:
