@@ -88,6 +88,35 @@ p_j
 
 As `alpha` increases, support tends to shrink.
 
+This is a sparsity pressure, not a support theorem independent of the scores.
+For a fixed score vector, define:
+
+```math
+S_\alpha(s)
+=
+\left\{
+j:
+\left[
+(\alpha-1)s_j-\tau_\alpha
+\right]_+
+>
+0
+\right\}.
+```
+
+The active set depends on both `alpha` and the score gaps. In particular, a
+change in score scale can imitate a change in alpha:
+
+```math
+\mathrm{entmax}_\alpha(\beta s)
+\ne
+\mathrm{entmax}_{\alpha'}(s)
+```
+
+in general, but both parameters can alter the thresholded support. Comparing
+models with different alpha values is therefore incomplete unless score scale,
+temperature, and the resulting support statistics are reported together.
+
 ## Why This Matters For WSI
 
 Softmax assumes every patch contributes some positive amount:
@@ -159,3 +188,8 @@ The mathematical question becomes not just "how much weight?" but:
 ```text
 which patches are allowed to have nonzero influence?
 ```
+
+As with sparsemax, the output is continuous for ordinary score perturbations,
+while derivatives change when a coordinate crosses the support boundary. A
+clean-looking sparse map is therefore not evidence that the support is stable
+under resampling, augmentation, or a small change in the bag.
