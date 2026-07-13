@@ -68,6 +68,26 @@ a_+
 
 Rare evidence can vanish under the denominator.
 
+More precisely, to retain a target mass `c` in `(0,1)`, the positive score
+must satisfy:
+
+```math
+a_+
+\ge
+c
+\quad\Longleftrightarrow\quad
+\epsilon
+\ge
+\log
+\left(
+\frac{cn}{1-c}
+\right).
+```
+
+The required score advantage therefore grows logarithmically with the number
+of background patches. Increasing the bag size is not a neutral preprocessing
+change for a fixed attention score scale.
+
 ## Shortcut Concentration
 
 If artifact features correlate with labels, attention may learn:
@@ -105,6 +125,21 @@ The same logit can arise from different pairs:
 ```
 
 Thus attention weights alone do not identify evidence.
+
+Even within one parameterization, weight and contribution are different
+quantities. For a linear head:
+
+```math
+o
+=
+w^\top z
+=
+\sum_j a_j\,w^\top v_j,
+```
+
+a patch can receive large attention while contributing little to the output if
+its projected value is nearly orthogonal to `w`. Conversely, a moderately
+weighted patch can dominate the logit through its value direction.
 
 ## Bag-Size Dependence
 
