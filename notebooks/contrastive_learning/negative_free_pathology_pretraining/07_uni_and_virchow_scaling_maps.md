@@ -84,6 +84,27 @@ Tiles are conditionally clustered rather than iid from the marginal tile
 distribution. Batch centering and KoLeo spacing therefore combine within-slide
 and across-slide statistics.
 
+Virchow also changes the teacher-temperature schedule used by the DINOv2
+training recipe. With iteration `r`, the reported schedule is:
+
+```math
+\tau_t(r)
+=
+0.04
++
+0.03
+\min
+\left(
+1,
+\frac{r}{186{,}000}
+\right).
+```
+
+The learning-rate warmup is extended to `495{,}000` iterations. These are
+training-dynamics changes, not changes to the exported embedding dimension,
+but they alter teacher sharpness and therefore the categorical distillation
+targets seen by the student.
+
 ## Virchow Exported Embedding
 
 For 224-pixel input, Virchow concatenates the class token with the mean of 256
