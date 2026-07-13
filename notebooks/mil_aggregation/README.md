@@ -26,3 +26,7 @@ research map.
 The mean/attention portion is now in `mean_attention_mil/`.
 
 The transformer portion is now in `transformer_mil/`.
+
+The graph MIL portion is now in `graph_mil/`. It derives graph-as-bag
+equivariance, Patch-GCN, HEAT, WiKG, HACT, graph readouts, graph-specific
+failure modes, and a C/R/G/S design matrix.
