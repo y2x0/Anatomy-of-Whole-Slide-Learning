@@ -148,3 +148,33 @@ This does not fully specify a pathology system. Patch encoder, tiling,
 sampling, hierarchy, residual blocks, MLPs, pretraining, and supervision can be
 as important as the attention operator. The matrix isolates only the weighting
 mechanism.
+
+## Operator Invariants
+
+For a nonnegative row-normalized attention map:
+
+```math
+a_{uv}
+\ge
+0,
+\qquad
+\sum_{v\in\mathcal{A}(u)}a_{uv}
+=
+1,
+\qquad
+a_{uv}=0
+\text{ when }v\notin\mathcal{A}(u).
+```
+
+The message therefore satisfies:
+
+```math
+m_u
+\in
+\mathrm{conv}
+\{r_v:v\in\mathcal{A}(u)\}.
+```
+
+If a method claims to preserve a statistic outside this convex hull, that
+statistic must enter through the value map, a residual path, multiple queries,
+or a later nonlinear transformation. Attention weights alone cannot create it.
