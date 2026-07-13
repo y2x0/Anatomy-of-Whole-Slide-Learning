@@ -55,9 +55,26 @@ m(q)
 {\sum_j K(q,k_j)}.
 ```
 
-Thus dot-product attention is a Nadaraya-Watson estimator in learned feature
-space. The learned part is not the normalization; it is the geometry in which
-similarity is computed.
+Thus dot-product attention has the form of a Nadaraya-Watson estimator in a
+learned feature space, conditional on the learned projections being fixed. The
+learned part is not the normalization; it is the geometry in which similarity
+is computed.
+
+The word ``kernel'' needs a qualification here. The function
+
+```math
+K(q,k)
+=
+\exp
+\left(
+\frac{q^\top k}{\sqrt{d_k}}
+\right)
+```
+
+is positive as a weighting function, but a general query-key score need not
+define a symmetric positive-semidefinite kernel on one common domain. The
+taxonomy therefore uses ``kernel smoother'' for the normalized weighting form,
+not as a claim that every attention score is a reproducing-kernel construction.
 
 ## Additive Attention
 
@@ -80,7 +97,8 @@ K_\theta(q,k_j)
 
 The difference is the score family. Dot-product attention is bilinear after
 projection. Additive attention passes the query-key pair through a nonlinear
-compatibility network.
+compatibility network. In both cases, the exponential score is a positive
+weighting function and the output is a normalized first moment of the values.
 
 ## MIL Readout As Degenerate Query Attention
 
