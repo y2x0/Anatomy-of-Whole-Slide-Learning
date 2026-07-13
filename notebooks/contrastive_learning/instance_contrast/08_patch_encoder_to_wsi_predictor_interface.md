@@ -381,6 +381,8 @@ then even an ideal aggregator has little evidence. The relevant discriminability
 is measured after pushforward, for example:
 
 ```math
+D_H^{(\mathrm{rare},\mathrm{common})}
+=
 D
 \left(
 p_H
@@ -431,23 +433,24 @@ f_{\widehat\theta}
 p_X^{(t)}.
 ```
 
-Successful augmentation can reduce nuisance shift:
+Successful augmentation may reduce nuisance shift in feature space, but this
+requires a feature-space divergence and a defined baseline:
 
 ```math
+D_H^{(s,t)}
+=
 D
 \left(
 p_H^{(s)},
 p_H^{(t)}
 \right)
-<
-D
-\left(
-p_X^{(s)},
-p_X^{(t)}
-\right).
 ```
 
-Shortcut-sensitive contrastive geometry can instead preserve or amplify it.
+The expression is not directly comparable with a raw-image divergence because
+the two distributions live in different spaces. One can compare two
+feature-space encoders, or evaluate a specified domain-discrimination or
+calibration metric. Shortcut-sensitive contrastive geometry can instead
+preserve or amplify the feature-space shift.
 
 ## DSMIL Interface
 
