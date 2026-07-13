@@ -58,3 +58,45 @@ The intervention semantics must be specified before interpreting the number.
 Graph node deletion, concept zeroing, and diffusion feature shifts are causal
 with respect to a computational graph only under their defined model semantics.
 
+## Intervention Semantics
+
+Let I_a be an intervention on object a and let q be the stated target. Model
+faithfulness concerns
+
+```math
+\Delta_q(a)
+=
+q(F(X))-q(F(\mathsf I_a(X))).
+```
+
+Biological causal validity concerns a different quantity, for example
+
+```math
+\Delta_Y(a)
+=
+\mathbb E[Y\mid\mathrm{do}(A=a)]
+-
+\mathbb E[Y\mid\mathrm{do}(A=a_0)].
+```
+
+There is no implication from a large model delta to a large biological effect.
+The implication requires an intervention map from computational object to a
+valid structural variable, plus assumptions that support transport from observed
+slides to the intervention distribution.
+
+For a ranked explanation E, deletion faithfulness can be written as a family of
+correlations over interventions:
+
+```math
+\rho_{\mathrm{del}}
+=
+\mathrm{Corr}_{a\sim\mathcal Q}
+\left(
+E_a,
+\Delta_q(a)
+\right).
+```
+
+Changing the intervention distribution Q changes the claim being measured. A
+patch deletion test, a feasible stain-preserving edit, and a graph rewire are not
+interchangeable evaluations.

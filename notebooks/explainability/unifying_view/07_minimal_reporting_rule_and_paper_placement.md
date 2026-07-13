@@ -49,3 +49,29 @@ The mathematically honest explanation is not the most visually persuasive
 one. It is the one whose displayed object, target, operator, and validation
 claim all refer to the same forward computation.
 
+## Identifiability Of A Reported Explanation
+
+Let a reported explanation be the tuple
+
+```math
+\mathfrak e
+=
+\left(
+\mathcal O,\mathcal C,\mathcal R,q,\mathcal I,\mathcal V
+\right).
+```
+
+The report is incomplete whenever two distinct explanation functionals are
+compatible with the stated fields:
+
+```math
+\exists E\ne E'
+\quad\text{such that}\quad
+\mathfrak e(E)=\mathfrak e(E').
+```
+
+In that case a reader cannot determine whether the figure shows routing,
+gradient credit, deletion effect, or a post-hoc spatial projection. The minimum
+reporting rule is therefore an identifiability condition: it should make the
+explanation functional recoverable from the stated object, target, operator,
+intervention, and validation definitions.

@@ -37,3 +37,31 @@ The same attention vector can be interpreted as patch evidence in a set model,
 node routing in a graph model, or a time-conditioned selector in a survival
 model. Its semantics come from the forward map, not from the plotted colors.
 
+## Resolution As A Projection
+
+Let E_i be an explanation defined on the native slide object and let Pi_l render
+or aggregate it at resolution level l:
+
+```math
+e_i^{(\ell)}
+=
+\Pi_{\ell}\left(E_i;\mathcal O_i\right),
+\qquad
+\mathcal O_i\in
+\{\text{set},\text{sequence},\text{graph},\text{hierarchy},\text{measure}\}.
+```
+
+The rendering map is generally many-to-one. Two patch-level explanations can
+produce the same region heatmap, and two different graph edge explanations can
+produce the same node score. Consequently,
+
+```math
+\Pi_{\ell}(E_i)=\Pi_{\ell}(E_i')
+\centernot\Longrightarrow
+E_i=E_i'.
+```
+
+The reverse error is also possible: interpolating a slide score onto patches
+creates an array without proving that the model computed patch-level evidence.
+An explanation report should name both the native object and the projection used
+to display it.
