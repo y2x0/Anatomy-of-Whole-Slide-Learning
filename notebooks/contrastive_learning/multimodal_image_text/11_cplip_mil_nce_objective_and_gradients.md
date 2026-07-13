@@ -160,6 +160,58 @@ q_{ij}
 The gradient has a hierarchical attention interpretation: `q_ij` weights text
 bags, while `\alpha_ijmn` weights instance pairs within each bag comparison.
 
+For numerical stability and interpretation, let the largest pair similarity
+be:
+
+```math
+m_{ij}
+=
+\max_{m,n}
+u_{im}^{\top}v_{jn}.
+```
+
+Then the bag score admits the centered form:
+
+```math
+S_{ij}
+=
+\frac{m_{ij}}{\sigma}
++
+\log
+\sum_{m,n}
+\exp
+\left(
+\frac{u_{im}^{\top}v_{jn}-m_{ij}}{\sigma}
+\right).
+```
+
+The second term measures how much pair mass survives beyond the best pair.
+Define the effective pair support:
+
+```math
+N_{\mathrm{eff}}^{(ij)}
+=
+\exp
+\left(
+-\sum_{m,n}
+\alpha_{ijmn}\log\alpha_{ijmn}
+\right).
+```
+
+It obeys:
+
+```math
+1
+\le
+N_{\mathrm{eff}}^{(ij)}
+\le
+M_iN_j.
+```
+
+Values near one indicate existential, single-pair behavior; values near
+`M_iN_j` indicate diffuse many-to-many responsibility. Thus the bag label
+alone does not determine how many cross-modal relations train the encoder.
+
 ## Temperature Limits
 
 Let pair similarities be `r_{mn}=u_m^{\top}v_n`. As `\sigma` approaches zero:
