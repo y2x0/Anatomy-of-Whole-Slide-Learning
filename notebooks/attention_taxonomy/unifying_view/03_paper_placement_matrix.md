@@ -416,6 +416,19 @@ S:
 The failure mode is also specific: if the max branch selects the wrong critical
 instance, the query used for bag attention is already biased.
 
+The critical-instance selection is an argmax, so ties or near-ties can make the
+query unstable:
+
+```math
+j_c^\star
+=
+\underset{j}{\arg\max}\ s_{ijc}.
+```
+
+This is a discrete selection step, not a smooth attention normalization. A
+DSMIL-style derivation should therefore report how ties, score perturbations,
+and the max branch are handled.
+
 ## TransMIL: Context Attention Before Readout
 
 TransMIL moves beyond pure readout MIL by contextualizing WSI tokens before
@@ -669,3 +682,30 @@ pathway-conditioned pathology summaries:
 
 This is the useful taxonomy: not "attention method" as a label, but the exact
 query, support, normalization, value map, and surviving statistic.
+
+## Scope And Anchor Links
+
+The forward maps above are placement derivations. They intentionally omit
+residual connections, feed-forward blocks, dropout, auxiliary losses, and
+implementation-specific projection details unless those details change the
+attention support or surviving statistic. They should not be read as complete
+reimplementations of the papers.
+
+Anchor papers:
+
+- Vaswani et al., "Attention Is All You Need":
+  https://arxiv.org/abs/1706.03762
+- Lee et al., "Set Transformer":
+  https://arxiv.org/abs/1810.00825
+- Ilse et al., "Attention-based Deep Multiple Instance Learning":
+  https://arxiv.org/abs/1802.04712
+- Lu et al., "Data-efficient and weakly supervised computational pathology on
+  whole-slide images": https://arxiv.org/abs/2004.09666
+- Li et al., "Dual-stream Multiple Instance Learning Network":
+  https://arxiv.org/abs/2011.08939
+- Shao et al., "TransMIL": https://arxiv.org/abs/2106.00908
+- Velickovic et al., "Graph Attention Networks":
+  https://arxiv.org/abs/1710.10903
+- Chen et al., "Multimodal Co-Attention Transformer for Survival Prediction in
+  Gigapixel Whole Slide Images":
+  https://openaccess.thecvf.com/content/ICCV2021/html/Chen_Multimodal_Co-Attention_Transformer_for_Survival_Prediction_in_Gigapixel_Whole_Slide_ICCV_2021_paper.html
